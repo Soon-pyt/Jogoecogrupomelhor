@@ -1,7 +1,8 @@
 {
     "name": "jogoecogrupomelhor",
     "dependencies": {
-        "device": "*"
+        "device": "*",
+        "color-coded-tilemap": "*"
     },
     "files": [
         "main.blocks",
