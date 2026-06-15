@@ -1,1 +1,308 @@
-<xml xmlns="https://developers.google.com/blockly/xml"><variables></variables><block type="pxt-on-start" id="xRRgvHNlG#rZ^u`HECiY" x="0" y="0"></block></xml>
+<xml xmlns="http://www.w3.org/1999/xhtml">
+<block id=";`Z~6m-5t_h9WFF;+d80" type="keyonevent">
+<field name="button">controller.left</field>
+<field name="event">ControllerButtonEvent.Pressed</field>
+<statement name="HANDLER">
+<block id="g6NW/t4tyUk!2q!sC=R5" type="variables_set">
+<field name="VAR">direcao</field>
+<value name="VALUE">
+<shadow type="math_number">
+<field name="NUM">-1</field>
+</shadow>
+</value>
+<next>
+<block id="FoLs5+.f-MDG/7JTVBO:" type="spritesetimage">
+<value name="sprite">
+<block type="variables_get">
+<field name="VAR">jogador</field>
+</block>
+</value>
+<value name="img">
+<shadow type="screen_image_picker"/>
+<block type="variables_get">
+<field name="VAR">imagemJogadorEsquerda</field>
+</block>
+</value>
+</block>
+</next>
+</block>
+</statement>
+</block>
+<block id="IgMxeokuuO:y$[V3Qrx`" type="keyonevent">
+<field name="button">controller.right</field>
+<field name="event">ControllerButtonEvent.Pressed</field>
+<statement name="HANDLER">
+<block id="17~c``%!oWoWR@m8z~QE" type="variables_set">
+<field name="VAR">direcao</field>
+<value name="VALUE">
+<shadow type="math_number">
+<field name="NUM">1</field>
+</shadow>
+</value>
+<next>
+<block id="Rl(i@9;n9]L|[??j_DWs" type="spritesetimage">
+<value name="sprite">
+<block type="variables_get">
+<field name="VAR">jogador</field>
+</block>
+</value>
+<value name="img">
+<shadow type="screen_image_picker"/>
+<block type="variables_get">
+<field name="VAR">imagemJogadorDireita</field>
+</block>
+</value>
+</block>
+</next>
+</block>
+</statement>
+</block>
+<block id="4$WI.)C[r}1egc$hnYOv" type="keyonevent">
+<field name="button">controller.A</field>
+<field name="event">ControllerButtonEvent.Pressed</field>
+<statement name="HANDLER">
+<block id="|7^*Y=FwJ;eTHMnejfT|" type="controls_if">
+<mutation elseif="0" else="0" />
+<value name="IF0">
+<shadow type="logic_boolean"><field name="BOOL">TRUE</field></shadow>
+<block type="spritehasobstacle">
+<field name="direction">CollisionDirection.Bottom</field>
+<value name="sprite">
+<block type="variables_get">
+<field name="VAR">jogador</field>
+</block>
+</value>
+</block>
+</value>
+<statement name="DO0">
+<block id="fj?1Hk5i8*he(*vZEyB-" type="Sprite_blockCombine_set">
+<field name="property">Sprite.vy&#64;set</field>
+<value name="mySprite">
+<block type="variables_get">
+<field name="VAR">jogador</field>
+</block>
+</value>
+<value name="value">
+<shadow type="math_number">
+<field name="NUM">-150</field>
+</shadow>
+</value>
+</block>
+</statement>
+</block>
+</statement>
+</block>
+<block id="lJ4Hgd#`n)*6EVl+cmKG" type="keyonevent">
+<field name="button">controller.B</field>
+<field name="event">ControllerButtonEvent.Pressed</field>
+<statement name="HANDLER">
+<block id="avzJL*`HL.3[D)QDx?rQ" type="variables_set">
+<field name="VAR">projetil</field>
+<value name="VALUE">
+<shadow type="math_number"><field name="NUM">0</field></shadow>
+<block type="spritescreateprojectilefromsprite">
+<value name="img">
+<shadow type="screen_image_picker"/>
+<block type="variables_get">
+<field name="VAR">imagemProjetil</field>
+</block>
+</value>
+<value name="sprite">
+<shadow type="variables_get">
+<field name="VAR">jogador</field>
+</shadow>
+</value>
+<value name="vx">
+<shadow type="spriteSpeedPicker"/>
+<block type="math_arithmetic">
+<field name="OP">MULTIPLY</field>
+<value name="A">
+<shadow type="math_number">
+<field name="NUM">120</field>
+</shadow>
+</value>
+<value name="B">
+<shadow type="math_number"><field name="NUM">0</field></shadow>
+<block type="variables_get">
+<field name="VAR">direcao</field>
+</block>
+</value>
+</block>
+</value>
+<value name="vy">
+<shadow type="spriteSpeedPicker">
+<field name="speed">0</field>
+</shadow>
+</value>
+</block>
+</value>
+</block>
+</statement>
+</block>
+<block id="xRRgvHNlG#rZ^u`HECiY" type="pxt-on-start">
+<statement name="HANDLER">
+<block id="2O5|dPc#wh6JP:ilec[U" type="variables_set">
+<field name="VAR">direcao</field>
+<value name="VALUE">
+<shadow type="math_number">
+<field name="NUM">1</field>
+</shadow>
+</value>
+<next>
+<block id="0I$)GY?wFVB(kYe*E)D?" type="variables_set">
+<field name="VAR">imagemJogadorDireita</field>
+<value name="VALUE">
+<shadow type="math_number"><field name="NUM">0</field></shadow>
+<block type="screen_image_picker">
+<field name="img">img&#96;&#13;&#10;    . . . 2 2 2 2 2 2 . . . . . . .&#13;&#10;    . . 2 2 2 2 2 2 2 2 2 . . . . .&#13;&#10;    . . 4 4 4 4 4 f 4 . . . . . . .&#13;&#10;    . 4 4 4 4 4 4 f 4 4 4 . . . . .&#13;&#10;    . 4 4 4 4 4 4 4 f 4 4 4 . . . .&#13;&#10;    . 4 4 4 4 4 4 f f f f . . . . .&#13;&#10;    . . . 4 4 4 4 4 4 . . . . . . .&#13;&#10;    . . 2 2 8 2 2 2 . . . . . . . .&#13;&#10;    . 2 2 2 8 2 2 8 2 2 2 . . . . .&#13;&#10;    2 2 2 2 8 8 8 8 2 2 2 2 . . . .&#13;&#10;    4 4 2 8 5 8 8 5 8 2 4 4 . . . .&#13;&#10;    4 4 4 8 8 8 8 8 8 4 4 4 . . . .&#13;&#10;    . 4 8 8 8 8 8 8 8 8 4 . . . . .&#13;&#10;    . . 8 8 8 . . 8 8 8 . . . . . .&#13;&#10;    . e e e . . . . e e e . . . . . .&#13;&#10;    e e e e . . . . e e e e . . . . .&#13;&#10;    &#96;</field>
+</block>
+</value>
+<next>
+<block id="C~oIN2xAgm#2_X2v(23*" type="variables_set">
+<field name="VAR">imagemJogadorEsquerda</field>
+<value name="VALUE">
+<shadow type="math_number"><field name="NUM">0</field></shadow>
+<block type="screen_image_picker">
+<field name="img">img&#96;&#13;&#10;    . . . . . . . 2 2 2 2 2 2 . . .&#13;&#10;    . . . . . 2 2 2 2 2 2 2 2 2 . .&#13;&#10;    . . . . . . . 4 f 4 4 4 4 4 . .&#13;&#10;    . . . . . 4 4 4 f 4 4 4 4 4 .&#13;&#10;    . . . . 4 4 4 f 4 4 4 4 4 4 .&#13;&#10;    . . . . f f f f 4 4 4 4 4 4 .&#13;&#10;    . . . . . . 4 4 4 4 4 4 . . .&#13;&#10;    . . . . . . . . 2 2 2 8 2 2 . .&#13;&#10;    . . . . . 2 2 2 8 2 2 8 2 2 2 .&#13;&#10;    . . . . 2 2 2 2 8 8 8 8 2 2 2 2&#13;&#10;    . . . . 4 4 2 8 5 8 8 5 8 2 4 4&#13;&#10;    . . . . 4 4 4 8 8 8 8 8 8 4 4 4&#13;&#10;    . . . . . 4 8 8 8 8 8 8 8 8 4 .&#13;&#10;    . . . . . . 8 8 8 . . 8 8 8 . .&#13;&#10;    . . . . . . e e e . . . . e e e .&#13;&#10;    . . . . . e e e e . . . . e e e e&#13;&#10;    &#96;</field>
+</block>
+</value>
+<next>
+<block id="gRAGSlt!u?T=p-72C3a=" type="variables_set">
+<field name="VAR">imagemProjetil</field>
+<value name="VALUE">
+<shadow type="math_number"><field name="NUM">0</field></shadow>
+<block type="screen_image_picker">
+<field name="img">img&#96;&#13;&#10;    . . 5 5 5 . . .&#13;&#10;    . 5 5 4 4 5 . .&#13;&#10;    5 5 4 4 2 4 5 .&#13;&#10;    5 4 4 2 2 4 5 5&#13;&#10;    5 5 4 4 2 4 5 .&#13;&#10;    . 5 5 4 4 5 . .&#13;&#10;    . . 5 5 5 . . .&#13;&#10;    . . . 5 . . . .&#13;&#10;    &#96;</field>
+</block>
+</value>
+<next>
+<block id="(~g?Ut]xoyUeD#nnhPgA" type="variables_set">
+<field name="VAR">jogador</field>
+<value name="VALUE">
+<shadow type="math_number"><field name="NUM">0</field></shadow>
+<block type="spritescreate">
+<value name="img">
+<shadow type="screen_image_picker"/>
+<block type="variables_get">
+<field name="VAR">imagemJogadorDireita</field>
+</block>
+</value>
+<value name="kind">
+<shadow type="spritekind">
+<field name="MEMBER">Player</field>
+</shadow>
+</value>
+</block>
+</value>
+<next>
+<block id="X:a{]|QId6g,.b,,Ebln" type="gamesetbackgroundcolor">
+<value name="color">
+<shadow type="colorindexpicker">
+<field name="index">9</field>
+</shadow>
+</value>
+<next>
+<block id="vM6M,pGZY@s.ebYPBp)X" type="gamesettilemap">
+<value name="map">
+<shadow type="tilemap_image_picker">
+<field name="img">&#10;    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .&#10;    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .&#10;    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .&#10;    . . . . . . . . . . . . 2 2 2 2 . . . . . . . . . . 2 2 2 2 . . . . . . . . .&#10;    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .&#10;    . . . . . . . . . . . . . . . . . . . . 2 2 2 2 2 . . . . . . . . . . . . . . .&#10;    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .&#10;    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2&#10;    </field>
+</shadow>
+</value>
+<next>
+<block id="zRui}96h/].U6-ea}7:." type="gamesettile">
+<value name="index">
+<shadow type="colorindexpicker">
+<field name="index">2</field>
+</shadow>
+</value>
+<value name="img">
+<shadow type="tile_image_picker">
+<field name="img">&#10;    7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7&#10;    6 7 7 6 7 7 6 7 7 6 7 7 6 7 7 6&#10;    e e e e e e e e e e e e e e e e&#10;    e 4 e e 4 e e 4 e e 4 e e 4 e e&#10;    e e e 4 e e 4 e e 4 e e 4 e e 4&#10;    4 e e e e 4 e e e e 4 e e e e 4&#10;    e e 4 e e e e 4 e e e e 4 e e e&#10;    e 4 e e 4 e e 4 e e 4 e e 4 e e&#10;    e e e 4 e e 4 e e 4 e e 4 e e 4&#10;    4 e e e e 4 e e e e 4 e e e e 4&#10;    e e 4 e e e e 4 e e e e 4 e e e&#10;    e 4 e e 4 e e 4 e e 4 e e 4 e e&#10;    e e e 4 e e 4 e e 4 e e 4 e e 4&#10;    4 e e e e 4 e e e e 4 e e e e 4&#10;    e e 4 e e e e 4 e e e e 4 e e e&#10;    e e e e e e e e e e e e e e e e&#10;    </field>
+</shadow>
+</value>
+<value name="wall">
+<shadow type="toggleOnOff">
+<field name="on">true</field>
+</shadow>
+</value>
+<next>
+<block id="R753gwLN6vb*=*0746Iu" type="game_control_sprite">
+<mutation _expanded="2" />
+<value name="sprite">
+<shadow type="variables_get">
+<field name="VAR">jogador</field>
+</shadow>
+</value>
+<value name="vx">
+<shadow type="spriteSpeedPicker">
+<field name="speed">100</field>
+</shadow>
+</value>
+<value name="vy">
+<shadow type="spriteSpeedPicker">
+<field name="speed">0</field>
+</shadow>
+</value>
+<next>
+<block id="fTP/+/M9F?yGLWy./F^^" type="Sprite_blockCombine_set">
+<field name="property">Sprite.ay&#64;set</field>
+<value name="mySprite">
+<block type="variables_get">
+<field name="VAR">jogador</field>
+</block>
+</value>
+<value name="value">
+<shadow type="math_number">
+<field name="NUM">350</field>
+</shadow>
+</value>
+<next>
+<block id="/?[E1/db)PD5Jj./9SZ2" type="spritesetpos">
+<value name="sprite">
+<block type="variables_get">
+<field name="VAR">jogador</field>
+</block>
+</value>
+<value name="x">
+<shadow type="positionPicker">
+<field name="index">24</field>
+</shadow>
+</value>
+<value name="y">
+<shadow type="positionPicker">
+<field name="index">80</field>
+</shadow>
+</value>
+<next>
+<block id="l|M2h:djd-_pjvpYqHNH" type="camerafollow">
+<value name="sprite">
+<shadow type="variables_get">
+<field name="VAR">jogador</field>
+</shadow>
+</value>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+</xml>
