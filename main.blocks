@@ -4,12 +4,13 @@
 <variable type="KIND_SpriteKind">ItemVida</variable>
 <variable type="KIND_SpriteKind">ItemEstrela</variable>
 <variable type="KIND_SpriteKind">InimigoFerido</variable>
+<variable type="KIND_SpriteKind">InimigoAereo</variable>
 </variables>
-<block id="l=(.L!U8?e|fCOx)cW0P" type="function_definition">
+<block id="T.#Ac`{7H87K@=yCH6Pe" type="function_definition">
 <mutation name="configurarTiles" >
 </mutation>
 <statement name="STACK">
-<block id="|EN|f8wY9`$ASo@Kg*(c" type="gamesettile">
+<block id="1IGA@18og6bi:4k^A9u," type="gamesettile">
 <value name="index">
 <shadow type="colorindexpicker">
 <field name="index">2</field>
@@ -27,7 +28,7 @@
 </shadow>
 </value>
 <next>
-<block id="APw%LMzVk0YJJFE,4B;{" type="gamesettile">
+<block id="U+apMVt)z3~G3(8gb_0i" type="gamesettile">
 <value name="index">
 <shadow type="colorindexpicker">
 <field name="index">3</field>
@@ -45,7 +46,7 @@
 </shadow>
 </value>
 <next>
-<block id="6-~frGWLN*U?JH1:Yxg-" type="gamesettile">
+<block id="k$]`{y8Bz)L2rt05dKG5" type="gamesettile">
 <value name="index">
 <shadow type="colorindexpicker">
 <field name="index">4</field>
@@ -69,11 +70,11 @@
 </block>
 </statement>
 </block>
-<block id="MV`^1c[3}@R+u%gxfPBB" type="function_definition">
+<block id=")i*(U)DnY[Ds%)l*lsKh" type="function_definition">
 <mutation name="renascerJogador" >
 </mutation>
 <statement name="STACK">
-<block id="JW7T]7StkA51XN1ZD-||" type="spritesetimage">
+<block id="H(Fw-yhkUx7^!yCfPhW=" type="spritesetimage">
 <value name="sprite">
 <block type="variables_get">
 <field name="VAR">jogador</field>
@@ -86,7 +87,7 @@
 </block>
 </value>
 <next>
-<block id="EvTZ{25_{rW+wZi*EQ#8" type="variables_set">
+<block id="2W%)]Xu/C37wcX,di:j-" type="variables_set">
 <field name="VAR">direcao</field>
 <value name="VALUE">
 <shadow type="math_number">
@@ -94,7 +95,7 @@
 </shadow>
 </value>
 <next>
-<block id="kWm?A(}OUWFxVXYYdl35" type="spritesetpos">
+<block id="q,tPh,!{kQC:}keSm8,^" type="spritesetpos">
 <value name="sprite">
 <block type="variables_get">
 <field name="VAR">jogador</field>
@@ -111,7 +112,7 @@
 </shadow>
 </value>
 <next>
-<block id="40hA+yiKFkJ:#q+f`F2v" type="Sprite_blockCombine_set">
+<block id="v)]@a;lU5^j2OhHfVJoY" type="Sprite_blockCombine_set">
 <field name="property">Sprite.vx&#64;set</field>
 <value name="mySprite">
 <block type="variables_get">
@@ -124,7 +125,7 @@
 </shadow>
 </value>
 <next>
-<block id="!xi!iG`c8_kRpt5:9/U!" type="Sprite_blockCombine_set">
+<block id="|V};G[}~ib^mGcGEklv2" type="Sprite_blockCombine_set">
 <field name="property">Sprite.vy&#64;set</field>
 <value name="mySprite">
 <block type="variables_get">
@@ -136,6 +137,21 @@
 <field name="NUM">0</field>
 </shadow>
 </value>
+<next>
+<block id="iU(V^+7YFk;_.KYX^|-!" type="spritesetsetflag">
+<field name="flag">SpriteFlag.Invisible</field>
+<value name="sprite">
+<block type="variables_get">
+<field name="VAR">jogador</field>
+</block>
+</value>
+<value name="on">
+<shadow type="toggleOnOff">
+<field name="on">false</field>
+</shadow>
+</value>
+</block>
+</next>
 </block>
 </next>
 </block>
@@ -147,13 +163,13 @@
 </block>
 </statement>
 </block>
-<block id="g~OVIM!|vcw*B?q`k[Q;" type="function_definition">
+<block id="Kx1?P#MB,z$PVdFF[rnW" type="function_definition">
 <mutation name="criarInimigo" >
-<arg name="x" type="number" id="1pfmq4nt0q9dqdph1gld" />
-<arg name="y" type="number" id="ux5umwm8k1hs1lrhuoxe2g" />
+<arg name="x" type="number" id="crmy5xlakc03oc823nx0oz" />
+<arg name="y" type="number" id="jvgrpdx341ohrmitkbs5" />
 </mutation>
 <statement name="STACK">
-<block id="Ks#7nKL%3_p/vQ)!f.C%" type="controls_if">
+<block id="?v:XVX-HMXV4I%|9?}6s" type="controls_if">
 <mutation elseif="1" else="1" />
 <value name="IF0">
 <shadow type="logic_boolean"><field name="BOOL">TRUE</field></shadow>
@@ -190,7 +206,7 @@
 </block>
 </value>
 <statement name="DO0">
-<block id="Dk3q^}?j~V7eV#1Q^-f(" type="variables_set">
+<block id="k01#1)-G?4|r%?NXx(K+" type="variables_set">
 <field name="VAR">inimigo</field>
 <value name="VALUE">
 <shadow type="math_number"><field name="NUM">0</field></shadow>
@@ -211,7 +227,7 @@
 </block>
 </statement>
 <statement name="DO1">
-<block id="(WZF(dd,HoiK,LKm|p]d" type="variables_set">
+<block id="jc/lnj0{t3Y8L]|-1$qe" type="variables_set">
 <field name="VAR">inimigo</field>
 <value name="VALUE">
 <shadow type="math_number"><field name="NUM">0</field></shadow>
@@ -232,7 +248,7 @@
 </block>
 </statement>
 <statement name="ELSE">
-<block id="fh`wnb2Z!6)|e#?{,@iS" type="variables_set">
+<block id="u*iX:E@eI;!#ye-SW/-B" type="variables_set">
 <field name="VAR">inimigo</field>
 <value name="VALUE">
 <shadow type="math_number"><field name="NUM">0</field></shadow>
@@ -253,7 +269,7 @@
 </block>
 </statement>
 <next>
-<block id="Am;l3%Q^uR{=[,+,eO;v" type="spritesetpos">
+<block id="rK3UKn4e4;bB.TW$+m?H" type="spritesetpos">
 <value name="sprite">
 <block type="variables_get">
 <field name="VAR">inimigo</field>
@@ -272,7 +288,7 @@
 </block>
 </value>
 <next>
-<block id="-)c]k_V`2NG-Rdjy{+08" type="Sprite_blockCombine_set">
+<block id="Fi(6O]W%MEd*TQM)e~~q" type="Sprite_blockCombine_set">
 <field name="property">Sprite.vx&#64;set</field>
 <value name="mySprite">
 <block type="variables_get">
@@ -296,7 +312,7 @@
 </block>
 </value>
 <next>
-<block id="m4c=26Smz-pVcnC|`+ix" type="Sprite_blockCombine_set">
+<block id="_SbPRyi@FYt@LoWSkqw2" type="Sprite_blockCombine_set">
 <field name="property">Sprite.ay&#64;set</field>
 <value name="mySprite">
 <block type="variables_get">
@@ -309,7 +325,7 @@
 </shadow>
 </value>
 <next>
-<block id="PezNj}~N}Dl%a^z@gQGc" type="spritesetsetbounceonwall">
+<block id="Iy_jfHbZ~?.)x/s0-s;9" type="spritesetsetbounceonwall">
 <value name="sprite">
 <block type="variables_get">
 <field name="VAR">inimigo</field>
@@ -331,13 +347,92 @@
 </block>
 </statement>
 </block>
-<block id="8/cnO1|P9sTk,[nV/n_O" type="function_definition">
-<mutation name="criarBandeira" >
-<arg name="x" type="number" id="f76psuok6rjxdw3jpvi4j" />
-<arg name="y" type="number" id="5tzbu6pkk2rfeh0yajki" />
+<block id="BZvGa1~%Y]_7[Cy,4_+q" type="function_definition">
+<mutation name="criarInimigoAereo" >
+<arg name="x" type="number" id="shy6k84gvn2ebmsvtcq8h" />
+<arg name="y" type="number" id="2vmkh226w8wkmyqgfeyih" />
+<arg name="velocidade" type="number" id="gh3hfda2i4urn5blc8a" />
 </mutation>
 <statement name="STACK">
-<block id="Oweu2S0YRT+eh,1tZdZ+" type="variables_set">
+<block id="ID`9%}gK:S`0Ho]QZ(8}" type="variables_set">
+<field name="VAR">inimigo</field>
+<value name="VALUE">
+<shadow type="math_number"><field name="NUM">0</field></shadow>
+<block type="spritescreate">
+<value name="img">
+<shadow type="screen_image_picker"/>
+<block type="variables_get">
+<field name="VAR">imagemInimigoAereo</field>
+</block>
+</value>
+<value name="kind">
+<shadow type="spritekind">
+<field name="MEMBER">InimigoAereo</field>
+</shadow>
+</value>
+</block>
+</value>
+<next>
+<block id="A`/3jL?6LZ/B!VEXF-/w" type="spritesetpos">
+<value name="sprite">
+<block type="variables_get">
+<field name="VAR">inimigo</field>
+</block>
+</value>
+<value name="x">
+<shadow type="positionPicker"/>
+<block type="argument_reporter_number">
+<field name="VALUE">x</field>
+</block>
+</value>
+<value name="y">
+<shadow type="positionPicker"/>
+<block type="argument_reporter_number">
+<field name="VALUE">y</field>
+</block>
+</value>
+<next>
+<block id="DtpR=tTdkp*`Jq-iW/Pk" type="Sprite_blockCombine_set">
+<field name="property">Sprite.vx&#64;set</field>
+<value name="mySprite">
+<block type="variables_get">
+<field name="VAR">inimigo</field>
+</block>
+</value>
+<value name="value">
+<block type="argument_reporter_number">
+<field name="VALUE">velocidade</field>
+</block>
+</value>
+<next>
+<block id="L_7@)Xy[9P@TBUI#t),e" type="Sprite_blockCombine_set">
+<field name="property">Sprite.ay&#64;set</field>
+<value name="mySprite">
+<block type="variables_get">
+<field name="VAR">inimigo</field>
+</block>
+</value>
+<value name="value">
+<shadow type="math_number">
+<field name="NUM">0</field>
+</shadow>
+</value>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+<block id="ZS?}0_dDw;;1%Q4uM#Sg" type="function_definition">
+<mutation name="criarBandeira" >
+<arg name="x" type="number" id="iklxzftg8ijtpx8n26n28" />
+<arg name="y" type="number" id="3blqd74xye1l202q4s57w" />
+</mutation>
+<statement name="STACK">
+<block id="!R}eQf#p_6R0l-^`vIg~" type="variables_set">
 <field name="VAR">bandeira</field>
 <value name="VALUE">
 <shadow type="math_number"><field name="NUM">0</field></shadow>
@@ -356,7 +451,7 @@
 </block>
 </value>
 <next>
-<block id="pyc(H|=uc2!U.ZO%xhi." type="spritesetpos">
+<block id="P^oRhv%hv}p4nZM^UK@v" type="spritesetpos">
 <value name="sprite">
 <block type="variables_get">
 <field name="VAR">bandeira</field>
@@ -379,13 +474,13 @@
 </block>
 </statement>
 </block>
-<block id="hElSn:-_Jy9x:4EsJ,S)" type="function_definition">
+<block id="k|cW4zylpuK`Q3,K3qw9" type="function_definition">
 <mutation name="criarItemVida" >
-<arg name="x" type="number" id="olsgnp9xe60qrba1j6uq" />
-<arg name="y" type="number" id="sl51btn2br1bjwwttwky" />
+<arg name="x" type="number" id="t3tl15la1zq10qq4qvfwn" />
+<arg name="y" type="number" id="842yjfutmez44zkdfmukl" />
 </mutation>
 <statement name="STACK">
-<block id="3]K^WJ9LT2(JekN5HncT" type="variables_set">
+<block id="|8}FCUvGNiVs]w_Fybrx" type="variables_set">
 <field name="VAR">itemVida</field>
 <value name="VALUE">
 <shadow type="math_number"><field name="NUM">0</field></shadow>
@@ -404,7 +499,7 @@
 </block>
 </value>
 <next>
-<block id="?WEmlZCl2-vtRIfr(`9-" type="spritesetpos">
+<block id="y$IA36$rWPy{`X17X$G=" type="spritesetpos">
 <value name="sprite">
 <block type="variables_get">
 <field name="VAR">itemVida</field>
@@ -427,13 +522,13 @@
 </block>
 </statement>
 </block>
-<block id="5Q$@)vPzQWW6D?vgbUz$" type="function_definition">
+<block id="6GlX?w(Bsvr(}iom=b9/" type="function_definition">
 <mutation name="criarItemEstrela" >
-<arg name="x" type="number" id="hxhlv7jldps254vkj8u" />
-<arg name="y" type="number" id="jj267y5agud397i7cctqh" />
+<arg name="x" type="number" id="xd3br1pq7xh7xd2luzho1" />
+<arg name="y" type="number" id="8wrw4j1rjm59sc643wm89t" />
 </mutation>
 <statement name="STACK">
-<block id="J?/ya+$KfZO=::APoEA`" type="variables_set">
+<block id="{|WDltdsB(lG)fpL66^m" type="variables_set">
 <field name="VAR">itemEstrela</field>
 <value name="VALUE">
 <shadow type="math_number"><field name="NUM">0</field></shadow>
@@ -452,7 +547,7 @@
 </block>
 </value>
 <next>
-<block id="QT*MQHQAF9qf2tVMW.tA" type="spritesetpos">
+<block id="BR8Ms`^g(FtAdz7,a{ZJ" type="spritesetpos">
 <value name="sprite">
 <block type="variables_get">
 <field name="VAR">itemEstrela</field>
@@ -475,53 +570,60 @@
 </block>
 </statement>
 </block>
-<block id="r-.PC/1XKEt;gL{VseDy" type="function_definition">
+<block id="#KjMw)}YPypOJQ{`1$eX" type="function_definition">
 <mutation name="carregarNivel" >
 </mutation>
 <statement name="STACK">
-<block id="xLtcfQeBx``t.U/YfvqZ" type="sprites_destroy_all_sprites_of_kind">
+<block id="e98E@x0-Clnw#|?e)3Ft" type="sprites_destroy_all_sprites_of_kind">
 <value name="kind">
 <shadow type="spritekind">
 <field name="MEMBER">Enemy</field>
 </shadow>
 </value>
 <next>
-<block id="{K^]n{#_X3BiyKCrnD)j" type="sprites_destroy_all_sprites_of_kind">
+<block id="Tjx{6s2@36^:(4}Ow).W" type="sprites_destroy_all_sprites_of_kind">
 <value name="kind">
 <shadow type="spritekind">
 <field name="MEMBER">InimigoFerido</field>
 </shadow>
 </value>
 <next>
-<block id="4C!Q!m{,?Y_NJs5!!{b!" type="sprites_destroy_all_sprites_of_kind">
+<block id="}V*2TOzhbc:R#GQo_tDX" type="sprites_destroy_all_sprites_of_kind">
+<value name="kind">
+<shadow type="spritekind">
+<field name="MEMBER">InimigoAereo</field>
+</shadow>
+</value>
+<next>
+<block id="(WyLEM_6aM=hW%^(UwcK" type="sprites_destroy_all_sprites_of_kind">
 <value name="kind">
 <shadow type="spritekind">
 <field name="MEMBER">Bandeira</field>
 </shadow>
 </value>
 <next>
-<block id=".k=n6wf*XZbpntWdC`WE" type="sprites_destroy_all_sprites_of_kind">
+<block id="6u^$mKPA9~g-Hsq)d{6d" type="sprites_destroy_all_sprites_of_kind">
 <value name="kind">
 <shadow type="spritekind">
 <field name="MEMBER">ItemVida</field>
 </shadow>
 </value>
 <next>
-<block id="S[s!fEkvjQaUUXpVW_^T" type="sprites_destroy_all_sprites_of_kind">
+<block id="BU`N)47JC!~o]WK_h8Cy" type="sprites_destroy_all_sprites_of_kind">
 <value name="kind">
 <shadow type="spritekind">
 <field name="MEMBER">ItemEstrela</field>
 </shadow>
 </value>
 <next>
-<block id="mDwQ+0B?d@FbtD|$pHo5" type="sprites_destroy_all_sprites_of_kind">
+<block id="KfQn[_RX4h}M*aqxCRD(" type="sprites_destroy_all_sprites_of_kind">
 <value name="kind">
 <shadow type="spritekind">
 <field name="MEMBER">Projectile</field>
 </shadow>
 </value>
 <next>
-<block id=".^I6?raRpT}a5(YGJM@)" type="controls_if">
+<block id="v#BLS,f9+VHg-UlNEOy6" type="controls_if">
 <mutation elseif="1" else="1" />
 <value name="IF0">
 <shadow type="logic_boolean"><field name="BOOL">TRUE</field></shadow>
@@ -558,7 +660,7 @@
 </block>
 </value>
 <statement name="DO0">
-<block id="3ssVechE{1Vq)bJ`_[-F" type="variables_set">
+<block id="/]X~ET_B{xvMr,G-83}%" type="variables_set">
 <field name="VAR">velocidadeInimigo</field>
 <value name="VALUE">
 <shadow type="math_number">
@@ -566,109 +668,109 @@
 </shadow>
 </value>
 <next>
-<block id="MjQSJFjf?tL;sjEis@1;" type="gamesettilemap">
+<block id="#8RvGK{Hg[,ud1lM]NxS" type="gamesettilemap">
 <value name="map">
 <shadow type="tilemap_image_picker">
-<field name="img">&#10;            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .&#10;            . . . . . . . . 4 4 4 . . . . . . . . . . . . . . . . . . 4 4 4 4 . . . . . . . . . . . . . . . 4 4 4 4 . . . . . . .&#10;            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .&#10;            . . . . . . . . . . . . . . 3 3 3 3 . . . . . . . . . . . . 3 3 3 3 . . . . . . . . . . 3 3 3 3 3 . . . . . . . . . . .&#10;            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .&#10;            . . . . . . . . . . . . . . . . . . . . . . 3 3 3 3 3 . . . . . . . . . . 3 3 3 3 3 . . . . . . . . . . . . . . . . . .&#10;            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .&#10;            2 2 2 2 2 2 2 2 2 2 2 2 . . . 2 2 2 2 2 2 2 2 2 2 2 2 2 . . . . 2 2 2 2 2 2 2 2 2 2 2 2 . . . 2 2 2 2 2 2 2 2 2 2 2 2 2&#10;            </field>
+<field name="img">&#10;            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .&#10;            . . . . . . . . 4 4 4 4 . . . . . . . . . . . . . . . . . . 4 4 4 4 . . . . . . . . . . . . . . 4 4 4 4 . . . . . . . . . . . .&#10;            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .&#10;            . . . . . . . . . . . . . . 3 3 3 3 . . . . . . . . . . . . 3 3 3 3 . . . . . . . . . . 3 3 3 3 3 . . . . . . . . . . . . . . .&#10;            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .&#10;            . . . . . . . . . . . . 3 3 3 3 . . . . . . . . 3 3 3 3 3 . . . . . . . . . 3 3 3 3 3 . . . . . . . . . . . 3 3 3 3 . . . . . .&#10;            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .&#10;            2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . . . 2 2 2 2 2 2 2 2 2 2 2 2 2&#10;            </field>
 </shadow>
 </value>
 <next>
-<block id="aK927+f88iSJ4.e7gPNF" type="function_call">
+<block id="B(?dJm[+S+*jfyK1y-wc" type="function_call">
 <mutation name="configurarTiles" />
 <next>
-<block id="g0gf^7akC5`1crItw)x#" type="function_call">
+<block id="siQ=mBEPhOPpT{n/}dgu" type="function_call">
 <mutation name="criarInimigo" >
-<arg name="x" type="number" id="1pfmq4nt0q9dqdph1gld" />
-<arg name="y" type="number" id="ux5umwm8k1hs1lrhuoxe2g" />
+<arg name="x" type="number" id="crmy5xlakc03oc823nx0oz" />
+<arg name="y" type="number" id="jvgrpdx341ohrmitkbs5" />
 </mutation>
-<value name="1pfmq4nt0q9dqdph1gld">
+<value name="crmy5xlakc03oc823nx0oz">
 <shadow type="math_number">
-<field name="NUM">328</field>
+<field name="NUM">168</field>
 </shadow>
 </value>
-<value name="ux5umwm8k1hs1lrhuoxe2g">
+<value name="jvgrpdx341ohrmitkbs5">
 <shadow type="math_number">
 <field name="NUM">104</field>
 </shadow>
 </value>
 <next>
-<block id="][Q;)[.FKa4]V}SvYdD." type="function_call">
+<block id="dK5L^we-}beev$[=[$ZR" type="function_call">
 <mutation name="criarInimigo" >
-<arg name="x" type="number" id="1pfmq4nt0q9dqdph1gld" />
-<arg name="y" type="number" id="ux5umwm8k1hs1lrhuoxe2g" />
+<arg name="x" type="number" id="crmy5xlakc03oc823nx0oz" />
+<arg name="y" type="number" id="jvgrpdx341ohrmitkbs5" />
 </mutation>
-<value name="1pfmq4nt0q9dqdph1gld">
+<value name="crmy5xlakc03oc823nx0oz">
 <shadow type="math_number">
-<field name="NUM">584</field>
+<field name="NUM">392</field>
 </shadow>
 </value>
-<value name="ux5umwm8k1hs1lrhuoxe2g">
+<value name="jvgrpdx341ohrmitkbs5">
 <shadow type="math_number">
 <field name="NUM">104</field>
 </shadow>
 </value>
 <next>
-<block id=".Kv.oSCfc^yrl8f+$jZ]" type="function_call">
+<block id="5vxA+.{Vn}:+]yqdGqdw" type="function_call">
 <mutation name="criarInimigo" >
-<arg name="x" type="number" id="1pfmq4nt0q9dqdph1gld" />
-<arg name="y" type="number" id="ux5umwm8k1hs1lrhuoxe2g" />
+<arg name="x" type="number" id="crmy5xlakc03oc823nx0oz" />
+<arg name="y" type="number" id="jvgrpdx341ohrmitkbs5" />
 </mutation>
-<value name="1pfmq4nt0q9dqdph1gld">
+<value name="crmy5xlakc03oc823nx0oz">
 <shadow type="math_number">
-<field name="NUM">856</field>
+<field name="NUM">680</field>
 </shadow>
 </value>
-<value name="ux5umwm8k1hs1lrhuoxe2g">
+<value name="jvgrpdx341ohrmitkbs5">
 <shadow type="math_number">
 <field name="NUM">104</field>
 </shadow>
 </value>
 <next>
-<block id="U6OZ^wf+(DHC@G5j%3|]" type="function_call">
+<block id="DQ:t,/Z]-lbm]?3pPcjj" type="function_call">
 <mutation name="criarItemVida" >
-<arg name="x" type="number" id="olsgnp9xe60qrba1j6uq" />
-<arg name="y" type="number" id="sl51btn2br1bjwwttwky" />
+<arg name="x" type="number" id="t3tl15la1zq10qq4qvfwn" />
+<arg name="y" type="number" id="842yjfutmez44zkdfmukl" />
 </mutation>
-<value name="olsgnp9xe60qrba1j6uq">
+<value name="t3tl15la1zq10qq4qvfwn">
 <shadow type="math_number">
-<field name="NUM">248</field>
+<field name="NUM">216</field>
 </shadow>
 </value>
-<value name="sl51btn2br1bjwwttwky">
+<value name="842yjfutmez44zkdfmukl">
 <shadow type="math_number">
 <field name="NUM">72</field>
 </shadow>
 </value>
 <next>
-<block id="i*wJ@axnNF)v:WZHOOEq" type="function_call">
+<block id="[[L:7N}^ZIeh@*b!N0Xf" type="function_call">
 <mutation name="criarItemEstrela" >
-<arg name="x" type="number" id="hxhlv7jldps254vkj8u" />
-<arg name="y" type="number" id="jj267y5agud397i7cctqh" />
+<arg name="x" type="number" id="xd3br1pq7xh7xd2luzho1" />
+<arg name="y" type="number" id="8wrw4j1rjm59sc643wm89t" />
 </mutation>
-<value name="hxhlv7jldps254vkj8u">
+<value name="xd3br1pq7xh7xd2luzho1">
 <shadow type="math_number">
-<field name="NUM">520</field>
+<field name="NUM">664</field>
 </shadow>
 </value>
-<value name="jj267y5agud397i7cctqh">
+<value name="8wrw4j1rjm59sc643wm89t">
 <shadow type="math_number">
 <field name="NUM">72</field>
 </shadow>
 </value>
 <next>
-<block id="z)5g!]2y2ZO2xgF5-N^]" type="function_call">
+<block id="UOVs0EyQ[_i]5+xx45:@" type="function_call">
 <mutation name="criarBandeira" >
-<arg name="x" type="number" id="f76psuok6rjxdw3jpvi4j" />
-<arg name="y" type="number" id="5tzbu6pkk2rfeh0yajki" />
+<arg name="x" type="number" id="iklxzftg8ijtpx8n26n28" />
+<arg name="y" type="number" id="3blqd74xye1l202q4s57w" />
 </mutation>
-<value name="f76psuok6rjxdw3jpvi4j">
+<value name="iklxzftg8ijtpx8n26n28">
 <shadow type="math_number">
-<field name="NUM">936</field>
+<field name="NUM">984</field>
 </shadow>
 </value>
-<value name="5tzbu6pkk2rfeh0yajki">
+<value name="3blqd74xye1l202q4s57w">
 <shadow type="math_number">
-<field name="NUM">96</field>
+<field name="NUM">104</field>
 </shadow>
 </value>
 </block>
@@ -690,7 +792,7 @@
 </block>
 </statement>
 <statement name="DO1">
-<block id="EO6%Wc`1mJr6$Yw_L1xa" type="variables_set">
+<block id="lHvU{F/fIUA!zsu@f3lu" type="variables_set">
 <field name="VAR">velocidadeInimigo</field>
 <value name="VALUE">
 <shadow type="math_number">
@@ -698,127 +800,175 @@
 </shadow>
 </value>
 <next>
-<block id="N7N1P*C=ouGEg*!%]$_K" type="gamesettilemap">
+<block id="sdwyH~(QWN$R^IZZi*~1" type="gamesettilemap">
 <value name="map">
 <shadow type="tilemap_image_picker">
-<field name="img">&#10;            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .&#10;            . . . . 4 4 4 4 . . . . . . . . . . . . . . . . 4 4 4 . . . . . . . . . . . . . . . . . . . . 4 4 4 4 . . . . . . . .&#10;            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .&#10;            . . . . . . . . . . 3 3 3 3 3 . . . . . . . . 3 3 3 3 3 . . . . . . . . . . . 3 3 3 3 3 . . . . . . . . 3 3 3 3 . . .&#10;            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3 3 3 3 . . . . . . . . . . . . . . . . . . . . . . .&#10;            . . . . . . . . . . . . . . . . . 3 3 3 3 3 . . . . . . . . 3 3 3 3 3 . . . . . . . . . . . 3 3 3 3 . . . . . . . . .&#10;            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .&#10;            2 2 2 2 2 2 2 2 2 2 . . . . 2 2 2 2 2 2 2 2 2 . . . . . 2 2 2 2 2 2 2 2 . . . . 2 2 2 2 2 2 2 2 2 . . . . 2 2 2 2 2 2 2&#10;            </field>
+<field name="img">&#10;            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .&#10;            . . . . 4 4 4 4 . . . . . . . . . . . . . . . . 4 4 4 4 . . . . . . . . . . . . . . . . . 4 4 4 4 . . . . . . . . . . . . . . .&#10;            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .&#10;            . . . . . . . . . . 3 3 3 3 3 . . . . . . . . . 3 3 3 3 3 . . . . . . . . . . 3 3 3 3 3 . . . . . . . . . 3 3 3 3 . . . . . . .&#10;            . . . . . . . . . . . . . . . . 3 3 3 3 . . . . . . . . . . . . . . 3 3 3 3 . . . . . . . . . . 3 3 3 3 . . . . . . . . . . . .&#10;            . . . . . . . . 3 3 3 3 . . . . . . . 3 3 3 3 3 . . . . . . . . . 3 3 3 3 3 . . . . . . . . . . 3 3 3 3 . . . . . . . . . . . .&#10;            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .&#10;            2 2 2 2 2 2 2 2 2 2 2 2 2 . . . 2 2 2 2 2 2 2 2 2 2 2 2 . . . 2 2 2 2 2 2 2 2 2 2 2 2 . . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2&#10;            </field>
 </shadow>
 </value>
 <next>
-<block id="(Q{xLGmK6F5n/]bha`S9" type="function_call">
+<block id="UqP%6yo#t2//d*SiW%kY" type="function_call">
 <mutation name="configurarTiles" />
 <next>
-<block id="r%+[PZu7fOPjB;t[Yh)E" type="function_call">
+<block id="Qd|h2zc6g*tCHTmgjTv1" type="function_call">
 <mutation name="criarInimigo" >
-<arg name="x" type="number" id="1pfmq4nt0q9dqdph1gld" />
-<arg name="y" type="number" id="ux5umwm8k1hs1lrhuoxe2g" />
+<arg name="x" type="number" id="crmy5xlakc03oc823nx0oz" />
+<arg name="y" type="number" id="jvgrpdx341ohrmitkbs5" />
 </mutation>
-<value name="1pfmq4nt0q9dqdph1gld">
+<value name="crmy5xlakc03oc823nx0oz">
 <shadow type="math_number">
-<field name="NUM">296</field>
+<field name="NUM">184</field>
 </shadow>
 </value>
-<value name="ux5umwm8k1hs1lrhuoxe2g">
+<value name="jvgrpdx341ohrmitkbs5">
 <shadow type="math_number">
 <field name="NUM">104</field>
 </shadow>
 </value>
 <next>
-<block id="B9h}mSPn-sx115X#RJYF" type="function_call">
+<block id="P3o[L1.~p[:#h$M*/JQR" type="function_call">
 <mutation name="criarInimigo" >
-<arg name="x" type="number" id="1pfmq4nt0q9dqdph1gld" />
-<arg name="y" type="number" id="ux5umwm8k1hs1lrhuoxe2g" />
+<arg name="x" type="number" id="crmy5xlakc03oc823nx0oz" />
+<arg name="y" type="number" id="jvgrpdx341ohrmitkbs5" />
 </mutation>
-<value name="1pfmq4nt0q9dqdph1gld">
+<value name="crmy5xlakc03oc823nx0oz">
 <shadow type="math_number">
-<field name="NUM">504</field>
+<field name="NUM">392</field>
 </shadow>
 </value>
-<value name="ux5umwm8k1hs1lrhuoxe2g">
+<value name="jvgrpdx341ohrmitkbs5">
 <shadow type="math_number">
 <field name="NUM">104</field>
 </shadow>
 </value>
 <next>
-<block id="=*Xj.8I)Mb9Ub(lCWCQ;" type="function_call">
+<block id="VPw-NL-ds|1$]]@G2]/," type="function_call">
 <mutation name="criarInimigo" >
-<arg name="x" type="number" id="1pfmq4nt0q9dqdph1gld" />
-<arg name="y" type="number" id="ux5umwm8k1hs1lrhuoxe2g" />
+<arg name="x" type="number" id="crmy5xlakc03oc823nx0oz" />
+<arg name="y" type="number" id="jvgrpdx341ohrmitkbs5" />
 </mutation>
-<value name="1pfmq4nt0q9dqdph1gld">
+<value name="crmy5xlakc03oc823nx0oz">
 <shadow type="math_number">
-<field name="NUM">712</field>
+<field name="NUM">632</field>
 </shadow>
 </value>
-<value name="ux5umwm8k1hs1lrhuoxe2g">
+<value name="jvgrpdx341ohrmitkbs5">
 <shadow type="math_number">
 <field name="NUM">104</field>
 </shadow>
 </value>
 <next>
-<block id="#?U%4=7knSN=)XiRk+}z" type="function_call">
+<block id="FD+_4}2ds={aV}_w:2EQ" type="function_call">
 <mutation name="criarInimigo" >
-<arg name="x" type="number" id="1pfmq4nt0q9dqdph1gld" />
-<arg name="y" type="number" id="ux5umwm8k1hs1lrhuoxe2g" />
+<arg name="x" type="number" id="crmy5xlakc03oc823nx0oz" />
+<arg name="y" type="number" id="jvgrpdx341ohrmitkbs5" />
 </mutation>
-<value name="1pfmq4nt0q9dqdph1gld">
+<value name="crmy5xlakc03oc823nx0oz">
 <shadow type="math_number">
-<field name="NUM">904</field>
+<field name="NUM">888</field>
 </shadow>
 </value>
-<value name="ux5umwm8k1hs1lrhuoxe2g">
+<value name="jvgrpdx341ohrmitkbs5">
 <shadow type="math_number">
 <field name="NUM">104</field>
 </shadow>
 </value>
 <next>
-<block id="VwHCWi+2pGLhWTKIegG]" type="function_call">
+<block id=";`j|AKvo{]O|.11EU?z~" type="function_call">
+<mutation name="criarInimigoAereo" >
+<arg name="x" type="number" id="shy6k84gvn2ebmsvtcq8h" />
+<arg name="y" type="number" id="2vmkh226w8wkmyqgfeyih" />
+<arg name="velocidade" type="number" id="gh3hfda2i4urn5blc8a" />
+</mutation>
+<value name="shy6k84gvn2ebmsvtcq8h">
+<shadow type="math_number">
+<field name="NUM">256</field>
+</shadow>
+</value>
+<value name="2vmkh226w8wkmyqgfeyih">
+<shadow type="math_number">
+<field name="NUM">64</field>
+</shadow>
+</value>
+<value name="gh3hfda2i4urn5blc8a">
+<shadow type="math_number">
+<field name="NUM">35</field>
+</shadow>
+</value>
+<next>
+<block id="o@p)KVY}NBjv8{#H2i@f" type="function_call">
+<mutation name="criarInimigoAereo" >
+<arg name="x" type="number" id="shy6k84gvn2ebmsvtcq8h" />
+<arg name="y" type="number" id="2vmkh226w8wkmyqgfeyih" />
+<arg name="velocidade" type="number" id="gh3hfda2i4urn5blc8a" />
+</mutation>
+<value name="shy6k84gvn2ebmsvtcq8h">
+<shadow type="math_number">
+<field name="NUM">560</field>
+</shadow>
+</value>
+<value name="2vmkh226w8wkmyqgfeyih">
+<shadow type="math_number">
+<field name="NUM">48</field>
+</shadow>
+</value>
+<value name="gh3hfda2i4urn5blc8a">
+<shadow type="math_number">
+<field name="NUM">-35</field>
+</shadow>
+</value>
+<next>
+<block id="*W{Wi)$Mmy/[Sp#Tof,?" type="function_call">
 <mutation name="criarItemVida" >
-<arg name="x" type="number" id="olsgnp9xe60qrba1j6uq" />
-<arg name="y" type="number" id="sl51btn2br1bjwwttwky" />
+<arg name="x" type="number" id="t3tl15la1zq10qq4qvfwn" />
+<arg name="y" type="number" id="842yjfutmez44zkdfmukl" />
 </mutation>
-<value name="olsgnp9xe60qrba1j6uq">
+<value name="t3tl15la1zq10qq4qvfwn">
 <shadow type="math_number">
-<field name="NUM">344</field>
+<field name="NUM">200</field>
 </shadow>
 </value>
-<value name="sl51btn2br1bjwwttwky">
+<value name="842yjfutmez44zkdfmukl">
 <shadow type="math_number">
-<field name="NUM">56</field>
+<field name="NUM">40</field>
 </shadow>
 </value>
 <next>
-<block id="aWy}3`61@OlQ4%YaHve)" type="function_call">
+<block id="$k;N4MJ9!*,J:EHMdc0X" type="function_call">
 <mutation name="criarItemEstrela" >
-<arg name="x" type="number" id="hxhlv7jldps254vkj8u" />
-<arg name="y" type="number" id="jj267y5agud397i7cctqh" />
+<arg name="x" type="number" id="xd3br1pq7xh7xd2luzho1" />
+<arg name="y" type="number" id="8wrw4j1rjm59sc643wm89t" />
 </mutation>
-<value name="hxhlv7jldps254vkj8u">
+<value name="xd3br1pq7xh7xd2luzho1">
 <shadow type="math_number">
-<field name="NUM">664</field>
+<field name="NUM">584</field>
 </shadow>
 </value>
-<value name="jj267y5agud397i7cctqh">
+<value name="8wrw4j1rjm59sc643wm89t">
 <shadow type="math_number">
 <field name="NUM">72</field>
 </shadow>
 </value>
 <next>
-<block id="tzZd=B5Dg*#S.]7ym?I~" type="function_call">
+<block id="68s5Y2UhMAB=4.IFMX+!" type="function_call">
 <mutation name="criarBandeira" >
-<arg name="x" type="number" id="f76psuok6rjxdw3jpvi4j" />
-<arg name="y" type="number" id="5tzbu6pkk2rfeh0yajki" />
+<arg name="x" type="number" id="iklxzftg8ijtpx8n26n28" />
+<arg name="y" type="number" id="3blqd74xye1l202q4s57w" />
 </mutation>
-<value name="f76psuok6rjxdw3jpvi4j">
+<value name="iklxzftg8ijtpx8n26n28">
 <shadow type="math_number">
-<field name="NUM">936</field>
+<field name="NUM">984</field>
 </shadow>
 </value>
-<value name="5tzbu6pkk2rfeh0yajki">
+<value name="3blqd74xye1l202q4s57w">
 <shadow type="math_number">
-<field name="NUM">96</field>
+<field name="NUM">104</field>
 </shadow>
 </value>
+</block>
+</next>
+</block>
+</next>
 </block>
 </next>
 </block>
@@ -840,7 +990,7 @@
 </block>
 </statement>
 <statement name="ELSE">
-<block id="_.#D;Yx;kU]Z@yXnmQ$O" type="variables_set">
+<block id="5|`z~cjHB@7CNqjf4V=N" type="variables_set">
 <field name="VAR">velocidadeInimigo</field>
 <value name="VALUE">
 <shadow type="math_number">
@@ -848,143 +998,215 @@
 </shadow>
 </value>
 <next>
-<block id="=mN.jX+`]dX{qD32+U(4" type="gamesettilemap">
+<block id="B8rajWE.1*YS2PwW8f}g" type="gamesettilemap">
 <value name="map">
 <shadow type="tilemap_image_picker">
-<field name="img">&#10;            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .&#10;            . . . . . . 4 4 4 . . . . . . . . . . . . . 4 4 4 4 . . . . . . . . . . . . . . . . . 4 4 4 . . . . . . . . . . . .&#10;            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .&#10;            . . . . . . . 3 3 3 3 . . . . . . . . 3 3 3 3 3 . . . . . . . . . . 3 3 3 3 3 . . . . . . . . . . 3 3 3 3 3 . . . . . .&#10;            . . . . . . . . . . . . . 3 3 3 . . . . . . . . . . . 3 3 3 3 . . . . . . . . . . 3 3 3 3 . . . . . . . . . . . . . .&#10;            . . . 3 3 3 3 3 . . . . . . . . . . . . . . . . 3 3 3 3 . . . . . . . . . . . . . . . . . . . . . . . . . . . 3 3 3 3 .&#10;            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .&#10;            2 2 2 2 2 2 2 2 . . . . . 2 2 2 2 2 2 2 2 . . . . . 2 2 2 2 2 2 2 . . . . . 2 2 2 2 2 2 2 . . . . . . 2 2 2 2 2 2 2 2 2&#10;            </field>
+<field name="img">&#10;            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .&#10;            . . . . . . 4 4 4 4 . . . . . . . . . . . . . . 4 4 4 4 . . . . . . . . . . . . . . . 4 4 4 4 . . . . . . . . . . . . . . . . .&#10;            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .&#10;            . . . . . . 3 3 3 3 . . . . . . . . . . 3 3 3 3 . . . . . . . . . . . 3 3 3 3 . . . . . . . . . . . 3 3 3 3 . . . . . . . . . .&#10;            . . . . . . . . . . . . 3 3 3 3 . . . . . . . . 3 3 3 3 . . . . . . . . 3 3 3 3 . . . . . . . . 3 3 3 3 . . . . . . 3 3 3 3 . .&#10;            . . . 3 3 3 3 3 . . . . . . . . 3 3 3 3 3 . . . . . . . . . 3 3 3 3 3 . . . . . . . . 3 3 3 3 3 . . . . . . . . 3 3 3 3 . . . .&#10;            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .&#10;            2 2 2 2 2 2 2 2 2 2 2 . . . 2 2 2 2 2 2 2 2 2 2 2 . . . 2 2 2 2 2 2 2 2 2 2 2 . . . 2 2 2 2 2 2 2 2 2 2 . . . 2 2 2 2 2 2 2 2 2&#10;            </field>
 </shadow>
 </value>
 <next>
-<block id="E-[Z/].K-SwlG|BNC+(d" type="function_call">
+<block id="D%RJwLtFX]oQ4/mSQU%b" type="function_call">
 <mutation name="configurarTiles" />
 <next>
-<block id="j!Qim5cCtB6aJ,mm)F38" type="function_call">
+<block id="5_5rf@Tlm.LJ/U|e}q29" type="function_call">
 <mutation name="criarInimigo" >
-<arg name="x" type="number" id="1pfmq4nt0q9dqdph1gld" />
-<arg name="y" type="number" id="ux5umwm8k1hs1lrhuoxe2g" />
+<arg name="x" type="number" id="crmy5xlakc03oc823nx0oz" />
+<arg name="y" type="number" id="jvgrpdx341ohrmitkbs5" />
 </mutation>
-<value name="1pfmq4nt0q9dqdph1gld">
+<value name="crmy5xlakc03oc823nx0oz">
 <shadow type="math_number">
 <field name="NUM">88</field>
 </shadow>
 </value>
-<value name="ux5umwm8k1hs1lrhuoxe2g">
+<value name="jvgrpdx341ohrmitkbs5">
 <shadow type="math_number">
 <field name="NUM">104</field>
 </shadow>
 </value>
 <next>
-<block id="akMC^gtrJP-?NE/GS32i" type="function_call">
+<block id="JHxZeht~a;i|ikH$s__5" type="function_call">
 <mutation name="criarInimigo" >
-<arg name="x" type="number" id="1pfmq4nt0q9dqdph1gld" />
-<arg name="y" type="number" id="ux5umwm8k1hs1lrhuoxe2g" />
+<arg name="x" type="number" id="crmy5xlakc03oc823nx0oz" />
+<arg name="y" type="number" id="jvgrpdx341ohrmitkbs5" />
 </mutation>
-<value name="1pfmq4nt0q9dqdph1gld">
+<value name="crmy5xlakc03oc823nx0oz">
 <shadow type="math_number">
-<field name="NUM">264</field>
+<field name="NUM">296</field>
 </shadow>
 </value>
-<value name="ux5umwm8k1hs1lrhuoxe2g">
+<value name="jvgrpdx341ohrmitkbs5">
 <shadow type="math_number">
 <field name="NUM">104</field>
 </shadow>
 </value>
 <next>
-<block id="p%2yu6Wa8owOVqqxC]=S" type="function_call">
+<block id="lhk[IN=SmiCo.$Z%o;{|" type="function_call">
 <mutation name="criarInimigo" >
-<arg name="x" type="number" id="1pfmq4nt0q9dqdph1gld" />
-<arg name="y" type="number" id="ux5umwm8k1hs1lrhuoxe2g" />
+<arg name="x" type="number" id="crmy5xlakc03oc823nx0oz" />
+<arg name="y" type="number" id="jvgrpdx341ohrmitkbs5" />
 </mutation>
-<value name="1pfmq4nt0q9dqdph1gld">
+<value name="crmy5xlakc03oc823nx0oz">
 <shadow type="math_number">
-<field name="NUM">488</field>
+<field name="NUM">520</field>
 </shadow>
 </value>
-<value name="ux5umwm8k1hs1lrhuoxe2g">
+<value name="jvgrpdx341ohrmitkbs5">
 <shadow type="math_number">
 <field name="NUM">104</field>
 </shadow>
 </value>
 <next>
-<block id="~7;`lnF=Ha:A[Je3br,d" type="function_call">
+<block id="XgA0nCa{L{gS${4-kF`X" type="function_call">
 <mutation name="criarInimigo" >
-<arg name="x" type="number" id="1pfmq4nt0q9dqdph1gld" />
-<arg name="y" type="number" id="ux5umwm8k1hs1lrhuoxe2g" />
+<arg name="x" type="number" id="crmy5xlakc03oc823nx0oz" />
+<arg name="y" type="number" id="jvgrpdx341ohrmitkbs5" />
 </mutation>
-<value name="1pfmq4nt0q9dqdph1gld">
+<value name="crmy5xlakc03oc823nx0oz">
 <shadow type="math_number">
-<field name="NUM">680</field>
+<field name="NUM">744</field>
 </shadow>
 </value>
-<value name="ux5umwm8k1hs1lrhuoxe2g">
+<value name="jvgrpdx341ohrmitkbs5">
 <shadow type="math_number">
 <field name="NUM">104</field>
 </shadow>
 </value>
 <next>
-<block id="d8S[hx{87#%N~U)g=Lp5" type="function_call">
+<block id=")ziSI=8`AvU^o:6K?G9i" type="function_call">
 <mutation name="criarInimigo" >
-<arg name="x" type="number" id="1pfmq4nt0q9dqdph1gld" />
-<arg name="y" type="number" id="ux5umwm8k1hs1lrhuoxe2g" />
+<arg name="x" type="number" id="crmy5xlakc03oc823nx0oz" />
+<arg name="y" type="number" id="jvgrpdx341ohrmitkbs5" />
 </mutation>
-<value name="1pfmq4nt0q9dqdph1gld">
+<value name="crmy5xlakc03oc823nx0oz">
 <shadow type="math_number">
-<field name="NUM">888</field>
+<field name="NUM">968</field>
 </shadow>
 </value>
-<value name="ux5umwm8k1hs1lrhuoxe2g">
+<value name="jvgrpdx341ohrmitkbs5">
 <shadow type="math_number">
 <field name="NUM">104</field>
 </shadow>
 </value>
 <next>
-<block id="$.j8Dmc#R7k)+%dj8!|I" type="function_call">
+<block id="0-`*8({.uf0AHQ742/Y;" type="function_call">
+<mutation name="criarInimigoAereo" >
+<arg name="x" type="number" id="shy6k84gvn2ebmsvtcq8h" />
+<arg name="y" type="number" id="2vmkh226w8wkmyqgfeyih" />
+<arg name="velocidade" type="number" id="gh3hfda2i4urn5blc8a" />
+</mutation>
+<value name="shy6k84gvn2ebmsvtcq8h">
+<shadow type="math_number">
+<field name="NUM">224</field>
+</shadow>
+</value>
+<value name="2vmkh226w8wkmyqgfeyih">
+<shadow type="math_number">
+<field name="NUM">56</field>
+</shadow>
+</value>
+<value name="gh3hfda2i4urn5blc8a">
+<shadow type="math_number">
+<field name="NUM">45</field>
+</shadow>
+</value>
+<next>
+<block id="m]r=e2gml79!3+FW@meA" type="function_call">
+<mutation name="criarInimigoAereo" >
+<arg name="x" type="number" id="shy6k84gvn2ebmsvtcq8h" />
+<arg name="y" type="number" id="2vmkh226w8wkmyqgfeyih" />
+<arg name="velocidade" type="number" id="gh3hfda2i4urn5blc8a" />
+</mutation>
+<value name="shy6k84gvn2ebmsvtcq8h">
+<shadow type="math_number">
+<field name="NUM">560</field>
+</shadow>
+</value>
+<value name="2vmkh226w8wkmyqgfeyih">
+<shadow type="math_number">
+<field name="NUM">48</field>
+</shadow>
+</value>
+<value name="gh3hfda2i4urn5blc8a">
+<shadow type="math_number">
+<field name="NUM">-45</field>
+</shadow>
+</value>
+<next>
+<block id="(1Lftp5(!3`]H8S(4GI%" type="function_call">
+<mutation name="criarInimigoAereo" >
+<arg name="x" type="number" id="shy6k84gvn2ebmsvtcq8h" />
+<arg name="y" type="number" id="2vmkh226w8wkmyqgfeyih" />
+<arg name="velocidade" type="number" id="gh3hfda2i4urn5blc8a" />
+</mutation>
+<value name="shy6k84gvn2ebmsvtcq8h">
+<shadow type="math_number">
+<field name="NUM">816</field>
+</shadow>
+</value>
+<value name="2vmkh226w8wkmyqgfeyih">
+<shadow type="math_number">
+<field name="NUM">56</field>
+</shadow>
+</value>
+<value name="gh3hfda2i4urn5blc8a">
+<shadow type="math_number">
+<field name="NUM">45</field>
+</shadow>
+</value>
+<next>
+<block id="!/GGIQl#Y36/eO@+Tdsi" type="function_call">
 <mutation name="criarItemVida" >
-<arg name="x" type="number" id="olsgnp9xe60qrba1j6uq" />
-<arg name="y" type="number" id="sl51btn2br1bjwwttwky" />
+<arg name="x" type="number" id="t3tl15la1zq10qq4qvfwn" />
+<arg name="y" type="number" id="842yjfutmez44zkdfmukl" />
 </mutation>
-<value name="olsgnp9xe60qrba1j6uq">
+<value name="t3tl15la1zq10qq4qvfwn">
 <shadow type="math_number">
-<field name="NUM">200</field>
+<field name="NUM">232</field>
 </shadow>
 </value>
-<value name="sl51btn2br1bjwwttwky">
+<value name="842yjfutmez44zkdfmukl">
 <shadow type="math_number">
 <field name="NUM">40</field>
 </shadow>
 </value>
 <next>
-<block id="+eeqC~%/82ItMLi)P[:|" type="function_call">
+<block id=":vUac5!L@c(JiG^UxKzy" type="function_call">
 <mutation name="criarItemEstrela" >
-<arg name="x" type="number" id="hxhlv7jldps254vkj8u" />
-<arg name="y" type="number" id="jj267y5agud397i7cctqh" />
+<arg name="x" type="number" id="xd3br1pq7xh7xd2luzho1" />
+<arg name="y" type="number" id="8wrw4j1rjm59sc643wm89t" />
 </mutation>
-<value name="hxhlv7jldps254vkj8u">
+<value name="xd3br1pq7xh7xd2luzho1">
 <shadow type="math_number">
-<field name="NUM">760</field>
+<field name="NUM">728</field>
 </shadow>
 </value>
-<value name="jj267y5agud397i7cctqh">
+<value name="8wrw4j1rjm59sc643wm89t">
 <shadow type="math_number">
-<field name="NUM">56</field>
+<field name="NUM">72</field>
 </shadow>
 </value>
 <next>
-<block id="JFUJ?n}(MhBrgn?)c,4+" type="function_call">
+<block id="2:q/AL=hW/zS6+N/vz/K" type="function_call">
 <mutation name="criarBandeira" >
-<arg name="x" type="number" id="f76psuok6rjxdw3jpvi4j" />
-<arg name="y" type="number" id="5tzbu6pkk2rfeh0yajki" />
+<arg name="x" type="number" id="iklxzftg8ijtpx8n26n28" />
+<arg name="y" type="number" id="3blqd74xye1l202q4s57w" />
 </mutation>
-<value name="f76psuok6rjxdw3jpvi4j">
+<value name="iklxzftg8ijtpx8n26n28">
 <shadow type="math_number">
-<field name="NUM">936</field>
+<field name="NUM">984</field>
 </shadow>
 </value>
-<value name="5tzbu6pkk2rfeh0yajki">
+<value name="3blqd74xye1l202q4s57w">
 <shadow type="math_number">
-<field name="NUM">80</field>
+<field name="NUM">104</field>
 </shadow>
 </value>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
 </block>
 </next>
 </block>
@@ -1008,7 +1230,7 @@
 </block>
 </statement>
 <next>
-<block id="$oM#:4uAwVIU;jclNuM=" type="function_call">
+<block id="@,{j2h_l6)}3mp9E|Tb)" type="function_call">
 <mutation name="renascerJogador" />
 </block>
 </next>
@@ -1025,13 +1247,15 @@
 </block>
 </next>
 </block>
+</next>
+</block>
 </statement>
 </block>
-<block id="8XgFNf?AlI60drD/v29n" type="function_definition">
+<block id="Uykj.G1adFFTvR1e{v^{" type="function_definition">
 <mutation name="piscarJogador" >
 </mutation>
 <statement name="STACK">
-<block id="K0R2Z)I8wCE/[p_0h{Ts" type="spritesetsetflag">
+<block id="rElZBJ)g#y|YH^m]i6v5" type="spritesetsetflag">
 <field name="flag">SpriteFlag.GhostThroughSprites</field>
 <value name="sprite">
 <block type="variables_get">
@@ -1044,14 +1268,14 @@
 </shadow>
 </value>
 <next>
-<block id="p(_1bp1xF11RX4DDviup" type="controls_repeat_ext">
+<block id="_Wya@S*j3PG}:{GJ}n*F" type="controls_repeat_ext">
 <value name="TIMES">
 <shadow type="math_whole_number">
 <field name="NUM">6</field>
 </shadow>
 </value>
 <statement name="DO">
-<block id="auvUVqQAIgf7_;7e2OYb" type="spritesetsetflag">
+<block id="#yW[KzfC.A.JPOh2F^xN" type="spritesetsetflag">
 <field name="flag">SpriteFlag.Invisible</field>
 <value name="sprite">
 <block type="variables_get">
@@ -1064,14 +1288,14 @@
 </shadow>
 </value>
 <next>
-<block id="{Lh3+GR(w6G*G;6#lm~K" type="device_pause">
+<block id="fGl7A+96Tz;}]@FOrK:~" type="device_pause">
 <value name="pause">
 <shadow type="timePicker">
 <field name="ms">100</field>
 </shadow>
 </value>
 <next>
-<block id="ARVRBU^/B*n7cTv@5|T6" type="spritesetsetflag">
+<block id="bcz~lkHs]3:ZFw?c{uUv" type="spritesetsetflag">
 <field name="flag">SpriteFlag.Invisible</field>
 <value name="sprite">
 <block type="variables_get">
@@ -1084,7 +1308,7 @@
 </shadow>
 </value>
 <next>
-<block id="!tuZt#C~{]0o}oU(.$/-" type="device_pause">
+<block id="A+g_u$]8FdT020[*Fk]~" type="device_pause">
 <value name="pause">
 <shadow type="timePicker">
 <field name="ms">100</field>
@@ -1099,7 +1323,7 @@
 </block>
 </statement>
 <next>
-<block id="iFW[-#Gd!8ckaQR{RAlI" type="spritesetsetflag">
+<block id="v?dhwO`l~7mf#lE)xfKK" type="spritesetsetflag">
 <field name="flag">SpriteFlag.Invisible</field>
 <value name="sprite">
 <block type="variables_get">
@@ -1112,7 +1336,7 @@
 </shadow>
 </value>
 <next>
-<block id="#RB6{Z`da4yYsbh*/h#?" type="spritesetsetflag">
+<block id="eW@Zg^Itp%yAO|.7w`oI" type="spritesetsetflag">
 <field name="flag">SpriteFlag.GhostThroughSprites</field>
 <value name="sprite">
 <block type="variables_get">
@@ -1133,11 +1357,11 @@
 </block>
 </statement>
 </block>
-<block id="rZOGfrE$yov6/_+zfiGb" type="function_definition">
+<block id="%m`;!ucx}K+Gu8?Whpr!" type="function_definition">
 <mutation name="machucarJogador" >
 </mutation>
 <statement name="STACK">
-<block id="84-*?Xo(4Pm~6InEUBQd" type="controls_if">
+<block id="AEqK=)Ra0Gq{b1ul-4)j" type="controls_if">
 <mutation elseif="0" else="0" />
 <value name="IF0">
 <shadow type="logic_boolean"><field name="BOOL">TRUE</field></shadow>
@@ -1158,7 +1382,7 @@
 </block>
 </value>
 <statement name="DO0">
-<block id="[hxZW+P,1bYL@~T5un_i" type="variables_set">
+<block id="_MgrR)^W/6agzC(YE+|f" type="variables_set">
 <field name="VAR">invulneravel</field>
 <value name="VALUE">
 <shadow type="math_number"><field name="NUM">0</field></shadow>
@@ -1167,14 +1391,14 @@
 </block>
 </value>
 <next>
-<block id="`{G8PSt*Z5[+4#aW3GYg" type="hudChangeLifeBy">
+<block id="QEALT.Zl92]=F;RQMlMx" type="hudChangeLifeBy">
 <value name="value">
 <shadow type="math_number">
 <field name="NUM">-1</field>
 </shadow>
 </value>
 <next>
-<block id="HI3z}b~~}r-0-!=.qWAd" type="mixer_play_note">
+<block id="Br0Chn*c%=~?-_#cs4Pi" type="mixer_play_note">
 <value name="note">
 <shadow type="device_note">
 <field name="note">Note.C4</field>
@@ -1186,7 +1410,7 @@
 </shadow>
 </value>
 <next>
-<block id="v:)B!#[q3c0eTErkJG=g" type="controls_if">
+<block id="r1.D!xdnO/xfUH@1(T]u" type="controls_if">
 <mutation elseif="0" else="1" />
 <value name="IF0">
 <shadow type="logic_boolean"><field name="BOOL">TRUE</field></shadow>
@@ -1205,7 +1429,7 @@
 </block>
 </value>
 <statement name="DO0">
-<block id="pHX$d)xV8v!`UN*ldWs1" type="gameOver2">
+<block id="+EbIr-E54+pQ^SV:kQmu" type="gameOver2">
 <value name="win">
 <shadow type="toggleWinLose">
 <field name="win">false</field>
@@ -1214,7 +1438,7 @@
 </block>
 </statement>
 <statement name="ELSE">
-<block id="sew@0,oit7`Ul(hT@^?n" type="startEffectOnSprite">
+<block id="A@.lJ5DKHP]0l4!]RyYY" type="startEffectOnSprite">
 <mutation _expanded="1" />
 <field name="effect">effects.spray</field>
 <value name="sprite">
@@ -1228,10 +1452,10 @@
 </shadow>
 </value>
 <next>
-<block id="UX.kA$8mHVq=@qP#*:n|" type="function_call">
+<block id="Wb`8/PE4^`|Z060]|1Mr" type="function_call">
 <mutation name="piscarJogador" />
 <next>
-<block id="ZKj]hJt?u0uKL]rL:TAX" type="variables_set">
+<block id=";upl%)o{or@.J#:5Ev:g" type="variables_set">
 <field name="VAR">invulneravel</field>
 <value name="VALUE">
 <shadow type="math_number"><field name="NUM">0</field></shadow>
@@ -1256,11 +1480,41 @@
 </block>
 </statement>
 </block>
-<block id="~EW)cvd;-`2xwP[tl@7~" type="function_definition">
+<block id="ExyZEnQU(b**(nQ/ADs9" type="function_definition">
 <mutation name="cairNoBuraco" >
 </mutation>
 <statement name="STACK">
-<block id="sFhqrxrQM{Kuuihl97f0" type="variables_set">
+<block id="/Pg!4)N{/@:-r!hONeFv" type="controls_if">
+<mutation elseif="0" else="0" />
+<value name="IF0">
+<shadow type="logic_boolean"><field name="BOOL">TRUE</field></shadow>
+<block type="logic_compare">
+<field name="OP">EQ</field>
+<value name="A">
+<shadow type="math_number"><field name="NUM">0</field></shadow>
+<block type="variables_get">
+<field name="VAR">perdeuNoBuraco</field>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number"><field name="NUM">0</field></shadow>
+<block type="logic_boolean">
+<field name="BOOL">FALSE</field>
+</block>
+</value>
+</block>
+</value>
+<statement name="DO0">
+<block id="4tLG^nH?1X$^7,pJ|1#m" type="variables_set">
+<field name="VAR">perdeuNoBuraco</field>
+<value name="VALUE">
+<shadow type="math_number"><field name="NUM">0</field></shadow>
+<block type="logic_boolean">
+<field name="BOOL">TRUE</field>
+</block>
+</value>
+<next>
+<block id="6[x?BfW9j=a;^))a9`p*" type="variables_set">
 <field name="VAR">invulneravel</field>
 <value name="VALUE">
 <shadow type="math_number"><field name="NUM">0</field></shadow>
@@ -1269,14 +1523,17 @@
 </block>
 </value>
 <next>
-<block id="GIfpC?p9e}7JM9gJ8nza" type="hudChangeLifeBy">
+<block id="t`bRvdG),NT,pp#wm+L6" type="function_call">
+<mutation name="renascerJogador" />
+<next>
+<block id="m[IAsgZv{:X-=uO.4RNO" type="hudChangeLifeBy">
 <value name="value">
 <shadow type="math_number">
 <field name="NUM">-1</field>
 </shadow>
 </value>
 <next>
-<block id="!]bK^PR}!zJ^:;en9z/(" type="mixer_play_note">
+<block id="=3I,RUfHx*2OE,fEHZP|" type="mixer_play_note">
 <value name="note">
 <shadow type="device_note">
 <field name="note">Note.C4</field>
@@ -1288,7 +1545,7 @@
 </shadow>
 </value>
 <next>
-<block id="Xe?s{$uNZVQ%v%5W3py/" type="controls_if">
+<block id="DB4y@4W;j}|z?y#-xBPD" type="controls_if">
 <mutation elseif="0" else="1" />
 <value name="IF0">
 <shadow type="logic_boolean"><field name="BOOL">TRUE</field></shadow>
@@ -1307,7 +1564,7 @@
 </block>
 </value>
 <statement name="DO0">
-<block id="gQE*KaO1,Fu*#~dz5`$q" type="gameOver2">
+<block id="bVyrPdG7C#dXE6+jmuaH" type="gameOver2">
 <value name="win">
 <shadow type="toggleWinLose">
 <field name="win">false</field>
@@ -1316,10 +1573,7 @@
 </block>
 </statement>
 <statement name="ELSE">
-<block id="|C#FGzE@f(GbejttJa6{" type="function_call">
-<mutation name="renascerJogador" />
-<next>
-<block id=";YP%|..PD+$lQ/VjwCj:" type="startEffectOnSprite">
+<block id="hUVIkj50Z*1{Z2ySUH{N" type="startEffectOnSprite">
 <mutation _expanded="1" />
 <field name="effect">effects.spray</field>
 <value name="sprite">
@@ -1333,11 +1587,20 @@
 </shadow>
 </value>
 <next>
-<block id="o8wlYTE/+D}ek?E`a1$Y" type="function_call">
+<block id="N~fu9.`]b2%jg+oMoOp*" type="function_call">
 <mutation name="piscarJogador" />
 <next>
-<block id="bgO9pKLp@P%HT62yjFF)" type="variables_set">
+<block id="]{l1p3XaYAN1z{X/x58:" type="variables_set">
 <field name="VAR">invulneravel</field>
+<value name="VALUE">
+<shadow type="math_number"><field name="NUM">0</field></shadow>
+<block type="logic_boolean">
+<field name="BOOL">FALSE</field>
+</block>
+</value>
+<next>
+<block id="-1HGdZT2+t2^#Y4|Pg7L" type="variables_set">
+<field name="VAR">perdeuNoBuraco</field>
 <value name="VALUE">
 <shadow type="math_number"><field name="NUM">0</field></shadow>
 <block type="logic_boolean">
@@ -1359,13 +1622,19 @@
 </block>
 </next>
 </block>
+</next>
+</block>
+</next>
+</block>
 </statement>
 </block>
-<block id=";=kV+5k^.U{$RdrjeYx," type="function_definition">
+</statement>
+</block>
+<block id="Kq]@4;/St_:0pu5;aBAv" type="function_definition">
 <mutation name="ativarTurbo" >
 </mutation>
 <statement name="STACK">
-<block id="#Y;GCGK%X6DB+MU}P??+" type="variables_set">
+<block id="$e.Y}YjK{qZBUfEhC@3O" type="variables_set">
 <field name="VAR">invulneravel</field>
 <value name="VALUE">
 <shadow type="math_number"><field name="NUM">0</field></shadow>
@@ -1374,7 +1643,7 @@
 </block>
 </value>
 <next>
-<block id="QEdt%mQoZ@i}I=7fm~iy" type="game_control_sprite">
+<block id="Y1X}9l3J~k6^@L;P8y]#" type="game_control_sprite">
 <mutation _expanded="2" />
 <value name="sprite">
 <shadow type="variables_get">
@@ -1392,7 +1661,7 @@
 </shadow>
 </value>
 <next>
-<block id="HhBfd*MB8[Mh{kfRg]S8" type="spritesetsetflag">
+<block id="Kphd`Webq+m7;~7[=EBz" type="spritesetsetflag">
 <field name="flag">SpriteFlag.GhostThroughSprites</field>
 <value name="sprite">
 <block type="variables_get">
@@ -1405,7 +1674,7 @@
 </shadow>
 </value>
 <next>
-<block id=":CtN0zbS()I,g|QyGVzY" type="startEffectOnSprite">
+<block id="h@WHrH~-~Z*ePUd-F#IE" type="startEffectOnSprite">
 <mutation _expanded="1" />
 <field name="effect">effects.halo</field>
 <value name="sprite">
@@ -1419,14 +1688,14 @@
 </shadow>
 </value>
 <next>
-<block id="Y[}/aF7k(L,L+BE%:X#x" type="device_pause">
+<block id="rcqQVk9|mjC6AZ%28m]2" type="device_pause">
 <value name="pause">
 <shadow type="timePicker">
 <field name="ms">5000</field>
 </shadow>
 </value>
 <next>
-<block id="lB]B7@a}T*Pnr25DpOvn" type="game_control_sprite">
+<block id="7WrEG3sF,0H6ZwMTXFAk" type="game_control_sprite">
 <mutation _expanded="2" />
 <value name="sprite">
 <shadow type="variables_get">
@@ -1444,7 +1713,7 @@
 </shadow>
 </value>
 <next>
-<block id="bPJ;V-p#EkB8lQ-1/Z9{" type="spritesetsetflag">
+<block id="GPYzw{,5k-=jw*I6@b)G" type="spritesetsetflag">
 <field name="flag">SpriteFlag.GhostThroughSprites</field>
 <value name="sprite">
 <block type="variables_get">
@@ -1457,7 +1726,7 @@
 </shadow>
 </value>
 <next>
-<block id="CIL=JIqvIvtW8G^xH9mG" type="spritesetsetflag">
+<block id="e:bqzNNDH?,)03F5FK90" type="spritesetsetflag">
 <field name="flag">SpriteFlag.Invisible</field>
 <value name="sprite">
 <block type="variables_get">
@@ -1470,7 +1739,7 @@
 </shadow>
 </value>
 <next>
-<block id="L@_Fk^6km$9o``OX*apW" type="variables_set">
+<block id="Qfl1G_uW84$y.z.[@21A" type="variables_set">
 <field name="VAR">invulneravel</field>
 <value name="VALUE">
 <shadow type="math_number"><field name="NUM">0</field></shadow>
@@ -1497,11 +1766,11 @@
 </block>
 </statement>
 </block>
-<block id="v`c)w~PQ|2doqB!O7q$(" type="function_definition">
+<block id=".l)K4?xX:84zzZeM)%7x" type="function_definition">
 <mutation name="passarDeNivel" >
 </mutation>
 <statement name="STACK">
-<block id="Eu]N]N^XCxhefWM_v$B~" type="controls_if">
+<block id="Jp}U-gwEmP9w$0AB`Qtu" type="controls_if">
 <mutation elseif="0" else="1" />
 <value name="IF0">
 <shadow type="logic_boolean"><field name="BOOL">TRUE</field></shadow>
@@ -1521,7 +1790,7 @@
 </block>
 </value>
 <statement name="DO0">
-<block id="BKo);6yf[RE@-%9;L?R-" type="variables_change">
+<block id="=[${5vWO0:GB,4%n?mmg" type="variables_change">
 <field name="VAR">nivel</field>
 <value name="VALUE">
 <shadow type="math_number">
@@ -1529,7 +1798,7 @@
 </shadow>
 </value>
 <next>
-<block id="2gJ8}2fLCYLE-IM^CB?s" type="playMelody">
+<block id="(*;m0_}91v;!ZVi2zOnq" type="playMelody">
 <value name="melody">
 <shadow type="melody_editor">
 <field name="melody">&#34;C5 E5 G5 C6&#34;</field>
@@ -1542,7 +1811,7 @@
 </shadow>
 </value>
 <next>
-<block id="iorO`kCUh5KL-g7j{L(N" type="function_call">
+<block id="oynv?:FACZL0*9`HEb?(" type="function_call">
 <mutation name="carregarNivel" />
 </block>
 </next>
@@ -1551,7 +1820,7 @@
 </block>
 </statement>
 <statement name="ELSE">
-<block id="2bz69`_}z00K+BG12lF$" type="gameOver2">
+<block id="5,pwe6B3(Bw}@O-#7*`5" type="gameOver2">
 <value name="win">
 <shadow type="toggleWinLose">
 <field name="win">true</field>
@@ -1562,11 +1831,11 @@
 </block>
 </statement>
 </block>
-<block id="DHD`%xOi[XJ/)QVeHP{$" type="keyonevent">
+<block id="7WL~UN3z@C8X,%J[DjGK" type="keyonevent">
 <field name="button">controller.left</field>
 <field name="event">ControllerButtonEvent.Pressed</field>
 <statement name="HANDLER">
-<block id="!!dS@$FzDdfq#?]4*%T3" type="variables_set">
+<block id="%#44v4}oO`[dyN1`,,p:" type="variables_set">
 <field name="VAR">direcao</field>
 <value name="VALUE">
 <shadow type="math_number">
@@ -1574,7 +1843,7 @@
 </shadow>
 </value>
 <next>
-<block id="6BtjF_l/1x8Rl:mC?=Hu" type="spritesetimage">
+<block id="s]_`g=UaVI%L9Mq-P%eE" type="spritesetimage">
 <value name="sprite">
 <block type="variables_get">
 <field name="VAR">jogador</field>
@@ -1591,11 +1860,11 @@
 </block>
 </statement>
 </block>
-<block id="9Jc!Z$f_/E^^K0NeXD7p" type="keyonevent">
+<block id="yYyoq*`X|Im7QD)I/(#N" type="keyonevent">
 <field name="button">controller.right</field>
 <field name="event">ControllerButtonEvent.Pressed</field>
 <statement name="HANDLER">
-<block id="4PWx]3($pV(u}yl-ZkXq" type="variables_set">
+<block id="%/z:I[SZk$fhHQ9r2n5V" type="variables_set">
 <field name="VAR">direcao</field>
 <value name="VALUE">
 <shadow type="math_number">
@@ -1603,7 +1872,7 @@
 </shadow>
 </value>
 <next>
-<block id="/mJRM2|=.RRFMhF5V@yl" type="spritesetimage">
+<block id="$VYuT7v3%r#ObIGQc#z|" type="spritesetimage">
 <value name="sprite">
 <block type="variables_get">
 <field name="VAR">jogador</field>
@@ -1620,11 +1889,11 @@
 </block>
 </statement>
 </block>
-<block id="?vbog:/})4@jiS8A2Fnr" type="keyonevent">
+<block id="~}mS9~9(@.[6}OE*[#2]" type="keyonevent">
 <field name="button">controller.A</field>
 <field name="event">ControllerButtonEvent.Pressed</field>
 <statement name="HANDLER">
-<block id="~)B/A@h+NgTb`4HkL+T:" type="controls_if">
+<block id="((Hlc*_@8IeR6J-YaL:9" type="controls_if">
 <mutation elseif="0" else="0" />
 <value name="IF0">
 <shadow type="logic_boolean"><field name="BOOL">TRUE</field></shadow>
@@ -1638,7 +1907,7 @@
 </block>
 </value>
 <statement name="DO0">
-<block id="u}NnyJyvCda$v#3m-@m7" type="Sprite_blockCombine_set">
+<block id="nB5hUUC*)4c~.tMmMa)!" type="Sprite_blockCombine_set">
 <field name="property">Sprite.vy&#64;set</field>
 <value name="mySprite">
 <block type="variables_get">
@@ -1651,7 +1920,7 @@
 </shadow>
 </value>
 <next>
-<block id="b}l@;2s)VT[V;g-c{taW" type="mixer_play_note">
+<block id="tr7yUxs)6^#WZ5.Mhz6N" type="mixer_play_note">
 <value name="note">
 <shadow type="device_note">
 <field name="note">Note.C5</field>
@@ -1669,11 +1938,41 @@
 </block>
 </statement>
 </block>
-<block id="|ZQO;O[1t3bGdM1_?$kb" type="keyonevent">
+<block id=")2X%*D0GMB,~z;_p4j2c" type="keyonevent">
 <field name="button">controller.B</field>
 <field name="event">ControllerButtonEvent.Pressed</field>
 <statement name="HANDLER">
-<block id="_[j%k7=;cdFWBy;$l=Iy" type="variables_set">
+<block id="(m4;pVK~4$LedbGt]H-{" type="controls_if">
+<mutation elseif="0" else="0" />
+<value name="IF0">
+<shadow type="logic_boolean"><field name="BOOL">TRUE</field></shadow>
+<block type="logic_compare">
+<field name="OP">EQ</field>
+<value name="A">
+<shadow type="math_number"><field name="NUM">0</field></shadow>
+<block type="variables_get">
+<field name="VAR">podeAtirar</field>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number"><field name="NUM">0</field></shadow>
+<block type="logic_boolean">
+<field name="BOOL">TRUE</field>
+</block>
+</value>
+</block>
+</value>
+<statement name="DO0">
+<block id="?g%p0[Tl%vzuF:`Zr/9{" type="variables_set">
+<field name="VAR">podeAtirar</field>
+<value name="VALUE">
+<shadow type="math_number"><field name="NUM">0</field></shadow>
+<block type="logic_boolean">
+<field name="BOOL">FALSE</field>
+</block>
+</value>
+<next>
+<block id="}Bjkhzz!eLbY@+v7+GJ+" type="variables_set">
 <field name="VAR">projetil</field>
 <value name="VALUE">
 <shadow type="math_number"><field name="NUM">0</field></shadow>
@@ -1714,7 +2013,7 @@
 </block>
 </value>
 <next>
-<block id="HGT/#[3@?#;%(se8fmN/" type="mixer_play_note">
+<block id="gLk.$p+NCiF}:lIr*YXu" type="mixer_play_note">
 <value name="note">
 <shadow type="device_note">
 <field name="note">Note.B5</field>
@@ -1725,12 +2024,36 @@
 <field name="fraction">BeatFraction.Eighth</field>
 </shadow>
 </value>
+<next>
+<block id="Fo(YbOe?k!3oiNGqwMeG" type="device_pause">
+<value name="pause">
+<shadow type="timePicker">
+<field name="ms">300</field>
+</shadow>
+</value>
+<next>
+<block id="5jME?$7M2d(42b8!kRvL" type="variables_set">
+<field name="VAR">podeAtirar</field>
+<value name="VALUE">
+<shadow type="math_number"><field name="NUM">0</field></shadow>
+<block type="logic_boolean">
+<field name="BOOL">TRUE</field>
+</block>
+</value>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
 </block>
 </next>
 </block>
 </statement>
 </block>
-<block id="H)A{?i5J_V4~o)0FMuHr" type="spritesoverlap">
+</statement>
+</block>
+<block id="w^QH(Pu]:mY:G;Is09(#" type="spritesoverlap">
 <value name="kind">
 <shadow type="spritekind">
 <field name="MEMBER">Player</field>
@@ -1754,7 +2077,7 @@
 </block>
 </value>
 <statement name="HANDLER">
-<block id="8Jl`Q!6N+XX:Hw3X/-Mj" type="controls_if">
+<block id="fDjQ@5_%Ol@~5kh5*IW#" type="controls_if">
 <mutation elseif="0" else="0" />
 <value name="IF0">
 <shadow type="logic_boolean"><field name="BOOL">TRUE</field></shadow>
@@ -1775,7 +2098,7 @@
 </block>
 </value>
 <statement name="DO0">
-<block id="7Jz)m)4Ppm?[%C~zX~{j" type="spritedestroy">
+<block id="b]^|G{-vhrCr!g3:Pj=S" type="spritedestroy">
 <mutation _expanded="2" />
 <field name="effect">effects.fire</field>
 <value name="sprite">
@@ -1790,7 +2113,7 @@
 </shadow>
 </value>
 <next>
-<block id="x?A*?u++t5u|7sa1LRvF" type="function_call">
+<block id="fkh:[si35Qj~fqOh1AL~" type="function_call">
 <mutation name="machucarJogador" />
 </block>
 </next>
@@ -1799,7 +2122,7 @@
 </block>
 </statement>
 </block>
-<block id="mDd[-f88$Ignjm5|co,T" type="spritesoverlap">
+<block id="j|`;qN3-W./.iiqC_j:t" type="spritesoverlap">
 <value name="kind">
 <shadow type="spritekind">
 <field name="MEMBER">Player</field>
@@ -1823,7 +2146,7 @@
 </block>
 </value>
 <statement name="HANDLER">
-<block id="f7jhTj4yjA1={zk8`{DB" type="controls_if">
+<block id="qToFk3~);@?%[k(EEyMb" type="controls_if">
 <mutation elseif="0" else="0" />
 <value name="IF0">
 <shadow type="logic_boolean"><field name="BOOL">TRUE</field></shadow>
@@ -1844,7 +2167,7 @@
 </block>
 </value>
 <statement name="DO0">
-<block id="/W{W7tsS[h*uxnxW,]`?" type="spritedestroy">
+<block id="8mJ**nPDERcv?-W@6fKT" type="spritedestroy">
 <mutation _expanded="2" />
 <field name="effect">effects.fire</field>
 <value name="sprite">
@@ -1859,7 +2182,7 @@
 </shadow>
 </value>
 <next>
-<block id="/@u@1f#Rm*j6E[-YpgpN" type="function_call">
+<block id="dv_*:RhCRA.o(_l(zJ]0" type="function_call">
 <mutation name="machucarJogador" />
 </block>
 </next>
@@ -1868,7 +2191,76 @@
 </block>
 </statement>
 </block>
-<block id="1:y_R3qcPgwSH@OImM8u" type="spritesoverlap">
+<block id="UrWmH-ljfTNDVfP20|d1" type="spritesoverlap">
+<value name="kind">
+<shadow type="spritekind">
+<field name="MEMBER">Player</field>
+</shadow>
+</value>
+<value name="otherKind">
+<shadow type="spritekind">
+<field name="MEMBER">InimigoAereo</field>
+</shadow>
+</value>
+<value name="HANDLER_DRAG_PARAM_sprite">
+<block type="argument_reporter_custom">
+<mutation typename="Sprite" duplicateondrag="true" />
+<field name="VALUE">sprite</field>
+</block>
+</value>
+<value name="HANDLER_DRAG_PARAM_otherSprite">
+<block type="argument_reporter_custom">
+<mutation typename="Sprite" duplicateondrag="true" />
+<field name="VALUE">otherSprite</field>
+</block>
+</value>
+<statement name="HANDLER">
+<block id="bmn]r;2L6?xFz^i}b$D." type="controls_if">
+<mutation elseif="0" else="0" />
+<value name="IF0">
+<shadow type="logic_boolean"><field name="BOOL">TRUE</field></shadow>
+<block type="logic_compare">
+<field name="OP">EQ</field>
+<value name="A">
+<shadow type="math_number"><field name="NUM">0</field></shadow>
+<block type="variables_get">
+<field name="VAR">invulneravel</field>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number"><field name="NUM">0</field></shadow>
+<block type="logic_boolean">
+<field name="BOOL">FALSE</field>
+</block>
+</value>
+</block>
+</value>
+<statement name="DO0">
+<block id="~h~wq4BEWT5maS525DE?" type="spritedestroy">
+<mutation _expanded="2" />
+<field name="effect">effects.fire</field>
+<value name="sprite">
+<block type="argument_reporter_custom">
+<mutation typename="Sprite" />
+<field name="VALUE">otherSprite</field>
+</block>
+</value>
+<value name="duration">
+<shadow type="timePicker">
+<field name="ms">100</field>
+</shadow>
+</value>
+<next>
+<block id="MdoE3kik8PzyyM=$BQV2" type="function_call">
+<mutation name="machucarJogador" />
+</block>
+</next>
+</block>
+</statement>
+</block>
+</statement>
+</block>
+<block id="{QI:lqrTUF]xn#]W|-_N" type="spritesoverlap">
 <value name="kind">
 <shadow type="spritekind">
 <field name="MEMBER">Projectile</field>
@@ -1892,7 +2284,7 @@
 </block>
 </value>
 <statement name="HANDLER">
-<block id="KQs0;x?)g%q/eo~=as]V" type="controls_if">
+<block id="R9Yy.2b{)kC/7I(]^5uP" type="controls_if">
 <mutation elseif="0" else="1" />
 <value name="IF0">
 <shadow type="logic_boolean"><field name="BOOL">TRUE</field></shadow>
@@ -1912,7 +2304,7 @@
 </block>
 </value>
 <statement name="DO0">
-<block id="^k[%F72r9?rI+h(-?K6s" type="spritedestroy">
+<block id="PC.eO4[h%@LdXgQ$`9Ca" type="spritedestroy">
 <mutation _expanded="2" />
 <field name="effect">effects.fire</field>
 <value name="sprite">
@@ -1927,7 +2319,7 @@
 </shadow>
 </value>
 <next>
-<block id="[`W)K~E,^[o-P!10c^i|" type="spritesetimage">
+<block id="EF(6lY)ckT=S}a+8ha]:" type="spritesetimage">
 <value name="sprite">
 <block type="argument_reporter_custom">
 <mutation typename="Sprite" />
@@ -1941,7 +2333,7 @@
 </block>
 </value>
 <next>
-<block id="~2{1KcjJTO{WhdP=]i@g" type="spritesetkind">
+<block id="/|%)OzwIL7{$z00.*CV~" type="spritesetkind">
 <value name="sprite">
 <block type="argument_reporter_custom">
 <mutation typename="Sprite" />
@@ -1954,7 +2346,7 @@
 </shadow>
 </value>
 <next>
-<block id="?kC{ISZxh7_fQ*kMuv]|" type="Sprite_blockCombine_set">
+<block id="v.P=rq?27}_v!brNT?V3" type="Sprite_blockCombine_set">
 <field name="property">Sprite.vx&#64;set</field>
 <value name="mySprite">
 <block type="argument_reporter_custom">
@@ -1968,7 +2360,7 @@
 </block>
 </value>
 <next>
-<block id="^(=R5elmV;KmJ_Q+gv=F" type="mixer_play_note">
+<block id="V0xLGnEn?oTrzKZSrO~f" type="mixer_play_note">
 <value name="note">
 <shadow type="device_note">
 <field name="note">Note.A4</field>
@@ -1990,7 +2382,7 @@
 </block>
 </statement>
 <statement name="ELSE">
-<block id="`%v7uDd%V5w(TEgw9]sI" type="spritedestroy">
+<block id="hubqVikf2JYGb;e+l_`^" type="spritedestroy">
 <mutation _expanded="2" />
 <field name="effect">effects.fire</field>
 <value name="sprite">
@@ -2005,7 +2397,7 @@
 </shadow>
 </value>
 <next>
-<block id="J+tFe(/~2vPBS)u@eQ;T" type="spritedestroy">
+<block id="cC|Ya+Chq`B3)rqD`P0e" type="spritedestroy">
 <mutation _expanded="2" />
 <field name="effect">effects.disintegrate</field>
 <value name="sprite">
@@ -2020,14 +2412,14 @@
 </shadow>
 </value>
 <next>
-<block id="BV`m*-xX14]fOlUvT*QG" type="hudChangeScoreBy">
+<block id="(:Tg1DBP/!I,kz;7JUN^" type="hudChangeScoreBy">
 <value name="value">
 <shadow type="math_number">
 <field name="NUM">10</field>
 </shadow>
 </value>
 <next>
-<block id="S,Fdl2BlgkWM]}=`nN/X" type="playMelody">
+<block id="TftaF`L.k,9y{0ksRhB(" type="playMelody">
 <value name="melody">
 <shadow type="melody_editor">
 <field name="melody">&#34;C5 G5 C6&#34;</field>
@@ -2050,7 +2442,200 @@
 </block>
 </statement>
 </block>
-<block id="_,?|oZd=$0KX}uHu1D9M" type="spritesoverlap">
+<block id="riZfumFc`fl=(EYDk~C`" type="spritesoverlap">
+<value name="kind">
+<shadow type="spritekind">
+<field name="MEMBER">Projectile</field>
+</shadow>
+</value>
+<value name="otherKind">
+<shadow type="spritekind">
+<field name="MEMBER">InimigoAereo</field>
+</shadow>
+</value>
+<value name="HANDLER_DRAG_PARAM_sprite">
+<block type="argument_reporter_custom">
+<mutation typename="Sprite" duplicateondrag="true" />
+<field name="VALUE">sprite</field>
+</block>
+</value>
+<value name="HANDLER_DRAG_PARAM_otherSprite">
+<block type="argument_reporter_custom">
+<mutation typename="Sprite" duplicateondrag="true" />
+<field name="VALUE">otherSprite</field>
+</block>
+</value>
+<statement name="HANDLER">
+<block id="{[d7ua|A6nZ?8=^UPtFW" type="controls_if">
+<mutation elseif="0" else="1" />
+<value name="IF0">
+<shadow type="logic_boolean"><field name="BOOL">TRUE</field></shadow>
+<block type="logic_compare">
+<field name="OP">EQ</field>
+<value name="A">
+<shadow type="math_number"><field name="NUM">0</field></shadow>
+<block type="variables_get">
+<field name="VAR">nivel</field>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number">
+<field name="NUM">3</field>
+</shadow>
+</value>
+</block>
+</value>
+<statement name="DO0">
+<block id="K6F,lakT4Rg20x$,0BEc" type="spritedestroy">
+<mutation _expanded="2" />
+<field name="effect">effects.fire</field>
+<value name="sprite">
+<block type="argument_reporter_custom">
+<mutation typename="Sprite" />
+<field name="VALUE">sprite</field>
+</block>
+</value>
+<value name="duration">
+<shadow type="timePicker">
+<field name="ms">100</field>
+</shadow>
+</value>
+<next>
+<block id="]q]v/mAzd=k9b[?^_F+=" type="spritesetimage">
+<value name="sprite">
+<block type="argument_reporter_custom">
+<mutation typename="Sprite" />
+<field name="VALUE">otherSprite</field>
+</block>
+</value>
+<value name="img">
+<shadow type="screen_image_picker"/>
+<block type="variables_get">
+<field name="VAR">imagemInimigoFerido</field>
+</block>
+</value>
+<next>
+<block id="3f.8VteR`E#P}wZW%iy|" type="spritesetkind">
+<value name="sprite">
+<block type="argument_reporter_custom">
+<mutation typename="Sprite" />
+<field name="VALUE">otherSprite</field>
+</block>
+</value>
+<value name="kind">
+<shadow type="spritekind">
+<field name="MEMBER">InimigoFerido</field>
+</shadow>
+</value>
+<next>
+<block id="o1^#i+]/$8SCXv7#M%]r" type="Sprite_blockCombine_set">
+<field name="property">Sprite.vx&#64;set</field>
+<value name="mySprite">
+<block type="argument_reporter_custom">
+<mutation typename="Sprite" />
+<field name="VALUE">otherSprite</field>
+</block>
+</value>
+<value name="value">
+<block type="math_arithmetic">
+<field name="OP">MULTIPLY</field>
+<value name="A">
+<shadow type="math_number"><field name="NUM">0</field></shadow>
+<block type="variables_get">
+<field name="VAR">velocidadeInimigo</field>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number">
+<field name="NUM">-1</field>
+</shadow>
+</value>
+</block>
+</value>
+<next>
+<block id="D|sG#YhbgZ1.ZqyTH5im" type="mixer_play_note">
+<value name="note">
+<shadow type="device_note">
+<field name="note">Note.A4</field>
+</shadow>
+</value>
+<value name="duration">
+<shadow type="device_beat">
+<field name="fraction">BeatFraction.Eighth</field>
+</shadow>
+</value>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+<statement name="ELSE">
+<block id="[CS#d24,H,G,HG)-:?^?" type="spritedestroy">
+<mutation _expanded="2" />
+<field name="effect">effects.fire</field>
+<value name="sprite">
+<block type="argument_reporter_custom">
+<mutation typename="Sprite" />
+<field name="VALUE">sprite</field>
+</block>
+</value>
+<value name="duration">
+<shadow type="timePicker">
+<field name="ms">100</field>
+</shadow>
+</value>
+<next>
+<block id=")~c-C.4]vCo_$MKRU7fK" type="spritedestroy">
+<mutation _expanded="2" />
+<field name="effect">effects.disintegrate</field>
+<value name="sprite">
+<block type="argument_reporter_custom">
+<mutation typename="Sprite" />
+<field name="VALUE">otherSprite</field>
+</block>
+</value>
+<value name="duration">
+<shadow type="timePicker">
+<field name="ms">200</field>
+</shadow>
+</value>
+<next>
+<block id="3XQ(e[GvC{{as$]sp9(w" type="hudChangeScoreBy">
+<value name="value">
+<shadow type="math_number">
+<field name="NUM">10</field>
+</shadow>
+</value>
+<next>
+<block id="Kt0E_$Ui]h7wg[n2!88k" type="playMelody">
+<value name="melody">
+<shadow type="melody_editor">
+<field name="melody">&#34;C5 G5 C6&#34;</field>
+</shadow>
+</value>
+<value name="tempo">
+<shadow type="math_number_minmax">
+<mutation min="40" max="500" />
+<field name="SLIDER">240</field>
+</shadow>
+</value>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+</statement>
+</block>
+<block id="g{V0-ao:$,v}@-ozm0aR" type="spritesoverlap">
 <value name="kind">
 <shadow type="spritekind">
 <field name="MEMBER">Projectile</field>
@@ -2074,7 +2659,7 @@
 </block>
 </value>
 <statement name="HANDLER">
-<block id="l_;]ud8UnbaPx^DKN!!I" type="spritedestroy">
+<block id="MerMve@Pd?,!BqGTzA`k" type="spritedestroy">
 <mutation _expanded="2" />
 <field name="effect">effects.fire</field>
 <value name="sprite">
@@ -2089,7 +2674,7 @@
 </shadow>
 </value>
 <next>
-<block id="kb67ifzvq($v8z(1ni.O" type="spritedestroy">
+<block id="Fdw~=^pEf)y.0zpg3k0K" type="spritedestroy">
 <mutation _expanded="2" />
 <field name="effect">effects.disintegrate</field>
 <value name="sprite">
@@ -2104,14 +2689,14 @@
 </shadow>
 </value>
 <next>
-<block id="J2$F?-R,xe(9fbx2[[dX" type="hudChangeScoreBy">
+<block id="zqs$9.vVTert(d$$A+Ax" type="hudChangeScoreBy">
 <value name="value">
 <shadow type="math_number">
 <field name="NUM">10</field>
 </shadow>
 </value>
 <next>
-<block id="%R;q:54G{+fA{D:6M;09" type="playMelody">
+<block id="Lj=sE117dUOF[KLA$0aM" type="playMelody">
 <value name="melody">
 <shadow type="melody_editor">
 <field name="melody">&#34;C5 G5 C6&#34;</field>
@@ -2132,7 +2717,7 @@
 </block>
 </statement>
 </block>
-<block id="U[ML_bW|.*z,9yw~koT[" type="spritesoverlap">
+<block id="|8G?,5ZFFoIFVFVk?Ebf" type="spritesoverlap">
 <value name="kind">
 <shadow type="spritekind">
 <field name="MEMBER">Player</field>
@@ -2156,7 +2741,7 @@
 </block>
 </value>
 <statement name="HANDLER">
-<block id="QgLKfDM~-b9BDwPrgvZ#" type="spritedestroy">
+<block id="qy]zO)q3*A0_~KA,v^+u" type="spritedestroy">
 <mutation _expanded="2" />
 <field name="effect">effects.hearts</field>
 <value name="sprite">
@@ -2171,14 +2756,14 @@
 </shadow>
 </value>
 <next>
-<block id="$T`z$G/UEBxPYm4Jnn)C" type="hudChangeLifeBy">
+<block id="k@1si^J[ATat!WS@}mI+" type="hudChangeLifeBy">
 <value name="value">
 <shadow type="math_number">
 <field name="NUM">1</field>
 </shadow>
 </value>
 <next>
-<block id="^3J4Hvk-U4tD.j-:F:0Z" type="mixer_play_note">
+<block id="huJa{:OU3^(+$|.jm$)." type="mixer_play_note">
 <value name="note">
 <shadow type="device_note">
 <field name="note">Note.E5</field>
@@ -2196,7 +2781,7 @@
 </block>
 </statement>
 </block>
-<block id="X?S471=gTCt_V^2X9xYt" type="spritesoverlap">
+<block id="8FE^6A7KDBATm!.wqYB|" type="spritesoverlap">
 <value name="kind">
 <shadow type="spritekind">
 <field name="MEMBER">Player</field>
@@ -2220,7 +2805,7 @@
 </block>
 </value>
 <statement name="HANDLER">
-<block id="~?t%~WB]H},ZP_+7@E$j" type="spritedestroy">
+<block id="~DKMq,fk1N+}PZD(6t@*" type="spritedestroy">
 <mutation _expanded="2" />
 <field name="effect">effects.halo</field>
 <value name="sprite">
@@ -2235,7 +2820,7 @@
 </shadow>
 </value>
 <next>
-<block id="|U1w4^4ywKPo/|GUWIl|" type="mixer_play_note">
+<block id="!qa#_~rx[l|j9U?YIpB5" type="mixer_play_note">
 <value name="note">
 <shadow type="device_note">
 <field name="note">Note.A5</field>
@@ -2247,7 +2832,7 @@
 </shadow>
 </value>
 <next>
-<block id="OStYbb.G79?IW[%c};Jr" type="function_call">
+<block id="IChBKJA9Y:3$T3ZuDtnf" type="function_call">
 <mutation name="ativarTurbo" />
 </block>
 </next>
@@ -2256,7 +2841,7 @@
 </block>
 </statement>
 </block>
-<block id="yzuCn(q$n4Lej=%$[wxH" type="spritesoverlap">
+<block id="~pFBs@L}$mCzM+OV0b+A" type="spritesoverlap">
 <value name="kind">
 <shadow type="spritekind">
 <field name="MEMBER">Player</field>
@@ -2280,7 +2865,7 @@
 </block>
 </value>
 <statement name="HANDLER">
-<block id="tlKy.s2y.jL[x5sStvI9" type="spritedestroy">
+<block id="hD.C`mOQ58:JaG:,CK4S" type="spritedestroy">
 <mutation _expanded="2" />
 <field name="effect">effects.confetti</field>
 <value name="sprite">
@@ -2295,16 +2880,16 @@
 </shadow>
 </value>
 <next>
-<block id="nY`tr/p3+Bvtx!!c1**:" type="function_call">
+<block id="2=-}*5j6H={t#g7,gs-z" type="function_call">
 <mutation name="passarDeNivel" />
 </block>
 </next>
 </block>
 </statement>
 </block>
-<block id="-x9z9!h1LHXhIxi/8V3:" type="gameupdate">
+<block id=".F2^11r@=%4%4k3;`b$n" type="gameupdate">
 <statement name="HANDLER">
-<block id="w`GQClzqO(VgV]Nr4CZ4" type="controls_if">
+<block id="ugku=33H-_*QOi(]4li?" type="controls_if">
 <mutation elseif="0" else="0" />
 <value name="IF0">
 <shadow type="logic_boolean"><field name="BOOL">TRUE</field></shadow>
@@ -2329,7 +2914,7 @@
 </block>
 </value>
 <statement name="DO0">
-<block id="VQr~`^C1*t/ybEIVN4eQ" type="function_call">
+<block id="gIiue4D|Q0r,z[3dR4aD" type="function_call">
 <mutation name="cairNoBuraco" />
 </block>
 </statement>
@@ -2338,7 +2923,7 @@
 </block>
 <block id="xRRgvHNlG#rZ^u`HECiY" type="pxt-on-start">
 <statement name="HANDLER">
-<block id="r8$(-BBEYM,!h%@q|lch" type="variables_set">
+<block id="%VH3k_g+BS}5DOB0s$M6" type="variables_set">
 <field name="VAR">nivel</field>
 <value name="VALUE">
 <shadow type="math_number">
@@ -2346,7 +2931,7 @@
 </shadow>
 </value>
 <next>
-<block id="RXk#K[}O0x:CO,mxP3Mj" type="variables_set">
+<block id=")1891oW$k#T50i0yGRdS" type="variables_set">
 <field name="VAR">direcao</field>
 <value name="VALUE">
 <shadow type="math_number">
@@ -2354,7 +2939,7 @@
 </shadow>
 </value>
 <next>
-<block id="jx.+f=IMYijQ/{bmI_wT" type="variables_set">
+<block id="AC5m2ofj.EECC~rYZtVh" type="variables_set">
 <field name="VAR">velocidadeInimigo</field>
 <value name="VALUE">
 <shadow type="math_number">
@@ -2362,7 +2947,16 @@
 </shadow>
 </value>
 <next>
-<block id="PUlD7w){/MoC`mJk*]6P" type="variables_set">
+<block id="AoKR*Q}7jD*UQZ_LdKvP" type="variables_set">
+<field name="VAR">podeAtirar</field>
+<value name="VALUE">
+<shadow type="math_number"><field name="NUM">0</field></shadow>
+<block type="logic_boolean">
+<field name="BOOL">TRUE</field>
+</block>
+</value>
+<next>
+<block id="ED~$Xy9#yh]RBstzZ@4N" type="variables_set">
 <field name="VAR">imagemJogadorDireita</field>
 <value name="VALUE">
 <shadow type="math_number"><field name="NUM">0</field></shadow>
@@ -2371,7 +2965,7 @@
 </block>
 </value>
 <next>
-<block id="WEPC~+wty=4AzK^~@XbZ" type="variables_set">
+<block id="B/Chx6lER85#p^U:D-I|" type="variables_set">
 <field name="VAR">imagemJogadorEsquerda</field>
 <value name="VALUE">
 <shadow type="math_number"><field name="NUM">0</field></shadow>
@@ -2380,7 +2974,7 @@
 </block>
 </value>
 <next>
-<block id="[ned`[a^KIMD|Q!ORx.C" type="variables_set">
+<block id="YUNZy5^Q3!wh1v5.D:]R" type="variables_set">
 <field name="VAR">imagemProjetil</field>
 <value name="VALUE">
 <shadow type="math_number"><field name="NUM">0</field></shadow>
@@ -2389,7 +2983,7 @@
 </block>
 </value>
 <next>
-<block id=";wjF7^6NIQ:*cqw3H4LE" type="variables_set">
+<block id="P3GZ[~gFfMY2*6Hr2g:?" type="variables_set">
 <field name="VAR">imagemInimigoNivel1</field>
 <value name="VALUE">
 <shadow type="math_number"><field name="NUM">0</field></shadow>
@@ -2398,7 +2992,7 @@
 </block>
 </value>
 <next>
-<block id="n5UZw:QEqWVa)A1#C/O," type="variables_set">
+<block id="v77.U;UUe*?sM:DlB]wJ" type="variables_set">
 <field name="VAR">imagemInimigoNivel2</field>
 <value name="VALUE">
 <shadow type="math_number"><field name="NUM">0</field></shadow>
@@ -2407,7 +3001,7 @@
 </block>
 </value>
 <next>
-<block id="ywa+(HH_IoIhZQd/xmwb" type="variables_set">
+<block id="LSB//Rwi^)I3P:pLv)4I" type="variables_set">
 <field name="VAR">imagemInimigoNivel3</field>
 <value name="VALUE">
 <shadow type="math_number"><field name="NUM">0</field></shadow>
@@ -2416,7 +3010,7 @@
 </block>
 </value>
 <next>
-<block id="/`wZ}K|Z]7U}0B,d(4)d" type="variables_set">
+<block id="hkrTai6+Ni;2],%wQn#b" type="variables_set">
 <field name="VAR">imagemInimigoFerido</field>
 <value name="VALUE">
 <shadow type="math_number"><field name="NUM">0</field></shadow>
@@ -2425,7 +3019,16 @@
 </block>
 </value>
 <next>
-<block id="~H=M[Kqaa_%^$uHO!2hy" type="variables_set">
+<block id="dN~5O`AK)`7}L1`%]dZ[" type="variables_set">
+<field name="VAR">imagemInimigoAereo</field>
+<value name="VALUE">
+<shadow type="math_number"><field name="NUM">0</field></shadow>
+<block type="screen_image_picker">
+<field name="img">img&#96;&#10;    . . . . . . . . . . . . . . . .&#10;    . . . . . f f . . f f . . . . .&#10;    . . . . f 8 8 f f 8 8 f . . . .&#10;    . . . f 8 8 8 8 8 8 8 8 f . . .&#10;    . . f 8 8 f 8 8 8 8 f 8 8 f . .&#10;    . f 8 8 8 8 8 8 8 8 8 8 8 f .&#10;    f 8 8 8 f f f f f f 8 8 8 8 f&#10;    f 8 f 8 8 8 f f 8 8 8 f 8 8 f&#10;    . f . f 8 8 8 8 8 8 f . f . .&#10;    . . . . f 8 8 8 8 f . . . . .&#10;    . . . . . f f f f . . . . . . .&#10;    . . . . . . f f . . . . . . . .&#10;    . . . . . . . . . . . . . . . .&#10;    . . . . . . . . . . . . . . . .&#10;    . . . . . . . . . . . . . . . .&#10;    . . . . . . . . . . . . . . . .&#10;    &#96;</field>
+</block>
+</value>
+<next>
+<block id=".HhRI2oY4vS.es!4rV_K" type="variables_set">
 <field name="VAR">imagemBandeira</field>
 <value name="VALUE">
 <shadow type="math_number"><field name="NUM">0</field></shadow>
@@ -2434,7 +3037,7 @@
 </block>
 </value>
 <next>
-<block id="`W8.$`MZ?1LFAG:D#Q?o" type="variables_set">
+<block id="=YJyd$5K3HwjooX.gotY" type="variables_set">
 <field name="VAR">imagemItemVida</field>
 <value name="VALUE">
 <shadow type="math_number"><field name="NUM">0</field></shadow>
@@ -2443,7 +3046,7 @@
 </block>
 </value>
 <next>
-<block id="~#VX2;hO7#x2l*A^4|hw" type="variables_set">
+<block id="V;7b.uhizAeOU8`n-XWO" type="variables_set">
 <field name="VAR">imagemItemEstrela</field>
 <value name="VALUE">
 <shadow type="math_number"><field name="NUM">0</field></shadow>
@@ -2452,7 +3055,7 @@
 </block>
 </value>
 <next>
-<block id="gtUkFL+.hPd`V1`tWfeC" type="variables_set">
+<block id="Xy^A{($P46-SVyo@1s$y" type="variables_set">
 <field name="VAR">imagemChao</field>
 <value name="VALUE">
 <shadow type="math_number"><field name="NUM">0</field></shadow>
@@ -2461,7 +3064,7 @@
 </block>
 </value>
 <next>
-<block id=".M(yFO,|%rzy:@8H/)*O" type="variables_set">
+<block id="IvJu1WYw7q1-;^q+(K0s" type="variables_set">
 <field name="VAR">imagemPlataforma</field>
 <value name="VALUE">
 <shadow type="math_number"><field name="NUM">0</field></shadow>
@@ -2470,7 +3073,7 @@
 </block>
 </value>
 <next>
-<block id="W4F=+@t:N%l*CQ%8;Y;g" type="variables_set">
+<block id="S|_MWKpC;aROU4]T42vh" type="variables_set">
 <field name="VAR">imagemDecoracao</field>
 <value name="VALUE">
 <shadow type="math_number"><field name="NUM">0</field></shadow>
@@ -2479,7 +3082,7 @@
 </block>
 </value>
 <next>
-<block id="4]W8RYTu1celWa{,FOq{" type="variables_set">
+<block id="TnBTgl]4)*Ejo-gIz8(i" type="variables_set">
 <field name="VAR">jogador</field>
 <value name="VALUE">
 <shadow type="math_number"><field name="NUM">0</field></shadow>
@@ -2498,28 +3101,28 @@
 </block>
 </value>
 <next>
-<block id="ECaK_ouycH9ynmTTW@k^" type="gamesetbackgroundcolor">
+<block id=",)c4na-~R)c#MrZ3~Y:{" type="gamesetbackgroundcolor">
 <value name="color">
 <shadow type="colorindexpicker">
 <field name="index">9</field>
 </shadow>
 </value>
 <next>
-<block id="bB8o+b^.,SUFoL9#NWWa" type="hudSetLife">
+<block id="F[Bon]T7sWqd=3s=jY_t" type="hudSetLife">
 <value name="value">
 <shadow type="math_number">
 <field name="NUM">3</field>
 </shadow>
 </value>
 <next>
-<block id="C.BM}_Y$-5`KkV(sPzql" type="hudsetScore">
+<block id="*~B;BIrR:H9[#^-d/i=N" type="hudsetScore">
 <value name="value">
 <shadow type="math_number">
 <field name="NUM">0</field>
 </shadow>
 </value>
 <next>
-<block id="tH-fR)q/r81lh[i-S_rC" type="game_control_sprite">
+<block id="Qo=~v+WetjHQixPA2jv]" type="game_control_sprite">
 <mutation _expanded="2" />
 <value name="sprite">
 <shadow type="variables_get">
@@ -2537,7 +3140,7 @@
 </shadow>
 </value>
 <next>
-<block id=")Grj0:rAdt~p4vjQ/pn$" type="Sprite_blockCombine_set">
+<block id="HySwYu.7845Yb*H~@xX*" type="Sprite_blockCombine_set">
 <field name="property">Sprite.ay&#64;set</field>
 <value name="mySprite">
 <block type="variables_get">
@@ -2550,15 +3153,19 @@
 </shadow>
 </value>
 <next>
-<block id="Zu]Hw*fi/yzb$mD[)9YO" type="camerafollow">
+<block id="Nj|aRn.%ESHeN!!aaMPx" type="camerafollow">
 <value name="sprite">
 <shadow type="variables_get">
 <field name="VAR">jogador</field>
 </shadow>
 </value>
 <next>
-<block id="mZv:|L624uHjTJp_4$3U" type="function_call">
+<block id="L}bz6Ch==*{+[.D#X(G*" type="function_call">
 <mutation name="carregarNivel" />
+</block>
+</next>
+</block>
+</next>
 </block>
 </next>
 </block>
