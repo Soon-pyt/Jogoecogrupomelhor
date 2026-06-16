@@ -1,9 +1,9 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-<block id="Y~es.]D#VTY$-4hxPC|4" type="function_definition">
+<block id="%i|Z5^nl=@0]s6@4,Kw." type="function_definition">
 <mutation name="configurarTiles" >
 </mutation>
 <statement name="STACK">
-<block id="k]ASYxf.!m;ggMF7,w#M" type="controls_if">
+<block id="~NB{ZB{u~]{vKx[6XLr9" type="controls_if">
 <mutation elseif="1" else="1" />
 <value name="IF0">
 <shadow type="logic_boolean"><field name="BOOL">TRUE</field></shadow>
@@ -40,31 +40,31 @@
 </block>
 </value>
 <statement name="DO0">
-<block id=":o=6l%2TYD5My/y/UzL1" type="typescript_statement">
+<block id="3zBk2TQrtWWbrO.n3?z8" type="typescript_statement">
 <mutation numlines="1" line0="scene.setBackgroundColor&#40;9&#41;" />
 </block>
 </statement>
 <statement name="DO1">
-<block id="{|O;gzGA;|(/h5jz)H_A" type="typescript_statement">
-<mutation numlines="1" line0="scene.setBackgroundColor&#40;5&#41;" />
+<block id="47d,_etrXB,uVrt%T;f8" type="typescript_statement">
+<mutation numlines="1" line0="scene.setBackgroundColor&#40;8&#41;" />
 </block>
 </statement>
 <statement name="ELSE">
-<block id=";T00Z;0%78ytEgt4!*YW" type="typescript_statement">
-<mutation numlines="1" line0="scene.setBackgroundColor&#40;15&#41;" />
+<block id="J%L=ew?vSDdo=yyXR0E^" type="typescript_statement">
+<mutation numlines="1" line0="scene.setBackgroundColor&#40;13&#41;" />
 </block>
 </statement>
 </block>
 </statement>
 </block>
-<block id="5am$cr*0^b?$~*eT=||/" type="function_definition">
+<block id="y.ml-a}h{{:3F]/,`*z5" type="function_definition">
 <mutation name="renascerJogador" >
 </mutation>
 <statement name="STACK">
-<block id="%f.b#+beBBiw]O`bqw}C" type="typescript_statement">
+<block id="h-{4464iJYf4*4](PhZ%" type="typescript_statement">
 <mutation numlines="1" line0="jogador.setImage&#40;imagemJogadorDireita&#41;" />
 <next>
-<block id="sj~6VP:UC,TX_IwmA_?)" type="variables_set">
+<block id="oO|-WOI{JIdq#1._P-q5" type="variables_set">
 <field name="VAR">direcao</field>
 <value name="VALUE">
 <shadow type="math_number">
@@ -72,16 +72,16 @@
 </shadow>
 </value>
 <next>
-<block id="hJ12!nz!?2b#=F.Y)+.I" type="typescript_statement">
+<block id="1@v!$DsY{pJUc]$?|;=Z" type="typescript_statement">
 <mutation numlines="1" line0="jogador.setPosition&#40;24&#44; 80&#41;" />
 <next>
-<block id="4mG%OSW4Ra0_#nJCN+uL" type="typescript_statement">
+<block id="=1;r{wB3kifm~[+:AcVO" type="typescript_statement">
 <mutation numlines="1" line0="jogador.vx &#61; 0" />
 <next>
-<block id="awq77/1OL|d=uN`!~`~`" type="typescript_statement">
+<block id="*xy@6[IDwTqA()(0|2}v" type="typescript_statement">
 <mutation numlines="1" line0="jogador.vy &#61; 0" />
 <next>
-<block id="t)Qetp|L}ZqTVPSm1^X{" type="typescript_statement">
+<block id="5qdBLTF-v[0lB|Sw6Vy=" type="typescript_statement">
 <mutation numlines="1" line0="jogador.setFlag&#40;SpriteFlag.Invisible&#44; false&#41;" />
 </block>
 </next>
@@ -96,13 +96,13 @@
 </block>
 </statement>
 </block>
-<block id="vxtKhtmG^YK5)*dAtv.-" type="function_definition">
+<block id="4d=TrU^r}Mp/Q%~gkR.V" type="function_definition">
 <mutation name="criarInimigo" >
-<arg name="x" type="number" id="s5txnxx4dk4jfjqfa673" />
-<arg name="y" type="number" id="p0tz73nanjogjetp7c295" />
+<arg name="x" type="number" id="673uuhhpdr0b8pzg57ghq7" />
+<arg name="y" type="number" id="aktxsgxy7301gscmqwhfdc" />
 </mutation>
 <statement name="STACK">
-<block id="wAf]Cd~9QgHh*-t!UPG;" type="controls_if">
+<block id="s@o;caHj-575Xnr$ZZ,3" type="controls_if">
 <mutation elseif="1" else="1" />
 <value name="IF0">
 <shadow type="logic_boolean"><field name="BOOL">TRUE</field></shadow>
@@ -139,31 +139,31 @@
 </block>
 </value>
 <statement name="DO0">
-<block id="QihtC8`3XBoZ=^#)-Ayd" type="typescript_statement">
+<block id="(8c~vX=c)wr8k]Ww$1)~" type="typescript_statement">
 <mutation numlines="1" line0="inimigo &#61; sprites.create&#40;imagemInimigoNivel1&#44; SpriteKind.Enemy&#41;" />
 </block>
 </statement>
 <statement name="DO1">
-<block id="FJ{o$!t#5-#p,Mh*FNO:" type="typescript_statement">
+<block id="(t]K#98$5CP1.`p}@H;u" type="typescript_statement">
 <mutation numlines="1" line0="inimigo &#61; sprites.create&#40;imagemInimigoNivel2&#44; SpriteKind.Enemy&#41;" />
 </block>
 </statement>
 <statement name="ELSE">
-<block id="#b3AG7:Y?VC`Ox2Rn|_?" type="typescript_statement">
+<block id="J3(qs61f(4k?*TYeT-+W" type="typescript_statement">
 <mutation numlines="1" line0="inimigo &#61; sprites.create&#40;imagemInimigoNivel3&#44; SpriteKind.Enemy&#41;" />
 </block>
 </statement>
 <next>
-<block id="s`9TO[70*;svgn7J,vwC" type="typescript_statement">
+<block id="/J!t_/)v8sGv8BJ{m_{0" type="typescript_statement">
 <mutation numlines="1" line0="inimigo.setPosition&#40;x&#44; y&#41;" />
 <next>
-<block id="C}|lrykH?nIYJGHfB{2d" type="typescript_statement">
+<block id="j=MdEuG_k7a,[PbzeL6M" type="typescript_statement">
 <mutation numlines="1" line0="inimigo.vx &#61; velocidadeInimigo &#42; -1" />
 <next>
-<block id="kwkVEDD`6aP5Y+~qaC0D" type="typescript_statement">
+<block id="}qrCXQp9(;w%U=a?PIbF" type="typescript_statement">
 <mutation numlines="1" line0="inimigo.ay &#61; 400" />
 <next>
-<block id="x,L;yr:7`H.dZS$oz(@9" type="typescript_statement">
+<block id="38#-l`$-0f9xoN_w#jh8" type="typescript_statement">
 <mutation numlines="1" line0="inimigo.setBounceOnWall&#40;true&#41;" />
 </block>
 </next>
@@ -176,25 +176,25 @@
 </block>
 </statement>
 </block>
-<block id="U,r.lW3b/Sj#FW6#JT#+" type="function_definition">
+<block id="]yXA3Wj/wbT[w$)lflqH" type="function_definition">
 <mutation name="criarInimigoAereo" >
-<arg name="x" type="number" id="7ks1im34bjm3onyshe223" />
-<arg name="y" type="number" id="c63xdh0er5g2azr7a44tvp" />
+<arg name="x" type="number" id="4fbpmwwhq2gqd8kopqiwc" />
+<arg name="y" type="number" id="1usgamjjx4ngxis8et5f" />
 </mutation>
 <statement name="STACK">
-<block id="41AZmrhFyZ@}3,N;$=Nr" type="typescript_statement">
+<block id="Qn37O;r=.Tuvrq]oYDFO" type="typescript_statement">
 <mutation numlines="1" line0="inimigo &#61; sprites.create&#40;imagemInimigoAereo&#44; SpriteKind.InimigoAereo&#41;" />
 <next>
-<block id="p[s#4by{$]Io-OR?-S@K" type="typescript_statement">
+<block id="vmX{Y=5%1=a=,`_R^WDB" type="typescript_statement">
 <mutation numlines="1" line0="inimigo.setPosition&#40;x&#44; y&#41;" />
 <next>
-<block id="xPcVx#eOTP0toeYL)gz|" type="typescript_statement">
-<mutation numlines="1" line0="inimigo.vx &#61; 50" />
+<block id="B+JF%^RlO@]844h@(]^-" type="typescript_statement">
+<mutation numlines="1" line0="inimigo.vx &#61; 60" />
 <next>
-<block id="6Bq?1Sw^?tm`?k_C/xaQ" type="typescript_statement">
+<block id="0[T,|Wv)GUN{uW6;q:CR" type="typescript_statement">
 <mutation numlines="1" line0="inimigo.ay &#61; 0" />
 <next>
-<block id="=/sz!Fa_eC6KHP!Ti4T$" type="typescript_statement">
+<block id="C]ZGZ.%|V;d1z}e#So@k" type="typescript_statement">
 <mutation numlines="1" line0="inimigo.setBounceOnWall&#40;true&#41;" />
 </block>
 </next>
@@ -207,80 +207,272 @@
 </block>
 </statement>
 </block>
-<block id="LuQ(tx?*+N8Xcbm*haS1" type="function_definition">
+<block id="4k[1xadLB,CeAzBZ.kzZ" type="function_definition">
 <mutation name="criarBandeira" >
-<arg name="x" type="number" id="4bcerasyrdklksvug9rd4" />
-<arg name="y" type="number" id="h1ggs0hsqltahuu0rs0j" />
+<arg name="x" type="number" id="cc8btdqrt3w02c0ovnpd" />
+<arg name="y" type="number" id="hyy0euu6z7ptsd3ekf2y" />
 </mutation>
 <statement name="STACK">
-<block id="_9xXK11x:}gIUe2gii|d" type="typescript_statement">
-<mutation numlines="1" line0="bandeira &#61; sprites.create&#40;imagemBandeira&#44; SpriteKind.Bandeira&#41;" />
+<block id=".}5dn=RqpyQf;-+Z3-~A" type="controls_if">
+<mutation elseif="1" else="1" />
+<value name="IF0">
+<shadow type="logic_boolean"><field name="BOOL">TRUE</field></shadow>
+<block type="logic_compare">
+<field name="OP">EQ</field>
+<value name="A">
+<shadow type="math_number"><field name="NUM">0</field></shadow>
+<block type="variables_get">
+<field name="VAR">nivel</field>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number">
+<field name="NUM">1</field>
+</shadow>
+</value>
+</block>
+</value>
+<value name="IF1">
+<shadow type="logic_boolean"><field name="BOOL">TRUE</field></shadow>
+<block type="logic_compare">
+<field name="OP">EQ</field>
+<value name="A">
+<shadow type="math_number"><field name="NUM">0</field></shadow>
+<block type="variables_get">
+<field name="VAR">nivel</field>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number">
+<field name="NUM">2</field>
+</shadow>
+</value>
+</block>
+</value>
+<statement name="DO0">
+<block id="_8=wVT.{:s$8}dttAS.E" type="typescript_statement">
+<mutation numlines="1" line0="bandeira &#61; sprites.create&#40;imagemBandeiraNivel1&#44; SpriteKind.Bandeira&#41;" />
+</block>
+</statement>
+<statement name="DO1">
+<block id="Pe`uKV3GoXqA=v5oHF%8" type="typescript_statement">
+<mutation numlines="1" line0="bandeira &#61; sprites.create&#40;imagemBandeiraNivel2&#44; SpriteKind.Bandeira&#41;" />
+</block>
+</statement>
+<statement name="ELSE">
+<block id="7{AkR.54V.H?0jf}`.f^" type="typescript_statement">
+<mutation numlines="1" line0="bandeira &#61; sprites.create&#40;imagemBandeiraNivel3&#44; SpriteKind.Bandeira&#41;" />
+</block>
+</statement>
 <next>
-<block id="m6@_Sn~m,g}h2HR8]kGs" type="typescript_statement">
+<block id="fH}w8`IHXn^I4dtkrPZY" type="typescript_statement">
 <mutation numlines="1" line0="bandeira.setPosition&#40;x&#44; y&#41;" />
 </block>
 </next>
 </block>
 </statement>
 </block>
-<block id="8DnUTZnh:?G!W-dJHl7m" type="function_definition">
+<block id="~GiWZ{t[lH8iYs**1d1q" type="function_definition">
 <mutation name="criarItemVida" >
-<arg name="x" type="number" id="edkshw7segd1a4g0m6h3a" />
-<arg name="y" type="number" id="4jpccbvd682pszlrg8kkya" />
+<arg name="x" type="number" id="8ou5flonmyhxkuhqiwhv" />
+<arg name="y" type="number" id="1tpb2w408pid5xzs6yyx8" />
 </mutation>
 <statement name="STACK">
-<block id="|4c3n8x[bE_o]/p|ge9:" type="typescript_statement">
+<block id="[*Pw@EF,u*~Vqv2fBKsa" type="typescript_statement">
 <mutation numlines="1" line0="itemVida &#61; sprites.create&#40;imagemItemVida&#44; SpriteKind.ItemVida&#41;" />
 <next>
-<block id="Cm26#,F76%bgFO!Wte1X" type="typescript_statement">
+<block id="XN_uKk0Ophq|qO/xm`(t" type="typescript_statement">
 <mutation numlines="1" line0="itemVida.setPosition&#40;x&#44; y&#41;" />
 </block>
 </next>
 </block>
 </statement>
 </block>
-<block id="jNretJO|S.OfRW2Q~mZ%" type="function_definition">
+<block id="E#$Lnce1?jjTYAIyIGQ^" type="function_definition">
 <mutation name="criarItemEstrela" >
-<arg name="x" type="number" id="436tx09okw3f8nht407l" />
-<arg name="y" type="number" id="zb2w0bovti9bv9c59yob" />
+<arg name="x" type="number" id="jikyd4f1ddtlyqcllkxk" />
+<arg name="y" type="number" id="q1cjphu3r7wx9uomp09fc" />
 </mutation>
 <statement name="STACK">
-<block id="19z-wGD,Vg0fk4:1?3x(" type="typescript_statement">
+<block id="LR_bGZ#N4p?Jmg*?*|c{" type="typescript_statement">
 <mutation numlines="1" line0="itemEstrela &#61; sprites.create&#40;imagemItemEstrela&#44; SpriteKind.ItemEstrela&#41;" />
 <next>
-<block id="!zw~%[y+vKkJbv,=M+]M" type="typescript_statement">
+<block id="0P^f7s=_eCojP*HM{Yf7" type="typescript_statement">
 <mutation numlines="1" line0="itemEstrela.setPosition&#40;x&#44; y&#41;" />
 </block>
 </next>
 </block>
 </statement>
 </block>
-<block id="8]7AmQkKgF#]ogS2#0Iw" type="function_definition">
+<block id="se*})Mw!a;w}jV[ivD0j" type="function_definition">
+<mutation name="criarIndicadorEnergia" >
+</mutation>
+<statement name="STACK">
+<block id="Bg6V^vpiL^tW0=7B?:/p" type="typescript_statement">
+<mutation numlines="1" line0="indicadorEnergia &#61; sprites.create&#40;imagemEnergia5&#44; SpriteKind.IndicadorEnergia&#41;" />
+<next>
+<block id="SMU]lwLu]!C[/qqRi+7n" type="typescript_statement">
+<mutation numlines="1" line0="indicadorEnergia.setFlag&#40;SpriteFlag.RelativeToCamera&#44; true&#41;" />
+<next>
+<block id="2;=T{tWH@n%2:b+se7F@" type="typescript_statement">
+<mutation numlines="1" line0="indicadorEnergia.setPosition&#40;144&#44; 8&#41;" />
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+<block id="*InqdAA]gI)t%#7T++$]" type="function_definition">
+<mutation name="atualizarEnergia" >
+</mutation>
+<statement name="STACK">
+<block id="^C;bRq(gqsm:RU-%r-5." type="controls_if">
+<mutation elseif="4" else="1" />
+<value name="IF0">
+<shadow type="logic_boolean"><field name="BOOL">TRUE</field></shadow>
+<block type="logic_compare">
+<field name="OP">EQ</field>
+<value name="A">
+<shadow type="math_number"><field name="NUM">0</field></shadow>
+<block type="variables_get">
+<field name="VAR">energiaTiro</field>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number">
+<field name="NUM">0</field>
+</shadow>
+</value>
+</block>
+</value>
+<value name="IF1">
+<shadow type="logic_boolean"><field name="BOOL">TRUE</field></shadow>
+<block type="logic_compare">
+<field name="OP">EQ</field>
+<value name="A">
+<shadow type="math_number"><field name="NUM">0</field></shadow>
+<block type="variables_get">
+<field name="VAR">energiaTiro</field>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number">
+<field name="NUM">1</field>
+</shadow>
+</value>
+</block>
+</value>
+<value name="IF2">
+<shadow type="logic_boolean"><field name="BOOL">TRUE</field></shadow>
+<block type="logic_compare">
+<field name="OP">EQ</field>
+<value name="A">
+<shadow type="math_number"><field name="NUM">0</field></shadow>
+<block type="variables_get">
+<field name="VAR">energiaTiro</field>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number">
+<field name="NUM">2</field>
+</shadow>
+</value>
+</block>
+</value>
+<value name="IF3">
+<shadow type="logic_boolean"><field name="BOOL">TRUE</field></shadow>
+<block type="logic_compare">
+<field name="OP">EQ</field>
+<value name="A">
+<shadow type="math_number"><field name="NUM">0</field></shadow>
+<block type="variables_get">
+<field name="VAR">energiaTiro</field>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number">
+<field name="NUM">3</field>
+</shadow>
+</value>
+</block>
+</value>
+<value name="IF4">
+<shadow type="logic_boolean"><field name="BOOL">TRUE</field></shadow>
+<block type="logic_compare">
+<field name="OP">EQ</field>
+<value name="A">
+<shadow type="math_number"><field name="NUM">0</field></shadow>
+<block type="variables_get">
+<field name="VAR">energiaTiro</field>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number">
+<field name="NUM">4</field>
+</shadow>
+</value>
+</block>
+</value>
+<statement name="DO0">
+<block id="=E~@m|:FX%$98Z:`!S}/" type="typescript_statement">
+<mutation numlines="1" line0="indicadorEnergia.setImage&#40;imagemEnergia0&#41;" />
+</block>
+</statement>
+<statement name="DO1">
+<block id="0Q1,D)|GLikCMK-6I6H." type="typescript_statement">
+<mutation numlines="1" line0="indicadorEnergia.setImage&#40;imagemEnergia1&#41;" />
+</block>
+</statement>
+<statement name="DO2">
+<block id="kA)DY4!sz4y@Md`ihn@U" type="typescript_statement">
+<mutation numlines="1" line0="indicadorEnergia.setImage&#40;imagemEnergia2&#41;" />
+</block>
+</statement>
+<statement name="DO3">
+<block id="aehjuoi2P4nT7CV1*elE" type="typescript_statement">
+<mutation numlines="1" line0="indicadorEnergia.setImage&#40;imagemEnergia3&#41;" />
+</block>
+</statement>
+<statement name="DO4">
+<block id="aZauo.R`V8$)tBU%$NK{" type="typescript_statement">
+<mutation numlines="1" line0="indicadorEnergia.setImage&#40;imagemEnergia4&#41;" />
+</block>
+</statement>
+<statement name="ELSE">
+<block id="CLjcIB)(h|wP7,6#X6ge" type="typescript_statement">
+<mutation numlines="1" line0="indicadorEnergia.setImage&#40;imagemEnergia5&#41;" />
+</block>
+</statement>
+</block>
+</statement>
+</block>
+<block id="G{Q5*CvdK,s0:#4x6GOb" type="function_definition">
 <mutation name="carregarNivel" >
 </mutation>
 <statement name="STACK">
-<block id="Q-MpH^GH:TS)#Sl4F+t=" type="typescript_statement">
+<block id=":-hq|a^yZY{kWJ-6QMmS" type="typescript_statement">
 <mutation numlines="1" line0="sprites.destroyAllSpritesOfKind&#40;SpriteKind.Enemy&#41;" />
 <next>
-<block id="g.1Xff:A_^rxr|baQX9_" type="typescript_statement">
+<block id="CX{/yS|I#Crjw/G3a7$p" type="typescript_statement">
 <mutation numlines="1" line0="sprites.destroyAllSpritesOfKind&#40;SpriteKind.InimigoFerido&#41;" />
 <next>
-<block id="j75}AUNj%pXuhZel85Sv" type="typescript_statement">
+<block id="]w6_4i=yp#x$`G2aJUvo" type="typescript_statement">
 <mutation numlines="1" line0="sprites.destroyAllSpritesOfKind&#40;SpriteKind.InimigoAereo&#41;" />
 <next>
-<block id="VB9lm0{D+!3nQ2^4ElQb" type="typescript_statement">
+<block id="X?nVF?KPJW-M[r{cBW_o" type="typescript_statement">
 <mutation numlines="1" line0="sprites.destroyAllSpritesOfKind&#40;SpriteKind.Bandeira&#41;" />
 <next>
-<block id="=~e-5!US}M`$E|,!?S#q" type="typescript_statement">
+<block id="eA-Vr^_9?P;C(|vIJ77R" type="typescript_statement">
 <mutation numlines="1" line0="sprites.destroyAllSpritesOfKind&#40;SpriteKind.ItemVida&#41;" />
 <next>
-<block id="Y60FVg9iWG`?Be}Q*[+[" type="typescript_statement">
+<block id="9ESYMi`9E;d)?p!3%04I" type="typescript_statement">
 <mutation numlines="1" line0="sprites.destroyAllSpritesOfKind&#40;SpriteKind.ItemEstrela&#41;" />
 <next>
-<block id="8E:sor!x0c*e_Wo`lch?" type="typescript_statement">
+<block id="#LE_8@pmvj!stR+bD!/L" type="typescript_statement">
 <mutation numlines="1" line0="sprites.destroyAllSpritesOfKind&#40;SpriteKind.Projectile&#41;" />
 <next>
-<block id="!J#|4-cy(ZU?IyTa#Z.J" type="controls_if">
+<block id="`ep,y8[q)V2#GJju4FmM" type="controls_if">
 <mutation elseif="1" else="1" />
 <value name="IF0">
 <shadow type="logic_boolean"><field name="BOOL">TRUE</field></shadow>
@@ -317,7 +509,7 @@
 </block>
 </value>
 <statement name="DO0">
-<block id="U1?M[;)*M421nz4yNQk~" type="variables_set">
+<block id="{O7JZz?u20Lu.pqm)sk3" type="variables_set">
 <field name="VAR">velocidadeInimigo</field>
 <value name="VALUE">
 <shadow type="math_number">
@@ -325,103 +517,103 @@
 </shadow>
 </value>
 <next>
-<block id="FZ8%~5uu{,.49C9#L;0Z" type="typescript_statement">
-<mutation numlines="10" line0="tiles.setCurrentTilemap&#40;tiles.createTilemap&#40;hex&#96;400008000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000004040404000000000000000000000000000000000000040404040000000000000000000000000000040404040000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000030303030000000000000000000000000003030303000000000000000000000000000003030303000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000030303030000000000000000000000030303030000000000000000000000000303030300000000000000000000000000030303030000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002020202020202020202020202020000020202020202020202020202020200000202020202020202020202020202000000020202020202020202020202020202&#96;&#44; img&#96;" line1="            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ." line2="            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ." line3="            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ." line4="            . . . . . . . . . . . 2 2 2 2 . . . . . . . . . . . . . 2 2 2 2 . . . . . . . . . . . . . . 2 2 2 2 . . . . . . . . . . . . . ." line5="            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ." line6="            . . . . . . 2 2 2 2 . . . . . . . . . . . 2 2 2 2 . . . . . . . . . . . . 2 2 2 2 . . . . . . . . . . . . . 2 2 2 2 . . . . . ." line7="            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ." line8="            2 2 2 2 2 2 2 2 2 2 2 2 2 2 . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2" line9="            &#96;&#44; &#91;imagemVazia&#44; imagemVazia&#44; imagemChao&#44; imagemPlataforma&#44; imagemDecoracao&#93;&#44; TileScale.Sixteen&#41;&#41;" />
+<block id="K1kR:j|FWP:#qWsxYNYZ" type="typescript_statement">
+<mutation numlines="14" line0="tiles.setCurrentTilemap&#40;tiles.createTilemap&#40;hex&#96;40000c00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000404040400000000000000000000000000000000000004040404000000000000000000000000000004040404000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000003030303000000000000000000000000000303030300000000000000000000000000000303030300000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000003030303000000000000000000000003030303000000000000000000000000030303030000000000000000000000000003030303000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000202020202020202020202020202000002020202020202020202020202020000020202020202020202020202020200000002020202020202020202020202020200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&#96;&#44; img&#96;&#13;" line1="            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .&#13;" line2="            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .&#13;" line3="            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .&#13;" line4="            . . . . . . . . . . . 2 2 2 2 . . . . . . . . . . . . . 2 2 2 2 . . . . . . . . . . . . . . 2 2 2 2 . . . . . . . . . . . . . .&#13;" line5="            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .&#13;" line6="            . . . . . . 2 2 2 2 . . . . . . . . . . . 2 2 2 2 . . . . . . . . . . . . 2 2 2 2 . . . . . . . . . . . . . 2 2 2 2 . . . . . .&#13;" line7="            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .&#13;" line8="            2 2 2 2 2 2 2 2 2 2 2 2 2 2 . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2&#13;" line9="            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .&#13;" line10="            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .&#13;" line11="            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .&#13;" line12="            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .&#13;" line13="            &#96;&#44; &#91;imagemVazia&#44; imagemVazia&#44; imagemChao&#44; imagemPlataforma&#44; imagemDecoracao&#93;&#44; TileScale.Sixteen&#41;&#41;" />
 <next>
-<block id="*K+q3v`c-$p3uE4w3d]T" type="function_call">
+<block id="twk/evJ`X;{TGX-V9^]{" type="function_call">
 <mutation name="configurarTiles" />
 <next>
-<block id="G,TR#pJTFbtJ9O=:.nXj" type="function_call">
+<block id="-]R;z$WYM^BmO+]*Sk)C" type="function_call">
 <mutation name="criarInimigo" >
-<arg name="x" type="number" id="s5txnxx4dk4jfjqfa673" />
-<arg name="y" type="number" id="p0tz73nanjogjetp7c295" />
+<arg name="x" type="number" id="673uuhhpdr0b8pzg57ghq7" />
+<arg name="y" type="number" id="aktxsgxy7301gscmqwhfdc" />
 </mutation>
-<value name="s5txnxx4dk4jfjqfa673">
+<value name="673uuhhpdr0b8pzg57ghq7">
 <shadow type="math_number">
 <field name="NUM">168</field>
 </shadow>
 </value>
-<value name="p0tz73nanjogjetp7c295">
+<value name="aktxsgxy7301gscmqwhfdc">
 <shadow type="math_number">
 <field name="NUM">104</field>
 </shadow>
 </value>
 <next>
-<block id="yPpD2e0|:5XRGRa!W+[K" type="function_call">
+<block id=")JPV3h^grea(cfA%C`7b" type="function_call">
 <mutation name="criarInimigo" >
-<arg name="x" type="number" id="s5txnxx4dk4jfjqfa673" />
-<arg name="y" type="number" id="p0tz73nanjogjetp7c295" />
+<arg name="x" type="number" id="673uuhhpdr0b8pzg57ghq7" />
+<arg name="y" type="number" id="aktxsgxy7301gscmqwhfdc" />
 </mutation>
-<value name="s5txnxx4dk4jfjqfa673">
+<value name="673uuhhpdr0b8pzg57ghq7">
 <shadow type="math_number">
 <field name="NUM">392</field>
 </shadow>
 </value>
-<value name="p0tz73nanjogjetp7c295">
+<value name="aktxsgxy7301gscmqwhfdc">
 <shadow type="math_number">
 <field name="NUM">104</field>
 </shadow>
 </value>
 <next>
-<block id="_9[;^(Rkz:a`?d9^ITSQ" type="function_call">
+<block id="!#t}ht//~fU_LP#l0v5D" type="function_call">
 <mutation name="criarInimigo" >
-<arg name="x" type="number" id="s5txnxx4dk4jfjqfa673" />
-<arg name="y" type="number" id="p0tz73nanjogjetp7c295" />
+<arg name="x" type="number" id="673uuhhpdr0b8pzg57ghq7" />
+<arg name="y" type="number" id="aktxsgxy7301gscmqwhfdc" />
 </mutation>
-<value name="s5txnxx4dk4jfjqfa673">
+<value name="673uuhhpdr0b8pzg57ghq7">
 <shadow type="math_number">
 <field name="NUM">680</field>
 </shadow>
 </value>
-<value name="p0tz73nanjogjetp7c295">
+<value name="aktxsgxy7301gscmqwhfdc">
 <shadow type="math_number">
 <field name="NUM">104</field>
 </shadow>
 </value>
 <next>
-<block id="8BocTC|`!7xh#tLm4yRp" type="function_call">
+<block id=")F5TUt[iDkO;OF,:{u/6" type="function_call">
 <mutation name="criarItemVida" >
-<arg name="x" type="number" id="edkshw7segd1a4g0m6h3a" />
-<arg name="y" type="number" id="4jpccbvd682pszlrg8kkya" />
+<arg name="x" type="number" id="8ou5flonmyhxkuhqiwhv" />
+<arg name="y" type="number" id="1tpb2w408pid5xzs6yyx8" />
 </mutation>
-<value name="edkshw7segd1a4g0m6h3a">
+<value name="8ou5flonmyhxkuhqiwhv">
 <shadow type="math_number">
 <field name="NUM">376</field>
 </shadow>
 </value>
-<value name="4jpccbvd682pszlrg8kkya">
+<value name="1tpb2w408pid5xzs6yyx8">
 <shadow type="math_number">
 <field name="NUM">72</field>
 </shadow>
 </value>
 <next>
-<block id="vYrQZFJ]#]}G;N0l=Pw8" type="function_call">
+<block id="943TjbQ-D;#}`qQ.b5}X" type="function_call">
 <mutation name="criarItemEstrela" >
-<arg name="x" type="number" id="436tx09okw3f8nht407l" />
-<arg name="y" type="number" id="zb2w0bovti9bv9c59yob" />
+<arg name="x" type="number" id="jikyd4f1ddtlyqcllkxk" />
+<arg name="y" type="number" id="q1cjphu3r7wx9uomp09fc" />
 </mutation>
-<value name="436tx09okw3f8nht407l">
+<value name="jikyd4f1ddtlyqcllkxk">
 <shadow type="math_number">
 <field name="NUM">760</field>
 </shadow>
 </value>
-<value name="zb2w0bovti9bv9c59yob">
+<value name="q1cjphu3r7wx9uomp09fc">
 <shadow type="math_number">
 <field name="NUM">40</field>
 </shadow>
 </value>
 <next>
-<block id="a]CWOOcB9%U3$RY4z7BQ" type="function_call">
+<block id="reYJZP!rI4gXD4s^x63/" type="function_call">
 <mutation name="criarBandeira" >
-<arg name="x" type="number" id="4bcerasyrdklksvug9rd4" />
-<arg name="y" type="number" id="h1ggs0hsqltahuu0rs0j" />
+<arg name="x" type="number" id="cc8btdqrt3w02c0ovnpd" />
+<arg name="y" type="number" id="hyy0euu6z7ptsd3ekf2y" />
 </mutation>
-<value name="4bcerasyrdklksvug9rd4">
+<value name="cc8btdqrt3w02c0ovnpd">
 <shadow type="math_number">
 <field name="NUM">984</field>
 </shadow>
 </value>
-<value name="h1ggs0hsqltahuu0rs0j">
+<value name="hyy0euu6z7ptsd3ekf2y">
 <shadow type="math_number">
 <field name="NUM">104</field>
 </shadow>
@@ -445,7 +637,7 @@
 </block>
 </statement>
 <statement name="DO1">
-<block id=";Uo.L9ToUt,oXP!upvT!" type="variables_set">
+<block id="np?8^f3h?OP6Z*N2-oKr" type="variables_set">
 <field name="VAR">velocidadeInimigo</field>
 <value name="VALUE">
 <shadow type="math_number">
@@ -453,103 +645,103 @@
 </shadow>
 </value>
 <next>
-<block id=";^[hx]pVQAoCAZx2|k5@" type="typescript_statement">
-<mutation numlines="10" line0="tiles.setCurrentTilemap&#40;tiles.createTilemap&#40;hex&#96;400008000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000040404040000000000000000000000000000000004040404000000000000000000000000000000000004040404000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000303030300000000000000000000000303030300000000000000000000000000030303030000000000000000000003030303000000000000000000000000000000000000000000030303030000000000000000000000000003030303000000000000000000000003030303000000000000000000000000000000000303030300000000000000000000000000000303030300000000000000000000000003030303000000000000000000000000000000030303030000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002020202020202020202020200000002020202020202020202020200000002020202020202020202020202000000020202020202020202020202020202020202&#96;&#44; img&#96;" line1="            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ." line2="            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ." line3="            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ." line4="            . . . . . . . . . 2 2 2 2 . . . . . . . . . . . 2 2 2 2 . . . . . . . . . . . . . 2 2 2 2 . . . . . . . . . . 2 2 2 2 . . . . ." line5="            . . . . . . . . . . . . . . . . 2 2 2 2 . . . . . . . . . . . . . 2 2 2 2 . . . . . . . . . . . 2 2 2 2 . . . . . . . . . . . ." line6="            . . . . 2 2 2 2 . . . . . . . . . . . . . . 2 2 2 2 . . . . . . . . . . . . 2 2 2 2 . . . . . . . . . . . . . . . 2 2 2 2 . . ." line7="            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ." line8="            2 2 2 2 2 2 2 2 2 2 2 2 . . . 2 2 2 2 2 2 2 2 2 2 2 2 . . . 2 2 2 2 2 2 2 2 2 2 2 2 2 . . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2" line9="            &#96;&#44; &#91;imagemVazia&#44; imagemVazia&#44; imagemChaoDeserto&#44; imagemPlataformaDeserto&#44; imagemDecoracaoDeserto&#93;&#44; TileScale.Sixteen&#41;&#41;" />
+<block id="x,)H!e_}l.{WZ%oB-j@I" type="typescript_statement">
+<mutation numlines="14" line0="tiles.setCurrentTilemap&#40;tiles.createTilemap&#40;hex&#96;40000c00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000004040404000000000000000000000000000000000404040400000000000000000000000000000000040404040000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000030303030000000000000000000000030303030000000000000000000000000003030303000000000000000000000303030300000000000000000000000000000000000000000003030303000000000000000000000000000303030300000000000000000000000303030300000000000000000000000000000000030303030000000000000000000000000000030303030000000000000000000000000303030300000000000000000000000000000003030303000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000202020202020202020202020000000202020202020202020202020000000202020202020202020202020200000002020202020202020202020202020202020200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&#96;&#44; img&#96;&#13;" line1="            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .&#13;" line2="            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .&#13;" line3="            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .&#13;" line4="            . . . . . . . . . 2 2 2 2 . . . . . . . . . . . 2 2 2 2 . . . . . . . . . . . . . 2 2 2 2 . . . . . . . . . . 2 2 2 2 . . . . .&#13;" line5="            . . . . . . . . . . . . . . . . 2 2 2 2 . . . . . . . . . . . . . 2 2 2 2 . . . . . . . . . . . 2 2 2 2 . . . . . . . . . . . .&#13;" line6="            . . . . 2 2 2 2 . . . . . . . . . . . . . . 2 2 2 2 . . . . . . . . . . . . 2 2 2 2 . . . . . . . . . . . . . . . 2 2 2 2 . . .&#13;" line7="            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .&#13;" line8="            2 2 2 2 2 2 2 2 2 2 2 2 . . . 2 2 2 2 2 2 2 2 2 2 2 2 . . . 2 2 2 2 2 2 2 2 2 2 2 2 2 . . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2&#13;" line9="            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .&#13;" line10="            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .&#13;" line11="            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .&#13;" line12="            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .&#13;" line13="            &#96;&#44; &#91;imagemVazia&#44; imagemVazia&#44; imagemChaoDeserto&#44; imagemPlataformaDeserto&#44; imagemDecoracaoDeserto&#93;&#44; TileScale.Sixteen&#41;&#41;" />
 <next>
-<block id="@$_U%SPF/R%k9~jEiyw]" type="function_call">
+<block id="*-iE|Ntz$SWy-/+zuI(w" type="function_call">
 <mutation name="configurarTiles" />
 <next>
-<block id="~FzW1[Po@L?bW[K5er8d" type="function_call">
+<block id="f]Z.3C;W3H.%2s!=z2uX" type="function_call">
 <mutation name="criarInimigoAereo" >
-<arg name="x" type="number" id="7ks1im34bjm3onyshe223" />
-<arg name="y" type="number" id="c63xdh0er5g2azr7a44tvp" />
+<arg name="x" type="number" id="4fbpmwwhq2gqd8kopqiwc" />
+<arg name="y" type="number" id="1usgamjjx4ngxis8et5f" />
 </mutation>
-<value name="7ks1im34bjm3onyshe223">
+<value name="4fbpmwwhq2gqd8kopqiwc">
 <shadow type="math_number">
 <field name="NUM">256</field>
 </shadow>
 </value>
-<value name="c63xdh0er5g2azr7a44tvp">
+<value name="1usgamjjx4ngxis8et5f">
 <shadow type="math_number">
 <field name="NUM">56</field>
 </shadow>
 </value>
 <next>
-<block id="q$F`z))J;XYJ2F*`7|JL" type="function_call">
+<block id="^3e5}%5blyK}pMwX-EEB" type="function_call">
 <mutation name="criarInimigoAereo" >
-<arg name="x" type="number" id="7ks1im34bjm3onyshe223" />
-<arg name="y" type="number" id="c63xdh0er5g2azr7a44tvp" />
+<arg name="x" type="number" id="4fbpmwwhq2gqd8kopqiwc" />
+<arg name="y" type="number" id="1usgamjjx4ngxis8et5f" />
 </mutation>
-<value name="7ks1im34bjm3onyshe223">
+<value name="4fbpmwwhq2gqd8kopqiwc">
 <shadow type="math_number">
 <field name="NUM">560</field>
 </shadow>
 </value>
-<value name="c63xdh0er5g2azr7a44tvp">
+<value name="1usgamjjx4ngxis8et5f">
 <shadow type="math_number">
 <field name="NUM">56</field>
 </shadow>
 </value>
 <next>
-<block id="a*huB.VEK)|mCFm-vh^/" type="function_call">
+<block id="_^MdY0DenH~[w+Ur1zRw" type="function_call">
 <mutation name="criarInimigoAereo" >
-<arg name="x" type="number" id="7ks1im34bjm3onyshe223" />
-<arg name="y" type="number" id="c63xdh0er5g2azr7a44tvp" />
+<arg name="x" type="number" id="4fbpmwwhq2gqd8kopqiwc" />
+<arg name="y" type="number" id="1usgamjjx4ngxis8et5f" />
 </mutation>
-<value name="7ks1im34bjm3onyshe223">
+<value name="4fbpmwwhq2gqd8kopqiwc">
 <shadow type="math_number">
 <field name="NUM">800</field>
 </shadow>
 </value>
-<value name="c63xdh0er5g2azr7a44tvp">
+<value name="1usgamjjx4ngxis8et5f">
 <shadow type="math_number">
 <field name="NUM">56</field>
 </shadow>
 </value>
 <next>
-<block id="!{mJ5o3)k])@5Pn!O84J" type="function_call">
+<block id="`P8sk{QH)?!=V37Lq^(%" type="function_call">
 <mutation name="criarItemVida" >
-<arg name="x" type="number" id="edkshw7segd1a4g0m6h3a" />
-<arg name="y" type="number" id="4jpccbvd682pszlrg8kkya" />
+<arg name="x" type="number" id="8ou5flonmyhxkuhqiwhv" />
+<arg name="y" type="number" id="1tpb2w408pid5xzs6yyx8" />
 </mutation>
-<value name="edkshw7segd1a4g0m6h3a">
+<value name="8ou5flonmyhxkuhqiwhv">
 <shadow type="math_number">
 <field name="NUM">200</field>
 </shadow>
 </value>
-<value name="4jpccbvd682pszlrg8kkya">
+<value name="1tpb2w408pid5xzs6yyx8">
 <shadow type="math_number">
 <field name="NUM">40</field>
 </shadow>
 </value>
 <next>
-<block id="Z_0]Q#+Q8P;M3UtPnDM!" type="function_call">
+<block id="{?3dGQL:$AI}!t.gb.0Y" type="function_call">
 <mutation name="criarItemEstrela" >
-<arg name="x" type="number" id="436tx09okw3f8nht407l" />
-<arg name="y" type="number" id="zb2w0bovti9bv9c59yob" />
+<arg name="x" type="number" id="jikyd4f1ddtlyqcllkxk" />
+<arg name="y" type="number" id="q1cjphu3r7wx9uomp09fc" />
 </mutation>
-<value name="436tx09okw3f8nht407l">
+<value name="jikyd4f1ddtlyqcllkxk">
 <shadow type="math_number">
 <field name="NUM">632</field>
 </shadow>
 </value>
-<value name="zb2w0bovti9bv9c59yob">
+<value name="q1cjphu3r7wx9uomp09fc">
 <shadow type="math_number">
 <field name="NUM">72</field>
 </shadow>
 </value>
 <next>
-<block id="4zb2)8K092Y9oQtTSyVp" type="function_call">
+<block id="!!MxDmjT/FtX$HMc7w9D" type="function_call">
 <mutation name="criarBandeira" >
-<arg name="x" type="number" id="4bcerasyrdklksvug9rd4" />
-<arg name="y" type="number" id="h1ggs0hsqltahuu0rs0j" />
+<arg name="x" type="number" id="cc8btdqrt3w02c0ovnpd" />
+<arg name="y" type="number" id="hyy0euu6z7ptsd3ekf2y" />
 </mutation>
-<value name="4bcerasyrdklksvug9rd4">
+<value name="cc8btdqrt3w02c0ovnpd">
 <shadow type="math_number">
 <field name="NUM">984</field>
 </shadow>
 </value>
-<value name="h1ggs0hsqltahuu0rs0j">
+<value name="hyy0euu6z7ptsd3ekf2y">
 <shadow type="math_number">
 <field name="NUM">104</field>
 </shadow>
@@ -573,147 +765,201 @@
 </block>
 </statement>
 <statement name="ELSE">
-<block id="8ZZ-K,e(RuKlRNe(^8o7" type="variables_set">
+<block id="SvQA8dW2.X51U]bQ=tci" type="variables_set">
 <field name="VAR">velocidadeInimigo</field>
 <value name="VALUE">
 <shadow type="math_number">
-<field name="NUM">80</field>
+<field name="NUM">110</field>
 </shadow>
 </value>
 <next>
-<block id="Jhc9mJ1*OSw.S,7f3h}}" type="typescript_statement">
-<mutation numlines="10" line0="tiles.setCurrentTilemap&#40;tiles.createTilemap&#40;hex&#96;400008000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000004040404000000000000000000000000000004040404000000000000000000000000000000040404040000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000030303030000000000000000000000030303030000000000000000000003030303000000000000000000000303030300000000000303030300000000000000000000000000000303030300000000000000000000000303030300000000000000000000030303030000000000000000000003030303000000000000000003030303000000000000000000000003030303000000000000000000000303030300000000000000000000030303030000000000000003030303000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002020202020202020202000000020202020202020202020000000202020202020202020202000000020202020202020202020200000002020202020202020202&#96;&#44; img&#96;" line1="            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ." line2="            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ." line3="            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ." line4="            . . . . . 2 2 2 2 . . . . . . . . . . . 2 2 2 2 . . . . . . . . . . 2 2 2 2 . . . . . . . . . . 2 2 2 2 . . . . . 2 2 2 2 . . ." line5="            . . . . . . . . . . . 2 2 2 2 . . . . . . . . . . . 2 2 2 2 . . . . . . . . . . 2 2 2 2 . . . . . . . . . . 2 2 2 2 . . . . . ." line6="            . . 2 2 2 2 . . . . . . . . . . . 2 2 2 2 . . . . . . . . . . 2 2 2 2 . . . . . . . . . . 2 2 2 2 . . . . . . . 2 2 2 2 . . . ." line7="            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ." line8="            2 2 2 2 2 2 2 2 2 2 . . . 2 2 2 2 2 2 2 2 2 2 . . . 2 2 2 2 2 2 2 2 2 2 2 . . . 2 2 2 2 2 2 2 2 2 2 2 . . . 2 2 2 2 2 2 2 2 2 2" line9="            &#96;&#44; &#91;imagemVazia&#44; imagemVazia&#44; imagemChaoSubmundo&#44; imagemPlataformaSubmundo&#44; imagemDecoracaoSubmundo&#93;&#44; TileScale.Sixteen&#41;&#41;" />
+<block id="w?b8{jzehQ+.H@3?D1;2" type="typescript_statement">
+<mutation numlines="14" line0="tiles.setCurrentTilemap&#40;tiles.createTilemap&#40;hex&#96;40000c00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000404040400000000000000000000000000000404040400000000000000000000000000040404040000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000003030303030300000000000000000003030303030300000000000000000000030303030303000000000000000000000303030303030000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000003030303030300000000000000000000030303030303030000000000000000000003030303030300000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000202020202020202020200000002020202020202020202000000020202020202020202020200000002020202020202020202020000000202020202020202020200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&#96;&#44; img&#96;&#13;" line1="            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .&#13;" line2="            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .&#13;" line3="            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .&#13;" line4="            . . . . . 2 2 2 2 2 2 . . . . . . . . . 2 2 2 2 2 2 . . . . . . . . . . 2 2 2 2 2 2 . . . . . . . . . . 2 2 2 2 2 2 . . . . . .&#13;" line5="            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .&#13;" line6="            . . . . . . . . . . . . 2 2 2 2 2 2 . . . . . . . . . . 2 2 2 2 2 2 2 . . . . . . . . . . 2 2 2 2 2 2 . . . . . . . . . . . . .&#13;" line7="            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .&#13;" line8="            2 2 2 2 2 2 2 2 2 2 . . . 2 2 2 2 2 2 2 2 2 2 . . . 2 2 2 2 2 2 2 2 2 2 2 . . . 2 2 2 2 2 2 2 2 2 2 2 . . . 2 2 2 2 2 2 2 2 2 2&#13;" line9="            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .&#13;" line10="            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .&#13;" line11="            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .&#13;" line12="            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .&#13;" line13="            &#96;&#44; &#91;imagemVazia&#44; imagemVazia&#44; imagemChaoSubmundo&#44; imagemPlataformaSubmundo&#44; imagemDecoracaoSubmundo&#93;&#44; TileScale.Sixteen&#41;&#41;" />
 <next>
-<block id="zV%OLDBrS`ExJ?APFzd0" type="function_call">
+<block id="oQ_v(46HDa:^UZ$X{1Jx" type="function_call">
 <mutation name="configurarTiles" />
 <next>
-<block id="00J4P*28n0Q]S82{jMfk" type="function_call">
+<block id="^{?$t./@++Ax/}30s?dM" type="function_call">
 <mutation name="criarInimigo" >
-<arg name="x" type="number" id="s5txnxx4dk4jfjqfa673" />
-<arg name="y" type="number" id="p0tz73nanjogjetp7c295" />
+<arg name="x" type="number" id="673uuhhpdr0b8pzg57ghq7" />
+<arg name="y" type="number" id="aktxsgxy7301gscmqwhfdc" />
 </mutation>
-<value name="s5txnxx4dk4jfjqfa673">
+<value name="673uuhhpdr0b8pzg57ghq7">
 <shadow type="math_number">
 <field name="NUM">88</field>
 </shadow>
 </value>
-<value name="p0tz73nanjogjetp7c295">
+<value name="aktxsgxy7301gscmqwhfdc">
 <shadow type="math_number">
 <field name="NUM">104</field>
 </shadow>
 </value>
 <next>
-<block id="|NdDAZaa[2a{/+@rp:dx" type="function_call">
+<block id=":z}Rx$%YH=2h8|bH=%|L" type="function_call">
 <mutation name="criarInimigo" >
-<arg name="x" type="number" id="s5txnxx4dk4jfjqfa673" />
-<arg name="y" type="number" id="p0tz73nanjogjetp7c295" />
+<arg name="x" type="number" id="673uuhhpdr0b8pzg57ghq7" />
+<arg name="y" type="number" id="aktxsgxy7301gscmqwhfdc" />
 </mutation>
-<value name="s5txnxx4dk4jfjqfa673">
+<value name="673uuhhpdr0b8pzg57ghq7">
 <shadow type="math_number">
 <field name="NUM">296</field>
 </shadow>
 </value>
-<value name="p0tz73nanjogjetp7c295">
+<value name="aktxsgxy7301gscmqwhfdc">
 <shadow type="math_number">
 <field name="NUM">104</field>
 </shadow>
 </value>
 <next>
-<block id="Z6(+~4rMh:-cyJ.(^VAb" type="function_call">
+<block id="c4S0`t$L?w_UQ}5s)N5;" type="function_call">
 <mutation name="criarInimigo" >
-<arg name="x" type="number" id="s5txnxx4dk4jfjqfa673" />
-<arg name="y" type="number" id="p0tz73nanjogjetp7c295" />
+<arg name="x" type="number" id="673uuhhpdr0b8pzg57ghq7" />
+<arg name="y" type="number" id="aktxsgxy7301gscmqwhfdc" />
 </mutation>
-<value name="s5txnxx4dk4jfjqfa673">
+<value name="673uuhhpdr0b8pzg57ghq7">
 <shadow type="math_number">
 <field name="NUM">520</field>
 </shadow>
 </value>
-<value name="p0tz73nanjogjetp7c295">
+<value name="aktxsgxy7301gscmqwhfdc">
 <shadow type="math_number">
 <field name="NUM">104</field>
 </shadow>
 </value>
 <next>
-<block id="Lk-b(3tLrz|p/9ehl!vc" type="function_call">
+<block id=";Z8lqW=[`/[m*lZ,y1L%" type="function_call">
 <mutation name="criarInimigo" >
-<arg name="x" type="number" id="s5txnxx4dk4jfjqfa673" />
-<arg name="y" type="number" id="p0tz73nanjogjetp7c295" />
+<arg name="x" type="number" id="673uuhhpdr0b8pzg57ghq7" />
+<arg name="y" type="number" id="aktxsgxy7301gscmqwhfdc" />
 </mutation>
-<value name="s5txnxx4dk4jfjqfa673">
+<value name="673uuhhpdr0b8pzg57ghq7">
 <shadow type="math_number">
 <field name="NUM">744</field>
 </shadow>
 </value>
-<value name="p0tz73nanjogjetp7c295">
+<value name="aktxsgxy7301gscmqwhfdc">
 <shadow type="math_number">
 <field name="NUM">104</field>
 </shadow>
 </value>
 <next>
-<block id="4|#)ng%w@nO-7aTw^GJS" type="function_call">
+<block id="ZJ7/I(%Ag7P-){rpoM9$" type="function_call">
 <mutation name="criarInimigo" >
-<arg name="x" type="number" id="s5txnxx4dk4jfjqfa673" />
-<arg name="y" type="number" id="p0tz73nanjogjetp7c295" />
+<arg name="x" type="number" id="673uuhhpdr0b8pzg57ghq7" />
+<arg name="y" type="number" id="aktxsgxy7301gscmqwhfdc" />
 </mutation>
-<value name="s5txnxx4dk4jfjqfa673">
+<value name="673uuhhpdr0b8pzg57ghq7">
 <shadow type="math_number">
 <field name="NUM">968</field>
 </shadow>
 </value>
-<value name="p0tz73nanjogjetp7c295">
+<value name="aktxsgxy7301gscmqwhfdc">
 <shadow type="math_number">
 <field name="NUM">104</field>
 </shadow>
 </value>
 <next>
-<block id="T%p8EoZSKTMU}FFz_dwo" type="function_call">
-<mutation name="criarItemVida" >
-<arg name="x" type="number" id="edkshw7segd1a4g0m6h3a" />
-<arg name="y" type="number" id="4jpccbvd682pszlrg8kkya" />
+<block id="c~E_CcD+#WY;r)4Ko7`q" type="function_call">
+<mutation name="criarInimigoAereo" >
+<arg name="x" type="number" id="4fbpmwwhq2gqd8kopqiwc" />
+<arg name="y" type="number" id="1usgamjjx4ngxis8et5f" />
 </mutation>
-<value name="edkshw7segd1a4g0m6h3a">
+<value name="4fbpmwwhq2gqd8kopqiwc">
 <shadow type="math_number">
-<field name="NUM">216</field>
+<field name="NUM">248</field>
 </shadow>
 </value>
-<value name="4jpccbvd682pszlrg8kkya">
+<value name="1usgamjjx4ngxis8et5f">
 <shadow type="math_number">
 <field name="NUM">56</field>
 </shadow>
 </value>
 <next>
-<block id="y%uzd,dWtg!$?rgCM+H?" type="function_call">
-<mutation name="criarItemEstrela" >
-<arg name="x" type="number" id="436tx09okw3f8nht407l" />
-<arg name="y" type="number" id="zb2w0bovti9bv9c59yob" />
+<block id="qQf$g]}aq.-i!{8l5^*a" type="function_call">
+<mutation name="criarInimigoAereo" >
+<arg name="x" type="number" id="4fbpmwwhq2gqd8kopqiwc" />
+<arg name="y" type="number" id="1usgamjjx4ngxis8et5f" />
 </mutation>
-<value name="436tx09okw3f8nht407l">
+<value name="4fbpmwwhq2gqd8kopqiwc">
 <shadow type="math_number">
-<field name="NUM">728</field>
+<field name="NUM">568</field>
 </shadow>
 </value>
-<value name="zb2w0bovti9bv9c59yob">
+<value name="1usgamjjx4ngxis8et5f">
+<shadow type="math_number">
+<field name="NUM">40</field>
+</shadow>
+</value>
+<next>
+<block id="TFd+raXWStRlRrij.p:O" type="function_call">
+<mutation name="criarInimigoAereo" >
+<arg name="x" type="number" id="4fbpmwwhq2gqd8kopqiwc" />
+<arg name="y" type="number" id="1usgamjjx4ngxis8et5f" />
+</mutation>
+<value name="4fbpmwwhq2gqd8kopqiwc">
+<shadow type="math_number">
+<field name="NUM">840</field>
+</shadow>
+</value>
+<value name="1usgamjjx4ngxis8et5f">
 <shadow type="math_number">
 <field name="NUM">72</field>
 </shadow>
 </value>
 <next>
-<block id="?+55zyt_K/@S{l:1M1I~" type="function_call">
-<mutation name="criarBandeira" >
-<arg name="x" type="number" id="4bcerasyrdklksvug9rd4" />
-<arg name="y" type="number" id="h1ggs0hsqltahuu0rs0j" />
+<block id="~O+m017d5TWK?-L;+{2/" type="function_call">
+<mutation name="criarItemVida" >
+<arg name="x" type="number" id="8ou5flonmyhxkuhqiwhv" />
+<arg name="y" type="number" id="1tpb2w408pid5xzs6yyx8" />
 </mutation>
-<value name="4bcerasyrdklksvug9rd4">
+<value name="8ou5flonmyhxkuhqiwhv">
+<shadow type="math_number">
+<field name="NUM">216</field>
+</shadow>
+</value>
+<value name="1tpb2w408pid5xzs6yyx8">
+<shadow type="math_number">
+<field name="NUM">72</field>
+</shadow>
+</value>
+<next>
+<block id="T)+v8o:RJjJDH[tSFk1," type="function_call">
+<mutation name="criarItemEstrela" >
+<arg name="x" type="number" id="jikyd4f1ddtlyqcllkxk" />
+<arg name="y" type="number" id="q1cjphu3r7wx9uomp09fc" />
+</mutation>
+<value name="jikyd4f1ddtlyqcllkxk">
+<shadow type="math_number">
+<field name="NUM">728</field>
+</shadow>
+</value>
+<value name="q1cjphu3r7wx9uomp09fc">
+<shadow type="math_number">
+<field name="NUM">72</field>
+</shadow>
+</value>
+<next>
+<block id="iuXjVdK`LTIPLP7WZw7D" type="function_call">
+<mutation name="criarBandeira" >
+<arg name="x" type="number" id="cc8btdqrt3w02c0ovnpd" />
+<arg name="y" type="number" id="hyy0euu6z7ptsd3ekf2y" />
+</mutation>
+<value name="cc8btdqrt3w02c0ovnpd">
 <shadow type="math_number">
 <field name="NUM">984</field>
 </shadow>
 </value>
-<value name="h1ggs0hsqltahuu0rs0j">
+<value name="hyy0euu6z7ptsd3ekf2y">
 <shadow type="math_number">
 <field name="NUM">104</field>
 </shadow>
 </value>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
 </block>
 </next>
 </block>
@@ -737,7 +983,7 @@
 </block>
 </statement>
 <next>
-<block id="u!9H^,*RCe)(8!7h7rl-" type="function_call">
+<block id="vAe,o?41UfJHG6Ku:U+R" type="function_call">
 <mutation name="renascerJogador" />
 </block>
 </next>
@@ -758,30 +1004,30 @@
 </block>
 </statement>
 </block>
-<block id="mg1Q[KE^02boixDYTP:T" type="function_definition">
+<block id="o15:fJXRHRg:`p-dV^?9" type="function_definition">
 <mutation name="piscarJogador" >
 </mutation>
 <statement name="STACK">
-<block id="]av72e,jp)ex`uCXuXNF" type="typescript_statement">
+<block id="!e}cZe%TO8L!W9r{vBo%" type="typescript_statement">
 <mutation numlines="1" line0="jogador.setFlag&#40;SpriteFlag.GhostThroughSprites&#44; true&#41;" />
 <next>
-<block id="qSh.HfX|H2GsIE%ROuXw" type="controls_repeat_ext">
+<block id="71Hbis5x!+HXm;8MS`,[" type="controls_repeat_ext">
 <value name="TIMES">
 <shadow type="math_whole_number">
 <field name="NUM">6</field>
 </shadow>
 </value>
 <statement name="DO">
-<block id="!`5O(DsD!QPSvEx9Cyu3" type="typescript_statement">
+<block id="FB::I;nci8^4[iC0_69q" type="typescript_statement">
 <mutation numlines="1" line0="jogador.setFlag&#40;SpriteFlag.Invisible&#44; true&#41;" />
 <next>
-<block id="v#|AD:eRJY/j[3lREBo(" type="typescript_statement">
+<block id="f@J:,.@o7d^p9DsiQ;]+" type="typescript_statement">
 <mutation numlines="1" line0="pause&#40;100&#41;" />
 <next>
-<block id="bBghR{Z_vM;W!+mB0/iw" type="typescript_statement">
+<block id="[)J@Gvlj70dYk=VAntBr" type="typescript_statement">
 <mutation numlines="1" line0="jogador.setFlag&#40;SpriteFlag.Invisible&#44; false&#41;" />
 <next>
-<block id="~9vWxpl#i)|(mS197Pz^" type="typescript_statement">
+<block id="hp*tfwiY^dx4tnQ]2H1H" type="typescript_statement">
 <mutation numlines="1" line0="pause&#40;100&#41;" />
 </block>
 </next>
@@ -792,10 +1038,10 @@
 </block>
 </statement>
 <next>
-<block id="UK45}yuIZ]V~!|noyIT{" type="typescript_statement">
+<block id="O+GV3kBmqh1u~87+Zg@c" type="typescript_statement">
 <mutation numlines="1" line0="jogador.setFlag&#40;SpriteFlag.Invisible&#44; false&#41;" />
 <next>
-<block id="KP{7MM0qk4fzrJR:+;eW" type="typescript_statement">
+<block id="*4`0#soLr:FIr:DDf=8z" type="typescript_statement">
 <mutation numlines="1" line0="jogador.setFlag&#40;SpriteFlag.GhostThroughSprites&#44; false&#41;" />
 </block>
 </next>
@@ -806,11 +1052,11 @@
 </block>
 </statement>
 </block>
-<block id="F,tt9v^h{1|=uECWe$i+" type="function_definition">
+<block id="AK)|76{s6v(gp4id1$di" type="function_definition">
 <mutation name="machucarJogador" >
 </mutation>
 <statement name="STACK">
-<block id="H0pm#;`@s,$lK[|1zclC" type="controls_if">
+<block id="a3v;[;^T^~qb.9H0b,J0" type="controls_if">
 <mutation elseif="0" else="0" />
 <value name="IF0">
 <shadow type="logic_boolean"><field name="BOOL">TRUE</field></shadow>
@@ -831,7 +1077,7 @@
 </block>
 </value>
 <statement name="DO0">
-<block id="`3v*7uf8;`xyZjP^LyCQ" type="variables_set">
+<block id="/dkWuNbK9]f9f7?elQJ`" type="variables_set">
 <field name="VAR">invulneravel</field>
 <value name="VALUE">
 <shadow type="math_number"><field name="NUM">0</field></shadow>
@@ -840,13 +1086,13 @@
 </block>
 </value>
 <next>
-<block id="I1+083Qk/!G=nRW53,HY" type="typescript_statement">
+<block id="t1:5NEu@P|:.j~v2,=?U" type="typescript_statement">
 <mutation numlines="1" line0="info.changeLifeBy&#40;-1&#41;" />
 <next>
-<block id="iOnTlb?W[1@8=gmr=.vF" type="typescript_statement">
+<block id="%mW?)$`K;IMX|:(Z9;SQ" type="typescript_statement">
 <mutation numlines="1" line0="music.playTone&#40;Note.C4&#44; music.beat&#40;BeatFraction.Eighth&#41;&#41;" />
 <next>
-<block id="Gi|[x=OCjNc0c0?+*zLd" type="controls_if">
+<block id="r?Ihm.k|fjO%VWRoS9?v" type="controls_if">
 <mutation elseif="0" else="1" />
 <value name="IF0">
 <shadow type="logic_boolean"><field name="BOOL">TRUE</field></shadow>
@@ -866,18 +1112,18 @@
 </block>
 </value>
 <statement name="DO0">
-<block id="C_/gD|Oy`C]ER./-kr$." type="typescript_statement">
+<block id="$V39LGbID{$HjUG0+u*4" type="typescript_statement">
 <mutation numlines="1" line0="game.gameOver&#40;false&#41;" />
 </block>
 </statement>
 <statement name="ELSE">
-<block id=";QymNy]}t]^7.[w5++(." type="typescript_statement">
+<block id="RKHH@T4afvd^yXP#KUIb" type="typescript_statement">
 <mutation numlines="1" line0="jogador.startEffect&#40;effects.spray&#44; 500&#41;" />
 <next>
-<block id="E~7LM1AsdL#wzOvueG~=" type="function_call">
+<block id="bo5zQlH/@F5=P)X29jav" type="function_call">
 <mutation name="piscarJogador" />
 <next>
-<block id="!OFN/X0N~yP~`a1nQJxP" type="variables_set">
+<block id="^;sngoaWF7yg:G;gE,;r" type="variables_set">
 <field name="VAR">invulneravel</field>
 <value name="VALUE">
 <shadow type="math_number"><field name="NUM">0</field></shadow>
@@ -902,17 +1148,17 @@
 </block>
 </statement>
 </block>
-<block id="2BXFH;t1M0r:(odbno$/" type="function_definition">
+<block id=":{^B#1*mcd9=VXF,()gM" type="function_definition">
 <mutation name="cairNoBuraco" >
 </mutation>
 <statement name="STACK">
-<block id="!5iSDkDZ#^/`nx2dj!}H" type="typescript_statement">
+<block id="2X1Q+vsNiS?stul)9v,m" type="typescript_statement">
 <mutation numlines="1" line0="info.changeLifeBy&#40;-1&#41;" />
 <next>
-<block id="6#Xo/p_yKsuL}AA3yRTe" type="function_call">
+<block id="#h@,N8]~^wj({6mbG!P9" type="function_call">
 <mutation name="renascerJogador" />
 <next>
-<block id="hD@qD|AL`@M6W]LiIeY)" type="variables_set">
+<block id="(*[:!z4.Y]B{}A0fY+?1" type="variables_set">
 <field name="VAR">invulneravel</field>
 <value name="VALUE">
 <shadow type="math_number"><field name="NUM">0</field></shadow>
@@ -921,10 +1167,10 @@
 </block>
 </value>
 <next>
-<block id="VHFB=(o%`=v=M|n2.B!/" type="typescript_statement">
+<block id="r$HGRW)_bL`ck5r+c(OD" type="typescript_statement">
 <mutation numlines="1" line0="music.playTone&#40;Note.C4&#44; music.beat&#40;BeatFraction.Eighth&#41;&#41;" />
 <next>
-<block id="O4sO`9J*[U-$kkAaP9@M" type="controls_if">
+<block id="v,,o},Fv#jHldyB4LP;5" type="controls_if">
 <mutation elseif="0" else="1" />
 <value name="IF0">
 <shadow type="logic_boolean"><field name="BOOL">TRUE</field></shadow>
@@ -944,18 +1190,18 @@
 </block>
 </value>
 <statement name="DO0">
-<block id="_cSwaRdGy]swQQSOO4JL" type="typescript_statement">
+<block id="IC$Di;yVC0~p4p#wxZ58" type="typescript_statement">
 <mutation numlines="1" line0="game.gameOver&#40;false&#41;" />
 </block>
 </statement>
 <statement name="ELSE">
-<block id="tFJez0Hsv5g*`@I?3[Rb" type="typescript_statement">
+<block id="DRv)a|_,d5t^ukM6hk]u" type="typescript_statement">
 <mutation numlines="1" line0="jogador.startEffect&#40;effects.spray&#44; 500&#41;" />
 <next>
-<block id="ukuJ-4ncRln/-227bga{" type="function_call">
+<block id="v]w@)`0Yaz`UE}CvyGQ|" type="function_call">
 <mutation name="piscarJogador" />
 <next>
-<block id="uL%W9ln^Y`@M;x{+;5CW" type="variables_set">
+<block id="2#*O=cshYPF`ZC2;bVhA" type="variables_set">
 <field name="VAR">invulneravel</field>
 <value name="VALUE">
 <shadow type="math_number"><field name="NUM">0</field></shadow>
@@ -980,11 +1226,11 @@
 </block>
 </statement>
 </block>
-<block id="rT51;HupSQq_B#8bRqnE" type="function_definition">
+<block id="(+:uBA+,(~v4G[-Ypz)?" type="function_definition">
 <mutation name="ativarTurbo" >
 </mutation>
 <statement name="STACK">
-<block id="{:cr#RkIhF:-Hy6]_buu" type="variables_set">
+<block id="J@%gb/n-dE_gwm{6W,5J" type="variables_set">
 <field name="VAR">invulneravel</field>
 <value name="VALUE">
 <shadow type="math_number"><field name="NUM">0</field></shadow>
@@ -993,7 +1239,7 @@
 </block>
 </value>
 <next>
-<block id="(T,E`4kd`(5cZiJYk`7V" type="variables_set">
+<block id="b9K`ou=pA.PY`XTHdNtn" type="variables_set">
 <field name="VAR">velocidadeProjetil</field>
 <value name="VALUE">
 <shadow type="math_number">
@@ -1001,22 +1247,22 @@
 </shadow>
 </value>
 <next>
-<block id="]QjE=tv6%mi2qYoLFq]_" type="typescript_statement">
+<block id="-|]Z-*EAXUim]q*wOalC" type="typescript_statement">
 <mutation numlines="1" line0="controller.moveSprite&#40;jogador&#44; 160&#44; 0&#41;" />
 <next>
-<block id="))d)OG$oM]dtWrpm6#y%" type="typescript_statement">
+<block id="e:8|M$1|fQ4w0p@rw}JX" type="typescript_statement">
 <mutation numlines="1" line0="jogador.setFlag&#40;SpriteFlag.GhostThroughSprites&#44; true&#41;" />
 <next>
-<block id="pgSw#HfMRi/n5AoF.%iZ" type="typescript_statement">
+<block id="UZldSTGkt2coTJ=`:$Cz" type="typescript_statement">
 <mutation numlines="1" line0="jogador.startEffect&#40;effects.halo&#44; 5000&#41;" />
 <next>
-<block id=",.q(Xn3.@4WQLX:G/[ot" type="typescript_statement">
+<block id="$kJ6(6eVwM1mj|tB9CQF" type="typescript_statement">
 <mutation numlines="1" line0="pause&#40;5000&#41;" />
 <next>
-<block id="i725A`,.Q|xqFrZaf3;b" type="typescript_statement">
+<block id="H%nLQSEuQqR]@gnV?`Yz" type="typescript_statement">
 <mutation numlines="1" line0="controller.moveSprite&#40;jogador&#44; 110&#44; 0&#41;" />
 <next>
-<block id="|xzg]L[9:HI*YJYG_z%!" type="variables_set">
+<block id="gd|Dj,iQj1EYTmCBx,%F" type="variables_set">
 <field name="VAR">velocidadeProjetil</field>
 <value name="VALUE">
 <shadow type="math_number">
@@ -1024,13 +1270,13 @@
 </shadow>
 </value>
 <next>
-<block id="#R()fBaC5aC**C(_v/|1" type="typescript_statement">
+<block id="zWKBv.pIzH~?Z8GRN`P{" type="typescript_statement">
 <mutation numlines="1" line0="jogador.setFlag&#40;SpriteFlag.GhostThroughSprites&#44; false&#41;" />
 <next>
-<block id="xbp]qKNj!DJZYShR$Q%Y" type="typescript_statement">
+<block id="WeWQ,L{7mt,?wFlmUU[g" type="typescript_statement">
 <mutation numlines="1" line0="jogador.setFlag&#40;SpriteFlag.Invisible&#44; false&#41;" />
 <next>
-<block id="TDp0QX$B:%nA1;M}OfIp" type="variables_set">
+<block id="R*1T.CgUEL2ts0dL/v(h" type="variables_set">
 <field name="VAR">invulneravel</field>
 <value name="VALUE">
 <shadow type="math_number"><field name="NUM">0</field></shadow>
@@ -1061,11 +1307,11 @@
 </block>
 </statement>
 </block>
-<block id="9zeLY[Z93z7~[!p4qfY~" type="function_definition">
+<block id="3Tr(znU7%i]2;#,Nb=[l" type="function_definition">
 <mutation name="passarDeNivel" >
 </mutation>
 <statement name="STACK">
-<block id="HNuF|_-eR[~[k.yCQW*0" type="controls_if">
+<block id="9)A:c*:7hU(WdTdiSY;0" type="controls_if">
 <mutation elseif="0" else="1" />
 <value name="IF0">
 <shadow type="logic_boolean"><field name="BOOL">TRUE</field></shadow>
@@ -1085,7 +1331,7 @@
 </block>
 </value>
 <statement name="DO0">
-<block id="[|G#j/Qg{ZA$T.[r]+GE" type="variables_change">
+<block id="Zk)6B`:^X^c-*e;[+_y8" type="variables_change">
 <field name="VAR">nivel</field>
 <value name="VALUE">
 <shadow type="math_number">
@@ -1093,10 +1339,10 @@
 </shadow>
 </value>
 <next>
-<block id="^~!kLhtt(+J#4L{U#p=?" type="typescript_statement">
+<block id="qSA@yq?hT)9U{`QoJL4)" type="typescript_statement">
 <mutation numlines="1" line0="music.playMelody&#40;&#34;C5 E5 G5 C6&#34;&#44; 180&#41;" />
 <next>
-<block id="i}j(ZkHyg;yOJ}v-wdAS" type="function_call">
+<block id="v9c]*;DY+#]Zt}t%G`r:" type="function_call">
 <mutation name="carregarNivel" />
 </block>
 </next>
@@ -1105,7 +1351,7 @@
 </block>
 </statement>
 <statement name="ELSE">
-<block id="FOOG^4+kJ)*TXFkZka[:" type="typescript_statement">
+<block id="M+/4xem;f{%67Y9j4n4." type="typescript_statement">
 <mutation numlines="1" line0="game.gameOver&#40;true&#41;" />
 </block>
 </statement>
@@ -1114,28 +1360,31 @@
 </block>
 <block id="xRRgvHNlG#rZ^u`HECiY" type="pxt-on-start">
 <statement name="HANDLER">
-<block id="/U{dfD@mGM_nSA8rRz?F" type="typescript_statement">
+<block id="H0JF5#k)t.DQ+]?32yUI" type="typescript_statement">
+<mutation declaredvars="indicadorEnergia" numlines="1" line0="let indicadorEnergia&#58; Sprite &#61; null" />
+<next>
+<block id="WYVc9(zm:3.T,EB1`KSn" type="typescript_statement">
 <mutation declaredvars="itemEstrela" numlines="1" line0="let itemEstrela&#58; Sprite &#61; null" />
 <next>
-<block id="*.W}xg+39{l^zG#i#2Yf" type="typescript_statement">
+<block id="B1%]O7^9xTeu;MlZ@elD" type="typescript_statement">
 <mutation declaredvars="itemVida" numlines="1" line0="let itemVida&#58; Sprite &#61; null" />
 <next>
-<block id="fl*$P8U7c4sv%{ed7Xql" type="typescript_statement">
+<block id="R]O`nQm#k!jN-ZVUNaxe" type="typescript_statement">
 <mutation declaredvars="bandeira" numlines="1" line0="let bandeira&#58; Sprite &#61; null" />
 <next>
-<block id="5)W`E!jKYajlXHqHN}m~" type="typescript_statement">
+<block id="9~aVT^6CeX(#JhZ({VP)" type="typescript_statement">
 <mutation declaredvars="inimigo" numlines="1" line0="let inimigo&#58; Sprite &#61; null" />
 <next>
-<block id="bJD~^9LHdrQX!Eqs/wbz" type="typescript_statement">
+<block id="qkb0+-cqAr=_zwXdYT$:" type="typescript_statement">
 <mutation declaredvars="projetil" numlines="1" line0="let projetil&#58; Sprite &#61; null" />
 <next>
-<block id="-RRL@P0?RTvedLEwFG)@" type="typescript_statement">
+<block id="!)9U;[co{d.:)t9_?7A." type="typescript_statement">
 <mutation declaredvars="invulneravel" numlines="1" line0="let invulneravel &#61; false" />
 <next>
-<block id="tBa*n1Vn+5Aaim?zaWpt" type="typescript_statement">
-<mutation numlines="7" line0="namespace SpriteKind &#123;" line1="    export const Bandeira &#61; SpriteKind.create&#40;&#41;" line2="    export const ItemVida &#61; SpriteKind.create&#40;&#41;" line3="    export const ItemEstrela &#61; SpriteKind.create&#40;&#41;" line4="    export const InimigoFerido &#61; SpriteKind.create&#40;&#41;" line5="    export const InimigoAereo &#61; SpriteKind.create&#40;&#41;" line6="&#125;" />
+<block id="iw8ePm0Ul6u[^$Pro}3#" type="typescript_statement">
+<mutation numlines="8" line0="namespace SpriteKind &#123;&#13;" line1="    export const Bandeira &#61; SpriteKind.create&#40;&#41;&#13;" line2="    export const ItemVida &#61; SpriteKind.create&#40;&#41;&#13;" line3="    export const ItemEstrela &#61; SpriteKind.create&#40;&#41;&#13;" line4="    export const InimigoFerido &#61; SpriteKind.create&#40;&#41;&#13;" line5="    export const InimigoAereo &#61; SpriteKind.create&#40;&#41;&#13;" line6="    export const IndicadorEnergia &#61; SpriteKind.create&#40;&#41;&#13;" line7="&#125;" />
 <next>
-<block id="[vGMW|@yQb+mqGZ,c$G^" type="variables_set">
+<block id="N5TvJH3fE6rhAi,sBx3)" type="variables_set">
 <field name="VAR">nivel</field>
 <value name="VALUE">
 <shadow type="math_number">
@@ -1143,7 +1392,7 @@
 </shadow>
 </value>
 <next>
-<block id="LWAp+?v[#by98,xPleiI" type="variables_set">
+<block id="3_+QVDPI)a66#Lk@a#X}" type="variables_set">
 <field name="VAR">direcao</field>
 <value name="VALUE">
 <shadow type="math_number">
@@ -1151,7 +1400,7 @@
 </shadow>
 </value>
 <next>
-<block id=")hqLO1u-CE{6!LZ9D#~F" type="variables_set">
+<block id="9A0T/#aUM*OJ#OYvL1(H" type="variables_set">
 <field name="VAR">velocidadeInimigo</field>
 <value name="VALUE">
 <shadow type="math_number">
@@ -1159,7 +1408,7 @@
 </shadow>
 </value>
 <next>
-<block id="Y#D~=o6z+V7~NqlmtHUF" type="variables_set">
+<block id="!p.qHHni2x6$LHVdL)Hf" type="variables_set">
 <field name="VAR">podeAtirar</field>
 <value name="VALUE">
 <shadow type="math_number"><field name="NUM">0</field></shadow>
@@ -1168,7 +1417,7 @@
 </block>
 </value>
 <next>
-<block id="MITQMa={tIURV1LDN)uO" type="variables_set">
+<block id="6%)pRq)-UBjTUJk|C.|y" type="variables_set">
 <field name="VAR">energiaTiro</field>
 <value name="VALUE">
 <shadow type="math_number">
@@ -1176,7 +1425,7 @@
 </shadow>
 </value>
 <next>
-<block id=";G8{DY[Z:$:6=yAgJa9?" type="variables_set">
+<block id="?|#%R5!E0TP4oaIsg$)B" type="variables_set">
 <field name="VAR">velocidadeProjetil</field>
 <value name="VALUE">
 <shadow type="math_number">
@@ -1184,131 +1433,183 @@
 </shadow>
 </value>
 <next>
-<block id="WD4KH.a{X]UED,U{[MF/" type="typescript_statement">
-<mutation declaredvars="imagemJogadorDireita" numlines="18" line0="let imagemJogadorDireita &#61; img&#96;" line1="    . . . 2 2 2 2 2 2 . . . . . . ." line2="    . . 2 2 2 2 2 2 2 2 2 . . . . ." line3="    . . 4 4 4 4 4 f 4 . . . . . . ." line4="    . 4 4 4 4 4 4 f 4 4 4 . . . . ." line5="    . 4 4 4 4 4 4 4 f 4 4 4 . . . ." line6="    . 4 4 4 4 4 4 f f f f . . . . ." line7="    . . . 4 4 4 4 4 4 . . . . . . ." line8="    . . 2 2 8 2 2 2 . . . . . . . ." line9="    . 2 2 2 8 2 2 8 2 2 2 . . . . ." line10="    2 2 2 2 8 8 8 8 2 2 2 2 . . . ." line11="    4 4 2 8 5 8 8 5 8 2 4 4 . . . ." line12="    4 4 4 8 8 8 8 8 8 4 4 4 . . . ." line13="    . 4 8 8 8 8 8 8 8 8 4 . . . . ." line14="    . . 8 8 8 . . 8 8 8 . . . . . ." line15="    . e e e . . . . e e e . . . . . ." line16="    e e e e . . . . e e e e . . . . ." line17="    &#96;" />
+<block id="BL%]j_ss-(]fMwN]W4[q" type="typescript_statement">
+<mutation declaredvars="imagemJogadorDireita" numlines="18" line0="let imagemJogadorDireita &#61; img&#96;&#13;" line1="    . . . 2 2 2 2 2 2 . . . . . . .&#13;" line2="    . . 2 2 2 2 2 2 2 2 2 . . . . .&#13;" line3="    . . 4 4 4 4 4 f 4 . . . . . . .&#13;" line4="    . 4 4 4 4 4 4 f 4 4 4 . . . . .&#13;" line5="    . 4 4 4 4 4 4 4 f 4 4 4 . . . .&#13;" line6="    . 4 4 4 4 4 4 f f f f . . . . .&#13;" line7="    . . . 4 4 4 4 4 4 . . . . . . .&#13;" line8="    . . 2 2 8 2 2 2 . . . . . . . .&#13;" line9="    . 2 2 2 8 2 2 8 2 2 2 . . . . .&#13;" line10="    2 2 2 2 8 8 8 8 2 2 2 2 . . . .&#13;" line11="    4 4 2 8 5 8 8 5 8 2 4 4 . . . .&#13;" line12="    4 4 4 8 8 8 8 8 8 4 4 4 . . . .&#13;" line13="    . 4 8 8 8 8 8 8 8 8 4 . . . . .&#13;" line14="    . . 8 8 8 . . 8 8 8 . . . . . .&#13;" line15="    . e e e . . . . e e e . . . . . .&#13;" line16="    e e e e . . . . e e e e . . . . .&#13;" line17="    &#96;" />
 <next>
-<block id=":-oMY0LimH8#oqwU!HP4" type="typescript_statement">
-<mutation declaredvars="imagemJogadorEsquerda" numlines="18" line0="let imagemJogadorEsquerda &#61; img&#96;" line1="    . . . . . . . 2 2 2 2 2 2 . . ." line2="    . . . . . 2 2 2 2 2 2 2 2 2 . ." line3="    . . . . . . . 4 f 4 4 4 4 4 . ." line4="    . . . . . 4 4 4 f 4 4 4 4 4 ." line5="    . . . . 4 4 4 f 4 4 4 4 4 4 ." line6="    . . . . f f f f 4 4 4 4 4 4 ." line7="    . . . . . . 4 4 4 4 4 4 . . ." line8="    . . . . . . . . 2 2 2 8 2 2 . ." line9="    . . . . . 2 2 2 8 2 2 8 2 2 2 ." line10="    . . . . 2 2 2 2 8 8 8 8 2 2 2 2" line11="    . . . . 4 4 2 8 5 8 8 5 8 2 4 4" line12="    . . . . 4 4 4 8 8 8 8 8 8 4 4 4" line13="    . . . . . 4 8 8 8 8 8 8 8 8 4 ." line14="    . . . . . . 8 8 8 . . 8 8 8 . ." line15="    . . . . . . e e e . . . . e e e ." line16="    . . . . . e e e e . . . . e e e e" line17="    &#96;" />
+<block id="So+Q^}c@%tomV7Mzkypv" type="typescript_statement">
+<mutation declaredvars="imagemJogadorEsquerda" numlines="18" line0="let imagemJogadorEsquerda &#61; img&#96;&#13;" line1="    . . . . . . . 2 2 2 2 2 2 . . .&#13;" line2="    . . . . . 2 2 2 2 2 2 2 2 2 . .&#13;" line3="    . . . . . . . 4 f 4 4 4 4 4 . .&#13;" line4="    . . . . . 4 4 4 f 4 4 4 4 4 .&#13;" line5="    . . . . 4 4 4 f 4 4 4 4 4 4 .&#13;" line6="    . . . . f f f f 4 4 4 4 4 4 .&#13;" line7="    . . . . . . 4 4 4 4 4 4 . . .&#13;" line8="    . . . . . . . . 2 2 2 8 2 2 . .&#13;" line9="    . . . . . 2 2 2 8 2 2 8 2 2 2 .&#13;" line10="    . . . . 2 2 2 2 8 8 8 8 2 2 2 2&#13;" line11="    . . . . 4 4 2 8 5 8 8 5 8 2 4 4&#13;" line12="    . . . . 4 4 4 8 8 8 8 8 8 4 4 4&#13;" line13="    . . . . . 4 8 8 8 8 8 8 8 8 4 .&#13;" line14="    . . . . . . 8 8 8 . . 8 8 8 . .&#13;" line15="    . . . . . . e e e . . . . e e e .&#13;" line16="    . . . . . e e e e . . . . e e e e&#13;" line17="    &#96;" />
 <next>
-<block id="T-)JdWvBOQH3y8(H_iVT" type="typescript_statement">
-<mutation declaredvars="imagemProjetil" numlines="10" line0="let imagemProjetil &#61; img&#96;" line1="    . . 5 5 5 . . ." line2="    . 5 5 4 4 5 . ." line3="    5 5 4 4 2 4 5 ." line4="    5 4 4 2 2 4 5 5" line5="    5 5 4 4 2 4 5 ." line6="    . 5 5 4 4 5 . ." line7="    . . 5 5 5 . . ." line8="    . . . 5 . . . ." line9="    &#96;" />
+<block id="NvKEf4[[=DOB=U$tUvI|" type="typescript_statement">
+<mutation declaredvars="imagemProjetil" numlines="10" line0="let imagemProjetil &#61; img&#96;&#13;" line1="    . . 5 5 5 . . .&#13;" line2="    . 5 5 4 4 5 . .&#13;" line3="    5 5 4 4 2 4 5 .&#13;" line4="    5 4 4 2 2 4 5 5&#13;" line5="    5 5 4 4 2 4 5 .&#13;" line6="    . 5 5 4 4 5 . .&#13;" line7="    . . 5 5 5 . . .&#13;" line8="    . . . 5 . . . .&#13;" line9="    &#96;" />
 <next>
-<block id=")eS6_Z-Vfa54Z~+1xKv)" type="typescript_statement">
-<mutation declaredvars="imagemInimigoNivel1" numlines="18" line0="let imagemInimigoNivel1 &#61; img&#96;" line1="    . . . . d d d d . . . . . . . ." line2="    . . d d d d d d d d . . . . . ." line3="    . d d d d d d d d d d . . . . ." line4="    d d d f d d d d f d d d . . . ." line5="    d d d d d d d d d d d d . . . ." line6="    d d f d d d d d d d f d . . . ." line7="    d d d f f f f f f f d d . . . ." line8="    . d d d d d d d d d d . . . . ." line9="    . . d d d d d d d d . . . . . ." line10="    . . . d d . . d d . . . . . . ." line11="    . . d d . . . . d d . . . . . ." line12="    . d d . . . . . . d d . . . . ." line13="    . . . . . . . . . . . . . . . ." line14="    . . . . . . . . . . . . . . . ." line15="    . . . . . . . . . . . . . . . ." line16="    . . . . . . . . . . . . . . . ." line17="    &#96;" />
+<block id="?l3{d~6LAX8ciqNg:fV0" type="typescript_statement">
+<mutation declaredvars="imagemInimigoNivel1" numlines="18" line0="let imagemInimigoNivel1 &#61; img&#96;&#13;" line1="    . . . . d d d d . . . . . . . .&#13;" line2="    . . d d d d d d d d . . . . . .&#13;" line3="    . d d d d d d d d d d . . . . .&#13;" line4="    d d d f d d d d f d d d . . . .&#13;" line5="    d d d d d d d d d d d d . . . .&#13;" line6="    d d f d d d d d d d f d . . . .&#13;" line7="    d d d f f f f f f f d d . . . .&#13;" line8="    . d d d d d d d d d d . . . . .&#13;" line9="    . . d d d d d d d d . . . . . .&#13;" line10="    . . . d d . . d d . . . . . . .&#13;" line11="    . . d d . . . . d d . . . . . .&#13;" line12="    . d d . . . . . . d d . . . . .&#13;" line13="    . . . . . . . . . . . . . . . .&#13;" line14="    . . . . . . . . . . . . . . . .&#13;" line15="    . . . . . . . . . . . . . . . .&#13;" line16="    . . . . . . . . . . . . . . . .&#13;" line17="    &#96;" />
 <next>
-<block id="bb,BU5Y7:!Hl][5nGd[-" type="typescript_statement">
-<mutation declaredvars="imagemInimigoNivel2" numlines="18" line0="let imagemInimigoNivel2 &#61; img&#96;" line1="    . . . . 7 7 7 7 . . . . . . . ." line2="    . . 7 7 7 7 7 7 7 7 . . . . . ." line3="    . 7 7 7 7 7 7 7 7 7 7 . . . . ." line4="    7 7 7 f 7 7 7 7 f 7 7 7 . . . ." line5="    7 7 7 7 7 7 7 7 7 7 7 7 . . . ." line6="    7 7 f 7 7 7 7 7 7 7 f 7 . . . ." line7="    7 7 7 f f f f f f f 7 7 . . . ." line8="    . 7 7 7 7 7 7 7 7 7 7 . . . . ." line9="    . . 7 7 7 7 7 7 7 7 . . . . . ." line10="    . . . 7 7 . . 7 7 . . . . . . ." line11="    . . 7 7 . . . . 7 7 . . . . . ." line12="    . 7 7 . . . . . . 7 7 . . . . ." line13="    . . . . . . . . . . . . . . . ." line14="    . . . . . . . . . . . . . . . ." line15="    . . . . . . . . . . . . . . . ." line16="    . . . . . . . . . . . . . . . ." line17="    &#96;" />
+<block id="2-8yWM_#Q2UDg,}}(sOn" type="typescript_statement">
+<mutation declaredvars="imagemInimigoNivel2" numlines="18" line0="let imagemInimigoNivel2 &#61; img&#96;&#13;" line1="    . . . . 7 7 7 7 . . . . . . . .&#13;" line2="    . . 7 7 7 7 7 7 7 7 . . . . . .&#13;" line3="    . 7 7 7 7 7 7 7 7 7 7 . . . . .&#13;" line4="    7 7 7 f 7 7 7 7 f 7 7 7 . . . .&#13;" line5="    7 7 7 7 7 7 7 7 7 7 7 7 . . . .&#13;" line6="    7 7 f 7 7 7 7 7 7 7 f 7 . . . .&#13;" line7="    7 7 7 f f f f f f f 7 7 . . . .&#13;" line8="    . 7 7 7 7 7 7 7 7 7 7 . . . . .&#13;" line9="    . . 7 7 7 7 7 7 7 7 . . . . . .&#13;" line10="    . . . 7 7 . . 7 7 . . . . . . .&#13;" line11="    . . 7 7 . . . . 7 7 . . . . . .&#13;" line12="    . 7 7 . . . . . . 7 7 . . . . .&#13;" line13="    . . . . . . . . . . . . . . . .&#13;" line14="    . . . . . . . . . . . . . . . .&#13;" line15="    . . . . . . . . . . . . . . . .&#13;" line16="    . . . . . . . . . . . . . . . .&#13;" line17="    &#96;" />
 <next>
-<block id="UjQzCG=e[`Nh44Qi=hx|" type="typescript_statement">
-<mutation declaredvars="imagemInimigoNivel3" numlines="18" line0="let imagemInimigoNivel3 &#61; img&#96;" line1="    . . 2 . . . . . . 2 . . . . . ." line2="    . . 2 2 . . . . 2 2 . . . . . ." line3="    . . . 2 2 2 2 2 2 . . . . . . ." line4="    . . 2 2 2 2 2 2 2 2 . . . . . ." line5="    . 2 2 f 2 2 2 2 f 2 2 . . . . ." line6="    2 2 2 2 2 2 2 2 2 2 2 2 . . . ." line7="    2 2 f 2 2 2 2 2 2 2 f 2 . . . ." line8="    2 2 2 f f f f f f f 2 2 . . . ." line9="    . 2 2 2 2 2 2 2 2 2 2 . . . . ." line10="    . . 2 2 2 2 2 2 2 2 . . . . . ." line11="    . . . 2 2 . . 2 2 . . . . . . ." line12="    . . 2 2 . . . . 2 2 . . . . . ." line13="    . 2 2 . . . . . . 2 2 . . . . ." line14="    . . . . . . . . . . . . . . . ." line15="    . . . . . . . . . . . . . . . ." line16="    . . . . . . . . . . . . . . . ." line17="    &#96;" />
+<block id=",3:WgH=$ZuMerd`R%fSX" type="typescript_statement">
+<mutation declaredvars="imagemInimigoNivel3" numlines="18" line0="let imagemInimigoNivel3 &#61; img&#96;&#13;" line1="    . . 2 . . . . . . 2 . . . . . .&#13;" line2="    . . 2 2 . . . . 2 2 . . . . . .&#13;" line3="    . . . 2 2 2 2 2 2 . . . . . . .&#13;" line4="    . . 2 2 2 2 2 2 2 2 . . . . . .&#13;" line5="    . 2 2 f 2 2 2 2 f 2 2 . . . . .&#13;" line6="    2 2 2 2 2 2 2 2 2 2 2 2 . . . .&#13;" line7="    2 2 f 2 2 2 2 2 2 2 f 2 . . . .&#13;" line8="    2 2 2 f f f f f f f 2 2 . . . .&#13;" line9="    . 2 2 2 2 2 2 2 2 2 2 . . . . .&#13;" line10="    . . 2 2 2 2 2 2 2 2 . . . . . .&#13;" line11="    . . . 2 2 . . 2 2 . . . . . . .&#13;" line12="    . . 2 2 . . . . 2 2 . . . . . .&#13;" line13="    . 2 2 . . . . . . 2 2 . . . . .&#13;" line14="    . . . . . . . . . . . . . . . .&#13;" line15="    . . . . . . . . . . . . . . . .&#13;" line16="    . . . . . . . . . . . . . . . .&#13;" line17="    &#96;" />
 <next>
-<block id="Z(vW8yWG]YMfL.v}dztW" type="typescript_statement">
-<mutation declaredvars="imagemInimigoFerido" numlines="18" line0="let imagemInimigoFerido &#61; img&#96;" line1="    . . 2 . . . . . . 2 . . . . . ." line2="    . . 2 2 . . . . 2 2 . . . . . ." line3="    . . . 2 2 2 2 2 2 . . . . . . ." line4="    . . 2 2 2 2 2 2 2 2 . . . . . ." line5="    . 2 2 f 2 2 2 2 f 2 2 . . . . ." line6="    2 2 2 2 5 5 5 5 2 2 2 2 . . . ." line7="    2 2 f 2 2 5 5 2 2 2 f 2 . . . ." line8="    2 2 2 f f f f f f f 2 2 . . . ." line9="    . 2 2 2 2 2 2 2 2 2 2 . . . . ." line10="    . . 2 2 5 2 2 5 2 2 . . . . . ." line11="    . . . 2 2 . . 2 2 . . . . . . ." line12="    . . 2 2 . . . . 2 2 . . . . . ." line13="    . 2 2 . . . . . . 2 2 . . . . ." line14="    . . . . . . . . . . . . . . . ." line15="    . . . . . . . . . . . . . . . ." line16="    . . . . . . . . . . . . . . . ." line17="    &#96;" />
+<block id="H3..qg4oCbRo`UpmdP7%" type="typescript_statement">
+<mutation declaredvars="imagemInimigoFerido" numlines="18" line0="let imagemInimigoFerido &#61; img&#96;&#13;" line1="    . . 2 . . . . . . 2 . . . . . .&#13;" line2="    . . 2 2 . . . . 2 2 . . . . . .&#13;" line3="    . . . 2 2 2 2 2 2 . . . . . . .&#13;" line4="    . . 2 2 2 2 2 2 2 2 . . . . . .&#13;" line5="    . 2 2 f 2 2 2 2 f 2 2 . . . . .&#13;" line6="    2 2 2 2 5 5 5 5 2 2 2 2 . . . .&#13;" line7="    2 2 f 2 2 5 5 2 2 2 f 2 . . . .&#13;" line8="    2 2 2 f f f f f f f 2 2 . . . .&#13;" line9="    . 2 2 2 2 2 2 2 2 2 2 . . . . .&#13;" line10="    . . 2 2 5 2 2 5 2 2 . . . . . .&#13;" line11="    . . . 2 2 . . 2 2 . . . . . . .&#13;" line12="    . . 2 2 . . . . 2 2 . . . . . .&#13;" line13="    . 2 2 . . . . . . 2 2 . . . . .&#13;" line14="    . . . . . . . . . . . . . . . .&#13;" line15="    . . . . . . . . . . . . . . . .&#13;" line16="    . . . . . . . . . . . . . . . .&#13;" line17="    &#96;" />
 <next>
-<block id="))1Jxc!E+V6p*`bzx!ab" type="typescript_statement">
-<mutation declaredvars="imagemInimigoAereo" numlines="18" line0="let imagemInimigoAereo &#61; img&#96;" line1="    . . . . . . . . . . . . . . . ." line2="    . . . . . f f . . f f . . . . ." line3="    . . . . f 8 8 f f 8 8 f . . . ." line4="    . . . f 8 8 8 8 8 8 8 8 f . . ." line5="    . . f 8 8 f 8 8 8 8 f 8 8 f . ." line6="    . f 8 8 8 8 8 8 8 8 8 8 8 f ." line7="    f 8 8 8 f f f f f f 8 8 8 8 f" line8="    f 8 f 8 8 8 f f 8 8 8 f 8 8 f" line9="    . f . f 8 8 8 8 8 8 f . f . ." line10="    . . . . f 8 8 8 8 f . . . . ." line11="    . . . . . f f f f . . . . . . ." line12="    . . . . . . f f . . . . . . . ." line13="    . . . . . . . . . . . . . . . ." line14="    . . . . . . . . . . . . . . . ." line15="    . . . . . . . . . . . . . . . ." line16="    . . . . . . . . . . . . . . . ." line17="    &#96;" />
+<block id="2M)V]+J8tWg`JR@/i`mo" type="typescript_statement">
+<mutation declaredvars="imagemInimigoAereo" numlines="18" line0="let imagemInimigoAereo &#61; img&#96;&#13;" line1="    . . . . . . . . . . . . . . . .&#13;" line2="    . . . . . f f . . f f . . . . .&#13;" line3="    . . . . f 8 8 f f 8 8 f . . . .&#13;" line4="    . . . f 8 8 8 8 8 8 8 8 f . . .&#13;" line5="    . . f 8 8 f 8 8 8 8 f 8 8 f . .&#13;" line6="    . f 8 8 8 8 8 8 8 8 8 8 8 f .&#13;" line7="    f 8 8 8 f f f f f f 8 8 8 8 f&#13;" line8="    f 8 f 8 8 8 f f 8 8 8 f 8 8 f&#13;" line9="    . f . f 8 8 8 8 8 8 f . f . .&#13;" line10="    . . . . f 8 8 8 8 f . . . . .&#13;" line11="    . . . . . f f f f . . . . . . .&#13;" line12="    . . . . . . f f . . . . . . . .&#13;" line13="    . . . . . . . . . . . . . . . .&#13;" line14="    . . . . . . . . . . . . . . . .&#13;" line15="    . . . . . . . . . . . . . . . .&#13;" line16="    . . . . . . . . . . . . . . . .&#13;" line17="    &#96;" />
 <next>
-<block id="AId(#8SQFxt4hyOJ1R[E" type="typescript_statement">
-<mutation declaredvars="imagemBandeira" numlines="18" line0="let imagemBandeira &#61; img&#96;" line1="    . . . . . . f f . . . . . . . ." line2="    . . . . . . f 7 7 7 7 . . . . ." line3="    . . . . . . f 7 7 7 7 7 . . . ." line4="    . . . . . . f 7 7 7 7 . . . . ." line5="    . . . . . . f . . . . . . . . ." line6="    . . . . . . f . . . . . . . . ." line7="    . . . . . . f . . . . . . . . ." line8="    . . . . . . f . . . . . . . . ." line9="    . . . . . . f . . . . . . . . ." line10="    . . . . . . f . . . . . . . . ." line11="    . . . . . . f . . . . . . . . ." line12="    . . . . . . f . . . . . . . . ." line13="    . . . . . . f . . . . . . . . ." line14="    . . . . . f f f . . . . . . . ." line15="    . . . . f f f f f . . . . . . ." line16="    . . . . f f f f f . . . . . . ." line17="    &#96;" />
+<block id="/dn7TSeL].P[Li98Q/A_" type="typescript_statement">
+<mutation declaredvars="imagemBandeiraNivel1" numlines="18" line0="let imagemBandeiraNivel1 &#61; img&#96;&#13;" line1="    . . . . . . f f . . . . . . . .&#13;" line2="    . . . . . . f 2 2 2 2 . . . . .&#13;" line3="    . . . . . . f 2 2 2 2 2 . . . .&#13;" line4="    . . . . . . f 2 2 2 2 . . . . .&#13;" line5="    . . . . . . f . . . . . . . . .&#13;" line6="    . . . . . . f . . . . . . . . .&#13;" line7="    . . . . . . f . . . . . . . . .&#13;" line8="    . . . . . . f . . . . . . . . .&#13;" line9="    . . . . . . f . . . . . . . . .&#13;" line10="    . . . . . . f . . . . . . . . .&#13;" line11="    . . . . . . f . . . . . . . . .&#13;" line12="    . . . . . . f . . . . . . . . .&#13;" line13="    . . . . . . f . . . . . . . . .&#13;" line14="    . . . . . f f f . . . . . . . .&#13;" line15="    . . . . f f f f f . . . . . . .&#13;" line16="    . . . . f f f f f . . . . . . .&#13;" line17="    &#96;" />
 <next>
-<block id="K6RlS@LXBqQ:XF-8.EBY" type="typescript_statement">
-<mutation declaredvars="imagemItemVida" numlines="18" line0="let imagemItemVida &#61; img&#96;" line1="    . . . . . . . . . . . . . . . ." line2="    . . . 2 2 . . . . 2 2 . . . ." line3="    . . 2 2 2 2 . . 2 2 2 2 . . ." line4="    . 2 2 2 2 2 2 2 2 2 2 2 . . ." line5="    . 2 2 2 2 2 2 2 2 2 2 2 . . ." line6="    . 2 2 2 2 2 2 2 2 2 2 2 . . ." line7="    . . 2 2 2 2 2 2 2 2 2 . . . ." line8="    . . . 2 2 2 2 2 2 2 . . . . ." line9="    . . . . 2 2 2 2 2 . . . . . ." line10="    . . . . . 2 2 2 . . . . . . ." line11="    . . . . . . 2 . . . . . . . ." line12="    . . . . . . . . . . . . . . . ." line13="    . . . . . . . . . . . . . . . ." line14="    . . . . . . . . . . . . . . . ." line15="    . . . . . . . . . . . . . . . ." line16="    . . . . . . . . . . . . . . . ." line17="    &#96;" />
+<block id="iAErj{dqD158i7mK,O24" type="typescript_statement">
+<mutation declaredvars="imagemBandeiraNivel2" numlines="18" line0="let imagemBandeiraNivel2 &#61; img&#96;&#13;" line1="    . . . . . . f f . . . . . . . .&#13;" line2="    . . . . . . f 9 9 9 9 . . . . .&#13;" line3="    . . . . . . f 9 9 9 9 9 . . . .&#13;" line4="    . . . . . . f 9 9 9 9 . . . . .&#13;" line5="    . . . . . . f . . . . . . . . .&#13;" line6="    . . . . . . f . . . . . . . . .&#13;" line7="    . . . . . . f . . . . . . . . .&#13;" line8="    . . . . . . f . . . . . . . . .&#13;" line9="    . . . . . . f . . . . . . . . .&#13;" line10="    . . . . . . f . . . . . . . . .&#13;" line11="    . . . . . . f . . . . . . . . .&#13;" line12="    . . . . . . f . . . . . . . . .&#13;" line13="    . . . . . . f . . . . . . . . .&#13;" line14="    . . . . . f f f . . . . . . . .&#13;" line15="    . . . . f f f f f . . . . . . .&#13;" line16="    . . . . f f f f f . . . . . . .&#13;" line17="    &#96;" />
 <next>
-<block id="wXvxCx[)J.K_PhPr}VH4" type="typescript_statement">
-<mutation declaredvars="imagemItemEstrela" numlines="18" line0="let imagemItemEstrela &#61; img&#96;" line1="    . . . . . . 5 5 . . . . . . . ." line2="    . . . . . 5 5 5 5 . . . . . . ." line3="    . . . . . 5 4 4 5 . . . . . . ." line4="    . . . . 5 4 4 4 4 5 . . . . . ." line5="    . 5 5 5 4 4 4 4 5 5 5 . . . ." line6="    . . 5 4 4 4 4 4 4 5 . . . . ." line7="    . . . 5 4 4 4 4 5 . . . . . ." line8="    . . . 5 4 4 4 4 5 . . . . . ." line9="    . . 5 4 4 5 5 4 4 5 . . . . ." line10="    . 5 4 4 5 . . 5 4 4 5 . . . ." line11="    . 5 5 5 . . . . 5 5 5 . . . ." line12="    . . . . . . . . . . . . . . . ." line13="    . . . . . . . . . . . . . . . ." line14="    . . . . . . . . . . . . . . . ." line15="    . . . . . . . . . . . . . . . ." line16="    . . . . . . . . . . . . . . . ." line17="    &#96;" />
+<block id="zxSdbIw+IkD;?7nG7+sC" type="typescript_statement">
+<mutation declaredvars="imagemBandeiraNivel3" numlines="18" line0="let imagemBandeiraNivel3 &#61; img&#96;&#13;" line1="    . . . . . . f f . . . . . . . .&#13;" line2="    . . . . . . f 7 7 7 7 . . . . .&#13;" line3="    . . . . . . f 7 7 7 7 7 . . . .&#13;" line4="    . . . . . . f 7 7 7 7 . . . . .&#13;" line5="    . . . . . . f . . . . . . . . .&#13;" line6="    . . . . . . f . . . . . . . . .&#13;" line7="    . . . . . . f . . . . . . . . .&#13;" line8="    . . . . . . f . . . . . . . . .&#13;" line9="    . . . . . . f . . . . . . . . .&#13;" line10="    . . . . . . f . . . . . . . . .&#13;" line11="    . . . . . . f . . . . . . . . .&#13;" line12="    . . . . . . f . . . . . . . . .&#13;" line13="    . . . . . . f . . . . . . . . .&#13;" line14="    . . . . . f f f . . . . . . . .&#13;" line15="    . . . . f f f f f . . . . . . .&#13;" line16="    . . . . f f f f f . . . . . . .&#13;" line17="    &#96;" />
 <next>
-<block id="~OH`k,wJqvpm]`FPnuDg" type="typescript_statement">
-<mutation declaredvars="imagemVazia" numlines="18" line0="let imagemVazia &#61; img&#96;" line1="    . . . . . . . . . . . . . . . ." line2="    . . . . . . . . . . . . . . . ." line3="    . . . . . . . . . . . . . . . ." line4="    . . . . . . . . . . . . . . . ." line5="    . . . . . . . . . . . . . . . ." line6="    . . . . . . . . . . . . . . . ." line7="    . . . . . . . . . . . . . . . ." line8="    . . . . . . . . . . . . . . . ." line9="    . . . . . . . . . . . . . . . ." line10="    . . . . . . . . . . . . . . . ." line11="    . . . . . . . . . . . . . . . ." line12="    . . . . . . . . . . . . . . . ." line13="    . . . . . . . . . . . . . . . ." line14="    . . . . . . . . . . . . . . . ." line15="    . . . . . . . . . . . . . . . ." line16="    . . . . . . . . . . . . . . . ." line17="    &#96;" />
+<block id="lQ2^(Ge-aT%Bix@s~.U#" type="typescript_statement">
+<mutation declaredvars="imagemItemVida" numlines="18" line0="let imagemItemVida &#61; img&#96;&#13;" line1="    . . . . . . . . . . . . . . . .&#13;" line2="    . . . 2 2 . . . . 2 2 . . . .&#13;" line3="    . . 2 2 2 2 . . 2 2 2 2 . . .&#13;" line4="    . 2 2 2 2 2 2 2 2 2 2 2 . . .&#13;" line5="    . 2 2 2 2 2 2 2 2 2 2 2 . . .&#13;" line6="    . 2 2 2 2 2 2 2 2 2 2 2 . . .&#13;" line7="    . . 2 2 2 2 2 2 2 2 2 . . . .&#13;" line8="    . . . 2 2 2 2 2 2 2 . . . . .&#13;" line9="    . . . . 2 2 2 2 2 . . . . . .&#13;" line10="    . . . . . 2 2 2 . . . . . . .&#13;" line11="    . . . . . . 2 . . . . . . . .&#13;" line12="    . . . . . . . . . . . . . . . .&#13;" line13="    . . . . . . . . . . . . . . . .&#13;" line14="    . . . . . . . . . . . . . . . .&#13;" line15="    . . . . . . . . . . . . . . . .&#13;" line16="    . . . . . . . . . . . . . . . .&#13;" line17="    &#96;" />
 <next>
-<block id="k?,6)vR02AQzSJ`y59BB" type="typescript_statement">
-<mutation declaredvars="imagemChao" numlines="18" line0="let imagemChao &#61; img&#96;" line1="    7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7" line2="    6 7 7 6 7 7 6 7 7 6 7 7 6 7 7 6" line3="    e e e e e e e e e e e e e e e e" line4="    e 4 e e 4 e e 4 e e 4 e e 4 e e" line5="    e e e 4 e e 4 e e 4 e e 4 e e 4" line6="    4 e e e e 4 e e e e 4 e e e e 4" line7="    e e 4 e e e e 4 e e e e 4 e e e" line8="    e 4 e e 4 e e 4 e e 4 e e 4 e e" line9="    e e e 4 e e 4 e e 4 e e 4 e e 4" line10="    4 e e e e 4 e e e e 4 e e e e 4" line11="    e e 4 e e e e 4 e e e e 4 e e e" line12="    e 4 e e 4 e e 4 e e 4 e e 4 e e" line13="    e e e 4 e e 4 e e 4 e e 4 e e 4" line14="    4 e e e e 4 e e e e 4 e e e e 4" line15="    e e 4 e e e e 4 e e e e 4 e e e" line16="    e e e e e e e e e e e e e e e e" line17="    &#96;" />
+<block id="-}L.:pb+Tgxexf#J3T3H" type="typescript_statement">
+<mutation declaredvars="imagemItemEstrela" numlines="18" line0="let imagemItemEstrela &#61; img&#96;&#13;" line1="    . . . . . . 5 5 . . . . . . . .&#13;" line2="    . . . . . 5 5 5 5 . . . . . . .&#13;" line3="    . . . . . 5 4 4 5 . . . . . . .&#13;" line4="    . . . . 5 4 4 4 4 5 . . . . . .&#13;" line5="    . 5 5 5 4 4 4 4 5 5 5 . . . .&#13;" line6="    . . 5 4 4 4 4 4 4 5 . . . . .&#13;" line7="    . . . 5 4 4 4 4 5 . . . . . .&#13;" line8="    . . . 5 4 4 4 4 5 . . . . . .&#13;" line9="    . . 5 4 4 5 5 4 4 5 . . . . .&#13;" line10="    . 5 4 4 5 . . 5 4 4 5 . . . .&#13;" line11="    . 5 5 5 . . . . 5 5 5 . . . .&#13;" line12="    . . . . . . . . . . . . . . . .&#13;" line13="    . . . . . . . . . . . . . . . .&#13;" line14="    . . . . . . . . . . . . . . . .&#13;" line15="    . . . . . . . . . . . . . . . .&#13;" line16="    . . . . . . . . . . . . . . . .&#13;" line17="    &#96;" />
 <next>
-<block id=".Tf1?JHi,J^4,1uL{X-%" type="typescript_statement">
-<mutation declaredvars="imagemPlataforma" numlines="18" line0="let imagemPlataforma &#61; img&#96;" line1="    e e e e e e e e e e e e e e e e" line2="    e 4 4 e e 4 4 e e 4 4 e e 4 4 e" line3="    e e e e e e e e e e e e e e e e" line4="    4 e e 4 4 e e 4 4 e e 4 4 e e 4" line5="    e e e e e e e e e e e e e e e e" line6="    e 4 4 e e 4 4 e e 4 4 e e 4 4 e" line7="    e e e e e e e e e e e e e e e e" line8="    4 e e 4 4 e e 4 4 e e 4 4 e e 4" line9="    e e e e e e e e e e e e e e e e" line10="    e 4 4 e e 4 4 e e 4 4 e e 4 4 e" line11="    e e e e e e e e e e e e e e e e" line12="    4 e e 4 4 e e 4 4 e e 4 4 e e 4" line13="    e e e e e e e e e e e e e e e e" line14="    e 4 4 e e 4 4 e e 4 4 e e 4 4 e" line15="    e e e e e e e e e e e e e e e e" line16="    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4" line17="    &#96;" />
+<block id="}(PJIIe9k;TBx+pZLbwU" type="typescript_statement">
+<mutation declaredvars="imagemVazia" numlines="18" line0="let imagemVazia &#61; img&#96;&#13;" line1="    . . . . . . . . . . . . . . . .&#13;" line2="    . . . . . . . . . . . . . . . .&#13;" line3="    . . . . . . . . . . . . . . . .&#13;" line4="    . . . . . . . . . . . . . . . .&#13;" line5="    . . . . . . . . . . . . . . . .&#13;" line6="    . . . . . . . . . . . . . . . .&#13;" line7="    . . . . . . . . . . . . . . . .&#13;" line8="    . . . . . . . . . . . . . . . .&#13;" line9="    . . . . . . . . . . . . . . . .&#13;" line10="    . . . . . . . . . . . . . . . .&#13;" line11="    . . . . . . . . . . . . . . . .&#13;" line12="    . . . . . . . . . . . . . . . .&#13;" line13="    . . . . . . . . . . . . . . . .&#13;" line14="    . . . . . . . . . . . . . . . .&#13;" line15="    . . . . . . . . . . . . . . . .&#13;" line16="    . . . . . . . . . . . . . . . .&#13;" line17="    &#96;" />
 <next>
-<block id="Rk8%-+tuD|yIsb1{9T[^" type="typescript_statement">
-<mutation declaredvars="imagemDecoracao" numlines="18" line0="let imagemDecoracao &#61; img&#96;" line1="    . . . . . . . . . . . . . . . ." line2="    . . . . . . . . . . . . . . . ." line3="    . . . . 1 1 1 . . . . . . . . ." line4="    . . 1 1 1 1 1 1 1 . . . . . . ." line5="    . 1 1 1 1 1 1 1 1 1 . . . . . ." line6="    1 1 1 1 1 1 1 1 1 1 1 . . . . ." line7="    . 1 1 1 1 1 1 1 1 1 . . . . . ." line8="    . . 1 1 1 1 1 1 1 . . . . . . ." line9="    . . . . 1 1 1 . . . . . . . . ." line10="    . . . . . . . . . . . . . . . ." line11="    . . . . . . . . . . . . . . . ." line12="    . . . . . . . . . . . . . . . ." line13="    . . . . . . . . . . . . . . . ." line14="    . . . . . . . . . . . . . . . ." line15="    . . . . . . . . . . . . . . . ." line16="    . . . . . . . . . . . . . . . ." line17="    &#96;" />
+<block id="w:a/TKF@7ao?kO95($S}" type="typescript_statement">
+<mutation declaredvars="imagemEnergia0" numlines="10" line0="let imagemEnergia0 &#61; img&#96;&#13;" line1="    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1&#13;" line2="    1 . . . . . . . . . . . . . . 1&#13;" line3="    1 . . . . . . . . . . . . . . 1&#13;" line4="    1 . . . . . . . . . . . . . . 1&#13;" line5="    1 . . . . . . . . . . . . . . 1&#13;" line6="    1 . . . . . . . . . . . . . . 1&#13;" line7="    1 . . . . . . . . . . . . . . 1&#13;" line8="    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1&#13;" line9="    &#96;" />
 <next>
-<block id="Q@S4hN;o2Lo2bzWt`:$F" type="typescript_statement">
-<mutation declaredvars="imagemChaoDeserto" numlines="18" line0="let imagemChaoDeserto &#61; img&#96;" line1="    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5" line2="    4 5 5 4 5 5 4 5 5 4 5 5 4 5 5 4" line3="    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4" line4="    5 4 4 5 4 4 5 4 4 5 4 4 5 4 4 5" line5="    4 4 5 4 4 5 4 4 5 4 4 5 4 4 5 4" line6="    4 5 4 4 5 4 4 5 4 4 5 4 4 5 4 4" line7="    5 4 4 5 4 4 5 4 4 5 4 4 5 4 4 5" line8="    4 4 5 4 4 5 4 4 5 4 4 5 4 4 5 4" line9="    4 5 4 4 5 4 4 5 4 4 5 4 4 5 4 4" line10="    5 4 4 5 4 4 5 4 4 5 4 4 5 4 4 5" line11="    4 4 5 4 4 5 4 4 5 4 4 5 4 4 5 4" line12="    4 5 4 4 5 4 4 5 4 4 5 4 4 5 4 4" line13="    5 4 4 5 4 4 5 4 4 5 4 4 5 4 4 5" line14="    4 4 5 4 4 5 4 4 5 4 4 5 4 4 5 4" line15="    4 5 4 4 5 4 4 5 4 4 5 4 4 5 4 4" line16="    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4" line17="    &#96;" />
+<block id="7j+|V}scWFth6c)MI/U~" type="typescript_statement">
+<mutation declaredvars="imagemEnergia1" numlines="10" line0="let imagemEnergia1 &#61; img&#96;&#13;" line1="    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1&#13;" line2="    1 . . . . . . . . . . . . . . 1&#13;" line3="    1 5 5 . . . . . . . . . . . . 1&#13;" line4="    1 5 5 . . . . . . . . . . . . 1&#13;" line5="    1 5 5 . . . . . . . . . . . . 1&#13;" line6="    1 5 5 . . . . . . . . . . . . 1&#13;" line7="    1 . . . . . . . . . . . . . . 1&#13;" line8="    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1&#13;" line9="    &#96;" />
 <next>
-<block id="+2m:-PR[hR.QNl4)=mFg" type="typescript_statement">
-<mutation declaredvars="imagemPlataformaDeserto" numlines="18" line0="let imagemPlataformaDeserto &#61; img&#96;" line1="    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5" line2="    5 4 4 5 5 4 4 5 5 4 4 5 5 4 4 5" line3="    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4" line4="    4 5 5 4 4 5 5 4 4 5 5 4 4 5 5 4" line5="    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5" line6="    5 4 4 5 5 4 4 5 5 4 4 5 5 4 4 5" line7="    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4" line8="    4 5 5 4 4 5 5 4 4 5 5 4 4 5 5 4" line9="    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5" line10="    5 4 4 5 5 4 4 5 5 4 4 5 5 4 4 5" line11="    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4" line12="    4 5 5 4 4 5 5 4 4 5 5 4 4 5 5 4" line13="    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5" line14="    5 4 4 5 5 4 4 5 5 4 4 5 5 4 4 5" line15="    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4" line16="    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4" line17="    &#96;" />
+<block id="j55GVUZVxbwa9_9!XRZ!" type="typescript_statement">
+<mutation declaredvars="imagemEnergia2" numlines="10" line0="let imagemEnergia2 &#61; img&#96;&#13;" line1="    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1&#13;" line2="    1 . . . . . . . . . . . . . . 1&#13;" line3="    1 5 5 . 5 5 . . . . . . . . . 1&#13;" line4="    1 5 5 . 5 5 . . . . . . . . . 1&#13;" line5="    1 5 5 . 5 5 . . . . . . . . . 1&#13;" line6="    1 5 5 . 5 5 . . . . . . . . . 1&#13;" line7="    1 . . . . . . . . . . . . . . 1&#13;" line8="    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1&#13;" line9="    &#96;" />
 <next>
-<block id="Lu5dCt/:(p1)AWb5*@Ia" type="typescript_statement">
-<mutation declaredvars="imagemDecoracaoDeserto" numlines="18" line0="let imagemDecoracaoDeserto &#61; img&#96;" line1="    . . . . . . . . . . . . . . . ." line2="    . . . . . . . 5 5 . . . . . . ." line3="    . . . . . 5 5 5 5 5 5 . . . ." line4="    . . . . 5 5 5 4 4 5 5 . . . ." line5="    . . . 5 5 5 4 4 4 5 5 5 . . ." line6="    . . . 5 5 4 4 4 4 4 5 5 . . ." line7="    . . . . 5 5 4 4 4 5 5 . . . ." line8="    . . . . . 5 5 5 5 5 5 . . . ." line9="    . . . . . . . 5 5 . . . . . . ." line10="    . . . . . . . . . . . . . . . ." line11="    . . . . . . . . . . . . . . . ." line12="    . . . . . . . . . . . . . . . ." line13="    . . . . . . . . . . . . . . . ." line14="    . . . . . . . . . . . . . . . ." line15="    . . . . . . . . . . . . . . . ." line16="    . . . . . . . . . . . . . . . ." line17="    &#96;" />
+<block id="$gUh]6IpZR|%COF0Lt:?" type="typescript_statement">
+<mutation declaredvars="imagemEnergia3" numlines="10" line0="let imagemEnergia3 &#61; img&#96;&#13;" line1="    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1&#13;" line2="    1 . . . . . . . . . . . . . . 1&#13;" line3="    1 5 5 . 5 5 . 5 5 . . . . . . 1&#13;" line4="    1 5 5 . 5 5 . 5 5 . . . . . . 1&#13;" line5="    1 5 5 . 5 5 . 5 5 . . . . . . 1&#13;" line6="    1 5 5 . 5 5 . 5 5 . . . . . . 1&#13;" line7="    1 . . . . . . . . . . . . . . 1&#13;" line8="    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1&#13;" line9="    &#96;" />
 <next>
-<block id="yiwJpa`f3ER/aJl0}%GF" type="typescript_statement">
-<mutation declaredvars="imagemChaoSubmundo" numlines="18" line0="let imagemChaoSubmundo &#61; img&#96;" line1="    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2" line2="    4 2 2 4 2 2 4 2 2 4 2 2 4 2 2 4" line3="    f f f f f f f f f f f f f f f f" line4="    f 2 2 f f 2 2 f f 2 2 f f 2 2 f" line5="    f f f 2 2 f f f 2 2 f f f 2 2 f" line6="    2 2 f f f 2 2 f f f 2 2 f f f 2" line7="    f f 2 2 f f f 2 2 f f f 2 2 f f" line8="    f 2 2 f f 2 2 f f 2 2 f f 2 2 f" line9="    f f f 2 2 f f f 2 2 f f f 2 2 f" line10="    2 2 f f f 2 2 f f f 2 2 f f f 2" line11="    f f 2 2 f f f 2 2 f f f 2 2 f f" line12="    f 2 2 f f 2 2 f f 2 2 f f 2 2 f" line13="    f f f 2 2 f f f 2 2 f f f 2 2 f" line14="    2 2 f f f 2 2 f f f 2 2 f f f 2" line15="    f f 2 2 f f f 2 2 f f f 2 2 f f" line16="    f f f f f f f f f f f f f f f f" line17="    &#96;" />
+<block id="fy`p8!{?wqvjmD]`Xgh~" type="typescript_statement">
+<mutation declaredvars="imagemEnergia4" numlines="10" line0="let imagemEnergia4 &#61; img&#96;&#13;" line1="    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1&#13;" line2="    1 . . . . . . . . . . . . . . 1&#13;" line3="    1 5 5 . 5 5 . 5 5 . 5 5 . . . 1&#13;" line4="    1 5 5 . 5 5 . 5 5 . 5 5 . . . 1&#13;" line5="    1 5 5 . 5 5 . 5 5 . 5 5 . . . 1&#13;" line6="    1 5 5 . 5 5 . 5 5 . 5 5 . . . 1&#13;" line7="    1 . . . . . . . . . . . . . . 1&#13;" line8="    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1&#13;" line9="    &#96;" />
 <next>
-<block id=";h;6P/#EJFr(%)vi]A_E" type="typescript_statement">
-<mutation declaredvars="imagemPlataformaSubmundo" numlines="18" line0="let imagemPlataformaSubmundo &#61; img&#96;" line1="    f f f f f f f f f f f f f f f f" line2="    f 2 2 f f 2 2 f f 2 2 f f 2 2 f" line3="    f f f f f f f f f f f f f f f f" line4="    2 f f 2 2 f f 2 2 f f 2 2 f f 2" line5="    f f f f f f f f f f f f f f f f" line6="    f 2 2 f f 2 2 f f 2 2 f f 2 2 f" line7="    f f f f f f f f f f f f f f f f" line8="    2 f f 2 2 f f 2 2 f f 2 2 f f 2" line9="    f f f f f f f f f f f f f f f f" line10="    f 2 2 f f 2 2 f f 2 2 f f 2 2 f" line11="    f f f f f f f f f f f f f f f f" line12="    2 f f 2 2 f f 2 2 f f 2 2 f f 2" line13="    f f f f f f f f f f f f f f f f" line14="    f 2 2 f f 2 2 f f 2 2 f f 2 2 f" line15="    f f f f f f f f f f f f f f f f" line16="    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2" line17="    &#96;" />
+<block id="MM,q-zeZ}ky7!q`zRuDD" type="typescript_statement">
+<mutation declaredvars="imagemEnergia5" numlines="10" line0="let imagemEnergia5 &#61; img&#96;&#13;" line1="    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1&#13;" line2="    1 . . . . . . . . . . . . . . 1&#13;" line3="    1 5 5 . 5 5 . 5 5 . 5 5 . 5 5 1&#13;" line4="    1 5 5 . 5 5 . 5 5 . 5 5 . 5 5 1&#13;" line5="    1 5 5 . 5 5 . 5 5 . 5 5 . 5 5 1&#13;" line6="    1 5 5 . 5 5 . 5 5 . 5 5 . 5 5 1&#13;" line7="    1 . . . . . . . . . . . . . . 1&#13;" line8="    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1&#13;" line9="    &#96;" />
 <next>
-<block id="]DDy.T7z{7UeuBP`w+QA" type="typescript_statement">
-<mutation declaredvars="imagemDecoracaoSubmundo" numlines="18" line0="let imagemDecoracaoSubmundo &#61; img&#96;" line1="    . . . . . . . . . . . . . . . ." line2="    . . . . . . 2 2 2 . . . . . . ." line3="    . . . . . 2 4 4 2 . . . . . . ." line4="    . . . . 2 4 4 4 4 2 . . . . . ." line5="    . . . 2 4 4 5 5 4 4 2 . . . ." line6="    . . . 2 4 5 5 5 5 4 2 . . . ." line7="    . . . . 2 4 5 5 4 2 . . . . ." line8="    . . . . . 2 4 4 2 . . . . . . ." line9="    . . . . . . 2 2 . . . . . . . ." line10="    . . . . . . . . . . . . . . . ." line11="    . . . . . . . . . . . . . . . ." line12="    . . . . . . . . . . . . . . . ." line13="    . . . . . . . . . . . . . . . ." line14="    . . . . . . . . . . . . . . . ." line15="    . . . . . . . . . . . . . . . ." line16="    . . . . . . . . . . . . . . . ." line17="    &#96;" />
+<block id="D4mo,LM-g69)a`mxI,zT" type="typescript_statement">
+<mutation declaredvars="imagemChao" numlines="18" line0="let imagemChao &#61; img&#96;&#13;" line1="    7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7&#13;" line2="    6 7 7 6 7 7 6 7 7 6 7 7 6 7 7 6&#13;" line3="    e e e e e e e e e e e e e e e e&#13;" line4="    e 4 e e 4 e e 4 e e 4 e e 4 e e&#13;" line5="    e e e 4 e e 4 e e 4 e e 4 e e 4&#13;" line6="    4 e e e e 4 e e e e 4 e e e e 4&#13;" line7="    e e 4 e e e e 4 e e e e 4 e e e&#13;" line8="    e 4 e e 4 e e 4 e e 4 e e 4 e e&#13;" line9="    e e e 4 e e 4 e e 4 e e 4 e e 4&#13;" line10="    4 e e e e 4 e e e e 4 e e e e 4&#13;" line11="    e e 4 e e e e 4 e e e e 4 e e e&#13;" line12="    e 4 e e 4 e e 4 e e 4 e e 4 e e&#13;" line13="    e e e 4 e e 4 e e 4 e e 4 e e 4&#13;" line14="    4 e e e e 4 e e e e 4 e e e e 4&#13;" line15="    e e 4 e e e e 4 e e e e 4 e e e&#13;" line16="    e e e e e e e e e e e e e e e e&#13;" line17="    &#96;" />
 <next>
-<block id="G6?-QR2[6N#?/.G3Hq)g" type="typescript_statement">
+<block id="V)lkq$GTL45|]Et@F-Za" type="typescript_statement">
+<mutation declaredvars="imagemPlataforma" numlines="18" line0="let imagemPlataforma &#61; img&#96;&#13;" line1="    e e e e e e e e e e e e e e e e&#13;" line2="    e 4 4 e e 4 4 e e 4 4 e e 4 4 e&#13;" line3="    e e e e e e e e e e e e e e e e&#13;" line4="    4 e e 4 4 e e 4 4 e e 4 4 e e 4&#13;" line5="    e e e e e e e e e e e e e e e e&#13;" line6="    e 4 4 e e 4 4 e e 4 4 e e 4 4 e&#13;" line7="    e e e e e e e e e e e e e e e e&#13;" line8="    4 e e 4 4 e e 4 4 e e 4 4 e e 4&#13;" line9="    e e e e e e e e e e e e e e e e&#13;" line10="    e 4 4 e e 4 4 e e 4 4 e e 4 4 e&#13;" line11="    e e e e e e e e e e e e e e e e&#13;" line12="    4 e e 4 4 e e 4 4 e e 4 4 e e 4&#13;" line13="    e e e e e e e e e e e e e e e e&#13;" line14="    e 4 4 e e 4 4 e e 4 4 e e 4 4 e&#13;" line15="    e e e e e e e e e e e e e e e e&#13;" line16="    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4&#13;" line17="    &#96;" />
+<next>
+<block id="5}?TtOE%*.ioVR^+in_;" type="typescript_statement">
+<mutation declaredvars="imagemDecoracao" numlines="18" line0="let imagemDecoracao &#61; img&#96;&#13;" line1="    . . . . . . . . . . . . . . . .&#13;" line2="    . . . . . . . . . . . . . . . .&#13;" line3="    . . . . 1 1 1 . . . . . . . . .&#13;" line4="    . . 1 1 1 1 1 1 1 . . . . . . .&#13;" line5="    . 1 1 1 1 1 1 1 1 1 . . . . . .&#13;" line6="    1 1 1 1 1 1 1 1 1 1 1 . . . . .&#13;" line7="    . 1 1 1 1 1 1 1 1 1 . . . . . .&#13;" line8="    . . 1 1 1 1 1 1 1 . . . . . . .&#13;" line9="    . . . . 1 1 1 . . . . . . . . .&#13;" line10="    . . . . . . . . . . . . . . . .&#13;" line11="    . . . . . . . . . . . . . . . .&#13;" line12="    . . . . . . . . . . . . . . . .&#13;" line13="    . . . . . . . . . . . . . . . .&#13;" line14="    . . . . . . . . . . . . . . . .&#13;" line15="    . . . . . . . . . . . . . . . .&#13;" line16="    . . . . . . . . . . . . . . . .&#13;" line17="    &#96;" />
+<next>
+<block id="y_VW=!Jn(+1sqZ,1*PIz" type="typescript_statement">
+<mutation declaredvars="imagemChaoDeserto" numlines="18" line0="let imagemChaoDeserto &#61; img&#96;&#13;" line1="    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5&#13;" line2="    4 5 5 4 5 5 4 5 5 4 5 5 4 5 5 4&#13;" line3="    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4&#13;" line4="    5 4 4 5 4 4 5 4 4 5 4 4 5 4 4 5&#13;" line5="    4 4 5 4 4 5 4 4 5 4 4 5 4 4 5 4&#13;" line6="    4 5 4 4 5 4 4 5 4 4 5 4 4 5 4 4&#13;" line7="    5 4 4 5 4 4 5 4 4 5 4 4 5 4 4 5&#13;" line8="    4 4 5 4 4 5 4 4 5 4 4 5 4 4 5 4&#13;" line9="    4 5 4 4 5 4 4 5 4 4 5 4 4 5 4 4&#13;" line10="    5 4 4 5 4 4 5 4 4 5 4 4 5 4 4 5&#13;" line11="    4 4 5 4 4 5 4 4 5 4 4 5 4 4 5 4&#13;" line12="    4 5 4 4 5 4 4 5 4 4 5 4 4 5 4 4&#13;" line13="    5 4 4 5 4 4 5 4 4 5 4 4 5 4 4 5&#13;" line14="    4 4 5 4 4 5 4 4 5 4 4 5 4 4 5 4&#13;" line15="    4 5 4 4 5 4 4 5 4 4 5 4 4 5 4 4&#13;" line16="    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4&#13;" line17="    &#96;" />
+<next>
+<block id="B;P46?#rw|p/}rk+7QHq" type="typescript_statement">
+<mutation declaredvars="imagemPlataformaDeserto" numlines="18" line0="let imagemPlataformaDeserto &#61; img&#96;&#13;" line1="    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5&#13;" line2="    5 4 4 5 5 4 4 5 5 4 4 5 5 4 4 5&#13;" line3="    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4&#13;" line4="    4 5 5 4 4 5 5 4 4 5 5 4 4 5 5 4&#13;" line5="    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5&#13;" line6="    5 4 4 5 5 4 4 5 5 4 4 5 5 4 4 5&#13;" line7="    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4&#13;" line8="    4 5 5 4 4 5 5 4 4 5 5 4 4 5 5 4&#13;" line9="    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5&#13;" line10="    5 4 4 5 5 4 4 5 5 4 4 5 5 4 4 5&#13;" line11="    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4&#13;" line12="    4 5 5 4 4 5 5 4 4 5 5 4 4 5 5 4&#13;" line13="    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5&#13;" line14="    5 4 4 5 5 4 4 5 5 4 4 5 5 4 4 5&#13;" line15="    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4&#13;" line16="    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4&#13;" line17="    &#96;" />
+<next>
+<block id="f|S.=eoIq[tCE58;Ghyl" type="typescript_statement">
+<mutation declaredvars="imagemDecoracaoDeserto" numlines="18" line0="let imagemDecoracaoDeserto &#61; img&#96;&#13;" line1="    . . . . . . . . . . . . . . . .&#13;" line2="    . . . . . . . 5 5 . . . . . . .&#13;" line3="    . . . . . 5 5 5 5 5 5 . . . .&#13;" line4="    . . . . 5 5 5 4 4 5 5 . . . .&#13;" line5="    . . . 5 5 5 4 4 4 5 5 5 . . .&#13;" line6="    . . . 5 5 4 4 4 4 4 5 5 . . .&#13;" line7="    . . . . 5 5 4 4 4 5 5 . . . .&#13;" line8="    . . . . . 5 5 5 5 5 5 . . . .&#13;" line9="    . . . . . . . 5 5 . . . . . . .&#13;" line10="    . . . . . . . . . . . . . . . .&#13;" line11="    . . . . . . . . . . . . . . . .&#13;" line12="    . . . . . . . . . . . . . . . .&#13;" line13="    . . . . . . . . . . . . . . . .&#13;" line14="    . . . . . . . . . . . . . . . .&#13;" line15="    . . . . . . . . . . . . . . . .&#13;" line16="    . . . . . . . . . . . . . . . .&#13;" line17="    &#96;" />
+<next>
+<block id="2L.%`+5ouHeo`9+0CW?m" type="typescript_statement">
+<mutation declaredvars="imagemChaoSubmundo" numlines="17" line0="let imagemChaoSubmundo &#61; img&#96;&#13;" line1="    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2&#13;" line2="    4 2 2 4 2 2 4 2 2 4 2 2 4 2 2 4&#13;" line3="    f f f f f f f f f f f f f f f f&#13;" line4="    f f f 2 2 f f f f f 2 2 f f f f&#13;" line5="    f f 2 4 4 2 f f f 2 4 4 2 f f f&#13;" line6="    f f f 2 2 f f f f f 2 2 f f f f&#13;" line7="    f f f f f f f f f f f f f f f f&#13;" line8="    f f f 2 2 f f f f f 2 2 f f f f&#13;" line9="    f f 2 4 4 2 f f f 2 4 4 2 f f f&#13;" line10="    f f f 2 2 f f f f f 2 2 f f f f&#13;" line11="    f f f f f f f f f f f f f f f f&#13;" line12="    f f f 2 2 f f f f f 2 2 f f f f&#13;" line13="    f f 2 4 4 2 f f f 2 4 4 2 f f f&#13;" line14="    f f f 2 2 f f f f f 2 2 f f f f&#13;" line15="    f f f f f f f f f f f f f f f f&#13;" line16="    &#96;" />
+<next>
+<block id="|sWP:x+GGv%z^{Bry0;d" type="typescript_statement">
+<mutation declaredvars="imagemPlataformaSubmundo" numlines="18" line0="let imagemPlataformaSubmundo &#61; img&#96;&#13;" line1="    f f f f f f f f f f f f f f f f&#13;" line2="    f f 2 2 f f f f f f 2 2 f f f f&#13;" line3="    f 2 4 4 2 f f f f 2 4 4 2 f f f&#13;" line4="    f f 2 2 f f f f f f 2 2 f f f f&#13;" line5="    f f f f f f f f f f f f f f f f&#13;" line6="    f f 2 2 f f f f f f 2 2 f f f f&#13;" line7="    f 2 4 4 2 f f f f 2 4 4 2 f f f&#13;" line8="    f f 2 2 f f f f f f 2 2 f f f f&#13;" line9="    f f f f f f f f f f f f f f f f&#13;" line10="    f f 2 2 f f f f f f 2 2 f f f f&#13;" line11="    f 2 4 4 2 f f f f 2 4 4 2 f f f&#13;" line12="    f f 2 2 f f f f f f 2 2 f f f f&#13;" line13="    f f f f f f f f f f f f f f f f&#13;" line14="    f f 2 2 f f f f f f 2 2 f f f f&#13;" line15="    f 2 4 4 2 f f f f 2 4 4 2 f f f&#13;" line16="    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2&#13;" line17="    &#96;" />
+<next>
+<block id="~g4U:W2KXs~7hq)q:8/e" type="typescript_statement">
+<mutation declaredvars="imagemDecoracaoSubmundo" numlines="18" line0="let imagemDecoracaoSubmundo &#61; img&#96;&#13;" line1="    . . . . . . . . . . . . . . . .&#13;" line2="    . . . . . . 2 2 2 . . . . . . .&#13;" line3="    . . . . . 2 4 4 2 . . . . . . .&#13;" line4="    . . . . 2 4 4 4 4 2 . . . . . .&#13;" line5="    . . . 2 4 4 5 5 4 4 2 . . . .&#13;" line6="    . . . 2 4 5 5 5 5 4 2 . . . .&#13;" line7="    . . . . 2 4 5 5 4 2 . . . . .&#13;" line8="    . . . . . 2 4 4 2 . . . . . . .&#13;" line9="    . . . . . . 2 2 . . . . . . . .&#13;" line10="    . . . . . . . . . . . . . . . .&#13;" line11="    . . . . . . . . . . . . . . . .&#13;" line12="    . . . . . . . . . . . . . . . .&#13;" line13="    . . . . . . . . . . . . . . . .&#13;" line14="    . . . . . . . . . . . . . . . .&#13;" line15="    . . . . . . . . . . . . . . . .&#13;" line16="    . . . . . . . . . . . . . . . .&#13;" line17="    &#96;" />
+<next>
+<block id="]dmMB4^T,e)t]bg2}I4Q" type="typescript_statement">
 <mutation declaredvars="jogador" numlines="1" line0="let jogador &#61; sprites.create&#40;imagemJogadorDireita&#44; SpriteKind.Player&#41;" />
 <next>
-<block id="3}!B9y]noSAjc4DZ!gJ/" type="typescript_statement">
+<block id="~Sznji]VNx~uMLAojH,)" type="typescript_statement">
 <mutation numlines="1" line0="scene.setBackgroundColor&#40;9&#41;" />
 <next>
-<block id="tBi0)hI-PV9UQ6kFgnzt" type="typescript_statement">
+<block id="RnMvG?}_[upao$IAeA@u" type="typescript_statement">
 <mutation numlines="1" line0="info.setLife&#40;3&#41;" />
 <next>
-<block id="1^J1v+pN$q6FGdzts1sC" type="typescript_statement">
+<block id="9Rsyt@5Sny=KoUF70Ke(" type="typescript_statement">
 <mutation numlines="1" line0="info.setScore&#40;0&#41;" />
 <next>
-<block id="7c4*I6-Y]|p;hIOm?Qb," type="typescript_statement">
+<block id="$_4pl?R=m%;0K$7sKUNB" type="typescript_statement">
 <mutation numlines="1" line0="controller.moveSprite&#40;jogador&#44; 110&#44; 0&#41;" />
 <next>
-<block id="lc(PtBHn*5_[G~U2pR@+" type="typescript_statement">
+<block id="kN9E?Um!j0[p^ck.vG9_" type="typescript_statement">
 <mutation numlines="1" line0="jogador.ay &#61; 480" />
 <next>
-<block id="=dt|GMIjd@@vQ3u16O:U" type="typescript_statement">
+<block id="b,^eW;EL327e|_cJpk)b" type="typescript_statement">
 <mutation numlines="1" line0="scene.cameraFollowSprite&#40;jogador&#41;" />
 <next>
-<block id="(I:JDAXf4cHOS!hdBPmT" type="function_call">
+<block id="pY{n1%*pLxLTGyIW^|X%" type="function_call">
+<mutation name="criarIndicadorEnergia" />
+<next>
+<block id="[xH-1x,.K7qlJCH/H9I=" type="function_call">
+<mutation name="atualizarEnergia" />
+<next>
+<block id="/l=U,PK]`4jhu-D%[0|8" type="function_call">
 <mutation name="carregarNivel" />
 <next>
-<block id="R5o4x.i0)0Lcco*`z#l_" type="typescript_statement">
-<mutation numlines="6" line0="controller.A.onEvent&#40;ControllerButtonEvent.Pressed&#44; function &#40;&#41; &#123;" line1="    if &#40;jogador.isHittingTile&#40;CollisionDirection.Bottom&#41;&#41; &#123;" line2="        jogador.vy &#61; -195" line3="        music.playTone&#40;Note.C5&#44; music.beat&#40;BeatFraction.Quarter&#41;&#41;" line4="    &#125;" line5="&#125;&#41;" />
+<block id="fwnp-e{s{=]*H:t6+6Eo" type="typescript_statement">
+<mutation numlines="6" line0="controller.A.onEvent&#40;ControllerButtonEvent.Pressed&#44; function &#40;&#41; &#123;&#13;" line1="    if &#40;jogador.isHittingTile&#40;CollisionDirection.Bottom&#41;&#41; &#123;&#13;" line2="        jogador.vy &#61; -195&#13;" line3="        music.playTone&#40;Note.C5&#44; music.beat&#40;BeatFraction.Quarter&#41;&#41;&#13;" line4="    &#125;&#13;" line5="&#125;&#41;" />
 <next>
-<block id="79a(r75_W`ASLs}vr3+T" type="typescript_statement">
-<mutation numlines="12" line0="controller.B.onEvent&#40;ControllerButtonEvent.Pressed&#44; function &#40;&#41; &#123;" line1="    if &#40;podeAtirar &#61;&#61; true&#41; &#123;" line2="        if &#40;energiaTiro &#62; 0&#41; &#123;" line3="            energiaTiro &#43;&#61; -1" line4="            podeAtirar &#61; false" line5="            projetil &#61; sprites.createProjectileFromSprite&#40;imagemProjetil&#44; jogador&#44; velocidadeProjetil &#42; direcao&#44; 0&#41;" line6="            music.playTone&#40;Note.B5&#44; music.beat&#40;BeatFraction.Eighth&#41;&#41;" line7="            pause&#40;250&#41;" line8="            podeAtirar &#61; true" line9="        &#125;" line10="    &#125;" line11="&#125;&#41;" />
+<block id="7JqM|f=49_PpU~yCt.@4" type="typescript_statement">
+<mutation numlines="15" line0="controller.B.onEvent&#40;ControllerButtonEvent.Pressed&#44; function &#40;&#41; &#123;&#13;" line1="    if &#40;podeAtirar &#61;&#61; true&#41; &#123;&#13;" line2="        if &#40;energiaTiro &#62; 0&#41; &#123;" line3="            energiaTiro &#43;&#61; -1" line4="            atualizarEnergia&#40;&#41;" line5="            podeAtirar &#61; false" line6="            projetil &#61; sprites.createProjectileFromSprite&#40;imagemProjetil&#44; jogador&#44; velocidadeProjetil &#42; direcao&#44; 0&#41;" line7="            music.playTone&#40;Note.B5&#44; music.beat&#40;BeatFraction.Eighth&#41;&#41;" line8="            pause&#40;250&#41;" line9="            podeAtirar &#61; true" line10="        &#125; else &#123;" line11="            music.playTone&#40;98&#44; 100&#41;" line12="        &#125;" line13="    &#125;" line14="&#125;&#41;" />
 <next>
-<block id="0T5G5[P5Ad2xR_kI6oHG" type="typescript_statement">
-<mutation numlines="6" line0="sprites.onOverlap&#40;SpriteKind.Player&#44; SpriteKind.Enemy&#44; function &#40;sprite&#44; otherSprite&#41; &#123;" line1="    if &#40;invulneravel &#61;&#61; false&#41; &#123;" line2="        otherSprite.destroy&#40;effects.fire&#44; 100&#41;" line3="        machucarJogador&#40;&#41;" line4="    &#125;" line5="&#125;&#41;" />
+<block id="+[=;-IfM%.Rg%guX_h.8" type="typescript_statement">
+<mutation numlines="6" line0="sprites.onOverlap&#40;SpriteKind.Player&#44; SpriteKind.Enemy&#44; function &#40;sprite&#44; otherSprite&#41; &#123;&#13;" line1="    if &#40;invulneravel &#61;&#61; false&#41; &#123;&#13;" line2="        otherSprite.destroy&#40;effects.fire&#44; 100&#41;&#13;" line3="        machucarJogador&#40;&#41;&#13;" line4="    &#125;&#13;" line5="&#125;&#41;" />
 <next>
-<block id="Zl:s|9s}g7cy_B^:+#7M" type="typescript_statement">
-<mutation numlines="6" line0="sprites.onOverlap&#40;SpriteKind.Player&#44; SpriteKind.InimigoFerido&#44; function &#40;sprite&#44; otherSprite&#41; &#123;" line1="    if &#40;invulneravel &#61;&#61; false&#41; &#123;" line2="        otherSprite.destroy&#40;effects.fire&#44; 100&#41;" line3="        machucarJogador&#40;&#41;" line4="    &#125;" line5="&#125;&#41;" />
+<block id="UZQ5BCyNs1X.3XT9BEZ)" type="typescript_statement">
+<mutation numlines="6" line0="sprites.onOverlap&#40;SpriteKind.Player&#44; SpriteKind.InimigoFerido&#44; function &#40;sprite&#44; otherSprite&#41; &#123;&#13;" line1="    if &#40;invulneravel &#61;&#61; false&#41; &#123;&#13;" line2="        otherSprite.destroy&#40;effects.fire&#44; 100&#41;&#13;" line3="        machucarJogador&#40;&#41;&#13;" line4="    &#125;&#13;" line5="&#125;&#41;" />
 <next>
-<block id="ma-@7R.V=50:_[sG$D/^" type="typescript_statement">
-<mutation numlines="6" line0="sprites.onOverlap&#40;SpriteKind.Player&#44; SpriteKind.InimigoAereo&#44; function &#40;sprite&#44; otherSprite&#41; &#123;" line1="    if &#40;invulneravel &#61;&#61; false&#41; &#123;" line2="        otherSprite.destroy&#40;effects.fire&#44; 100&#41;" line3="        machucarJogador&#40;&#41;" line4="    &#125;" line5="&#125;&#41;" />
+<block id="Yh%~CsOf@gPfrBt?F{Ij" type="typescript_statement">
+<mutation numlines="6" line0="sprites.onOverlap&#40;SpriteKind.Player&#44; SpriteKind.InimigoAereo&#44; function &#40;sprite&#44; otherSprite&#41; &#123;&#13;" line1="    if &#40;invulneravel &#61;&#61; false&#41; &#123;&#13;" line2="        otherSprite.destroy&#40;effects.fire&#44; 100&#41;&#13;" line3="        machucarJogador&#40;&#41;&#13;" line4="    &#125;&#13;" line5="&#125;&#41;" />
 <next>
-<block id="4d~P-5g8TLmJRytRa]#h" type="typescript_statement">
-<mutation numlines="15" line0="sprites.onOverlap&#40;SpriteKind.Projectile&#44; SpriteKind.Enemy&#44; function &#40;sprite&#44; otherSprite&#41; &#123;" line1="    scene.cameraShake&#40;2&#44; 100&#41;" line2="    if &#40;nivel &#61;&#61; 3&#41; &#123;" line3="        sprite.destroy&#40;effects.fire&#44; 100&#41;" line4="        otherSprite.setImage&#40;imagemInimigoFerido&#41;" line5="        otherSprite.setKind&#40;SpriteKind.InimigoFerido&#41;" line6="        otherSprite.vx &#61; velocidadeInimigo" line7="        music.playTone&#40;Note.A4&#44; music.beat&#40;BeatFraction.Eighth&#41;&#41;" line8="    &#125; else &#123;" line9="        sprite.destroy&#40;effects.fire&#44; 100&#41;" line10="        otherSprite.destroy&#40;effects.disintegrate&#44; 200&#41;" line11="        info.changeScoreBy&#40;10&#41;" line12="        music.playMelody&#40;&#34;C5 G5 C6&#34;&#44; 240&#41;" line13="    &#125;" line14="&#125;&#41;" />
+<block id="kSOiY0!@6A3#!@.)sQ`4" type="typescript_statement">
+<mutation numlines="15" line0="sprites.onOverlap&#40;SpriteKind.Projectile&#44; SpriteKind.Enemy&#44; function &#40;sprite&#44; otherSprite&#41; &#123;&#13;" line1="    scene.cameraShake&#40;2&#44; 100&#41;&#13;" line2="    if &#40;nivel &#61;&#61; 3&#41; &#123;&#13;" line3="        sprite.destroy&#40;effects.fire&#44; 100&#41;&#13;" line4="        otherSprite.setImage&#40;imagemInimigoFerido&#41;&#13;" line5="        otherSprite.setKind&#40;SpriteKind.InimigoFerido&#41;&#13;" line6="        otherSprite.vx &#61; velocidadeInimigo&#13;" line7="        music.playTone&#40;Note.A4&#44; music.beat&#40;BeatFraction.Eighth&#41;&#41;&#13;" line8="    &#125; else &#123;&#13;" line9="        sprite.destroy&#40;effects.fire&#44; 100&#41;&#13;" line10="        otherSprite.destroy&#40;effects.disintegrate&#44; 200&#41;&#13;" line11="        info.changeScoreBy&#40;10&#41;&#13;" line12="        music.playMelody&#40;&#34;C5 G5 C6&#34;&#44; 240&#41;&#13;" line13="    &#125;&#13;" line14="&#125;&#41;" />
 <next>
-<block id="8mtSDnnyCCwyFj2CXXwy" type="typescript_statement">
-<mutation numlines="15" line0="sprites.onOverlap&#40;SpriteKind.Projectile&#44; SpriteKind.InimigoAereo&#44; function &#40;sprite&#44; otherSprite&#41; &#123;" line1="    scene.cameraShake&#40;2&#44; 100&#41;" line2="    if &#40;nivel &#61;&#61; 3&#41; &#123;" line3="        sprite.destroy&#40;effects.fire&#44; 100&#41;" line4="        otherSprite.setImage&#40;imagemInimigoFerido&#41;" line5="        otherSprite.setKind&#40;SpriteKind.InimigoFerido&#41;" line6="        otherSprite.vx &#61; velocidadeInimigo &#42; -1" line7="        music.playTone&#40;Note.A4&#44; music.beat&#40;BeatFraction.Eighth&#41;&#41;" line8="    &#125; else &#123;" line9="        sprite.destroy&#40;effects.fire&#44; 100&#41;" line10="        otherSprite.destroy&#40;effects.disintegrate&#44; 200&#41;" line11="        info.changeScoreBy&#40;10&#41;" line12="        music.playMelody&#40;&#34;C5 G5 C6&#34;&#44; 240&#41;" line13="    &#125;" line14="&#125;&#41;" />
+<block id="Dk%c;h=[,J*h@D==nJQo" type="typescript_statement">
+<mutation numlines="15" line0="sprites.onOverlap&#40;SpriteKind.Projectile&#44; SpriteKind.InimigoAereo&#44; function &#40;sprite&#44; otherSprite&#41; &#123;&#13;" line1="    scene.cameraShake&#40;2&#44; 100&#41;&#13;" line2="    if &#40;nivel &#61;&#61; 3&#41; &#123;&#13;" line3="        sprite.destroy&#40;effects.fire&#44; 100&#41;&#13;" line4="        otherSprite.setImage&#40;imagemInimigoFerido&#41;&#13;" line5="        otherSprite.setKind&#40;SpriteKind.InimigoFerido&#41;&#13;" line6="        otherSprite.vx &#61; velocidadeInimigo &#42; -1&#13;" line7="        music.playTone&#40;Note.A4&#44; music.beat&#40;BeatFraction.Eighth&#41;&#41;&#13;" line8="    &#125; else &#123;&#13;" line9="        sprite.destroy&#40;effects.fire&#44; 100&#41;&#13;" line10="        otherSprite.destroy&#40;effects.disintegrate&#44; 200&#41;&#13;" line11="        info.changeScoreBy&#40;10&#41;&#13;" line12="        music.playMelody&#40;&#34;C5 G5 C6&#34;&#44; 240&#41;&#13;" line13="    &#125;&#13;" line14="&#125;&#41;" />
 <next>
-<block id="/zqmPz8A|wVkZ34#52E#" type="typescript_statement">
-<mutation numlines="7" line0="sprites.onOverlap&#40;SpriteKind.Projectile&#44; SpriteKind.InimigoFerido&#44; function &#40;sprite&#44; otherSprite&#41; &#123;" line1="    scene.cameraShake&#40;2&#44; 100&#41;" line2="    sprite.destroy&#40;effects.fire&#44; 100&#41;" line3="    otherSprite.destroy&#40;effects.disintegrate&#44; 200&#41;" line4="    info.changeScoreBy&#40;10&#41;" line5="    music.playMelody&#40;&#34;C5 G5 C6&#34;&#44; 240&#41;" line6="&#125;&#41;" />
+<block id="iyoFx=YWZ5Z56(9ZS5NW" type="typescript_statement">
+<mutation numlines="7" line0="sprites.onOverlap&#40;SpriteKind.Projectile&#44; SpriteKind.InimigoFerido&#44; function &#40;sprite&#44; otherSprite&#41; &#123;&#13;" line1="    scene.cameraShake&#40;2&#44; 100&#41;&#13;" line2="    sprite.destroy&#40;effects.fire&#44; 100&#41;&#13;" line3="    otherSprite.destroy&#40;effects.disintegrate&#44; 200&#41;&#13;" line4="    info.changeScoreBy&#40;10&#41;&#13;" line5="    music.playMelody&#40;&#34;C5 G5 C6&#34;&#44; 240&#41;&#13;" line6="&#125;&#41;" />
 <next>
-<block id="yH+NnK1^V10}/z8U!xtP" type="typescript_statement">
-<mutation numlines="5" line0="sprites.onOverlap&#40;SpriteKind.Player&#44; SpriteKind.ItemVida&#44; function &#40;sprite&#44; otherSprite&#41; &#123;" line1="    otherSprite.destroy&#40;effects.hearts&#44; 200&#41;" line2="    info.changeLifeBy&#40;1&#41;" line3="    music.playTone&#40;Note.E5&#44; music.beat&#40;BeatFraction.Quarter&#41;&#41;" line4="&#125;&#41;" />
+<block id="SUVdXRI:~d`Du(f)d#6s" type="typescript_statement">
+<mutation numlines="5" line0="sprites.onOverlap&#40;SpriteKind.Player&#44; SpriteKind.ItemVida&#44; function &#40;sprite&#44; otherSprite&#41; &#123;&#13;" line1="    otherSprite.destroy&#40;effects.hearts&#44; 200&#41;&#13;" line2="    info.changeLifeBy&#40;1&#41;&#13;" line3="    music.playTone&#40;Note.E5&#44; music.beat&#40;BeatFraction.Quarter&#41;&#41;&#13;" line4="&#125;&#41;" />
 <next>
-<block id="BwQUP;RRX6ZI?:*%3oz`" type="typescript_statement">
-<mutation numlines="5" line0="sprites.onOverlap&#40;SpriteKind.Player&#44; SpriteKind.ItemEstrela&#44; function &#40;sprite&#44; otherSprite&#41; &#123;" line1="    otherSprite.destroy&#40;effects.halo&#44; 200&#41;" line2="    music.playTone&#40;Note.A5&#44; music.beat&#40;BeatFraction.Quarter&#41;&#41;" line3="    ativarTurbo&#40;&#41;" line4="&#125;&#41;" />
+<block id="2[v[^d^iMPSq@X7xp|tv" type="typescript_statement">
+<mutation numlines="5" line0="sprites.onOverlap&#40;SpriteKind.Player&#44; SpriteKind.ItemEstrela&#44; function &#40;sprite&#44; otherSprite&#41; &#123;&#13;" line1="    otherSprite.destroy&#40;effects.halo&#44; 200&#41;&#13;" line2="    music.playTone&#40;Note.A5&#44; music.beat&#40;BeatFraction.Quarter&#41;&#41;&#13;" line3="    ativarTurbo&#40;&#41;&#13;" line4="&#125;&#41;" />
 <next>
-<block id="#?W-oE;G$%6u_6R;Cim%" type="typescript_statement">
-<mutation numlines="4" line0="sprites.onOverlap&#40;SpriteKind.Player&#44; SpriteKind.Bandeira&#44; function &#40;sprite&#44; otherSprite&#41; &#123;" line1="    otherSprite.destroy&#40;effects.confetti&#44; 200&#41;" line2="    passarDeNivel&#40;&#41;" line3="&#125;&#41;" />
+<block id="lenWdFUGoE8+)6Mq.xo*" type="typescript_statement">
+<mutation numlines="4" line0="sprites.onOverlap&#40;SpriteKind.Player&#44; SpriteKind.Bandeira&#44; function &#40;sprite&#44; otherSprite&#41; &#123;&#13;" line1="    otherSprite.destroy&#40;effects.confetti&#44; 200&#41;&#13;" line2="    passarDeNivel&#40;&#41;&#13;" line3="&#125;&#41;" />
 <next>
-<block id="]/3A:``XL2)m,,y@[MFT" type="typescript_statement">
-<mutation numlines="12" line0="game.onUpdate&#40;function &#40;&#41; &#123;" line1="    if &#40;jogador.vx &#62; 0&#41; &#123;" line2="        jogador.setImage&#40;imagemJogadorDireita&#41;" line3="        direcao &#61; 1" line4="    &#125; else if &#40;jogador.vx &#60; 0&#41; &#123;" line5="        jogador.setImage&#40;imagemJogadorEsquerda&#41;" line6="        direcao &#61; -1" line7="    &#125;" line8="    if &#40;jogador.y &#62; 135&#41; &#123;" line9="        cairNoBuraco&#40;&#41;" line10="    &#125;" line11="&#125;&#41;" />
+<block id="{3m;67Q}EMWS.x^}Iu6+" type="typescript_statement">
+<mutation numlines="12" line0="game.onUpdate&#40;function &#40;&#41; &#123;&#13;" line1="    if &#40;jogador.vx &#62; 0&#41; &#123;&#13;" line2="        jogador.setImage&#40;imagemJogadorDireita&#41;&#13;" line3="        direcao &#61; 1&#13;" line4="    &#125; else if &#40;jogador.vx &#60; 0&#41; &#123;&#13;" line5="        jogador.setImage&#40;imagemJogadorEsquerda&#41;&#13;" line6="        direcao &#61; -1&#13;" line7="    &#125;&#13;" line8="    if &#40;jogador.y &#62; 150&#41; &#123;" line9="        cairNoBuraco&#40;&#41;" line10="    &#125;" line11="&#125;&#41;" />
 <next>
-<block id="Kz(j#1@Uk]3Urt_7ysBg" type="typescript_statement">
-<mutation numlines="5" line0="game.onUpdateInterval&#40;2000&#44; function &#40;&#41; &#123;" line1="    if &#40;energiaTiro &#60; 5&#41; &#123;" line2="        energiaTiro &#43;&#61; 1" line3="    &#125;" line4="&#125;&#41;" />
+<block id="2NmgOI|lJ3ZaNBB9Mpca" type="typescript_statement">
+<mutation numlines="6" line0="game.onUpdateInterval&#40;2000&#44; function &#40;&#41; &#123;" line1="    if &#40;energiaTiro &#60; 5&#41; &#123;" line2="        energiaTiro &#43;&#61; 1" line3="        atualizarEnergia&#40;&#41;" line4="    &#125;" line5="&#125;&#41;" />
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
 </block>
 </next>
 </block>
