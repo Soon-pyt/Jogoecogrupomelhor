@@ -15,6 +15,13 @@ let invulneravel = false
 let podeAtirar = true
 let energiaTiro = 5
 let velocidadeProjetil = 220
+let tempoUltimoTiro = 0
+let tempoFimTurbo = 0
+let tempoFimInvulneravel = 0
+let tempoProximoPiscar = 0
+let piscandoDano = false
+let turboAtivo = false
+let spriteVisivel = true
 let projetil: Sprite = null
 let inimigo: Sprite = null
 let atirador: Sprite = null
@@ -24,6 +31,7 @@ let itemEstrela: Sprite = null
 let indicadorEnergia: Sprite = null
 let projetilInimigo: Sprite = null
 let direcaoTiroInimigo = 1
+let imagensEnergia: Image[] = []
 let imagemJogadorDireita = img`
     . . . 2 2 2 2 2 2 . . . . . . .
     . . 2 2 2 2 2 2 2 2 2 . . . . .
@@ -161,28 +169,32 @@ let imagemInimigoAereo = img`
     . . . . . . . . . . . . . . . .
     `
 let imagemInimigoAtirador = img`
-    . . . . b b b b . . . . . . . .
-    . . b b b b b b b b . . . . . .
-    . b b b b b b b b b b . . . . .
-    b b b f b b b b f b b b . . . .
-    b b b b b b b b b b b b . . . .
-    b b b b 5 5 5 5 b b b b . . . .
-    b b b f f f f f f f b b . . . .
-    . b b b b b b b b b b . . . . .
-    . . b b b b b b b b . . . . . .
-    . . . b b . . b b . . . . . . .
-    . . b b . . . . b b . . . . . .
-    . b b . . . . . . b b . . . . .
+    . . . . 2 2 2 2 . . . . . . . .
+    . . 2 2 2 4 4 2 2 2 . . . . . .
+    . 2 2 4 4 5 5 4 4 2 2 . . . . .
+    2 2 4 f 4 5 5 4 f 4 2 2 . . . .
+    2 4 4 4 4 4 4 4 4 4 4 2 . . . .
+    2 4 5 5 2 2 2 2 5 5 4 2 . . . .
+    2 4 4 f f f f f f f 4 2 . . . .
+    . 2 4 4 4 4 4 4 4 4 2 . . . . .
+    . . 2 2 4 4 4 4 2 2 . . . . . .
+    . . . 2 2 . . 2 2 . . . . . . .
+    . . 2 4 . . . . 4 2 . . . . . .
+    . 2 4 . . . . . . 4 2 . . . . .
     . . . . 5 5 5 5 5 5 . . . . . .
-    . . . . . 5 5 5 5 . . . . . . .
-    . . . . . . 5 5 . . . . . . . .
+    . . . . . 4 4 4 4 . . . . . . .
+    . . . . . . 2 2 . . . . . . . .
     . . . . . . . . . . . . . . . .
     `
 let imagemProjetilInimigo = img`
-    . 2 2 .
-    2 5 5 2
-    2 5 5 2
-    . 2 2 .
+    . . 2 2 2 2 . .
+    . 2 5 5 5 4 2 .
+    2 5 5 4 4 4 4 2
+    2 5 4 4 2 2 4 2
+    2 5 5 4 4 4 4 2
+    . 2 5 5 5 4 2 .
+    . . 2 2 2 2 . .
+    . . . 2 2 . . .
     `
 let imagemBandeiraNivel1 = img`
     . . . . . . f f . . . . . . . .
@@ -582,19 +594,7 @@ function criarIndicadorEnergia() {
     indicadorEnergia.setPosition(24, 112)
 }
 function atualizarEnergia() {
-    if (energiaTiro == 0) {
-        indicadorEnergia.setImage(imagemEnergia0)
-    } else if (energiaTiro == 1) {
-        indicadorEnergia.setImage(imagemEnergia1)
-    } else if (energiaTiro == 2) {
-        indicadorEnergia.setImage(imagemEnergia2)
-    } else if (energiaTiro == 3) {
-        indicadorEnergia.setImage(imagemEnergia3)
-    } else if (energiaTiro == 4) {
-        indicadorEnergia.setImage(imagemEnergia4)
-    } else {
-        indicadorEnergia.setImage(imagemEnergia5)
-    }
+    indicadorEnergia.setImage(imagensEnergia[energiaTiro])
 }
 function pontosBase() {
     return nivel * 10
@@ -627,6 +627,55 @@ function atirarInimigo(atiradorAtual: Sprite) {
     }
     projetilInimigo = sprites.createProjectileFromSprite(imagemProjetilInimigo, atiradorAtual, 55 * direcaoTiroInimigo, 0)
     projetilInimigo.setKind(SpriteKind.ProjetilInimigo)
+}
+function atualizarTempos() {
+    if (turboAtivo == true) {
+        if (game.runtime() > tempoFimTurbo) {
+            turboAtivo = false
+            controller.moveSprite(jogador, 110, 0)
+            velocidadeProjetil = 220
+            if (piscandoDano == false) {
+                invulneravel = false
+            }
+        }
+    }
+    if (piscandoDano == true) {
+        if (game.runtime() > tempoProximoPiscar) {
+            if (spriteVisivel == true) {
+                jogador.setFlag(SpriteFlag.Invisible, true)
+                spriteVisivel = false
+            } else {
+                jogador.setFlag(SpriteFlag.Invisible, false)
+                spriteVisivel = true
+            }
+            tempoProximoPiscar = game.runtime() + 100
+        }
+        if (game.runtime() > tempoFimInvulneravel) {
+            piscandoDano = false
+            jogador.setFlag(SpriteFlag.Invisible, false)
+            if (turboAtivo == false) {
+                invulneravel = false
+            }
+        }
+    }
+}
+function criarAmeacaDinamica() {
+    let xDinamico = jogador.x + 96
+    if (xDinamico > 984) {
+        xDinamico = jogador.x - 96
+    }
+    if (xDinamico < 32) {
+        xDinamico = 32
+    }
+    if (Math.percentChance(50)) {
+        if (tiles.tileAtLocationIsWall(tiles.getTileLocation(Math.idiv(xDinamico, 16), 7))) {
+            criarInimigo(xDinamico, 104)
+        } else {
+            criarInimigoAereo(xDinamico, randint(48, 72))
+        }
+    } else {
+        criarInimigoAereo(xDinamico, randint(48, 72))
+    }
 }
 function carregarNivel() {
     sprites.destroyAllSpritesOfKind(SpriteKind.Enemy)
@@ -713,13 +762,12 @@ function carregarNivel() {
             `, [imagemVazia, imagemVazia, imagemChaoSubmundo, imagemPlataformaSubmundo, imagemDecoracaoSubmundo], TileScale.Sixteen))
         configurarTiles()
         criarInimigo(88, 104)
-        criarInimigo(296, 104)
-        criarInimigo(520, 104)
-        criarInimigo(744, 104)
-        criarInimigo(968, 104)
-        criarInimigoAtirador(136, 104)
-        criarInimigoAtirador(424, 104)
-        criarInimigoAtirador(696, 104)
+        criarInimigo(312, 104)
+        criarInimigo(560, 104)
+        criarInimigo(904, 104)
+        criarInimigoAtirador(216, 104)
+        criarInimigoAtirador(456, 104)
+        criarInimigoAtirador(760, 104)
         criarInimigoAereo(248, 56)
         criarInimigoAereo(568, 40)
         criarInimigoAereo(840, 72)
@@ -730,54 +778,33 @@ function carregarNivel() {
     }
     renascerJogador()
 }
-function piscarJogador() {
-    jogador.setFlag(SpriteFlag.GhostThroughSprites, true)
-    for (let index = 0; index < 6; index++) {
-        jogador.setFlag(SpriteFlag.Invisible, true)
-        pause(100)
-        jogador.setFlag(SpriteFlag.Invisible, false)
-        pause(100)
-    }
-    jogador.setFlag(SpriteFlag.Invisible, false)
-    jogador.setFlag(SpriteFlag.GhostThroughSprites, false)
-}
-function machucarJogador() {
+function aplicarDano(origem: string) {
     if (invulneravel == false) {
-        invulneravel = true
         info.changeLifeBy(-1)
+        if (origem == "buraco") {
+            renascerJogador()
+        }
+        invulneravel = true
+        piscandoDano = true
+        spriteVisivel = true
+        tempoFimInvulneravel = game.runtime() + 1200
+        tempoProximoPiscar = game.runtime()
         music.playTone(Note.C4, music.beat(BeatFraction.Eighth))
         if (info.life() <= 0) {
             game.gameOver(false)
         } else {
             jogador.startEffect(effects.spray, 500)
-            piscarJogador()
-            invulneravel = false
         }
-    }
-}
-function cairNoBuraco() {
-    info.changeLifeBy(-1)
-    renascerJogador()
-    invulneravel = true
-    music.playTone(Note.C4, music.beat(BeatFraction.Eighth))
-    if (info.life() <= 0) {
-        game.gameOver(false)
-    } else {
-        jogador.startEffect(effects.spray, 500)
-        piscarJogador()
-        invulneravel = false
     }
 }
 function ativarTurbo() {
     invulneravel = true
+    turboAtivo = true
     velocidadeProjetil = 280
+    tempoFimTurbo = game.runtime() + 5000
+    tempoFimInvulneravel = tempoFimTurbo
     controller.moveSprite(jogador, 160, 0)
     jogador.startEffect(effects.halo, 5000)
-    pause(5000)
-    controller.moveSprite(jogador, 110, 0)
-    velocidadeProjetil = 220
-    jogador.setFlag(SpriteFlag.Invisible, false)
-    invulneravel = false
 }
 function passarDeNivel() {
     if (nivel < 3) {
@@ -794,6 +821,7 @@ info.setScore(0)
 controller.moveSprite(jogador, 110, 0)
 jogador.ay = 480
 scene.cameraFollowSprite(jogador)
+imagensEnergia = [imagemEnergia0, imagemEnergia1, imagemEnergia2, imagemEnergia3, imagemEnergia4, imagemEnergia5]
 criarIndicadorEnergia()
 atualizarEnergia()
 carregarNivel()
@@ -804,47 +832,91 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     }
 })
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+    if (game.runtime() - tempoUltimoTiro >= 250) {
+        podeAtirar = true
+    } else {
+        podeAtirar = false
+    }
     if (podeAtirar == true) {
         if (energiaTiro > 0) {
             energiaTiro += -1
             atualizarEnergia()
-            podeAtirar = false
+            tempoUltimoTiro = game.runtime()
             projetil = sprites.createProjectileFromSprite(imagemProjetil, jogador, velocidadeProjetil * direcao, 0)
             music.playTone(Note.B5, music.beat(BeatFraction.Eighth))
-            pause(250)
-            podeAtirar = true
         } else {
             music.playTone(98, 100)
         }
     }
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
-    if (invulneravel == false) {
-        otherSprite.destroy(effects.fire, 100)
-        machucarJogador()
+    if (jogador.vy > 0) {
+        otherSprite.destroy(effects.disintegrate, 200)
+        pontuarInimigoTerrestre()
+        jogador.vy = -150
+        music.playTone(Note.C5, music.beat(BeatFraction.Eighth))
+    } else {
+        if (invulneravel == false) {
+            otherSprite.destroy(effects.fire, 100)
+            aplicarDano("inimigo")
+        }
     }
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.InimigoFerido, function (sprite, otherSprite) {
-    if (invulneravel == false) {
-        otherSprite.destroy(effects.fire, 100)
-        machucarJogador()
+    if (jogador.vy > 0) {
+        otherSprite.destroy(effects.disintegrate, 200)
+        pontuarInimigoTerrestre()
+        jogador.vy = -150
+        music.playTone(Note.C5, music.beat(BeatFraction.Eighth))
+    } else {
+        if (invulneravel == false) {
+            otherSprite.destroy(effects.fire, 100)
+            aplicarDano("inimigo")
+        }
     }
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.InimigoAereo, function (sprite, otherSprite) {
     if (invulneravel == false) {
         otherSprite.destroy(effects.fire, 100)
-        machucarJogador()
+        aplicarDano("inimigo")
     }
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.InimigoAtirador, function (sprite, otherSprite) {
-    if (invulneravel == false) {
-        otherSprite.destroy(effects.fire, 100)
-        machucarJogador()
+    if (jogador.vy > 0) {
+        otherSprite.destroy(effects.disintegrate, 200)
+        pontuarInimigoAtirador()
+        jogador.vy = -150
+        music.playTone(Note.C5, music.beat(BeatFraction.Eighth))
+    } else {
+        if (invulneravel == false) {
+            otherSprite.destroy(effects.fire, 100)
+            aplicarDano("inimigo")
+        }
     }
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.ProjetilInimigo, function (sprite, otherSprite) {
     otherSprite.destroy(effects.fire, 100)
-    machucarJogador()
+    aplicarDano("tiro")
+})
+sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Enemy, function (sprite, otherSprite) {
+    if (sprite != otherSprite) {
+        sprite.vx = sprite.vx * -1
+        otherSprite.vx = otherSprite.vx * -1
+    }
+})
+sprites.onOverlap(SpriteKind.Enemy, SpriteKind.InimigoAtirador, function (sprite, otherSprite) {
+    sprite.vx = sprite.vx * -1
+    otherSprite.vx = otherSprite.vx * -1
+})
+sprites.onOverlap(SpriteKind.InimigoAtirador, SpriteKind.InimigoAtirador, function (sprite, otherSprite) {
+    if (sprite != otherSprite) {
+        sprite.vx = sprite.vx * -1
+        otherSprite.vx = otherSprite.vx * -1
+    }
+})
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.ProjetilInimigo, function (sprite, otherSprite) {
+    sprite.destroy(effects.spray, 100)
+    otherSprite.destroy(effects.spray, 100)
 })
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
     scene.cameraShake(2, 100)
@@ -897,6 +969,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Bandeira, function (sprite, othe
     passarDeNivel()
 })
 game.onUpdate(function () {
+    atualizarTempos()
     for (let inimigoAtual of sprites.allOfKind(SpriteKind.Enemy)) {
         protegerBuraco(inimigoAtual)
     }
@@ -914,7 +987,7 @@ game.onUpdate(function () {
         direcao = -1
     }
     if (jogador.y > 150) {
-        cairNoBuraco()
+        aplicarDano("buraco")
     }
 })
 game.onUpdateInterval(2000, function () {
@@ -923,8 +996,11 @@ game.onUpdateInterval(2000, function () {
         atualizarEnergia()
     }
 })
-game.onUpdateInterval(3000, function () {
+game.onUpdateInterval(1500, function () {
     for (let atiradorAtual of sprites.allOfKind(SpriteKind.InimigoAtirador)) {
         atirarInimigo(atiradorAtual)
     }
+})
+game.onUpdateInterval(12000, function () {
+    criarAmeacaDinamica()
 })
