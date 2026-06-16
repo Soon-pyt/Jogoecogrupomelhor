@@ -10,7 +10,8 @@ let direcao = 1
 let velocidadeInimigo = 30
 let invulneravel = false
 let podeAtirar = true
-let perdeuNoBuraco = false
+let energiaTiro = 5
+let velocidadeProjetil = 220
 let projetil: Sprite = null
 let inimigo: Sprite = null
 let bandeira: Sprite = null
@@ -260,11 +261,132 @@ let imagemDecoracao = img`
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
     `
+let imagemChaoDeserto = img`
+    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
+    4 5 5 4 5 5 4 5 5 4 5 5 4 5 5 4
+    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+    5 4 4 5 4 4 5 4 4 5 4 4 5 4 4 5
+    4 4 5 4 4 5 4 4 5 4 4 5 4 4 5 4
+    4 5 4 4 5 4 4 5 4 4 5 4 4 5 4 4
+    5 4 4 5 4 4 5 4 4 5 4 4 5 4 4 5
+    4 4 5 4 4 5 4 4 5 4 4 5 4 4 5 4
+    4 5 4 4 5 4 4 5 4 4 5 4 4 5 4 4
+    5 4 4 5 4 4 5 4 4 5 4 4 5 4 4 5
+    4 4 5 4 4 5 4 4 5 4 4 5 4 4 5 4
+    4 5 4 4 5 4 4 5 4 4 5 4 4 5 4 4
+    5 4 4 5 4 4 5 4 4 5 4 4 5 4 4 5
+    4 4 5 4 4 5 4 4 5 4 4 5 4 4 5 4
+    4 5 4 4 5 4 4 5 4 4 5 4 4 5 4 4
+    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+    `
+let imagemPlataformaDeserto = img`
+    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
+    5 4 4 5 5 4 4 5 5 4 4 5 5 4 4 5
+    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+    4 5 5 4 4 5 5 4 4 5 5 4 4 5 5 4
+    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
+    5 4 4 5 5 4 4 5 5 4 4 5 5 4 4 5
+    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+    4 5 5 4 4 5 5 4 4 5 5 4 4 5 5 4
+    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
+    5 4 4 5 5 4 4 5 5 4 4 5 5 4 4 5
+    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+    4 5 5 4 4 5 5 4 4 5 5 4 4 5 5 4
+    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
+    5 4 4 5 5 4 4 5 5 4 4 5 5 4 4 5
+    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+    `
+let imagemDecoracaoDeserto = img`
+    . . . . . . . . . . . . . . . .
+    . . . . . . . 5 5 . . . . . . .
+    . . . . . 5 5 5 5 5 5 . . . .
+    . . . . 5 5 5 4 4 5 5 . . . .
+    . . . 5 5 5 4 4 4 5 5 5 . . .
+    . . . 5 5 4 4 4 4 4 5 5 . . .
+    . . . . 5 5 4 4 4 5 5 . . . .
+    . . . . . 5 5 5 5 5 5 . . . .
+    . . . . . . . 5 5 . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    `
+let imagemChaoSubmundo = img`
+    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+    4 2 2 4 2 2 4 2 2 4 2 2 4 2 2 4
+    f f f f f f f f f f f f f f f f
+    f 2 2 f f 2 2 f f 2 2 f f 2 2 f
+    f f f 2 2 f f f 2 2 f f f 2 2 f
+    2 2 f f f 2 2 f f f 2 2 f f f 2
+    f f 2 2 f f f 2 2 f f f 2 2 f f
+    f 2 2 f f 2 2 f f 2 2 f f 2 2 f
+    f f f 2 2 f f f 2 2 f f f 2 2 f
+    2 2 f f f 2 2 f f f 2 2 f f f 2
+    f f 2 2 f f f 2 2 f f f 2 2 f f
+    f 2 2 f f 2 2 f f 2 2 f f 2 2 f
+    f f f 2 2 f f f 2 2 f f f 2 2 f
+    2 2 f f f 2 2 f f f 2 2 f f f 2
+    f f 2 2 f f f 2 2 f f f 2 2 f f
+    f f f f f f f f f f f f f f f f
+    `
+let imagemPlataformaSubmundo = img`
+    f f f f f f f f f f f f f f f f
+    f 2 2 f f 2 2 f f 2 2 f f 2 2 f
+    f f f f f f f f f f f f f f f f
+    2 f f 2 2 f f 2 2 f f 2 2 f f 2
+    f f f f f f f f f f f f f f f f
+    f 2 2 f f 2 2 f f 2 2 f f 2 2 f
+    f f f f f f f f f f f f f f f f
+    2 f f 2 2 f f 2 2 f f 2 2 f f 2
+    f f f f f f f f f f f f f f f f
+    f 2 2 f f 2 2 f f 2 2 f f 2 2 f
+    f f f f f f f f f f f f f f f f
+    2 f f 2 2 f f 2 2 f f 2 2 f f 2
+    f f f f f f f f f f f f f f f f
+    f 2 2 f f 2 2 f f 2 2 f f 2 2 f
+    f f f f f f f f f f f f f f f f
+    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+    `
+let imagemDecoracaoSubmundo = img`
+    . . . . . . . . . . . . . . . .
+    . . . . . . 2 2 2 . . . . . . .
+    . . . . . 2 4 4 2 . . . . . . .
+    . . . . 2 4 4 4 4 2 . . . . . .
+    . . . 2 4 4 5 5 4 4 2 . . . .
+    . . . 2 4 5 5 5 5 4 2 . . . .
+    . . . . 2 4 5 5 4 2 . . . . .
+    . . . . . 2 4 4 2 . . . . . . .
+    . . . . . . 2 2 . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    `
 let jogador = sprites.create(imagemJogadorDireita, SpriteKind.Player)
 function configurarTiles() {
-    scene.setTile(2, imagemChao, true)
-    scene.setTile(3, imagemPlataforma, true)
-    scene.setTile(4, imagemDecoracao, false)
+    if (nivel == 1) {
+        scene.setBackgroundColor(9)
+        scene.setTile(2, imagemChao, true)
+        scene.setTile(3, imagemPlataforma, true)
+        scene.setTile(4, imagemDecoracao, false)
+    } else if (nivel == 2) {
+        scene.setBackgroundColor(5)
+        scene.setTile(2, imagemChaoDeserto, true)
+        scene.setTile(3, imagemPlataformaDeserto, true)
+        scene.setTile(4, imagemDecoracaoDeserto, false)
+    } else {
+        scene.setBackgroundColor(15)
+        scene.setTile(2, imagemChaoSubmundo, true)
+        scene.setTile(3, imagemPlataformaSubmundo, true)
+        scene.setTile(4, imagemDecoracaoSubmundo, false)
+    }
 }
 function renascerJogador() {
     jogador.setImage(imagemJogadorDireita)
@@ -287,11 +409,12 @@ function criarInimigo(x: number, y: number) {
     inimigo.ay = 400
     inimigo.setBounceOnWall(true)
 }
-function criarInimigoAereo(x: number, y: number, velocidade: number) {
+function criarInimigoAereo(x: number, y: number) {
     inimigo = sprites.create(imagemInimigoAereo, SpriteKind.InimigoAereo)
     inimigo.setPosition(x, y)
-    inimigo.vx = velocidade
+    inimigo.vx = 50
     inimigo.ay = 0
+    inimigo.setBounceOnWall(true)
 }
 function criarBandeira(x: number, y: number) {
     bandeira = sprites.create(imagemBandeira, SpriteKind.Bandeira)
@@ -317,20 +440,20 @@ function carregarNivel() {
         velocidadeInimigo = 30
         scene.setTileMap(img`
             . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-            . . . . . . . . 4 4 4 4 . . . . . . . . . . . . . . . . . . 4 4 4 4 . . . . . . . . . . . . . . 4 4 4 4 . . . . . . . . . . . .
+            . . . . . . 4 4 4 4 . . . . . . . . . . . . . . . . . . 4 4 4 4 . . . . . . . . . . . . . . 4 4 4 4 . . . . . . . . . . . . . .
             . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-            . . . . . . . . . . . . . . 3 3 3 3 . . . . . . . . . . . . 3 3 3 3 . . . . . . . . . . 3 3 3 3 3 . . . . . . . . . . . . . . .
+            . . . . . . . . . . . 3 3 3 3 . . . . . . . . . . . . . 3 3 3 3 . . . . . . . . . . . . . . 3 3 3 3 . . . . . . . . . . . . . .
             . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-            . . . . . . . . . . . . 3 3 3 3 . . . . . . . . 3 3 3 3 3 . . . . . . . . . 3 3 3 3 3 . . . . . . . . . . . 3 3 3 3 . . . . . .
+            . . . . . . 3 3 3 3 . . . . . . . . . . . 3 3 3 3 . . . . . . . . . . . . 3 3 3 3 . . . . . . . . . . . . . 3 3 3 3 . . . . . .
             . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-            2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . . . 2 2 2 2 2 2 2 2 2 2 2 2 2
+            2 2 2 2 2 2 2 2 2 2 2 2 2 2 . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
             `)
         configurarTiles()
         criarInimigo(168, 104)
         criarInimigo(392, 104)
         criarInimigo(680, 104)
-        criarItemVida(216, 72)
-        criarItemEstrela(664, 72)
+        criarItemVida(376, 72)
+        criarItemEstrela(760, 40)
         criarBandeira(984, 104)
     } else if (nivel == 2) {
         velocidadeInimigo = 45
@@ -338,33 +461,30 @@ function carregarNivel() {
             . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
             . . . . 4 4 4 4 . . . . . . . . . . . . . . . . 4 4 4 4 . . . . . . . . . . . . . . . . . 4 4 4 4 . . . . . . . . . . . . . . .
             . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-            . . . . . . . . . . 3 3 3 3 3 . . . . . . . . . 3 3 3 3 3 . . . . . . . . . . 3 3 3 3 3 . . . . . . . . . 3 3 3 3 . . . . . . .
-            . . . . . . . . . . . . . . . . 3 3 3 3 . . . . . . . . . . . . . . 3 3 3 3 . . . . . . . . . . 3 3 3 3 . . . . . . . . . . . .
-            . . . . . . . . 3 3 3 3 . . . . . . . 3 3 3 3 3 . . . . . . . . . 3 3 3 3 3 . . . . . . . . . . 3 3 3 3 . . . . . . . . . . . .
+            . . . . . . . . . 3 3 3 3 . . . . . . . . . . . 3 3 3 3 . . . . . . . . . . . . . 3 3 3 3 . . . . . . . . . . 3 3 3 3 . . . . .
+            . . . . . . . . . . . . . . . . 3 3 3 3 . . . . . . . . . . . . . 3 3 3 3 . . . . . . . . . . . 3 3 3 3 . . . . . . . . . . . .
+            . . . . 3 3 3 3 . . . . . . . . . . . . . . 3 3 3 3 . . . . . . . . . . . . 3 3 3 3 . . . . . . . . . . . . . . . 3 3 3 3 . . .
             . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-            2 2 2 2 2 2 2 2 2 2 2 2 2 . . . 2 2 2 2 2 2 2 2 2 2 2 2 . . . 2 2 2 2 2 2 2 2 2 2 2 2 . . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+            2 2 2 2 2 2 2 2 2 2 2 2 . . . 2 2 2 2 2 2 2 2 2 2 2 2 . . . 2 2 2 2 2 2 2 2 2 2 2 2 2 . . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
             `)
         configurarTiles()
-        criarInimigo(184, 104)
-        criarInimigo(392, 104)
-        criarInimigo(632, 104)
-        criarInimigo(888, 104)
-        criarInimigoAereo(256, 64, 35)
-        criarInimigoAereo(560, 48, -35)
+        criarInimigoAereo(256, 56)
+        criarInimigoAereo(560, 56)
+        criarInimigoAereo(800, 56)
         criarItemVida(200, 40)
-        criarItemEstrela(584, 72)
+        criarItemEstrela(632, 72)
         criarBandeira(984, 104)
     } else {
-        velocidadeInimigo = 60
+        velocidadeInimigo = 80
         scene.setTileMap(img`
             . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
             . . . . . . 4 4 4 4 . . . . . . . . . . . . . . 4 4 4 4 . . . . . . . . . . . . . . . 4 4 4 4 . . . . . . . . . . . . . . . . .
             . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-            . . . . . . 3 3 3 3 . . . . . . . . . . 3 3 3 3 . . . . . . . . . . . 3 3 3 3 . . . . . . . . . . . 3 3 3 3 . . . . . . . . . .
-            . . . . . . . . . . . . 3 3 3 3 . . . . . . . . 3 3 3 3 . . . . . . . . 3 3 3 3 . . . . . . . . 3 3 3 3 . . . . . . 3 3 3 3 . .
-            . . . 3 3 3 3 3 . . . . . . . . 3 3 3 3 3 . . . . . . . . . 3 3 3 3 3 . . . . . . . . 3 3 3 3 3 . . . . . . . . 3 3 3 3 . . . .
+            . . . . . 3 3 3 3 . . . . . . . . . . . 3 3 3 3 . . . . . . . . . . 3 3 3 3 . . . . . . . . . . 3 3 3 3 . . . . . 3 3 3 3 . . .
+            . . . . . . . . . . . 3 3 3 3 . . . . . . . . . . . 3 3 3 3 . . . . . . . . . . 3 3 3 3 . . . . . . . . . . 3 3 3 3 . . . . . .
+            . . 3 3 3 3 . . . . . . . . . . . 3 3 3 3 . . . . . . . . . . 3 3 3 3 . . . . . . . . . . 3 3 3 3 . . . . . . . 3 3 3 3 . . . .
             . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-            2 2 2 2 2 2 2 2 2 2 2 . . . 2 2 2 2 2 2 2 2 2 2 2 . . . 2 2 2 2 2 2 2 2 2 2 2 . . . 2 2 2 2 2 2 2 2 2 2 . . . 2 2 2 2 2 2 2 2 2
+            2 2 2 2 2 2 2 2 2 2 . . . 2 2 2 2 2 2 2 2 2 2 . . . 2 2 2 2 2 2 2 2 2 2 2 . . . 2 2 2 2 2 2 2 2 2 2 2 . . . 2 2 2 2 2 2 2 2 2 2
             `)
         configurarTiles()
         criarInimigo(88, 104)
@@ -372,10 +492,7 @@ function carregarNivel() {
         criarInimigo(520, 104)
         criarInimigo(744, 104)
         criarInimigo(968, 104)
-        criarInimigoAereo(224, 56, 45)
-        criarInimigoAereo(560, 48, -45)
-        criarInimigoAereo(816, 56, 45)
-        criarItemVida(232, 40)
+        criarItemVida(216, 56)
         criarItemEstrela(728, 72)
         criarBandeira(984, 104)
     }
@@ -407,29 +524,27 @@ function machucarJogador() {
     }
 }
 function cairNoBuraco() {
-    if (perdeuNoBuraco == false) {
-        perdeuNoBuraco = true
-        invulneravel = true
-        renascerJogador()
-        info.changeLifeBy(-1)
-        music.playTone(Note.C4, music.beat(BeatFraction.Eighth))
-        if (info.life() <= 0) {
-            game.gameOver(false)
-        } else {
-            jogador.startEffect(effects.spray, 500)
-            piscarJogador()
-            invulneravel = false
-            perdeuNoBuraco = false
-        }
+    info.changeLifeBy(-1)
+    renascerJogador()
+    invulneravel = true
+    music.playTone(Note.C4, music.beat(BeatFraction.Eighth))
+    if (info.life() <= 0) {
+        game.gameOver(false)
+    } else {
+        jogador.startEffect(effects.spray, 500)
+        piscarJogador()
+        invulneravel = false
     }
 }
 function ativarTurbo() {
     invulneravel = true
+    velocidadeProjetil = 280
     controller.moveSprite(jogador, 160, 0)
     jogador.setFlag(SpriteFlag.GhostThroughSprites, true)
     jogador.startEffect(effects.halo, 5000)
     pause(5000)
     controller.moveSprite(jogador, 110, 0)
+    velocidadeProjetil = 220
     jogador.setFlag(SpriteFlag.GhostThroughSprites, false)
     jogador.setFlag(SpriteFlag.Invisible, false)
     invulneravel = false
@@ -447,30 +562,25 @@ scene.setBackgroundColor(9)
 info.setLife(3)
 info.setScore(0)
 controller.moveSprite(jogador, 110, 0)
-jogador.ay = 400
+jogador.ay = 480
 scene.cameraFollowSprite(jogador)
 carregarNivel()
-controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
-    direcao = -1
-    jogador.setImage(imagemJogadorEsquerda)
-})
-controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
-    direcao = 1
-    jogador.setImage(imagemJogadorDireita)
-})
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     if (jogador.isHittingTile(CollisionDirection.Bottom)) {
-        jogador.vy = -175
+        jogador.vy = -195
         music.playTone(Note.C5, music.beat(BeatFraction.Quarter))
     }
 })
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     if (podeAtirar == true) {
-        podeAtirar = false
-        projetil = sprites.createProjectileFromSprite(imagemProjetil, jogador, 120 * direcao, 0)
-        music.playTone(Note.B5, music.beat(BeatFraction.Eighth))
-        pause(300)
-        podeAtirar = true
+        if (energiaTiro > 0) {
+            energiaTiro += -1
+            podeAtirar = false
+            projetil = sprites.createProjectileFromSprite(imagemProjetil, jogador, velocidadeProjetil * direcao, 0)
+            music.playTone(Note.B5, music.beat(BeatFraction.Eighth))
+            pause(250)
+            podeAtirar = true
+        }
     }
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
@@ -492,6 +602,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.InimigoAereo, function (sprite, 
     }
 })
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
+    scene.cameraShake(2, 100)
     if (nivel == 3) {
         sprite.destroy(effects.fire, 100)
         otherSprite.setImage(imagemInimigoFerido)
@@ -506,6 +617,7 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
     }
 })
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.InimigoAereo, function (sprite, otherSprite) {
+    scene.cameraShake(2, 100)
     if (nivel == 3) {
         sprite.destroy(effects.fire, 100)
         otherSprite.setImage(imagemInimigoFerido)
@@ -520,6 +632,7 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.InimigoAereo, function (spri
     }
 })
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.InimigoFerido, function (sprite, otherSprite) {
+    scene.cameraShake(2, 100)
     sprite.destroy(effects.fire, 100)
     otherSprite.destroy(effects.disintegrate, 200)
     info.changeScoreBy(10)
@@ -540,7 +653,19 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Bandeira, function (sprite, othe
     passarDeNivel()
 })
 game.onUpdate(function () {
-    if (jogador.y > 120) {
+    if (jogador.vx > 0) {
+        jogador.setImage(imagemJogadorDireita)
+        direcao = 1
+    } else if (jogador.vx < 0) {
+        jogador.setImage(imagemJogadorEsquerda)
+        direcao = -1
+    }
+    if (jogador.y > 135) {
         cairNoBuraco()
+    }
+})
+game.onUpdateInterval(2000, function () {
+    if (energiaTiro < 5) {
+        energiaTiro += 1
     }
 })
