@@ -5,6 +5,8 @@ namespace SpriteKind {
     export const InimigoFerido = SpriteKind.create()
     export const InimigoAereo = SpriteKind.create()
     export const IndicadorEnergia = SpriteKind.create()
+    export const InimigoAtirador = SpriteKind.create()
+    export const ProjetilInimigo = SpriteKind.create()
 }
 let nivel = 1
 let direcao = 1
@@ -15,10 +17,13 @@ let energiaTiro = 5
 let velocidadeProjetil = 220
 let projetil: Sprite = null
 let inimigo: Sprite = null
+let atirador: Sprite = null
 let bandeira: Sprite = null
 let itemVida: Sprite = null
 let itemEstrela: Sprite = null
 let indicadorEnergia: Sprite = null
+let projetilInimigo: Sprite = null
+let direcaoTiroInimigo = 1
 let imagemJogadorDireita = img`
     . . . 2 2 2 2 2 2 . . . . . . .
     . . 2 2 2 2 2 2 2 2 2 . . . . .
@@ -154,6 +159,30 @@ let imagemInimigoAereo = img`
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
+    `
+let imagemInimigoAtirador = img`
+    . . . . b b b b . . . . . . . .
+    . . b b b b b b b b . . . . . .
+    . b b b b b b b b b b . . . . .
+    b b b f b b b b f b b b . . . .
+    b b b b b b b b b b b b . . . .
+    b b b b 5 5 5 5 b b b b . . . .
+    b b b f f f f f f f b b . . . .
+    . b b b b b b b b b b . . . . .
+    . . b b b b b b b b . . . . . .
+    . . . b b . . b b . . . . . . .
+    . . b b . . . . b b . . . . . .
+    . b b . . . . . . b b . . . . .
+    . . . . 5 5 5 5 5 5 . . . . . .
+    . . . . . 5 5 5 5 . . . . . . .
+    . . . . . . 5 5 . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    `
+let imagemProjetilInimigo = img`
+    . 2 2 .
+    2 5 5 2
+    2 5 5 2
+    . 2 2 .
     `
 let imagemBandeiraNivel1 = img`
     . . . . . . f f . . . . . . . .
@@ -489,7 +518,7 @@ function configurarTiles() {
     if (nivel == 1) {
         scene.setBackgroundColor(9)
     } else if (nivel == 2) {
-        scene.setBackgroundColor(8)
+        scene.setBackgroundColor(11)
     } else {
         scene.setBackgroundColor(13)
     }
@@ -522,6 +551,13 @@ function criarInimigoAereo(x: number, y: number) {
     inimigo.ay = 0
     inimigo.setBounceOnWall(true)
 }
+function criarInimigoAtirador(x: number, y: number) {
+    atirador = sprites.create(imagemInimigoAtirador, SpriteKind.InimigoAtirador)
+    atirador.setPosition(x, y)
+    atirador.vx = velocidadeInimigo * -1
+    atirador.ay = 400
+    atirador.setBounceOnWall(true)
+}
 function criarBandeira(x: number, y: number) {
     if (nivel == 1) {
         bandeira = sprites.create(imagemBandeiraNivel1, SpriteKind.Bandeira)
@@ -543,7 +579,7 @@ function criarItemEstrela(x: number, y: number) {
 function criarIndicadorEnergia() {
     indicadorEnergia = sprites.create(imagemEnergia5, SpriteKind.IndicadorEnergia)
     indicadorEnergia.setFlag(SpriteFlag.RelativeToCamera, true)
-    indicadorEnergia.setPosition(144, 8)
+    indicadorEnergia.setPosition(24, 112)
 }
 function atualizarEnergia() {
     if (energiaTiro == 0) {
@@ -560,14 +596,48 @@ function atualizarEnergia() {
         indicadorEnergia.setImage(imagemEnergia5)
     }
 }
+function pontosBase() {
+    return nivel * 10
+}
+function pontuarInimigoTerrestre() {
+    info.changeScoreBy(pontosBase())
+}
+function pontuarInimigoAereo() {
+    info.changeScoreBy(pontosBase() + 15)
+}
+function pontuarInimigoAtirador() {
+    info.changeScoreBy(pontosBase() + 25)
+}
+function protegerBuraco(inimigoAtual: Sprite) {
+    if (inimigoAtual.vx < 0) {
+        if (tiles.tileAtLocationIsWall(tiles.getTileLocation(Math.idiv(inimigoAtual.x - 12, 16), Math.idiv(inimigoAtual.y + 10, 16))) == false) {
+            inimigoAtual.vx = inimigoAtual.vx * -1
+        }
+    } else if (inimigoAtual.vx > 0) {
+        if (tiles.tileAtLocationIsWall(tiles.getTileLocation(Math.idiv(inimigoAtual.x + 12, 16), Math.idiv(inimigoAtual.y + 10, 16))) == false) {
+            inimigoAtual.vx = inimigoAtual.vx * -1
+        }
+    }
+}
+function atirarInimigo(atiradorAtual: Sprite) {
+    if (jogador.x < atiradorAtual.x) {
+        direcaoTiroInimigo = -1
+    } else {
+        direcaoTiroInimigo = 1
+    }
+    projetilInimigo = sprites.createProjectileFromSprite(imagemProjetilInimigo, atiradorAtual, 55 * direcaoTiroInimigo, 0)
+    projetilInimigo.setKind(SpriteKind.ProjetilInimigo)
+}
 function carregarNivel() {
     sprites.destroyAllSpritesOfKind(SpriteKind.Enemy)
     sprites.destroyAllSpritesOfKind(SpriteKind.InimigoFerido)
     sprites.destroyAllSpritesOfKind(SpriteKind.InimigoAereo)
+    sprites.destroyAllSpritesOfKind(SpriteKind.InimigoAtirador)
     sprites.destroyAllSpritesOfKind(SpriteKind.Bandeira)
     sprites.destroyAllSpritesOfKind(SpriteKind.ItemVida)
     sprites.destroyAllSpritesOfKind(SpriteKind.ItemEstrela)
     sprites.destroyAllSpritesOfKind(SpriteKind.Projectile)
+    sprites.destroyAllSpritesOfKind(SpriteKind.ProjetilInimigo)
     if (nivel == 1) {
         velocidadeInimigo = 30
         tiles.setCurrentTilemap(tiles.createTilemap(hex`40000c00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000404040400000000000000000000000000000000000004040404000000000000000000000000000004040404000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000003030303000000000000000000000000000303030300000000000000000000000000000303030300000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000003030303000000000000000000000003030303000000000000000000000000030303030000000000000000000000000003030303000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000202020202020202020202020202000002020202020202020202020202020000020202020202020202020202020200000002020202020202020202020202020200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000`, img`
@@ -586,8 +656,13 @@ function carregarNivel() {
             `, [imagemVazia, imagemVazia, imagemChao, imagemPlataforma, imagemDecoracao], TileScale.Sixteen))
         configurarTiles()
         criarInimigo(168, 104)
+        criarInimigo(264, 104)
         criarInimigo(392, 104)
+        criarInimigo(536, 104)
         criarInimigo(680, 104)
+        criarInimigo(824, 104)
+        criarInimigoAtirador(456, 104)
+        criarInimigoAtirador(888, 104)
         criarItemVida(376, 72)
         criarItemEstrela(760, 40)
         criarBandeira(984, 104)
@@ -609,21 +684,27 @@ function carregarNivel() {
             `, [imagemVazia, imagemVazia, imagemChaoDeserto, imagemPlataformaDeserto, imagemDecoracaoDeserto], TileScale.Sixteen))
         configurarTiles()
         criarInimigoAereo(256, 56)
+        criarInimigoAereo(384, 72)
         criarInimigoAereo(560, 56)
+        criarInimigoAereo(688, 72)
         criarInimigoAereo(800, 56)
+        criarInimigoAereo(928, 72)
+        criarInimigoAtirador(184, 104)
+        criarInimigoAtirador(504, 104)
+        criarInimigoAtirador(824, 104)
         criarItemVida(200, 40)
         criarItemEstrela(632, 72)
         criarBandeira(984, 104)
     } else {
         velocidadeInimigo = 110
-        tiles.setCurrentTilemap(tiles.createTilemap(hex`40000c00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000404040400000000000000000000000000000404040400000000000000000000000000040404040000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000003030303030300000000000000000003030303030300000000000000000000030303030303000000000000000000000303030303030000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000003030303030300000000000000000000030303030303030000000000000000000003030303030300000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000202020202020202020200000002020202020202020202000000020202020202020202020200000002020202020202020202020000000202020202020202020200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000`, img`
+        tiles.setCurrentTilemap(tiles.createTilemap(hex`40000c00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000404040400000000000000000000000000000000000000000404040400000000000000000000000000000000000004040404000000000000000000000000000000000000000003030303030300000000000000000000000000000000000000000000030303030303000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000030303030303000000000000000000000000000000000000000000000000030303030303000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000303030303030000000000000000000003030303030300000000000000000000000000000000030303030303000000000000000000000000000000000202020202020202020200000002020202020202020202000000020202020202020202020200000002020202020202020202020000000202020202020202020200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000`, img`
             . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+            . . . . . . 2 2 2 2 . . . . . . . . . . . . . . . . . . . . 2 2 2 2 . . . . . . . . . . . . . . . . . . 2 2 2 2 . . . . . . . .
+            . . . . . . . . . . . . 2 2 2 2 2 2 . . . . . . . . . . . . . . . . . . . . . . 2 2 2 2 2 2 . . . . . . . . . . . . . . . . . .
             . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+            . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2 2 2 2 2 . . . . . . . . . . . . . . . . . . . . . . . . 2 2 2 2 2 2 . .
             . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-            . . . . . 2 2 2 2 2 2 . . . . . . . . . 2 2 2 2 2 2 . . . . . . . . . . 2 2 2 2 2 2 . . . . . . . . . . 2 2 2 2 2 2 . . . . . .
-            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-            . . . . . . . . . . . . 2 2 2 2 2 2 . . . . . . . . . . 2 2 2 2 2 2 2 . . . . . . . . . . 2 2 2 2 2 2 . . . . . . . . . . . . .
-            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+            . . . . 2 2 2 2 2 2 . . . . . . . . . . 2 2 2 2 2 2 . . . . . . . . . . . . . . . . 2 2 2 2 2 2 . . . . . . . . . . . . . . . .
             2 2 2 2 2 2 2 2 2 2 . . . 2 2 2 2 2 2 2 2 2 2 . . . 2 2 2 2 2 2 2 2 2 2 2 . . . 2 2 2 2 2 2 2 2 2 2 2 . . . 2 2 2 2 2 2 2 2 2 2
             . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
             . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
@@ -636,9 +717,13 @@ function carregarNivel() {
         criarInimigo(520, 104)
         criarInimigo(744, 104)
         criarInimigo(968, 104)
+        criarInimigoAtirador(136, 104)
+        criarInimigoAtirador(424, 104)
+        criarInimigoAtirador(696, 104)
         criarInimigoAereo(248, 56)
         criarInimigoAereo(568, 40)
         criarInimigoAereo(840, 72)
+        criarInimigoAereo(936, 40)
         criarItemVida(216, 72)
         criarItemEstrela(728, 72)
         criarBandeira(984, 104)
@@ -687,12 +772,10 @@ function ativarTurbo() {
     invulneravel = true
     velocidadeProjetil = 280
     controller.moveSprite(jogador, 160, 0)
-    jogador.setFlag(SpriteFlag.GhostThroughSprites, true)
     jogador.startEffect(effects.halo, 5000)
     pause(5000)
     controller.moveSprite(jogador, 110, 0)
     velocidadeProjetil = 220
-    jogador.setFlag(SpriteFlag.GhostThroughSprites, false)
     jogador.setFlag(SpriteFlag.Invisible, false)
     invulneravel = false
 }
@@ -753,6 +836,16 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.InimigoAereo, function (sprite, 
         machucarJogador()
     }
 })
+sprites.onOverlap(SpriteKind.Player, SpriteKind.InimigoAtirador, function (sprite, otherSprite) {
+    if (invulneravel == false) {
+        otherSprite.destroy(effects.fire, 100)
+        machucarJogador()
+    }
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.ProjetilInimigo, function (sprite, otherSprite) {
+    otherSprite.destroy(effects.fire, 100)
+    machucarJogador()
+})
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
     scene.cameraShake(2, 100)
     if (nivel == 3) {
@@ -764,30 +857,29 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
     } else {
         sprite.destroy(effects.fire, 100)
         otherSprite.destroy(effects.disintegrate, 200)
-        info.changeScoreBy(10)
+        pontuarInimigoTerrestre()
         music.playMelody("C5 G5 C6", 240)
     }
 })
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.InimigoAereo, function (sprite, otherSprite) {
     scene.cameraShake(2, 100)
-    if (nivel == 3) {
-        sprite.destroy(effects.fire, 100)
-        otherSprite.setImage(imagemInimigoFerido)
-        otherSprite.setKind(SpriteKind.InimigoFerido)
-        otherSprite.vx = velocidadeInimigo * -1
-        music.playTone(Note.A4, music.beat(BeatFraction.Eighth))
-    } else {
-        sprite.destroy(effects.fire, 100)
-        otherSprite.destroy(effects.disintegrate, 200)
-        info.changeScoreBy(10)
-        music.playMelody("C5 G5 C6", 240)
-    }
+    sprite.destroy(effects.fire, 100)
+    otherSprite.destroy(effects.disintegrate, 200)
+    pontuarInimigoAereo()
+    music.playMelody("C5 G5 C6", 240)
+})
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.InimigoAtirador, function (sprite, otherSprite) {
+    scene.cameraShake(2, 100)
+    sprite.destroy(effects.fire, 100)
+    otherSprite.destroy(effects.disintegrate, 200)
+    pontuarInimigoAtirador()
+    music.playMelody("C5 G5 C6", 240)
 })
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.InimigoFerido, function (sprite, otherSprite) {
     scene.cameraShake(2, 100)
     sprite.destroy(effects.fire, 100)
     otherSprite.destroy(effects.disintegrate, 200)
-    info.changeScoreBy(10)
+    pontuarInimigoTerrestre()
     music.playMelody("C5 G5 C6", 240)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.ItemVida, function (sprite, otherSprite) {
@@ -805,6 +897,15 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Bandeira, function (sprite, othe
     passarDeNivel()
 })
 game.onUpdate(function () {
+    for (let inimigoAtual of sprites.allOfKind(SpriteKind.Enemy)) {
+        protegerBuraco(inimigoAtual)
+    }
+    for (let inimigoAtual2 of sprites.allOfKind(SpriteKind.InimigoFerido)) {
+        protegerBuraco(inimigoAtual2)
+    }
+    for (let inimigoAtual3 of sprites.allOfKind(SpriteKind.InimigoAtirador)) {
+        protegerBuraco(inimigoAtual3)
+    }
     if (jogador.vx > 0) {
         jogador.setImage(imagemJogadorDireita)
         direcao = 1
@@ -820,5 +921,10 @@ game.onUpdateInterval(2000, function () {
     if (energiaTiro < 5) {
         energiaTiro += 1
         atualizarEnergia()
+    }
+})
+game.onUpdateInterval(3000, function () {
+    for (let atiradorAtual of sprites.allOfKind(SpriteKind.InimigoAtirador)) {
+        atirarInimigo(atiradorAtual)
     }
 })
