@@ -8,557 +8,60 @@ namespace SpriteKind {
     export const InimigoAtirador = SpriteKind.create()
     export const ProjetilInimigo = SpriteKind.create()
 }
-let nivel = 1
-let direcao = 1
-let velocidadeInimigo = 30
-let invulneravel = false
-let podeAtirar = true
-let energiaTiro = 5
-let velocidadeProjetil = 220
-let projetil: Sprite = null
-let inimigo: Sprite = null
-let atirador: Sprite = null
-let bandeira: Sprite = null
-let itemVida: Sprite = null
-let itemEstrela: Sprite = null
-let indicadorEnergia: Sprite = null
-let projetilInimigo: Sprite = null
-let direcaoTiroInimigo = 1
-let imagemJogadorDireita = img`
-    . . . 2 2 2 2 2 2 . . . . . . .
-    . . 2 2 2 2 2 2 2 2 2 . . . . .
-    . . 4 4 4 4 4 f 4 . . . . . . .
-    . 4 4 4 4 4 4 f 4 4 4 . . . . .
-    . 4 4 4 4 4 4 4 f 4 4 4 . . . .
-    . 4 4 4 4 4 4 f f f f . . . . .
-    . . . 4 4 4 4 4 4 . . . . . . .
-    . . 2 2 8 2 2 2 . . . . . . . .
-    . 2 2 2 8 2 2 8 2 2 2 . . . . .
-    2 2 2 2 8 8 8 8 2 2 2 2 . . . .
-    4 4 2 8 5 8 8 5 8 2 4 4 . . . .
-    4 4 4 8 8 8 8 8 8 4 4 4 . . . .
-    . 4 8 8 8 8 8 8 8 8 4 . . . . .
-    . . 8 8 8 . . 8 8 8 . . . . . .
-    . e e e . . . . e e e . . . . . .
-    e e e e . . . . e e e e . . . . .
-    `
-let imagemJogadorEsquerda = img`
-    . . . . . . . 2 2 2 2 2 2 . . .
-    . . . . . 2 2 2 2 2 2 2 2 2 . .
-    . . . . . . . 4 f 4 4 4 4 4 . .
-    . . . . . 4 4 4 f 4 4 4 4 4 .
-    . . . . 4 4 4 f 4 4 4 4 4 4 .
-    . . . . f f f f 4 4 4 4 4 4 .
-    . . . . . . 4 4 4 4 4 4 . . .
-    . . . . . . . . 2 2 2 8 2 2 . .
-    . . . . . 2 2 2 8 2 2 8 2 2 2 .
-    . . . . 2 2 2 2 8 8 8 8 2 2 2 2
-    . . . . 4 4 2 8 5 8 8 5 8 2 4 4
-    . . . . 4 4 4 8 8 8 8 8 8 4 4 4
-    . . . . . 4 8 8 8 8 8 8 8 8 4 .
-    . . . . . . 8 8 8 . . 8 8 8 . .
-    . . . . . . e e e . . . . e e e .
-    . . . . . e e e e . . . . e e e e
-    `
-let imagemProjetil = img`
-    . . 5 5 5 . . .
-    . 5 5 4 4 5 . .
-    5 5 4 4 2 4 5 .
-    5 4 4 2 2 4 5 5
-    5 5 4 4 2 4 5 .
-    . 5 5 4 4 5 . .
-    . . 5 5 5 . . .
-    . . . 5 . . . .
-    `
-let imagemInimigoNivel1 = img`
-    . . . . d d d d . . . . . . . .
-    . . d d d d d d d d . . . . . .
-    . d d d d d d d d d d . . . . .
-    d d d f d d d d f d d d . . . .
-    d d d d d d d d d d d d . . . .
-    d d f d d d d d d d f d . . . .
-    d d d f f f f f f f d d . . . .
-    . d d d d d d d d d d . . . . .
-    . . d d d d d d d d . . . . . .
-    . . . d d . . d d . . . . . . .
-    . . d d . . . . d d . . . . . .
-    . d d . . . . . . d d . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    `
-let imagemInimigoNivel2 = img`
-    . . . . 7 7 7 7 . . . . . . . .
-    . . 7 7 7 7 7 7 7 7 . . . . . .
-    . 7 7 7 7 7 7 7 7 7 7 . . . . .
-    7 7 7 f 7 7 7 7 f 7 7 7 . . . .
-    7 7 7 7 7 7 7 7 7 7 7 7 . . . .
-    7 7 f 7 7 7 7 7 7 7 f 7 . . . .
-    7 7 7 f f f f f f f 7 7 . . . .
-    . 7 7 7 7 7 7 7 7 7 7 . . . . .
-    . . 7 7 7 7 7 7 7 7 . . . . . .
-    . . . 7 7 . . 7 7 . . . . . . .
-    . . 7 7 . . . . 7 7 . . . . . .
-    . 7 7 . . . . . . 7 7 . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    `
-let imagemInimigoNivel3 = img`
-    . . 2 . . . . . . 2 . . . . . .
-    . . 2 2 . . . . 2 2 . . . . . .
-    . . . 2 2 2 2 2 2 . . . . . . .
-    . . 2 2 2 2 2 2 2 2 . . . . . .
-    . 2 2 f 2 2 2 2 f 2 2 . . . . .
-    2 2 2 2 2 2 2 2 2 2 2 2 . . . .
-    2 2 f 2 2 2 2 2 2 2 f 2 . . . .
-    2 2 2 f f f f f f f 2 2 . . . .
-    . 2 2 2 2 2 2 2 2 2 2 . . . . .
-    . . 2 2 2 2 2 2 2 2 . . . . . .
-    . . . 2 2 . . 2 2 . . . . . . .
-    . . 2 2 . . . . 2 2 . . . . . .
-    . 2 2 . . . . . . 2 2 . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    `
-let imagemInimigoFerido = img`
-    . . 2 . . . . . . 2 . . . . . .
-    . . 2 2 . . . . 2 2 . . . . . .
-    . . . 2 2 2 2 2 2 . . . . . . .
-    . . 2 2 2 2 2 2 2 2 . . . . . .
-    . 2 2 f 2 2 2 2 f 2 2 . . . . .
-    2 2 2 2 5 5 5 5 2 2 2 2 . . . .
-    2 2 f 2 2 5 5 2 2 2 f 2 . . . .
-    2 2 2 f f f f f f f 2 2 . . . .
-    . 2 2 2 2 2 2 2 2 2 2 . . . . .
-    . . 2 2 5 2 2 5 2 2 . . . . . .
-    . . . 2 2 . . 2 2 . . . . . . .
-    . . 2 2 . . . . 2 2 . . . . . .
-    . 2 2 . . . . . . 2 2 . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    `
-let imagemInimigoAereo = img`
-    . . . . . . . . . . . . . . . .
-    . . . . . f f . . f f . . . . .
-    . . . . f 8 8 f f 8 8 f . . . .
-    . . . f 8 8 8 8 8 8 8 8 f . . .
-    . . f 8 8 f 8 8 8 8 f 8 8 f . .
-    . f 8 8 8 8 8 8 8 8 8 8 8 f .
-    f 8 8 8 f f f f f f 8 8 8 8 f
-    f 8 f 8 8 8 f f 8 8 8 f 8 8 f
-    . f . f 8 8 8 8 8 8 f . f . .
-    . . . . f 8 8 8 8 f . . . . .
-    . . . . . f f f f . . . . . . .
-    . . . . . . f f . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    `
-let imagemInimigoAtirador = img`
-    . . . . b b b b . . . . . . . .
-    . . b b b b b b b b . . . . . .
-    . b b b b b b b b b b . . . . .
-    b b b f b b b b f b b b . . . .
-    b b b b b b b b b b b b . . . .
-    b b b b 5 5 5 5 b b b b . . . .
-    b b b f f f f f f f b b . . . .
-    . b b b b b b b b b b . . . . .
-    . . b b b b b b b b . . . . . .
-    . . . b b . . b b . . . . . . .
-    . . b b . . . . b b . . . . . .
-    . b b . . . . . . b b . . . . .
-    . . . . 5 5 5 5 5 5 . . . . . .
-    . . . . . 5 5 5 5 . . . . . . .
-    . . . . . . 5 5 . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    `
-let imagemProjetilInimigo = img`
-    . 2 2 .
-    2 5 5 2
-    2 5 5 2
-    . 2 2 .
-    `
-let imagemBandeiraNivel1 = img`
-    . . . . . . f f . . . . . . . .
-    . . . . . . f 2 2 2 2 . . . . .
-    . . . . . . f 2 2 2 2 2 . . . .
-    . . . . . . f 2 2 2 2 . . . . .
-    . . . . . . f . . . . . . . . .
-    . . . . . . f . . . . . . . . .
-    . . . . . . f . . . . . . . . .
-    . . . . . . f . . . . . . . . .
-    . . . . . . f . . . . . . . . .
-    . . . . . . f . . . . . . . . .
-    . . . . . . f . . . . . . . . .
-    . . . . . . f . . . . . . . . .
-    . . . . . . f . . . . . . . . .
-    . . . . . f f f . . . . . . . .
-    . . . . f f f f f . . . . . . .
-    . . . . f f f f f . . . . . . .
-    `
-let imagemBandeiraNivel2 = img`
-    . . . . . . f f . . . . . . . .
-    . . . . . . f 9 9 9 9 . . . . .
-    . . . . . . f 9 9 9 9 9 . . . .
-    . . . . . . f 9 9 9 9 . . . . .
-    . . . . . . f . . . . . . . . .
-    . . . . . . f . . . . . . . . .
-    . . . . . . f . . . . . . . . .
-    . . . . . . f . . . . . . . . .
-    . . . . . . f . . . . . . . . .
-    . . . . . . f . . . . . . . . .
-    . . . . . . f . . . . . . . . .
-    . . . . . . f . . . . . . . . .
-    . . . . . . f . . . . . . . . .
-    . . . . . f f f . . . . . . . .
-    . . . . f f f f f . . . . . . .
-    . . . . f f f f f . . . . . . .
-    `
-let imagemBandeiraNivel3 = img`
-    . . . . . . f f . . . . . . . .
-    . . . . . . f 7 7 7 7 . . . . .
-    . . . . . . f 7 7 7 7 7 . . . .
-    . . . . . . f 7 7 7 7 . . . . .
-    . . . . . . f . . . . . . . . .
-    . . . . . . f . . . . . . . . .
-    . . . . . . f . . . . . . . . .
-    . . . . . . f . . . . . . . . .
-    . . . . . . f . . . . . . . . .
-    . . . . . . f . . . . . . . . .
-    . . . . . . f . . . . . . . . .
-    . . . . . . f . . . . . . . . .
-    . . . . . . f . . . . . . . . .
-    . . . . . f f f . . . . . . . .
-    . . . . f f f f f . . . . . . .
-    . . . . f f f f f . . . . . . .
-    `
-let imagemItemVida = img`
-    . . . . . . . . . . . . . . . .
-    . . . 2 2 . . . . 2 2 . . . .
-    . . 2 2 2 2 . . 2 2 2 2 . . .
-    . 2 2 2 2 2 2 2 2 2 2 2 . . .
-    . 2 2 2 2 2 2 2 2 2 2 2 . . .
-    . 2 2 2 2 2 2 2 2 2 2 2 . . .
-    . . 2 2 2 2 2 2 2 2 2 . . . .
-    . . . 2 2 2 2 2 2 2 . . . . .
-    . . . . 2 2 2 2 2 . . . . . .
-    . . . . . 2 2 2 . . . . . . .
-    . . . . . . 2 . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    `
-let imagemItemEstrela = img`
-    . . . . . . 5 5 . . . . . . . .
-    . . . . . 5 5 5 5 . . . . . . .
-    . . . . . 5 4 4 5 . . . . . . .
-    . . . . 5 4 4 4 4 5 . . . . . .
-    . 5 5 5 4 4 4 4 5 5 5 . . . .
-    . . 5 4 4 4 4 4 4 5 . . . . .
-    . . . 5 4 4 4 4 5 . . . . . .
-    . . . 5 4 4 4 4 5 . . . . . .
-    . . 5 4 4 5 5 4 4 5 . . . . .
-    . 5 4 4 5 . . 5 4 4 5 . . . .
-    . 5 5 5 . . . . 5 5 5 . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    `
-let imagemVazia = img`
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    `
-let imagemEnergia0 = img`
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    1 . . . . . . . . . . . . . . 1
-    1 . . . . . . . . . . . . . . 1
-    1 . . . . . . . . . . . . . . 1
-    1 . . . . . . . . . . . . . . 1
-    1 . . . . . . . . . . . . . . 1
-    1 . . . . . . . . . . . . . . 1
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    `
-let imagemEnergia1 = img`
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    1 . . . . . . . . . . . . . . 1
-    1 5 5 . . . . . . . . . . . . 1
-    1 5 5 . . . . . . . . . . . . 1
-    1 5 5 . . . . . . . . . . . . 1
-    1 5 5 . . . . . . . . . . . . 1
-    1 . . . . . . . . . . . . . . 1
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    `
-let imagemEnergia2 = img`
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    1 . . . . . . . . . . . . . . 1
-    1 5 5 . 5 5 . . . . . . . . . 1
-    1 5 5 . 5 5 . . . . . . . . . 1
-    1 5 5 . 5 5 . . . . . . . . . 1
-    1 5 5 . 5 5 . . . . . . . . . 1
-    1 . . . . . . . . . . . . . . 1
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    `
-let imagemEnergia3 = img`
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    1 . . . . . . . . . . . . . . 1
-    1 5 5 . 5 5 . 5 5 . . . . . . 1
-    1 5 5 . 5 5 . 5 5 . . . . . . 1
-    1 5 5 . 5 5 . 5 5 . . . . . . 1
-    1 5 5 . 5 5 . 5 5 . . . . . . 1
-    1 . . . . . . . . . . . . . . 1
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    `
-let imagemEnergia4 = img`
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    1 . . . . . . . . . . . . . . 1
-    1 5 5 . 5 5 . 5 5 . 5 5 . . . 1
-    1 5 5 . 5 5 . 5 5 . 5 5 . . . 1
-    1 5 5 . 5 5 . 5 5 . 5 5 . . . 1
-    1 5 5 . 5 5 . 5 5 . 5 5 . . . 1
-    1 . . . . . . . . . . . . . . 1
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    `
-let imagemEnergia5 = img`
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    1 . . . . . . . . . . . . . . 1
-    1 5 5 . 5 5 . 5 5 . 5 5 . 5 5 1
-    1 5 5 . 5 5 . 5 5 . 5 5 . 5 5 1
-    1 5 5 . 5 5 . 5 5 . 5 5 . 5 5 1
-    1 5 5 . 5 5 . 5 5 . 5 5 . 5 5 1
-    1 . . . . . . . . . . . . . . 1
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    `
-let imagemChao = img`
-    7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-    6 7 7 6 7 7 6 7 7 6 7 7 6 7 7 6
-    e e e e e e e e e e e e e e e e
-    e 4 e e 4 e e 4 e e 4 e e 4 e e
-    e e e 4 e e 4 e e 4 e e 4 e e 4
-    4 e e e e 4 e e e e 4 e e e e 4
-    e e 4 e e e e 4 e e e e 4 e e e
-    e 4 e e 4 e e 4 e e 4 e e 4 e e
-    e e e 4 e e 4 e e 4 e e 4 e e 4
-    4 e e e e 4 e e e e 4 e e e e 4
-    e e 4 e e e e 4 e e e e 4 e e e
-    e 4 e e 4 e e 4 e e 4 e e 4 e e
-    e e e 4 e e 4 e e 4 e e 4 e e 4
-    4 e e e e 4 e e e e 4 e e e e 4
-    e e 4 e e e e 4 e e e e 4 e e e
-    e e e e e e e e e e e e e e e e
-    `
-let imagemPlataforma = img`
-    e e e e e e e e e e e e e e e e
-    e 4 4 e e 4 4 e e 4 4 e e 4 4 e
-    e e e e e e e e e e e e e e e e
-    4 e e 4 4 e e 4 4 e e 4 4 e e 4
-    e e e e e e e e e e e e e e e e
-    e 4 4 e e 4 4 e e 4 4 e e 4 4 e
-    e e e e e e e e e e e e e e e e
-    4 e e 4 4 e e 4 4 e e 4 4 e e 4
-    e e e e e e e e e e e e e e e e
-    e 4 4 e e 4 4 e e 4 4 e e 4 4 e
-    e e e e e e e e e e e e e e e e
-    4 e e 4 4 e e 4 4 e e 4 4 e e 4
-    e e e e e e e e e e e e e e e e
-    e 4 4 e e 4 4 e e 4 4 e e 4 4 e
-    e e e e e e e e e e e e e e e e
-    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-    `
-let imagemDecoracao = img`
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . 1 1 1 . . . . . . . . .
-    . . 1 1 1 1 1 1 1 . . . . . . .
-    . 1 1 1 1 1 1 1 1 1 . . . . . .
-    1 1 1 1 1 1 1 1 1 1 1 . . . . .
-    . 1 1 1 1 1 1 1 1 1 . . . . . .
-    . . 1 1 1 1 1 1 1 . . . . . . .
-    . . . . 1 1 1 . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    `
-let imagemChaoDeserto = img`
-    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-    4 5 5 4 5 5 4 5 5 4 5 5 4 5 5 4
-    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-    5 4 4 5 4 4 5 4 4 5 4 4 5 4 4 5
-    4 4 5 4 4 5 4 4 5 4 4 5 4 4 5 4
-    4 5 4 4 5 4 4 5 4 4 5 4 4 5 4 4
-    5 4 4 5 4 4 5 4 4 5 4 4 5 4 4 5
-    4 4 5 4 4 5 4 4 5 4 4 5 4 4 5 4
-    4 5 4 4 5 4 4 5 4 4 5 4 4 5 4 4
-    5 4 4 5 4 4 5 4 4 5 4 4 5 4 4 5
-    4 4 5 4 4 5 4 4 5 4 4 5 4 4 5 4
-    4 5 4 4 5 4 4 5 4 4 5 4 4 5 4 4
-    5 4 4 5 4 4 5 4 4 5 4 4 5 4 4 5
-    4 4 5 4 4 5 4 4 5 4 4 5 4 4 5 4
-    4 5 4 4 5 4 4 5 4 4 5 4 4 5 4 4
-    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-    `
-let imagemPlataformaDeserto = img`
-    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-    5 4 4 5 5 4 4 5 5 4 4 5 5 4 4 5
-    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-    4 5 5 4 4 5 5 4 4 5 5 4 4 5 5 4
-    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-    5 4 4 5 5 4 4 5 5 4 4 5 5 4 4 5
-    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-    4 5 5 4 4 5 5 4 4 5 5 4 4 5 5 4
-    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-    5 4 4 5 5 4 4 5 5 4 4 5 5 4 4 5
-    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-    4 5 5 4 4 5 5 4 4 5 5 4 4 5 5 4
-    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-    5 4 4 5 5 4 4 5 5 4 4 5 5 4 4 5
-    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-    `
-let imagemDecoracaoDeserto = img`
-    . . . . . . . . . . . . . . . .
-    . . . . . . . 5 5 . . . . . . .
-    . . . . . 5 5 5 5 5 5 . . . .
-    . . . . 5 5 5 4 4 5 5 . . . .
-    . . . 5 5 5 4 4 4 5 5 5 . . .
-    . . . 5 5 4 4 4 4 4 5 5 . . .
-    . . . . 5 5 4 4 4 5 5 . . . .
-    . . . . . 5 5 5 5 5 5 . . . .
-    . . . . . . . 5 5 . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    `
-let imagemChaoSubmundo = img`
-    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-    4 2 2 4 2 2 4 2 2 4 2 2 4 2 2 4
-    f f f f f f f f f f f f f f f f
-    f f f 2 2 f f f f f 2 2 f f f f
-    f f 2 4 4 2 f f f 2 4 4 2 f f f
-    f f f 2 2 f f f f f 2 2 f f f f
-    f f f f f f f f f f f f f f f f
-    f f f 2 2 f f f f f 2 2 f f f f
-    f f 2 4 4 2 f f f 2 4 4 2 f f f
-    f f f 2 2 f f f f f 2 2 f f f f
-    f f f f f f f f f f f f f f f f
-    f f f 2 2 f f f f f 2 2 f f f f
-    f f 2 4 4 2 f f f 2 4 4 2 f f f
-    f f f 2 2 f f f f f 2 2 f f f f
-    f f f f f f f f f f f f f f f f
-    `
-let imagemPlataformaSubmundo = img`
-    f f f f f f f f f f f f f f f f
-    f f 2 2 f f f f f f 2 2 f f f f
-    f 2 4 4 2 f f f f 2 4 4 2 f f f
-    f f 2 2 f f f f f f 2 2 f f f f
-    f f f f f f f f f f f f f f f f
-    f f 2 2 f f f f f f 2 2 f f f f
-    f 2 4 4 2 f f f f 2 4 4 2 f f f
-    f f 2 2 f f f f f f 2 2 f f f f
-    f f f f f f f f f f f f f f f f
-    f f 2 2 f f f f f f 2 2 f f f f
-    f 2 4 4 2 f f f f 2 4 4 2 f f f
-    f f 2 2 f f f f f f 2 2 f f f f
-    f f f f f f f f f f f f f f f f
-    f f 2 2 f f f f f f 2 2 f f f f
-    f 2 4 4 2 f f f f 2 4 4 2 f f f
-    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-    `
-let imagemDecoracaoSubmundo = img`
-    . . . . . . . . . . . . . . . .
-    . . . . . . 2 2 2 . . . . . . .
-    . . . . . 2 4 4 2 . . . . . . .
-    . . . . 2 4 4 4 4 2 . . . . . .
-    . . . 2 4 4 5 5 4 4 2 . . . .
-    . . . 2 4 5 5 5 5 4 2 . . . .
-    . . . . 2 4 5 5 4 2 . . . . .
-    . . . . . 2 4 4 2 . . . . . . .
-    . . . . . . 2 2 . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    `
-let jogador = sprites.create(imagemJogadorDireita, SpriteKind.Player)
-function configurarTiles() {
-    if (nivel == 1) {
-        scene.setBackgroundColor(9)
-    } else if (nivel == 2) {
-        scene.setBackgroundColor(11)
-    } else {
-        scene.setBackgroundColor(13)
-    }
-}
-function renascerJogador() {
-    jogador.setImage(imagemJogadorDireita)
-    direcao = 1
-    jogador.setPosition(24, 80)
-    jogador.vx = 0
-    jogador.vy = 0
-    jogador.setFlag(SpriteFlag.Invisible, false)
-}
-function criarInimigo(x: number, y: number) {
-    if (nivel == 1) {
-        inimigo = sprites.create(imagemInimigoNivel1, SpriteKind.Enemy)
-    } else if (nivel == 2) {
-        inimigo = sprites.create(imagemInimigoNivel2, SpriteKind.Enemy)
-    } else {
-        inimigo = sprites.create(imagemInimigoNivel3, SpriteKind.Enemy)
-    }
-    inimigo.setPosition(x, y)
-    inimigo.vx = velocidadeInimigo * -1
-    inimigo.ay = 400
-    inimigo.setBounceOnWall(true)
-}
-function criarInimigoAereo(x: number, y: number) {
-    inimigo = sprites.create(imagemInimigoAereo, SpriteKind.InimigoAereo)
-    inimigo.setPosition(x, y)
-    inimigo.vx = 60
-    inimigo.ay = 0
-    inimigo.setBounceOnWall(true)
-}
-function criarInimigoAtirador(x: number, y: number) {
+function criarInimigoAtirador (x: number, y: number) {
     atirador = sprites.create(imagemInimigoAtirador, SpriteKind.InimigoAtirador)
     atirador.setPosition(x, y)
     atirador.vx = velocidadeInimigo * -1
     atirador.ay = 400
     atirador.setBounceOnWall(true)
 }
-function criarBandeira(x: number, y: number) {
+function pontuarInimigoAtirador () {
+    info.changeScoreBy(pontosBase() + 25)
+}
+sprites.onOverlap(SpriteKind.Player, SpriteKind.InimigoAereo, function (sprite, otherSprite) {
+    if (invulneravel == false) {
+        otherSprite.destroy(effects.fire, 100)
+        machucarJogador()
+    }
+})
+function cairNoBuraco () {
+    info.changeLifeBy(-1)
+    renascerJogador()
+    invulneravel = true
+    music.playTone(262, music.beat(BeatFraction.Eighth))
+    if (info.life() <= 0) {
+        game.gameOver(false)
+    } else {
+        jogador.startEffect(effects.spray, 500)
+        piscarJogador()
+        invulneravel = false
+    }
+}
+controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+    if (podeAtirar == true) {
+        if (energiaTiro > 0) {
+            energiaTiro += -1
+            atualizarEnergia()
+            podeAtirar = false
+            projetil = sprites.createProjectileFromSprite(imagemProjetil, jogador, velocidadeProjetil * direcao, 0)
+            music.playTone(988, music.beat(BeatFraction.Eighth))
+            pause(250)
+            podeAtirar = true
+        } else {
+            music.playTone(98, 100)
+        }
+    }
+})
+function passarDeNivel () {
+    if (nivel < 3) {
+        nivel += 1
+        music.playMelody("C5 E5 G5 C6", 180)
+        carregarNivel()
+    } else {
+        game.gameOver(true)
+    }
+}
+function criarBandeira (x: number, y: number) {
     if (nivel == 1) {
         bandeira = sprites.create(imagemBandeiraNivel1, SpriteKind.Bandeira)
     } else if (nivel == 2) {
@@ -568,20 +71,38 @@ function criarBandeira(x: number, y: number) {
     }
     bandeira.setPosition(x, y)
 }
-function criarItemVida(x: number, y: number) {
-    itemVida = sprites.create(imagemItemVida, SpriteKind.ItemVida)
-    itemVida.setPosition(x, y)
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    if (jogador.isHittingTile(CollisionDirection.Bottom)) {
+        jogador.vy = -195
+        music.playTone(523, music.beat(BeatFraction.Quarter))
+    }
+})
+function protegerBuraco (inimigoAtual: Sprite) {
+    if (inimigoAtual.vx < 0) {
+        if (tiles.tileAtLocationIsWall(tiles.getTileLocation(Math.idiv(inimigoAtual.x - 12, 16), Math.idiv(inimigoAtual.y + 10, 16))) == false) {
+            inimigoAtual.vx = inimigoAtual.vx * -1
+        }
+    } else if (inimigoAtual.vx > 0) {
+        if (tiles.tileAtLocationIsWall(tiles.getTileLocation(Math.idiv(inimigoAtual.x + 12, 16), Math.idiv(inimigoAtual.y + 10, 16))) == false) {
+            inimigoAtual.vx = inimigoAtual.vx * -1
+        }
+    }
 }
-function criarItemEstrela(x: number, y: number) {
-    itemEstrela = sprites.create(imagemItemEstrela, SpriteKind.ItemEstrela)
-    itemEstrela.setPosition(x, y)
+function renascerJogador () {
+    jogador.setImage(imagemJogadorDireita)
+    direcao = 1
+    jogador.setPosition(24, 80)
+    jogador.vx = 0
+    jogador.vy = 0
+    jogador.setFlag(SpriteFlag.Invisible, false)
 }
-function criarIndicadorEnergia() {
-    indicadorEnergia = sprites.create(imagemEnergia5, SpriteKind.IndicadorEnergia)
-    indicadorEnergia.setFlag(SpriteFlag.RelativeToCamera, true)
-    indicadorEnergia.setPosition(24, 112)
+function pontuarInimigoTerrestre () {
+    info.changeScoreBy(pontosBase())
 }
-function atualizarEnergia() {
+function pontuarInimigoAereo () {
+    info.changeScoreBy(pontosBase() + 15)
+}
+function atualizarEnergia () {
     if (energiaTiro == 0) {
         indicadorEnergia.setImage(imagemEnergia0)
     } else if (energiaTiro == 1) {
@@ -596,30 +117,122 @@ function atualizarEnergia() {
         indicadorEnergia.setImage(imagemEnergia5)
     }
 }
-function pontosBase() {
+sprites.onOverlap(SpriteKind.Player, SpriteKind.ProjetilInimigo, function (sprite, otherSprite) {
+    otherSprite.destroy(effects.fire, 100)
+    machucarJogador()
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Bandeira, function (sprite, otherSprite) {
+    otherSprite.destroy(effects.confetti, 200)
+    passarDeNivel()
+})
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.InimigoAtirador, function (sprite, otherSprite) {
+    scene.cameraShake(2, 100)
+    sprite.destroy(effects.fire, 100)
+    otherSprite.destroy(effects.disintegrate, 200)
+    pontuarInimigoAtirador()
+    music.playMelody("C5 G5 C6", 240)
+})
+function criarIndicadorEnergia () {
+    indicadorEnergia = sprites.create(imagemEnergia5, SpriteKind.IndicadorEnergia)
+    indicadorEnergia.setFlag(SpriteFlag.RelativeToCamera, true)
+    indicadorEnergia.setPosition(24, 112)
+}
+function piscarJogador () {
+    jogador.setFlag(SpriteFlag.GhostThroughSprites, true)
+    for (let index = 0; index < 6; index++) {
+        jogador.setFlag(SpriteFlag.Invisible, true)
+        pause(100)
+        jogador.setFlag(SpriteFlag.Invisible, false)
+        pause(100)
+    }
+    jogador.setFlag(SpriteFlag.Invisible, false)
+    jogador.setFlag(SpriteFlag.GhostThroughSprites, false)
+}
+function ativarTurbo () {
+    invulneravel = true
+    velocidadeProjetil = 280
+    controller.moveSprite(jogador, 160, 0)
+    jogador.startEffect(effects.halo, 5000)
+    pause(5000)
+    controller.moveSprite(jogador, 110, 0)
+    velocidadeProjetil = 220
+    jogador.setFlag(SpriteFlag.Invisible, false)
+    invulneravel = false
+}
+function pontosBase () {
     return nivel * 10
 }
-function pontuarInimigoTerrestre() {
-    info.changeScoreBy(pontosBase())
+function criarItemVida (x: number, y: number) {
+    itemVida = sprites.create(imagemItemVida, SpriteKind.ItemVida)
+    itemVida.setPosition(x, y)
 }
-function pontuarInimigoAereo() {
-    info.changeScoreBy(pontosBase() + 15)
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.InimigoFerido, function (sprite, otherSprite) {
+    scene.cameraShake(2, 100)
+    sprite.destroy(effects.fire, 100)
+    otherSprite.destroy(effects.disintegrate, 200)
+    pontuarInimigoTerrestre()
+    music.playMelody("C5 G5 C6", 240)
+})
+function criarInimigo (x: number, y: number) {
+    if (nivel == 1) {
+        inimigo = sprites.create(imagemInimigoNivel1, SpriteKind.Enemy)
+    } else if (nivel == 2) {
+        inimigo = sprites.create(imagemInimigoNivel2, SpriteKind.Enemy)
+    } else {
+        inimigo = sprites.create(imagemInimigoNivel3, SpriteKind.Enemy)
+    }
+    inimigo.setPosition(x, y)
+    inimigo.vx = velocidadeInimigo * -1
+    inimigo.ay = 400
+    inimigo.setBounceOnWall(true)
 }
-function pontuarInimigoAtirador() {
-    info.changeScoreBy(pontosBase() + 25)
-}
-function protegerBuraco(inimigoAtual: Sprite) {
-    if (inimigoAtual.vx < 0) {
-        if (tiles.tileAtLocationIsWall(tiles.getTileLocation(Math.idiv(inimigoAtual.x - 12, 16), Math.idiv(inimigoAtual.y + 10, 16))) == false) {
-            inimigoAtual.vx = inimigoAtual.vx * -1
-        }
-    } else if (inimigoAtual.vx > 0) {
-        if (tiles.tileAtLocationIsWall(tiles.getTileLocation(Math.idiv(inimigoAtual.x + 12, 16), Math.idiv(inimigoAtual.y + 10, 16))) == false) {
-            inimigoAtual.vx = inimigoAtual.vx * -1
+sprites.onOverlap(SpriteKind.Player, SpriteKind.InimigoAtirador, function (sprite, otherSprite) {
+    if (invulneravel == false) {
+        otherSprite.destroy(effects.fire, 100)
+        machucarJogador()
+    }
+})
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.InimigoAereo, function (sprite, otherSprite) {
+    scene.cameraShake(2, 100)
+    sprite.destroy(effects.fire, 100)
+    otherSprite.destroy(effects.disintegrate, 200)
+    pontuarInimigoAereo()
+    music.playMelody("C5 G5 C6", 240)
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.ItemEstrela, function (sprite, otherSprite) {
+    otherSprite.destroy(effects.halo, 200)
+    music.playTone(880, music.beat(BeatFraction.Quarter))
+    ativarTurbo()
+})
+function machucarJogador () {
+    if (invulneravel == false) {
+        invulneravel = true
+        info.changeLifeBy(-1)
+        music.playTone(262, music.beat(BeatFraction.Eighth))
+        if (info.life() <= 0) {
+            game.gameOver(false)
+        } else {
+            jogador.startEffect(effects.spray, 500)
+            piscarJogador()
+            invulneravel = false
         }
     }
 }
-function atirarInimigo(atiradorAtual: Sprite) {
+sprites.onOverlap(SpriteKind.Player, SpriteKind.ItemVida, function (sprite, otherSprite) {
+    otherSprite.destroy(effects.hearts, 200)
+    info.changeLifeBy(1)
+    music.playTone(659, music.beat(BeatFraction.Quarter))
+})
+function configurarTiles () {
+    if (nivel == 1) {
+        scene.setBackgroundColor(9)
+    } else if (nivel == 2) {
+        scene.setBackgroundColor(9)
+    } else {
+        scene.setBackgroundColor(4)
+    }
+}
+function atirarInimigo (atiradorAtual: Sprite) {
     if (jogador.x < atiradorAtual.x) {
         direcaoTiroInimigo = -1
     } else {
@@ -628,7 +241,7 @@ function atirarInimigo(atiradorAtual: Sprite) {
     projetilInimigo = sprites.createProjectileFromSprite(imagemProjetilInimigo, atiradorAtual, 55 * direcaoTiroInimigo, 0)
     projetilInimigo.setKind(SpriteKind.ProjetilInimigo)
 }
-function carregarNivel() {
+function carregarNivel () {
     sprites.destroyAllSpritesOfKind(SpriteKind.Enemy)
     sprites.destroyAllSpritesOfKind(SpriteKind.InimigoFerido)
     sprites.destroyAllSpritesOfKind(SpriteKind.InimigoAereo)
@@ -730,64 +343,578 @@ function carregarNivel() {
     }
     renascerJogador()
 }
-function piscarJogador() {
-    jogador.setFlag(SpriteFlag.GhostThroughSprites, true)
-    for (let index = 0; index < 6; index++) {
-        jogador.setFlag(SpriteFlag.Invisible, true)
-        pause(100)
-        jogador.setFlag(SpriteFlag.Invisible, false)
-        pause(100)
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
+    scene.cameraShake(2, 100)
+    if (nivel == 3) {
+        sprite.destroy(effects.fire, 100)
+        otherSprite.setImage(imagemInimigoFerido)
+        otherSprite.setKind(SpriteKind.InimigoFerido)
+        otherSprite.vx = velocidadeInimigo
+        music.playTone(440, music.beat(BeatFraction.Eighth))
+    } else {
+        sprite.destroy(effects.fire, 100)
+        otherSprite.destroy(effects.disintegrate, 200)
+        pontuarInimigoTerrestre()
+        music.playMelody("C5 G5 C6", 240)
     }
-    jogador.setFlag(SpriteFlag.Invisible, false)
-    jogador.setFlag(SpriteFlag.GhostThroughSprites, false)
+})
+function criarInimigoAereo (x: number, y: number) {
+    inimigo = sprites.create(imagemInimigoAereo, SpriteKind.InimigoAereo)
+    inimigo.setPosition(x, y)
+    inimigo.vx = 60
+    inimigo.ay = 0
+    inimigo.setBounceOnWall(true)
 }
-function machucarJogador() {
+sprites.onOverlap(SpriteKind.Player, SpriteKind.InimigoFerido, function (sprite, otherSprite) {
     if (invulneravel == false) {
-        invulneravel = true
-        info.changeLifeBy(-1)
-        music.playTone(Note.C4, music.beat(BeatFraction.Eighth))
-        if (info.life() <= 0) {
-            game.gameOver(false)
-        } else {
-            jogador.startEffect(effects.spray, 500)
-            piscarJogador()
-            invulneravel = false
-        }
+        otherSprite.destroy(effects.fire, 100)
+        machucarJogador()
     }
-}
-function cairNoBuraco() {
-    info.changeLifeBy(-1)
-    renascerJogador()
-    invulneravel = true
-    music.playTone(Note.C4, music.beat(BeatFraction.Eighth))
-    if (info.life() <= 0) {
-        game.gameOver(false)
-    } else {
-        jogador.startEffect(effects.spray, 500)
-        piscarJogador()
-        invulneravel = false
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    if (invulneravel == false) {
+        otherSprite.destroy(effects.fire, 100)
+        machucarJogador()
     }
+})
+function criarItemEstrela (x: number, y: number) {
+    itemEstrela = sprites.create(imagemItemEstrela, SpriteKind.ItemEstrela)
+    itemEstrela.setPosition(x, y)
 }
-function ativarTurbo() {
-    invulneravel = true
-    velocidadeProjetil = 280
-    controller.moveSprite(jogador, 160, 0)
-    jogador.startEffect(effects.halo, 5000)
-    pause(5000)
-    controller.moveSprite(jogador, 110, 0)
-    velocidadeProjetil = 220
-    jogador.setFlag(SpriteFlag.Invisible, false)
-    invulneravel = false
-}
-function passarDeNivel() {
-    if (nivel < 3) {
-        nivel += 1
-        music.playMelody("C5 E5 G5 C6", 180)
-        carregarNivel()
-    } else {
-        game.gameOver(true)
-    }
-}
+let itemEstrela: Sprite = null
+let projetilInimigo: Sprite = null
+let inimigo: Sprite = null
+let itemVida: Sprite = null
+let indicadorEnergia: Sprite = null
+let bandeira: Sprite = null
+let projetil: Sprite = null
+let invulneravel = false
+let atirador: Sprite = null
+let jogador: Sprite = null
+let imagemEnergia5: Image = null
+let imagemEnergia4: Image = null
+let imagemEnergia3: Image = null
+let imagemEnergia2: Image = null
+let imagemEnergia1: Image = null
+let imagemEnergia0: Image = null
+let imagemItemEstrela: Image = null
+let imagemItemVida: Image = null
+let imagemBandeiraNivel3: Image = null
+let imagemBandeiraNivel2: Image = null
+let imagemBandeiraNivel1: Image = null
+let imagemProjetilInimigo: Image = null
+let imagemInimigoAtirador: Image = null
+let imagemInimigoAereo: Image = null
+let imagemInimigoFerido: Image = null
+let imagemInimigoNivel3: Image = null
+let imagemInimigoNivel2: Image = null
+let imagemInimigoNivel1: Image = null
+let imagemProjetil: Image = null
+let imagemJogadorDireita: Image = null
+let direcaoTiroInimigo = 0
+let velocidadeProjetil = 0
+let energiaTiro = 0
+let podeAtirar = false
+let velocidadeInimigo = 0
+let direcao = 0
+let nivel = 0
+nivel = 1
+direcao = 1
+velocidadeInimigo = 30
+podeAtirar = true
+energiaTiro = 5
+velocidadeProjetil = 220
+direcaoTiroInimigo = 1
+imagemJogadorDireita = img`
+    . . a a a a a a a . . . . . . . . 
+    . a a a a a a a a a . . . . . . . 
+    a a . a a 5 5 5 5 5 5 . . . . . . 
+    a . 5 5 5 a a a a a a a . . . . . 
+    . a a a a a e e e e . . . e e . . 
+    . . e e e e e d d e . . e 8 9 e . 
+    . . e e d d d f d . . . e 8 8 e . 
+    . . . e d d d f d d . . . e e . . 
+    . . . . . d d d d . . . e . . . . 
+    . . . c c c c 5 5 . . . e . . . . 
+    . . c c c c c 4 c c c d d . . . . 
+    . . c c c c c 4 c c c d d . . . . 
+    . . d d f f f e f . . e . . . . . 
+    . c d d c c 4 e 4 . e . . . . . . 
+    c c 4 4 4 . e e . . e . . . . . . 
+    c c e e . . e e e . . . . . . . . 
+    `
+let imagemJogadorEsquerda = img`
+    . . . . . . . . a a a a a a a . . 
+    . . . . . . . a a a a a a a a a . 
+    . . . . . . 5 5 5 5 5 5 a a . a a 
+    . . . . . a a a a a a a 5 5 5 . a 
+    . . e e . . . e e e e a a a a a . 
+    . e 9 8 e . . e d d e e e e e . . 
+    . e 8 8 e . . . d f d d d e e . . 
+    . . e e . . . d d f d d d e . . . 
+    . . . . e . . . d d d d . . . . . 
+    . . . . e . . . 5 5 c c c c . . . 
+    . . . . d d c c c 4 c c c c c . . 
+    . . . . d d c c c 4 c c c c c . . 
+    . . . . . e . . f e f f f d d . . 
+    . . . . . . e . 4 e 4 c c d d c . 
+    . . . . . . e . . e e . 4 4 4 c c 
+    . . . . . . . . e e e . . e e c c 
+    `
+imagemProjetil = img`
+    . . 5 5 5 . . . 
+    . 5 5 4 4 5 . . 
+    5 5 4 4 2 4 5 . 
+    5 4 4 2 2 4 5 5 
+    5 5 4 4 2 4 5 . 
+    . 5 5 4 4 5 . . 
+    . . 5 5 5 . . . 
+    . . . 5 . . . . 
+    `
+imagemInimigoNivel1 = img`
+    . . . . . . . f f f f . . . . . 
+    . . . . . . f d d d d f . . . . 
+    . . f . . f d d d d d d f . . . 
+    . f 1 f . f d d d d d d f . . . 
+    . f 1 f . f d f d f d d f . . . 
+    . f 1 f . f d d d d d f f f . . 
+    . f 1 f . . f d f d d f b b f . 
+    . f 1 f . f d f d f f b e e b f 
+    . f 1 f f d f d d d f b e b b f 
+    f e e e d f . f d f f b e b b f 
+    . f b f f . f d f d f b e e b f 
+    . f b f . f d f . f d f b b f . 
+    . . f . f d f . . . f d f f . . 
+    . . . . . f . . . . . f . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    `
+imagemInimigoNivel2 = img`
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . f f f . . . . . . . . 
+    . . . f f a a a f f . . . . . . 
+    . . f a a a a a a a f . . . . . 
+    . f a a a a a a a a a f . . . . 
+    . f a a a a a a a a a f . . . . 
+    f c a f d f a f d f a a f . . . 
+    f c a f d f a f d f a c f . . . 
+    f c a a a c a a a c a a c f . . 
+    f c c a a a a a a a c c c f . . 
+    . f f c c c c c c c f f f . . . 
+    . . . f f f f f f f . . . . . . 
+    `
+imagemInimigoNivel3 = img`
+    . . . . . . f f f f f . . . . . 
+    . . . f . f 4 4 4 4 4 f . . . . 
+    . . f d f 4 4 4 4 4 4 4 f . . . 
+    . f d d 4 4 4 4 4 4 4 4 4 f . . 
+    f d d d 4 4 f f 4 f f 4 4 f . . 
+    f d d f 4 4 d f 4 d f 4 4 f . . 
+    f d f f 4 4 4 4 f 4 4 4 4 f . . 
+    f d f f f 4 4 4 4 4 4 4 f f . . 
+    f d d f . f d 4 d 4 d 4 f f . . 
+    f d d f d d f f 4 f f d d d f . 
+    f d d 4 4 4 d d 4 d d d 4 4 4 f 
+    . f e d d f 4 4 4 4 4 4 f d d f 
+    . f 4 4 f f f d 4 d d f f f 4 f 
+    . . f e f f 4 4 4 4 4 4 f f d f 
+    . . . f f d d d f f d d d f f . 
+    . . . f 4 4 4 f . . f 4 4 4 f . 
+    `
+imagemInimigoFerido = img`
+    . . . . . . f f f f f . . . . . 
+    . . . f . f 4 4 4 4 4 f . . . . 
+    . . f d f 4 2 2 2 4 4 4 f . . . 
+    . f d d 4 4 4 4 2 2 2 4 4 f . . 
+    f d d 2 4 4 f f 4 f f 2 4 f . . 
+    f d 2 2 4 5 d f 4 d 2 2 4 f . . 
+    f 2 2 f 4 5 5 4 f 4 2 4 4 f . . 
+    f 2 f f f 4 5 5 4 4 2 4 f f . . 
+    f d d f . f d 5 5 4 d 5 5 f . . 
+    f d d f d d f f 5 f f d 5 5 f . 
+    f d d 4 4 4 d d 5 2 2 d 4 5 5 f 
+    . f 5 5 d f 4 5 2 2 4 4 5 d d f 
+    . f 4 5 5 f f 5 5 2 d f 5 f 4 f 
+    . . f e f 2 2 2 5 2 2 4 5 f d f 
+    . . . f f 2 5 5 5 f d d 5 f f . 
+    . . . f 4 4 4 f . . f 4 4 4 f . 
+    `
+imagemInimigoAereo = img`
+    . . . f . . . . . . . . f . . . 
+    . . f d f f . . . . f f d f . . 
+    . . f d d d f f f f d d d f . . 
+    . . f f f d d c c d d f f f . . 
+    . f c f f d 2 c c 2 d f f c f . 
+    . f c f . f 4 c c 4 f . f c f . 
+    . f c c f . f c c f . f b c f . 
+    f c c b c f c c c c f c b b c f 
+    f c b b c b c c c c b c c b c f 
+    f c b c c b c c c c b c c b c f 
+    f c b c b f c c c c f b c b c f 
+    f c f c b f c c c c f b c f c f 
+    . f . f c f c f f c f c f . f . 
+    . . . . f f c f f c f f . . . . 
+    . . . . . . f . . f . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    `
+imagemInimigoAtirador = img`
+    . . . . . . . . . . . . . . . . 
+    . . . f . . . f f f f f . . . . 
+    . . f a f . f c c c c c f . . . 
+    . f a f . f c f f f f f c f . . 
+    f c a c f c f f f f f f c c f . 
+    f a a a f c f 4 4 f 4 4 c c c f 
+    f a c c f c f 2 2 f 2 2 f f c f 
+    . f e f f c f f f f f f f . f . 
+    . f e f f c c f f f f f f . . . 
+    . f e f . f c c c c c c f . . . 
+    . f e e f f e e d d e e f . . . 
+    . . f e f f e e d d e e e f . . 
+    . . . f f c b b c c c b b c f . 
+    . . . f c b b c c c c c b b c f 
+    . . f c b b b c c c c c b b b f 
+    . . . f f f f f f f f f f f f f 
+    `
+imagemProjetilInimigo = img`
+    . 2 2 . 
+    2 5 5 2 
+    2 5 5 2 
+    . 2 2 . 
+    `
+imagemBandeiraNivel1 = img`
+    . . . . . . f f . . . . . . . . 
+    . . . . . . f 2 2 2 2 . . . . . 
+    . . . . . . f 2 2 2 2 2 . . . . 
+    . . . . . . f 2 2 2 2 . . . . . 
+    . . . . . . f . . . . . . . . . 
+    . . . . . . f . . . . . . . . . 
+    . . . . . . f . . . . . . . . . 
+    . . . . . . f . . . . . . . . . 
+    . . . . . . f . . . . . . . . . 
+    . . . . . . f . . . . . . . . . 
+    . . . . . . f . . . . . . . . . 
+    . . . . . . f . . . . . . . . . 
+    . . . . . . f . . . . . . . . . 
+    . . . . . f f f . . . . . . . . 
+    . . . . f f f f f . . . . . . . 
+    . . . . f f f f f . . . . . . . 
+    `
+imagemBandeiraNivel2 = img`
+    . . . . . . f f . . . . . . . . 
+    . . . . . . f a a a a . . . . . 
+    . . . . . . f a a a a a . . . . 
+    . . . . . . f a a a a . . . . . 
+    . . . . . . f . . . . . . . . . 
+    . . . . . . f . . . . . . . . . 
+    . . . . . . f . . . . . . . . . 
+    . . . . . . f . . . . . . . . . 
+    . . . . . . f . . . . . . . . . 
+    . . . . . . f . . . . . . . . . 
+    . . . . . . f . . . . . . . . . 
+    . . . . . . f . . . . . . . . . 
+    . . . . . . f . . . . . . . . . 
+    . . . . . f f f . . . . . . . . 
+    . . . . f f f f f . . . . . . . 
+    . . . . f f f f f . . . . . . . 
+    `
+imagemBandeiraNivel3 = img`
+    . . . . . . f f . . . . . . . . 
+    . . . . . . f 7 7 7 7 . . . . . 
+    . . . . . . f 7 7 7 7 7 . . . . 
+    . . . . . . f 7 7 7 7 . . . . . 
+    . . . . . . f . . . . . . . . . 
+    . . . . . . f . . . . . . . . . 
+    . . . . . . f . . . . . . . . . 
+    . . . . . . f . . . . . . . . . 
+    . . . . . . f . . . . . . . . . 
+    . . . . . . f . . . . . . . . . 
+    . . . . . . f . . . . . . . . . 
+    . . . . . . f . . . . . . . . . 
+    . . . . . . f . . . . . . . . . 
+    . . . . . f f f . . . . . . . . 
+    . . . . f f f f f . . . . . . . 
+    . . . . f f f f f . . . . . . . 
+    `
+imagemItemVida = img`
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . f f f . . . f f f . . . . 
+    . . f 2 2 2 f . f 2 2 2 f . . . 
+    . f 2 2 1 2 2 f 2 2 2 2 2 f . . 
+    f 2 2 1 2 2 2 2 2 2 2 2 2 2 f . 
+    f 2 1 2 2 2 2 2 2 2 2 2 2 2 f . 
+    f 2 2 2 2 2 2 2 2 2 2 2 2 2 f . 
+    f 2 2 2 2 2 2 2 2 2 2 2 2 2 f . 
+    . f 2 2 2 2 2 2 2 2 2 2 2 f . . 
+    . . f 2 2 2 2 2 2 2 2 2 f . . . 
+    . . . f 2 2 2 2 2 2 2 f . . . . 
+    . . . . f 2 2 2 2 2 f . . . . . 
+    . . . . . f 2 2 2 f . . . . . . 
+    . . . . . . f 2 f . . . . . . . 
+    . . . . . . . f . . . . . . . . 
+    `
+imagemItemEstrela = img`
+    . . . . . . . f f . . . . . . . 
+    . . . . . . f e e f . . . . . . 
+    . . . . . f 1 1 1 1 f . . . . . 
+    . . . . . . f 1 1 f . . . . . . 
+    . . . . . . f d d f . . . . . . 
+    . . . . f f d d d d f f . . . . 
+    . . . f d d d d d d d d f . . . 
+    . . f d d 1 2 2 2 2 2 d d f . . 
+    . f d d 2 1 2 2 2 2 2 2 d d f . 
+    . f d 2 1 2 2 2 2 2 2 2 2 d f . 
+    . f d 2 1 2 2 2 2 2 2 2 2 d f . 
+    . f d 2 1 2 2 2 2 2 2 2 2 d f . 
+    . f d 2 1 2 2 2 2 2 2 2 2 d f . 
+    . . f d 2 2 2 2 2 2 2 2 d f . . 
+    . . . f d d d d d d d d f . . . 
+    . . . . f f f f f f f f . . . . 
+    `
+let imagemVazia = img`
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    `
+imagemEnergia0 = img`
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+    1 . . . . . . . . . . . . . . 1 
+    1 . . . . . . . . . . . . . . 1 
+    1 . . . . . . . . . . . . . . 1 
+    1 . . . . . . . . . . . . . . 1 
+    1 . . . . . . . . . . . . . . 1 
+    1 . . . . . . . . . . . . . . 1 
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+    `
+imagemEnergia1 = img`
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+    1 . . . . . . . . . . . . . . 1 
+    1 5 5 . . . . . . . . . . . . 1 
+    1 5 5 . . . . . . . . . . . . 1 
+    1 5 5 . . . . . . . . . . . . 1 
+    1 5 5 . . . . . . . . . . . . 1 
+    1 . . . . . . . . . . . . . . 1 
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+    `
+imagemEnergia2 = img`
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+    1 . . . . . . . . . . . . . . 1 
+    1 5 5 . 5 5 . . . . . . . . . 1 
+    1 5 5 . 5 5 . . . . . . . . . 1 
+    1 5 5 . 5 5 . . . . . . . . . 1 
+    1 5 5 . 5 5 . . . . . . . . . 1 
+    1 . . . . . . . . . . . . . . 1 
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+    `
+imagemEnergia3 = img`
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+    1 . . . . . . . . . . . . . . 1 
+    1 5 5 . 5 5 . 5 5 . . . . . . 1 
+    1 5 5 . 5 5 . 5 5 . . . . . . 1 
+    1 5 5 . 5 5 . 5 5 . . . . . . 1 
+    1 5 5 . 5 5 . 5 5 . . . . . . 1 
+    1 . . . . . . . . . . . . . . 1 
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+    `
+imagemEnergia4 = img`
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+    1 . . . . . . . . . . . . . . 1 
+    1 5 5 . 5 5 . 5 5 . 5 5 . . . 1 
+    1 5 5 . 5 5 . 5 5 . 5 5 . . . 1 
+    1 5 5 . 5 5 . 5 5 . 5 5 . . . 1 
+    1 5 5 . 5 5 . 5 5 . 5 5 . . . 1 
+    1 . . . . . . . . . . . . . . 1 
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+    `
+imagemEnergia5 = img`
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+    1 . . . . . . . . . . . . . . 1 
+    1 5 5 . 5 5 . 5 5 . 5 5 . 5 5 1 
+    1 5 5 . 5 5 . 5 5 . 5 5 . 5 5 1 
+    1 5 5 . 5 5 . 5 5 . 5 5 . 5 5 1 
+    1 5 5 . 5 5 . 5 5 . 5 5 . 5 5 1 
+    1 . . . . . . . . . . . . . . 1 
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+    `
+let imagemChao = img`
+    7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+    6 7 7 6 7 7 6 7 7 6 7 7 6 7 7 6 
+    e e e e e e e e e e e e e e e e 
+    e 4 e e 4 e e 4 e e 4 e e 4 e e 
+    e e e 4 e e 4 e e 4 e e 4 e e 4 
+    4 e e e e 4 e e e e 4 e e e e 4 
+    e e 4 e e e e 4 e e e e 4 e e e 
+    e 4 e e 4 e e 4 e e 4 e e 4 e e 
+    e e e 4 e e 4 e e 4 e e 4 e e 4 
+    4 e e e e 4 e e e e 4 e e e e 4 
+    e e 4 e e e e 4 e e e e 4 e e e 
+    e 4 e e 4 e e 4 e e 4 e e 4 e e 
+    e e e 4 e e 4 e e 4 e e 4 e e 4 
+    4 e e e e 4 e e e e 4 e e e e 4 
+    e e 4 e e e e 4 e e e e 4 e e e 
+    e e e e e e e e e e e e e e e e 
+    `
+let imagemPlataforma = img`
+    e e e e e e e e e e e e e e e e 
+    e 4 4 e e 4 4 e e 4 4 e e 4 4 e 
+    e e e e e e e e e e e e e e e e 
+    4 e e 4 4 e e 4 4 e e 4 4 e e 4 
+    e e e e e e e e e e e e e e e e 
+    e 4 4 e e 4 4 e e 4 4 e e 4 4 e 
+    e e e e e e e e e e e e e e e e 
+    4 e e 4 4 e e 4 4 e e 4 4 e e 4 
+    e e e e e e e e e e e e e e e e 
+    e 4 4 e e 4 4 e e 4 4 e e 4 4 e 
+    e e e e e e e e e e e e e e e e 
+    4 e e 4 4 e e 4 4 e e 4 4 e e 4 
+    e e e e e e e e e e e e e e e e 
+    e 4 4 e e 4 4 e e 4 4 e e 4 4 e 
+    e e e e e e e e e e e e e e e e 
+    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
+    `
+let imagemDecoracao = img`
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . 1 1 1 . . . . . . . . . 
+    . . 1 1 1 1 1 1 1 . . . . . . . 
+    . 1 1 1 1 1 1 1 1 1 . . . . . . 
+    1 1 1 1 1 1 1 1 1 1 1 . . . . . 
+    . 1 1 1 1 1 1 1 1 1 . . . . . . 
+    . . 1 1 1 1 1 1 1 . . . . . . . 
+    . . . . 1 1 1 . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    `
+let imagemChaoDeserto = img`
+    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
+    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
+    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
+    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
+    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
+    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
+    5 5 5 5 5 5 5 5 5 4 5 5 5 4 4 5 
+    5 4 5 4 5 5 4 5 5 4 4 5 5 4 4 4 
+    4 5 5 4 4 5 5 4 4 5 4 4 4 4 4 5 
+    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
+    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
+    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
+    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
+    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
+    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
+    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
+    `
+let imagemPlataformaDeserto = img`
+    5 4 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
+    5 5 4 5 5 5 5 4 4 5 5 4 4 4 5 5 
+    4 4 4 4 4 4 4 4 5 4 4 4 4 5 5 5 
+    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
+    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
+    5 4 5 5 4 4 4 4 4 4 4 4 4 4 4 4 
+    4 4 5 5 5 4 4 4 4 4 5 5 4 4 4 4 
+    5 5 4 4 5 5 5 5 5 5 5 5 5 4 5 5 
+    5 5 4 4 4 5 5 5 5 5 4 4 4 5 5 5 
+    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 5 
+    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 5 
+    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
+    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
+    4 4 5 4 4 5 4 4 4 4 4 4 5 4 4 4 
+    5 5 5 5 4 4 5 5 5 5 5 5 5 4 5 5 
+    5 5 5 5 5 5 5 5 5 5 5 5 4 4 5 5 
+    `
+let imagemDecoracaoDeserto = img`
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . 5 5 . . . . . . . 
+    . . . . . 5 5 5 5 5 5 . . . . . 
+    . . . . 5 5 5 4 4 5 5 . . . . . 
+    . . . 5 5 5 4 4 4 5 5 5 . . . . 
+    . . . 5 5 4 4 4 4 4 5 5 . . . . 
+    . . . . 5 5 4 4 4 5 5 . . . . . 
+    . . . . . 5 5 5 5 5 5 . . . . . 
+    . . . . . . . 5 5 . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    `
+let imagemChaoSubmundo = img`
+    2 2 5 5 5 2 2 2 2 5 5 2 2 2 5 5 
+    2 2 5 5 2 2 2 2 2 5 5 2 2 5 2 2 
+    5 5 2 2 5 2 2 2 5 2 2 2 2 5 5 2 
+    f f 2 2 f f f f f f f 2 f f f f 
+    f f 2 f f f f f f f f 2 f f f f 
+    f f 2 2 5 2 f f f f f f 2 2 f f 
+    f f f 2 5 5 f f f f 2 f f 2 2 f 
+    f 2 2 2 2 f f f f f 2 2 5 2 2 f 
+    f f f f f f f f f 2 2 2 f f f f 
+    f f f f f f f 5 5 5 f f 2 f f f 
+    f f f f f 5 2 5 f f f f 2 2 f f 
+    f f f f 2 5 f f f f f f f 2 5 2 
+    f f 2 f 2 5 2 f f f f f f f f f 
+    f 5 5 2 f f 2 2 f f f f f f f f 
+    f 5 f f f f f 2 2 f f f f f f f 
+    `
+let imagemPlataformaSubmundo = img`
+    f f f f f 2 f f f f f 5 2 f f f 
+    f f f f f 2 2 f f f f 2 5 5 5 f 
+    2 2 f f f f 2 5 f f f f 2 5 5 f 
+    5 2 2 f f f f 5 5 f f f 2 2 2 f 
+    5 5 5 2 f f f f 5 f f f f f f f 
+    5 2 2 2 f f f f f f f f f f f f 
+    2 f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f 2 2 5 f 
+    f f f f f 2 f 2 2 f f f 2 5 5 2 
+    f f f f f 2 5 5 2 f f f 5 5 2 f 
+    2 2 f f f f 5 f f f f f f f f f 
+    5 5 2 f f f f f f f f f f f 2 2 
+    f 5 5 f f f f f f f f f f 2 5 5 
+    f f 5 f f f f f f f f f f 2 5 5 
+    f f 2 2 f f f f f f f f f f f f 
+    `
+let imagemDecoracaoSubmundo = img`
+    . . . . . . . . . . . . . . . . 
+    . . . . . . 2 2 2 . . . . . . . 
+    . . . . . 2 4 4 2 . . . . . . . 
+    . . . . 2 4 4 4 4 2 . . . . . . 
+    . . . 2 4 4 5 5 4 4 2 . . . . . 
+    . . . 2 4 5 5 5 5 4 2 . . . . . 
+    . . . . 2 4 5 5 4 2 . . . . . . 
+    . . . . . 2 4 4 2 . . . . . . . 
+    . . . . . . 2 2 . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    `
+jogador = sprites.create(imagemJogadorDireita, SpriteKind.Player)
 scene.setBackgroundColor(9)
 info.setLife(3)
 info.setScore(0)
@@ -797,105 +924,6 @@ scene.cameraFollowSprite(jogador)
 criarIndicadorEnergia()
 atualizarEnergia()
 carregarNivel()
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    if (jogador.isHittingTile(CollisionDirection.Bottom)) {
-        jogador.vy = -195
-        music.playTone(Note.C5, music.beat(BeatFraction.Quarter))
-    }
-})
-controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    if (podeAtirar == true) {
-        if (energiaTiro > 0) {
-            energiaTiro += -1
-            atualizarEnergia()
-            podeAtirar = false
-            projetil = sprites.createProjectileFromSprite(imagemProjetil, jogador, velocidadeProjetil * direcao, 0)
-            music.playTone(Note.B5, music.beat(BeatFraction.Eighth))
-            pause(250)
-            podeAtirar = true
-        } else {
-            music.playTone(98, 100)
-        }
-    }
-})
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
-    if (invulneravel == false) {
-        otherSprite.destroy(effects.fire, 100)
-        machucarJogador()
-    }
-})
-sprites.onOverlap(SpriteKind.Player, SpriteKind.InimigoFerido, function (sprite, otherSprite) {
-    if (invulneravel == false) {
-        otherSprite.destroy(effects.fire, 100)
-        machucarJogador()
-    }
-})
-sprites.onOverlap(SpriteKind.Player, SpriteKind.InimigoAereo, function (sprite, otherSprite) {
-    if (invulneravel == false) {
-        otherSprite.destroy(effects.fire, 100)
-        machucarJogador()
-    }
-})
-sprites.onOverlap(SpriteKind.Player, SpriteKind.InimigoAtirador, function (sprite, otherSprite) {
-    if (invulneravel == false) {
-        otherSprite.destroy(effects.fire, 100)
-        machucarJogador()
-    }
-})
-sprites.onOverlap(SpriteKind.Player, SpriteKind.ProjetilInimigo, function (sprite, otherSprite) {
-    otherSprite.destroy(effects.fire, 100)
-    machucarJogador()
-})
-sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
-    scene.cameraShake(2, 100)
-    if (nivel == 3) {
-        sprite.destroy(effects.fire, 100)
-        otherSprite.setImage(imagemInimigoFerido)
-        otherSprite.setKind(SpriteKind.InimigoFerido)
-        otherSprite.vx = velocidadeInimigo
-        music.playTone(Note.A4, music.beat(BeatFraction.Eighth))
-    } else {
-        sprite.destroy(effects.fire, 100)
-        otherSprite.destroy(effects.disintegrate, 200)
-        pontuarInimigoTerrestre()
-        music.playMelody("C5 G5 C6", 240)
-    }
-})
-sprites.onOverlap(SpriteKind.Projectile, SpriteKind.InimigoAereo, function (sprite, otherSprite) {
-    scene.cameraShake(2, 100)
-    sprite.destroy(effects.fire, 100)
-    otherSprite.destroy(effects.disintegrate, 200)
-    pontuarInimigoAereo()
-    music.playMelody("C5 G5 C6", 240)
-})
-sprites.onOverlap(SpriteKind.Projectile, SpriteKind.InimigoAtirador, function (sprite, otherSprite) {
-    scene.cameraShake(2, 100)
-    sprite.destroy(effects.fire, 100)
-    otherSprite.destroy(effects.disintegrate, 200)
-    pontuarInimigoAtirador()
-    music.playMelody("C5 G5 C6", 240)
-})
-sprites.onOverlap(SpriteKind.Projectile, SpriteKind.InimigoFerido, function (sprite, otherSprite) {
-    scene.cameraShake(2, 100)
-    sprite.destroy(effects.fire, 100)
-    otherSprite.destroy(effects.disintegrate, 200)
-    pontuarInimigoTerrestre()
-    music.playMelody("C5 G5 C6", 240)
-})
-sprites.onOverlap(SpriteKind.Player, SpriteKind.ItemVida, function (sprite, otherSprite) {
-    otherSprite.destroy(effects.hearts, 200)
-    info.changeLifeBy(1)
-    music.playTone(Note.E5, music.beat(BeatFraction.Quarter))
-})
-sprites.onOverlap(SpriteKind.Player, SpriteKind.ItemEstrela, function (sprite, otherSprite) {
-    otherSprite.destroy(effects.halo, 200)
-    music.playTone(Note.A5, music.beat(BeatFraction.Quarter))
-    ativarTurbo()
-})
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Bandeira, function (sprite, otherSprite) {
-    otherSprite.destroy(effects.confetti, 200)
-    passarDeNivel()
-})
 game.onUpdate(function () {
     for (let inimigoAtual of sprites.allOfKind(SpriteKind.Enemy)) {
         protegerBuraco(inimigoAtual)
