@@ -560,15 +560,15 @@ imagemInimigoNivel2 = img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
     . . . . . f f f . . . . . . . . 
-    . . . f f b b b f f . . . . . . 
-    . . f b b b b b b b f . . . . . 
-    . f b b b b b b b b b f . . . . 
-    . f b b b b b b b b b f . . . . 
-    f b b b b b b b b b b b f . . . 
-    f b c 1 c b c 1 c b b b f . . . 
-    f b c 1 c b c 1 c b b b b f . . 
-    f b b b b b b b b b b b b f . . 
-    . f f b b b b b b b f f f . . . 
+    . . . f f 4 4 4 f f . . . . . . 
+    . . f 4 4 4 4 4 4 4 f . . . . . 
+    . f 4 4 4 4 4 4 4 4 4 f . . . . 
+    . f 4 4 4 4 4 4 4 4 4 f . . . . 
+    f 4 4 4 4 4 4 4 4 4 4 4 f . . . 
+    f 4 5 1 5 4 5 1 5 4 4 4 f . . . 
+    f 4 5 1 5 4 5 1 5 4 4 4 4 f . . 
+    f 4 4 4 4 4 4 4 4 4 4 4 4 f . . 
+    . f f 4 4 4 4 4 4 4 f f f . . . 
     . . . f f f f f f f . . . . . . 
     `
 imagemInimigoNivel3 = img`

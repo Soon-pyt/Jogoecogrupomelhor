@@ -65,15 +65,15 @@ f e e e f d f d d d d b e d b f
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . f f f . . . . . . . . 
-. . . f f b b b f f . . . . . . 
-. . f b b b b b b b f . . . . . 
-. f b b b b b b b b b f . . . . 
-. f b b b b b b b b b f . . . . 
-f b b b b b b b b b b b f . . . 
-f b c 1 c b c 1 c b b b f . . . 
-f b c 1 c b c 1 c b b b b f . . 
-f b b b b b b b b b b b b f . . 
-. f f b b b b b b b f f f . . . 
+. . . f f 4 4 4 f f . . . . . . 
+. . f 4 4 4 4 4 4 4 f . . . . . 
+. f 4 4 4 4 4 4 4 4 4 f . . . . 
+. f 4 4 4 4 4 4 4 4 4 f . . . . 
+f 4 4 4 4 4 4 4 4 4 4 4 f . . . 
+f 4 5 1 5 4 5 1 5 4 4 4 f . . . 
+f 4 5 1 5 4 5 1 5 4 4 4 4 f . . 
+f 4 4 4 4 4 4 4 4 4 4 4 4 f . . 
+. f f 4 4 4 4 4 4 4 f f f . . . 
 . . . f f f f f f f . . . . . . 
 `</field><data>{"commentRefs":[],"fieldData":{"img":null}}</data></block></value><next><block type="variables_set" id="S8ARvKD`ZJk7X[/;]8KB"><field name="VAR" id="w*y7:[o*Fm#(22U60kDZ">imagemInimigoNivel3</field><value name="VALUE"><shadow type="math_number" id="uj6ffNW{46s:]P^WHAgv"><field name="NUM">0</field></shadow><block type="screen_image_picker" id="4B?d*1,IPYd58i*!Aas^"><field name="img">img`
 2 . . . . f . 2 . f . . 2 2 2 . 
