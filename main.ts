@@ -490,40 +490,40 @@ velocidadeProjetil = 220
 spriteVisivel = true
 direcaoTiroInimigo = 1
 imagemJogadorDireita = img`
-    . . . 2 2 2 2 2 2 . . . . . . . . 
-    . . 2 2 2 2 2 2 2 2 2 . . . . . . 
-    . . 4 4 4 4 4 f 4 . . . . . . . . 
-    . 4 4 4 4 4 4 f 4 4 4 . . . . . . 
-    . 4 4 4 4 4 4 4 f 4 4 4 . . . . . 
-    . 4 4 4 4 4 4 f f f f . . . . . . 
-    . . . 4 4 4 4 4 4 . . . . . . . . 
-    . . 2 2 8 2 2 2 . . . . . . . . . 
-    . 2 2 2 8 2 2 8 2 2 2 . . . . . . 
-    2 2 2 2 8 8 8 8 2 2 2 2 . . . . . 
-    4 4 2 8 5 8 8 5 8 2 4 4 . . . . . 
-    4 4 4 8 8 8 8 8 8 4 4 4 . . . . . 
-    . 4 8 8 8 8 8 8 8 8 4 . . . . . . 
-    . . 8 8 8 . . 8 8 8 . . . . . . . 
-    . e e e . . . . e e e . . . . . . 
-    e e e e . . . . e e e e . . . . . 
+    . a a a a a a a a . . . . . . . . 
+    a . . a a a a a a a . . . . . . . 
+    a . c c 5 5 5 5 5 5 5 . . e e . . 
+    . . 5 5 c c c c c c c a e 8 9 e . 
+    . 5 c c e e e e e e . . e 8 8 e . 
+    . c c e e e e e d e . . . e e . . 
+    c c e e e e d f d . . . e . . . . 
+    . . . e d d d f d d . . e . . . . 
+    . . . . . d d d d . . e . . . . . 
+    . . . a a e e e a a d d . . . . . 
+    . . a a a a 5 a a a d d . . . . . 
+    . . d d a a 5 a a . . e . . . . . 
+    . . d d e e e e e . e . . . . . . 
+    . a a a a 5 . a a . . . . . . . . 
+    a a a 5 5 . . e e . . . . . . . . 
+    a a e e . . . e e e . . . . . . . 
     `
 let imagemJogadorEsquerda = img`
-    . . . . . . . 2 2 2 2 2 2 . . . . 
-    . . . . . 2 2 2 2 2 2 2 2 2 . . . 
-    . . . . . . . 4 f 4 4 4 4 4 . . . 
-    . . . . . 4 4 4 f 4 4 4 4 4 . . . 
-    . . . . 4 4 4 f 4 4 4 4 4 4 . . . 
-    . . . . f f f f 4 4 4 4 4 4 . . . 
-    . . . . . . 4 4 4 4 4 4 . . . . . 
-    . . . . . . . . 2 2 2 8 2 2 . . . 
-    . . . . . 2 2 2 8 2 2 8 2 2 2 . . 
-    . . . . 2 2 2 2 8 8 8 8 2 2 2 2 . 
-    . . . . 4 4 2 8 5 8 8 5 8 2 4 4 . 
-    . . . . 4 4 4 8 8 8 8 8 8 4 4 4 . 
-    . . . . . 4 8 8 8 8 8 8 8 8 4 . . 
-    . . . . . . 8 8 8 . . 8 8 8 . . . 
-    . . . . . . e e e . . . . e e e . 
-    . . . . . e e e e . . . . e e e e 
+    . . . . . . . . a a a a a a a a . 
+    . . . . . . . a a a a a a a . . a 
+    . . e e . . 5 5 5 5 5 5 5 c c . a 
+    . e 9 8 e a c c c c c c c 5 5 . . 
+    . e 8 8 e . . e e e e e e c c 5 . 
+    . . e e . . . e d e e e e e c c . 
+    . . . . e . . . d f d e e e e c c 
+    . . . . e . . d d f d d d e . . . 
+    . . . . . e . . d d d d . . . . . 
+    . . . . . d d a a e e e a a . . . 
+    . . . . . d d a a a 5 a a a a . . 
+    . . . . . e . . a a 5 a a d d . . 
+    . . . . . . e . e e e e e d d . . 
+    . . . . . . . . a a . 5 a a a a . 
+    . . . . . . . . e e . . 5 5 a a a 
+    . . . . . . . e e e . . . e e a a 
     `
 imagemProjetil = img`
     . . 5 5 5 . . . 
