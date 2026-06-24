@@ -608,22 +608,22 @@ imagemInimigoFerido = img`
     . . . . . . . . . . . . . . . . 
     `
 imagemInimigoAereo = img`
-    . . . . . . . . . . . . . . . . 
-    . . . . . f f . . f f . . . . . 
-    . . . . f 8 8 f f 8 8 f . . . . 
-    . . . f 8 8 8 8 8 8 8 8 f . . . 
-    . . f 8 8 f 8 8 8 8 f 8 8 f . . 
-    . f 8 8 8 8 8 8 8 8 8 8 8 f . . 
-    f 8 8 8 f f f f f f 8 8 8 8 f . 
-    f 8 f 8 8 8 f f 8 8 8 f 8 8 f . 
-    . f . f 8 8 8 8 8 8 f . f . . . 
-    . . . . f 8 8 8 8 f . . . . . . 
-    . . . . . f f f f . . . . . . . 
-    . . . . . . f f . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
+    . . . f . . . . . . . . f . . . 
+    . . f d f . . . . . . f d f . . 
+    . . f d d f f f f f f d d f . . 
+    . . . f d d d c c d d d f . . . 
+    . . f f f d 2 c c 2 d f f . . . 
+    . . f c f c 2 c c 2 c f c f . . 
+    . f c c f c c c c c c f c c f . 
+    . f c c c f c c c c f c c c f . 
+    f c c c b f f c c f f b c c c f 
+    f c c c b f c c c c f b c c c f 
+    f c c b c c c c c c c c b c c f 
+    f c b b c c c c c c c c b c c f 
+    . f b c c f c c c c f c c b f . 
+    . . f c f . f c c f . f c f . . 
+    . . . f . . f b b f . . f . . . 
+    . . . . . . . f f . . . . . . . 
     `
 imagemInimigoAtirador = img`
     . f f f f . . . . f f f f f f . 
