@@ -536,39 +536,39 @@ imagemProjetil = img`
     . . . 5 . . . . 
     `
 imagemInimigoNivel1 = img`
-    . . . . d d d d . . . . . . . . 
-    . . d d d d d d d d . . . . . . 
-    . d d d d d d d d d d . . . . . 
-    d d d f d d d d f d d d . . . . 
-    d d d d d d d d d d d d . . . . 
-    d d f d d d d d d d f d . . . . 
-    d d d f f f f f f f d d . . . . 
-    . d d d d d d d d d d . . . . . 
-    . . d d d d d d d d . . . . . . 
-    . . . d d . . d d . . . . . . . 
-    . . d d . . . . d d . . . . . . 
-    . d d . . . . . . d d . . . . . 
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . f f f . . . . . . . . 
+    . . . f f c c c f f . . . . . . 
+    . . f c c c c c c c f . . . . . 
+    . f c c c c c c c c c f . . . . 
+    . f c c c c c c c c c f . . . . 
+    f c f d f c f d f c c c f . . . 
+    f c f d f c f d f c c c f . . . 
+    f c c c c c c c c c c c c f . . 
+    f c c c c c c c c c c c c f . . 
+    . f f c c c c c c c f f f . . . 
+    . . . f f f f f f f . . . . . . 
     `
 imagemInimigoNivel2 = img`
-    . . . . 7 7 7 7 . . . . . . . . 
-    . . 7 7 7 7 7 7 7 7 . . . . . . 
-    . 7 7 7 7 7 7 7 7 7 7 . . . . . 
-    7 7 7 f 7 7 7 7 f 7 7 7 . . . . 
-    7 7 7 7 7 7 7 7 7 7 7 7 . . . . 
-    7 7 f 7 7 7 7 7 7 7 f 7 . . . . 
-    7 7 7 f f f f f f f 7 7 . . . . 
-    . 7 7 7 7 7 7 7 7 7 7 . . . . . 
-    . . 7 7 7 7 7 7 7 7 . . . . . . 
-    . . . 7 7 . . 7 7 . . . . . . . 
-    . . 7 7 . . . . 7 7 . . . . . . 
-    . 7 7 . . . . . . 7 7 . . . . . 
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
+    . . . . . . . f f f f . . . . . 
+    . . . . . . f d d d d f . . . . 
+    . . f . . f d d d d d d f . . . 
+    . f 1 f . f d d d d d d f . . . 
+    . f 1 f . f d f d f d d f . . . 
+    . f 1 f . f d d d d d f f f . . 
+    . f 1 f . . f d f d d f b b f . 
+    . f 1 f . f d f d f f b e e b f 
+    f e e e f d f d d d d b e d b f 
+    . f d f d f . f d f f b e d b f 
+    . f d f f f f d f d f b e e b f 
+    . . f f . f d f . f d f b b f . 
+    . . . . . f b f . . f b f f . . 
     . . . . . . . . . . . . . . . . 
     `
 imagemInimigoNivel3 = img`
@@ -709,39 +709,39 @@ imagemBandeiraNivel3 = img`
     `
 imagemItemVida = img`
     . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . f f . . . f f . . . . . 
-    . . . f 2 2 f . f 2 2 f . . . . 
-    . . f 2 2 2 2 f 2 2 2 2 f . . . 
-    . f 2 2 2 2 2 2 2 2 2 2 2 f . . 
-    . f 2 2 2 2 2 2 2 2 2 2 2 f . . 
-    . f 2 2 2 2 2 2 2 2 2 2 2 f . . 
-    . f 2 2 2 2 2 2 2 2 2 2 2 f . . 
-    . f 2 2 2 2 2 2 2 2 2 2 2 f . . 
-    . . f 2 2 2 2 2 2 2 2 2 f . . . 
-    . . . f 2 2 2 2 2 2 2 f . . . . 
-    . . . . f 2 2 2 2 2 f . . . . . 
-    . . . . . f 2 2 2 f . . . . . . 
-    . . . . . . f 2 f . . . . . . . 
-    . . . . . . . f . . . . . . . . 
+    . . . . . . f f f f . . . . . . 
+    . . . . . f e e e e f . . . . . 
+    . . . . . . f 1 1 f . . . . . . 
+    . . . . . . f 1 1 f . . . . . . 
+    . . . . . . f 1 1 f . . . . . . 
+    . . . . . . f d d f . . . . . . 
+    . . . . f f 1 d d d f f . . . . 
+    . . . f d d 1 2 2 2 d d f . . . 
+    . . f d 2 1 1 2 2 2 2 2 d f . . 
+    . . f d 2 1 2 2 2 2 2 2 d f . . 
+    . . f d 2 1 2 2 2 2 2 2 d f . . 
+    . . f d 2 1 2 2 2 2 2 2 d f . . 
+    . . . f d 2 2 2 2 2 2 d f . . . 
+    . . . f d d d d d d d d f . . . 
+    . . . . f f f f f f f f . . . . 
     `
 imagemItemEstrela = img`
-    . . . . . . 5 5 . . . . . . . . 
-    . . . . . 5 5 5 5 . . . . . . . 
-    . . . . . 5 4 4 5 . . . . . . . 
-    . . . . 5 4 4 4 4 5 . . . . . . 
-    . 5 5 5 4 4 4 4 5 5 5 . . . . . 
-    . . 5 4 4 4 4 4 4 5 . . . . . . 
-    . . . 5 4 4 4 4 5 . . . . . . . 
-    . . . 5 4 4 4 4 5 . . . . . . . 
-    . . 5 4 4 5 5 4 4 5 . . . . . . 
-    . 5 4 4 5 . . 5 4 4 5 . . . . . 
-    . 5 5 5 . . . . 5 5 5 . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
+    . . . . . . . f f . . . . . . . 
+    . . . . . . f 5 5 f . . . . . . 
+    . . . . . f 5 5 5 4 f . . . . . 
+    . . . . . f 5 5 5 4 f . . . . . 
+    f f f f f 5 5 5 5 5 4 f f f f f 
+    f 5 5 5 5 5 5 5 5 5 4 4 4 4 4 f 
+    . f 5 5 5 5 5 5 5 5 5 5 4 4 f . 
+    . . f 5 5 5 5 5 5 5 5 4 4 f . . 
+    . . . f 5 5 5 5 5 5 5 4 f . . . 
+    . . . f 5 5 5 5 5 5 5 5 f . . . 
+    . . f 5 5 5 5 5 5 5 5 5 4 f . . 
+    . . f 5 5 5 5 4 4 5 5 5 4 f . . 
+    . . f 5 5 5 4 f f 4 4 4 5 f . . 
+    . f 5 5 4 f f . . f f 4 4 4 f . 
+    . f 4 4 f . . . . . . f 4 4 f . 
+    . . f f . . . . . . . . f f . . 
     `
 let imagemVazia = img`
     . . . . . . . . . . . . . . . . 
@@ -877,38 +877,38 @@ let imagemDecoracao = img`
     `
 let imagemChaoDeserto = img`
     5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-    4 5 5 4 5 5 4 5 5 4 5 5 4 5 5 4 
+    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
+    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
+    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
+    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
+    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
+    4 5 5 4 5 5 5 5 5 5 5 5 4 5 5 5 
+    4 4 5 5 4 4 4 4 5 5 5 4 4 5 4 4 
+    4 4 5 4 5 4 5 4 4 5 4 4 5 4 4 4 
     4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-    5 4 4 5 4 4 5 4 4 5 4 4 5 4 4 5 
-    4 4 5 4 4 5 4 4 5 4 4 5 4 4 5 4 
-    4 5 4 4 5 4 4 5 4 4 5 4 4 5 4 4 
-    5 4 4 5 4 4 5 4 4 5 4 4 5 4 4 5 
-    4 4 5 4 4 5 4 4 5 4 4 5 4 4 5 4 
-    4 5 4 4 5 4 4 5 4 4 5 4 4 5 4 4 
-    5 4 4 5 4 4 5 4 4 5 4 4 5 4 4 5 
-    4 4 5 4 4 5 4 4 5 4 4 5 4 4 5 4 
-    4 5 4 4 5 4 4 5 4 4 5 4 4 5 4 4 
-    5 4 4 5 4 4 5 4 4 5 4 4 5 4 4 5 
-    4 4 5 4 4 5 4 4 5 4 4 5 4 4 5 4 
-    4 5 4 4 5 4 4 5 4 4 5 4 4 5 4 4 
+    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
+    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
+    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
+    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
+    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
     4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
     `
 let imagemPlataformaDeserto = img`
     5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-    5 4 4 5 5 4 4 5 5 4 4 5 5 4 4 5 
-    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-    4 5 5 4 4 5 5 4 4 5 5 4 4 5 5 4 
+    4 4 4 4 4 5 4 4 4 4 4 4 4 4 4 5 
+    5 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
+    5 5 5 5 5 5 5 5 5 5 5 5 4 4 5 5 
     5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-    5 4 4 5 5 4 4 5 5 4 4 5 5 4 4 5 
+    5 5 4 4 4 4 4 4 4 4 5 5 5 5 5 5 
     4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-    4 5 5 4 4 5 5 4 4 5 5 4 4 5 5 4 
+    4 5 4 4 4 4 4 4 5 4 4 4 4 4 4 4 
+    5 5 5 5 5 5 5 5 5 5 5 5 5 5 4 4 
     5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-    5 4 4 5 5 4 4 5 5 4 4 5 5 4 4 5 
-    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-    4 5 5 4 4 5 5 4 4 5 5 4 4 5 5 4 
-    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-    5 4 4 5 5 4 4 5 5 4 4 5 5 4 4 5 
-    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
+    5 5 5 5 5 4 4 5 5 5 5 5 5 5 5 5 
+    5 4 4 4 4 4 4 4 4 4 4 4 4 5 4 4 
+    4 4 4 4 4 4 4 4 4 4 4 5 4 4 4 4 
+    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 4 
+    5 4 4 5 4 4 4 4 4 4 5 5 5 5 5 5 
     4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
     `
 let imagemDecoracaoDeserto = img`
@@ -930,39 +930,39 @@ let imagemDecoracaoDeserto = img`
     . . . . . . . . . . . . . . . . 
     `
 let imagemChaoSubmundo = img`
-    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
-    4 2 2 4 2 2 4 2 2 4 2 2 4 2 2 4 
-    f f f f f f f f f f f f f f f f 
-    f f f 2 2 f f f f f 2 2 f f f f 
-    f f 2 4 4 2 f f f 2 4 4 2 f f f 
-    f f f 2 2 f f f f f 2 2 f f f f 
-    f f f f f f f f f f f f f f f f 
-    f f f 2 2 f f f f f 2 2 f f f f 
-    f f 2 4 4 2 f f f 2 4 4 2 f f f 
-    f f f 2 2 f f f f f 2 2 f f f f 
-    f f f f f f f f f f f f f f f f 
-    f f f 2 2 f f f f f 2 2 f f f f 
-    f f 2 4 4 2 f f f 2 4 4 2 f f f 
-    f f f 2 2 f f f f f 2 2 f f f f 
-    f f f f f f f f f f f f f f f f 
+    2 2 2 5 5 5 2 2 2 5 5 5 5 2 2 5 
+    2 4 2 4 4 2 2 5 2 2 2 4 2 2 4 4 
+    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
+    f f f 2 f f f f f f 2 f f f f f 
+    f f f 5 f f f f f f f 2 f f f f 
+    f f 2 5 f f f f f f 2 5 2 2 f f 
+    f 2 5 f f f f f f f 2 f f 2 f f 
+    f 5 f f f f f 2 5 2 2 f f 5 5 f 
+    2 5 2 f f f f 5 5 f f f 2 2 5 2 
+    2 5 f f f f f f 2 2 f f f f f f 
+    f f f f f f f f f 2 f f f f f f 
+    f f f f f f 2 f f f f f f 2 5 5 
+    f f f f 5 5 2 f f f f f 2 5 5 2 
+    f f f f 5 5 f f f f f f 2 5 2 f 
+    f f f f 2 f f f f f f f f f 2 2 
     `
 let imagemPlataformaSubmundo = img`
+    f f f f f f 2 f f f f 5 5 2 f f 
+    f f f f f f 2 5 5 f f 2 5 f f f 
+    f 2 2 2 f f f 2 5 2 f f 2 2 f f 
+    2 5 5 2 f f f f f f f f f 2 2 f 
+    f 2 5 5 2 f f f f f f f f f 5 5 
+    f f 2 5 5 2 f f f f f f f 2 5 5 
+    f f f f 2 2 2 f f f f f 2 2 f f 
     f f f f f f f f f f f f f f f f 
-    f f 2 2 f f f f f f 2 2 f f f f 
-    f 2 4 4 2 f f f f 2 4 4 2 f f f 
-    f f 2 2 f f f f f f 2 2 f f f f 
-    f f f f f f f f f f f f f f f f 
-    f f 2 2 f f f f f f 2 2 f f f f 
-    f 2 4 4 2 f f f f 2 4 4 2 f f f 
-    f f 2 2 f f f f f f 2 2 f f f f 
-    f f f f f f f f f f f f f f f f 
-    f f 2 2 f f f f f f 2 2 f f f f 
-    f 2 4 4 2 f f f f 2 4 4 2 f f f 
-    f f 2 2 f f f f f f 2 2 f f f f 
-    f f f f f f f f f f f f f f f f 
-    f f 2 2 f f f f f f 2 2 f f f f 
-    f 2 4 4 2 f f f f 2 4 4 2 f f f 
-    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+    f f f f f f f f f 2 5 2 f f f f 
+    f f f f f 2 f f f 2 2 f f f f f 
+    f f f 5 5 2 f f f f 5 5 f f f f 
+    f 2 5 5 2 2 f f f f 2 5 5 2 2 2 
+    2 2 5 2 f f f f f f f 5 5 5 5 f 
+    f f 2 2 f f 2 2 f f 2 2 2 2 f f 
+    f f f f f f 2 5 f f 2 f f f f f 
+    f f f f f f 2 f f f 2 f f f f f 
     `
 let imagemDecoracaoSubmundo = img`
     . . . . . . . . . . . . . . . . 
