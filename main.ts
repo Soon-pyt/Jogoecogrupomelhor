@@ -269,9 +269,9 @@ function configurarTiles () {
     if (nivel == 1) {
         scene.setBackgroundColor(9)
     } else if (nivel == 2) {
-        scene.setBackgroundColor(11)
+        scene.setBackgroundColor(9)
     } else {
-        scene.setBackgroundColor(13)
+        scene.setBackgroundColor(12)
     }
 }
 function atirarInimigo (atiradorAtual: Sprite) {
@@ -717,6 +717,24 @@ imagemBandeiraNivel3 = img`
     `
 imagemItemVida = img`
     . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . f f . . . f f . . . . . 
+    . . . f 2 2 f . f 2 2 f . . . . 
+    . . f 2 2 2 2 f 2 2 2 2 f . . . 
+    . f 2 2 1 2 2 2 2 2 2 2 2 f . . 
+    . f 2 1 2 2 2 2 2 2 2 2 2 f . . 
+    . f 2 2 2 2 2 2 2 2 2 2 2 f . . 
+    . . f 2 2 2 2 2 2 2 2 2 f . . . 
+    . . . f 2 2 2 2 2 2 2 f . . . . 
+    . . . . f 2 2 2 2 2 f . . . . . 
+    . . . . . f 2 2 2 f . . . . . . 
+    . . . . . . f 2 f . . . . . . . 
+    . . . . . . . f . . . . . . . . 
+    `
+imagemItemEstrela = img`
+    . . . . . . . . . . . . . . . . 
     . . . . . . f f f f . . . . . . 
     . . . . . f e e e e f . . . . . 
     . . . . . . f 1 1 f . . . . . . 
@@ -732,24 +750,6 @@ imagemItemVida = img`
     . . . f d 2 2 2 2 2 2 d f . . . 
     . . . f d d d d d d d d f . . . 
     . . . . f f f f f f f f . . . . 
-    `
-imagemItemEstrela = img`
-    . . . . . . . f f . . . . . . . 
-    . . . . . . f 5 5 f . . . . . . 
-    . . . . . f 5 5 5 4 f . . . . . 
-    . . . . . f 5 5 5 4 f . . . . . 
-    f f f f f 5 5 5 5 5 4 f f f f f 
-    f 5 5 5 5 5 5 5 5 5 4 4 4 4 4 f 
-    . f 5 5 5 5 5 5 5 5 5 5 4 4 f . 
-    . . f 5 5 5 5 5 5 5 5 4 4 f . . 
-    . . . f 5 5 5 5 5 5 5 4 f . . . 
-    . . . f 5 5 5 5 5 5 5 5 f . . . 
-    . . f 5 5 5 5 5 5 5 5 5 4 f . . 
-    . . f 5 5 5 5 4 4 5 5 5 4 f . . 
-    . . f 5 5 5 4 f f 4 4 4 5 f . . 
-    . f 5 5 4 f f . . f f 4 4 4 f . 
-    . f 4 4 f . . . . . . f 4 4 f . 
-    . . f f . . . . . . . . f f . . 
     `
 let imagemVazia = img`
     . . . . . . . . . . . . . . . . 
