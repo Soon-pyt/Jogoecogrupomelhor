@@ -626,32 +626,40 @@ imagemInimigoAereo = img`
     . . . . . . . . . . . . . . . . 
     `
 imagemInimigoAtirador = img`
-    . . . . 2 2 2 2 . . . . . . . . 
-    . . 2 2 2 4 4 2 2 2 . . . . . . 
-    . 2 2 4 4 5 5 4 4 2 2 . . . . . 
-    2 2 4 f 4 5 5 4 f 4 2 2 . . . . 
-    2 4 4 4 4 4 4 4 4 4 4 2 . . . . 
-    2 4 5 5 2 2 2 2 5 5 4 2 . . . . 
-    2 4 4 f f f f f f f 4 2 . . . . 
-    . 2 4 4 4 4 4 4 4 4 2 . . . . . 
-    . . 2 2 4 4 4 4 2 2 . . . . . . 
-    . . . 2 2 . . 2 2 . . . . . . . 
-    . . 2 4 . . . . 4 2 . . . . . . 
-    . 2 4 . . . . . . 4 2 . . . . . 
-    . . . . 5 5 5 5 5 5 . . . . . . 
-    . . . . . 4 4 4 4 . . . . . . . 
-    . . . . . . 2 2 . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
+    . f f f f . . . . f f f f f f . 
+    f f c c a f . f f c c c c c c f 
+    f a a c f . f c c c c c c c c f 
+    f a a e f f c f f f f c c f c f 
+    f c e f f c f f f f f f c f f . 
+    f e f . f c f f f f f f c f . . 
+    f e f f c f 2 2 f 2 2 f c f . . 
+    f e f f c f 2 2 f 2 2 f c f . . 
+    f e f f c f f f f f f f c c f . 
+    f e c c c c c f f f f c c c c f 
+    f d d c c f e e 5 e e f f d d f 
+    f d d f f f e e 5 e e f f d d f 
+    f e f . f c b b c b c c f f f . 
+    f e f f c b b b c b b c c f . . 
+    f e f c b b b c c c b b c c f . 
+    . f . f f f f f f f f f f f . . 
     `
 imagemProjetilInimigo = img`
-    . . 2 2 2 2 . . 
-    . 2 5 5 5 4 2 . 
-    2 5 5 4 4 4 4 2 
-    2 5 4 4 2 2 4 2 
-    2 5 5 4 4 4 4 2 
-    . 2 5 5 5 4 2 . 
-    . . 2 2 2 2 . . 
-    . . . 2 2 . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . 2 2 2 . . . . . . . 
+    . . . . . 2 4 4 2 . . . . . . . 
+    . . . . 2 4 4 4 4 2 . . . . . . 
+    . . . 2 4 4 5 5 4 4 2 . . . . . 
+    . . . 2 4 5 5 5 5 4 2 . . . . . 
+    . . . . 2 4 5 5 4 2 . . . . . . 
+    . . . . . 2 4 4 2 . . . . . . . 
+    . . . . . . 2 2 . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
     `
 imagemBandeiraNivel1 = img`
     . . . . . . f f . . . . . . . . 

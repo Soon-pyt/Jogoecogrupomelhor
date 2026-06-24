@@ -127,31 +127,39 @@ f 8 f 8 8 8 f f 8 8 8 f 8 8 f .
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `</field><data>{"commentRefs":[],"fieldData":{"img":null}}</data></block></value><next><block type="variables_set" id="6T5GgV+3(G;+7zkT;DbL"><field name="VAR" id="6$D+}dN,/A3HH*}w=P*y">imagemInimigoAtirador</field><value name="VALUE"><shadow type="math_number" id="9%4SbsdgkvbP4[x5JET;"><field name="NUM">0</field></shadow><block type="screen_image_picker" id="c.SB:xQ!1!!EQT6)T4oi"><field name="img">img`
-. . . . 2 2 2 2 . . . . . . . . 
-. . 2 2 2 4 4 2 2 2 . . . . . . 
-. 2 2 4 4 5 5 4 4 2 2 . . . . . 
-2 2 4 f 4 5 5 4 f 4 2 2 . . . . 
-2 4 4 4 4 4 4 4 4 4 4 2 . . . . 
-2 4 5 5 2 2 2 2 5 5 4 2 . . . . 
-2 4 4 f f f f f f f 4 2 . . . . 
-. 2 4 4 4 4 4 4 4 4 2 . . . . . 
-. . 2 2 4 4 4 4 2 2 . . . . . . 
-. . . 2 2 . . 2 2 . . . . . . . 
-. . 2 4 . . . . 4 2 . . . . . . 
-. 2 4 . . . . . . 4 2 . . . . . 
-. . . . 5 5 5 5 5 5 . . . . . . 
-. . . . . 4 4 4 4 . . . . . . . 
+. f f f f . . . . f f f f f f . 
+f f c c a f . f f c c c c c c f 
+f a a c f . f c c c c c c c c f 
+f a a e f f c f f f f c c f c f 
+f c e f f c f f f f f f c f f . 
+f e f . f c f f f f f f c f . . 
+f e f f c f 2 2 f 2 2 f c f . . 
+f e f f c f 2 2 f 2 2 f c f . . 
+f e f f c f f f f f f f c c f . 
+f e c c c c c f f f f c c c c f 
+f d d c c f e e 5 e e f f d d f 
+f d d f f f e e 5 e e f f d d f 
+f e f . f c b b c b c c f f f . 
+f e f f c b b b c b b c c f . . 
+f e f c b b b c c c b b c c f . 
+. f . f f f f f f f f f f f . . 
+`</field><data>{"commentRefs":[],"fieldData":{"img":null}}</data></block></value><next><block type="variables_set" id="u`Q,6r^]~a3-jQ.KFPBb"><field name="VAR" id="QY,0#5L$5{fX88d|i,(*">imagemProjetilInimigo</field><value name="VALUE"><shadow type="math_number" id="NZbpwd|Bvfgc|@@qR]@_"><field name="NUM">0</field></shadow><block type="screen_image_picker" id=".nB9`,VQ@|H(A+2VoYqR"><field name="img">img`
+. . . . . . . . . . . . . . . . 
+. . . . . . 2 2 2 . . . . . . . 
+. . . . . 2 4 4 2 . . . . . . . 
+. . . . 2 4 4 4 4 2 . . . . . . 
+. . . 2 4 4 5 5 4 4 2 . . . . . 
+. . . 2 4 5 5 5 5 4 2 . . . . . 
+. . . . 2 4 5 5 4 2 . . . . . . 
+. . . . . 2 4 4 2 . . . . . . . 
 . . . . . . 2 2 . . . . . . . . 
 . . . . . . . . . . . . . . . . 
-`</field><data>{"commentRefs":[],"fieldData":{"img":null}}</data></block></value><next><block type="variables_set" id="u`Q,6r^]~a3-jQ.KFPBb"><field name="VAR" id="QY,0#5L$5{fX88d|i,(*">imagemProjetilInimigo</field><value name="VALUE"><shadow type="math_number" id="NZbpwd|Bvfgc|@@qR]@_"><field name="NUM">0</field></shadow><block type="screen_image_picker" id=".nB9`,VQ@|H(A+2VoYqR"><field name="img">img`
-. . 2 2 2 2 . . 
-. 2 5 5 5 4 2 . 
-2 5 5 4 4 4 4 2 
-2 5 4 4 2 2 4 2 
-2 5 5 4 4 4 4 2 
-. 2 5 5 5 4 2 . 
-. . 2 2 2 2 . . 
-. . . 2 2 . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
 `</field><data>{"commentRefs":[],"fieldData":{"img":null}}</data></block></value><next><block type="variables_set" id="QjrI0+.cAU%;K)sxK9=r"><field name="VAR" id="+~j]uCw{w{GC6jgC=qe~">imagemBandeiraNivel1</field><value name="VALUE"><shadow type="math_number" id="Ks:o[8VJ[=H5cB7uA}z?"><field name="NUM">0</field></shadow><block type="screen_image_picker" id=")Z:WuTUvd4DSeZjaZ(IC"><field name="img">img`
 . . . . . . f f . . . . . . . . 
 . . . . . . f 2 2 2 2 . . . . . 
