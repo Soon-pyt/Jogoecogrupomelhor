@@ -538,24 +538,6 @@ imagemProjetil = img`
 imagemInimigoNivel1 = img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . f f f . . . . . . . . 
-    . . . f f c c c f f . . . . . . 
-    . . f c c c c c c c f . . . . . 
-    . f c c c c c c c c c f . . . . 
-    . f c c c c c c c c c f . . . . 
-    f c f d f c f d f c c c f . . . 
-    f c f d f c f d f c c c f . . . 
-    f c c c c c c c c c c c c f . . 
-    f c c c c c c c c c c c c f . . 
-    . f f c c c c c c c f f f . . . 
-    . . . f f f f f f f . . . . . . 
-    `
-imagemInimigoNivel2 = img`
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
     . . . . . . . f f f f . . . . . 
     . . . . . . f d d d d f . . . . 
     . . f . . f d d d d d d f . . . 
@@ -570,6 +552,24 @@ imagemInimigoNivel2 = img`
     . . f f . f d f . f d f b b f . 
     . . . . . f b f . . f b f f . . 
     . . . . . . . . . . . . . . . . 
+    `
+imagemInimigoNivel2 = img`
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . f f f . . . . . . . . 
+    . . . f f b b b f f . . . . . . 
+    . . f b b b b b b b f . . . . . 
+    . f b b b b b b b b b f . . . . 
+    . f b b b b b b b b b f . . . . 
+    f b b b b b b b b b b b f . . . 
+    f b c 1 c b c 1 c b b b f . . . 
+    f b c 1 c b c 1 c b b b b f . . 
+    f b b b b b b b b b b b b f . . 
+    . f f b b b b b b b f f f . . . 
+    . . . f f f f f f f . . . . . . 
     `
 imagemInimigoNivel3 = img`
     . . 2 . . . . . . 2 . . . . . . 
