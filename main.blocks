@@ -179,9 +179,9 @@ f e f c b b b c c c b b c c f .
 . . . . f f f f f . . . . . . . 
 `</field><data>{"commentRefs":[],"fieldData":{"img":null}}</data></block></value><next><block type="variables_set" id="?DLzDqD5Bf;1=at=.hvb"><field name="VAR" id="XND?H^n.VygqhyjS-WHo">imagemBandeiraNivel2</field><value name="VALUE"><shadow type="math_number" id="2dSiAr8},p$8b/-dh_Aa"><field name="NUM">0</field></shadow><block type="screen_image_picker" id="u0**RRX5|9.U93YHdo=?"><field name="img">img`
 . . . . . . f f . . . . . . . . 
-. . . . . . f 9 9 9 9 . . . . . 
-. . . . . . f 9 9 9 9 9 . . . . 
-. . . . . . f 9 9 9 9 . . . . . 
+. . . . . . f a a a a . . . . . 
+. . . . . . f a a a a a . . . . 
+. . . . . . f a a a a . . . . . 
 . . . . . . f . . . . . . . . . 
 . . . . . . f . . . . . . . . . 
 . . . . . . f . . . . . . . . . 
